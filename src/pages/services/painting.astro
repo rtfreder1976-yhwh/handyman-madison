@@ -1,0 +1,564 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const includedServices = [
+  {
+    title: "Interior Painting",
+    items: [
+      "Single room painting",
+      "Whole house interior painting",
+      "Accent walls and feature walls",
+      "Ceiling painting",
+      "Hallway and stairwell painting",
+      "Closet and storage area painting",
+      "Garage interior painting",
+      "Basement painting"
+    ]
+  },
+  {
+    title: "Exterior Painting",
+    items: [
+      "House exterior painting",
+      "Trim and fascia painting",
+      "Soffit painting",
+      "Shutters and doors",
+      "Porch and deck painting",
+      "Fence painting and staining",
+      "Garage door painting",
+      "Outbuilding and shed painting"
+    ]
+  },
+  {
+    title: "Cabinet & Furniture",
+    items: [
+      "Kitchen cabinet painting",
+      "Bathroom vanity painting",
+      "Built-in cabinet refinishing",
+      "Furniture painting",
+      "Shelf and bookcase painting",
+      "Cabinet door and drawer fronts",
+      "Hardware removal and reinstallation",
+      "Primer and topcoat finishing"
+    ]
+  },
+  {
+    title: "Specialty Finishes",
+    items: [
+      "Trim and molding painting",
+      "Door and window frame painting",
+      "Baseboards and crown molding",
+      "Deck staining and sealing",
+      "Fence staining",
+      "Wood restoration and finishing",
+      "Epoxy garage floor coating",
+      "Textured ceiling painting"
+    ]
+  }
+];
+
+const commonProblems = [
+  {
+    problem: "Peeling or flaking paint on walls or trim",
+    solution: "We scrape, sand, prime, and repaint with quality paint that adheres properly and lasts for years."
+  },
+  {
+    problem: "Water stains on ceilings or walls",
+    solution: "We apply stain-blocking primer to seal stains permanently, then paint with matching color for invisible repairs."
+  },
+  {
+    problem: "Outdated colors making rooms feel dark or dated",
+    solution: "We help with color selection and transform spaces with modern, fresh colors that brighten and update your home."
+  },
+  {
+    problem: "Faded or chalky exterior paint",
+    solution: "We power wash, scrape loose paint, prime bare spots, and apply quality exterior paint rated for Alabama weather."
+  },
+  {
+    problem: "Worn, scratched, or discolored cabinets",
+    solution: "We clean, sand, prime, and repaint cabinets for a fraction of replacement cost — transforming kitchens and bathrooms."
+  },
+  {
+    problem: "Nail holes, cracks, and imperfections visible through paint",
+    solution: "We fill, sand, and properly prep all surfaces so paint goes on smooth with a flawless finish."
+  },
+  {
+    problem: "Previous paint job done poorly with drips and missed spots",
+    solution: "We correct amateur work with proper technique, ensuring clean lines, even coverage, and professional results."
+  },
+  {
+    problem: "Weathered, gray deck or fence needing restoration",
+    solution: "We clean, sand, and apply quality stain or paint to restore and protect your outdoor wood surfaces."
+  }
+];
+
+const processSteps = [
+  {
+    step: 1,
+    title: "Contact & Color Consultation",
+    description: "Call or message us about your painting project. We can discuss color options, finishes, and provide guidance on paint selection for your specific needs.",
+    time: "Same day response"
+  },
+  {
+    step: 2,
+    title: "Free On-Site Estimate",
+    description: "We measure your space, assess surface conditions, identify any prep work needed, and provide a detailed written quote with no hidden fees.",
+    time: "Within 48 hours"
+  },
+  {
+    step: 3,
+    title: "Schedule Your Project",
+    description: "Pick dates that work for you. We confirm appointments 24 hours and 2 hours before arrival. Flexible scheduling including Saturdays available.",
+    time: "Usually within 3-5 days"
+  },
+  {
+    step: 4,
+    title: "Protect Your Home",
+    description: "We move furniture, cover floors with drop cloths, tape off trim and fixtures, and plastic-wrap anything that needs protection. Your belongings are safe.",
+    time: "30-60 minutes"
+  },
+  {
+    step: 5,
+    title: "Surface Preparation",
+    description: "This is where quality shows. We fill holes, sand rough spots, scrape loose paint, clean surfaces, and apply primer where needed. Proper prep = lasting results.",
+    time: "Varies by condition"
+  },
+  {
+    step: 6,
+    title: "Professional Painting",
+    description: "We apply paint with brushes, rollers, or sprayers as appropriate. Multiple coats for full coverage. Cut-in edges by hand for clean lines.",
+    time: "1-3 days typical"
+  },
+  {
+    step: 7,
+    title: "Detail & Touch-Up",
+    description: "We inspect every surface, touch up any spots, ensure clean paint lines, and make sure coverage is perfect. Details matter.",
+    time: "Final day"
+  },
+  {
+    step: 8,
+    title: "Final Walkthrough & Cleanup",
+    description: "Walk through with you to ensure complete satisfaction. We remove all tape, plastic, and drop cloths. Clean up debris. Leave your home spotless.",
+    time: "30 minutes"
+  }
+];
+
+const faqs = [
+  {
+    question: "How much does it cost to paint a room?",
+    answer: "A standard 12x12 room typically costs $300-500 for walls and ceiling with quality paint. Factors affecting price include room size, ceiling height, number of colors, surface condition, and trim painting. We provide free detailed estimates so you know exactly what to expect."
+  },
+  {
+    question: "How long does it take to paint a room?",
+    answer: "A single room usually takes 1 day including prep, painting, and cleanup. Larger rooms, multiple colors, or extensive prep work may take 2 days. Whole house interiors typically take 3-5 days depending on size and scope."
+  },
+  {
+    question: "Do I need to buy the paint?",
+    answer: "You can, but most customers prefer we handle it. We get contractor pricing at major paint stores and can recommend the right products for your project. We pass our discounts on to you. Just tell us your color choices."
+  },
+  {
+    question: "What paint brands do you use?",
+    answer: "We use premium paints from Sherwin-Williams, Benjamin Moore, and Behr. We recommend specific products based on the surface, room usage, and your budget. Quality paint costs more but lasts longer and looks better."
+  },
+  {
+    question: "How do I choose the right paint color?",
+    answer: "We can help! We bring color samples and discuss what works with your lighting, furniture, and style. We recommend testing colors on your wall before committing. Many paint stores offer small sample sizes for testing."
+  },
+  {
+    question: "Do I need to move my furniture?",
+    answer: "We handle furniture moving as part of our service. We'll move items to the center of the room and cover them with plastic. For large or valuable pieces, we may ask you to remove them beforehand."
+  },
+  {
+    question: "How long before I can use the room after painting?",
+    answer: "You can typically use the room the same evening for light use. Avoid touching walls for 24 hours and wait 2-4 weeks before washing painted surfaces. We'll give you specific care instructions for your paint."
+  },
+  {
+    question: "What about the paint smell?",
+    answer: "Modern paints are low-VOC and have minimal odor. We ventilate rooms during and after painting. Most smell dissipates within 24-48 hours. If you're sensitive to odors, we can recommend zero-VOC options."
+  },
+  {
+    question: "Can you paint over wallpaper?",
+    answer: "We can, but we usually recommend removing it for best results. Painting over wallpaper can show seams and texture. We offer wallpaper removal services and can advise on the best approach for your situation."
+  },
+  {
+    question: "Do you offer exterior painting in winter?",
+    answer: "Exterior painting requires temperatures above 50°F for proper curing. In North Alabama, we typically paint exteriors March through November. For winter projects, we focus on interior painting."
+  },
+  {
+    question: "How often should I repaint my house exterior?",
+    answer: "Quality exterior paint in Alabama typically lasts 7-10 years. Factors like sun exposure, paint quality, and surface preparation affect longevity. We use premium paints and proper prep to maximize paint life."
+  },
+  {
+    question: "Do you offer emergency painting services?",
+    answer: "Yes, for situations like preparing a home for sale, move-in deadlines, or covering damage quickly, we offer expedited scheduling. Call us directly to discuss urgent painting needs."
+  }
+];
+
+const serviceAreas = [
+  { city: "Madison", driveTime: "Local", note: "No travel fee" },
+  { city: "Huntsville", driveTime: "10-20 min", note: "No travel fee" },
+  { city: "Decatur", driveTime: "25-35 min", note: "Minimal travel fee may apply" },
+  { city: "Athens", driveTime: "20-30 min", note: "Minimal travel fee may apply" },
+  { city: "Harvest", driveTime: "15-25 min", note: "No travel fee" },
+  { city: "Meridianville", driveTime: "15-20 min", note: "No travel fee" },
+  { city: "Hazel Green", driveTime: "20-30 min", note: "No travel fee" },
+  { city: "Owens Cross Roads", driveTime: "25-35 min", note: "Minimal travel fee may apply" },
+  { city: "Hampton Cove", driveTime: "20-30 min", note: "No travel fee" },
+  { city: "Redstone Arsenal", driveTime: "15-25 min", note: "No travel fee" }
+];
+
+const paintTypes = [
+  { name: "Flat/Matte", best: "Ceilings, low-traffic areas", note: "Hides imperfections, not washable" },
+  { name: "Eggshell", best: "Living rooms, bedrooms", note: "Slight sheen, easy to clean" },
+  { name: "Satin", best: "Kitchens, bathrooms, hallways", note: "Durable, moisture-resistant" },
+  { name: "Semi-Gloss", best: "Trim, doors, cabinets", note: "Very durable, easy to wipe clean" },
+  { name: "Gloss", best: "Doors, trim accents", note: "Highest sheen, most durable" }
+];
+---
+
+<Layout title="Painting Services" description="Professional interior and exterior painting in Madison, Huntsville & North Alabama. Cabinet painting, deck staining, trim work. Free estimates, quality guaranteed.">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-3xl">
+        <nav class="text-blue-200 text-sm mb-4">
+          <a href="/" class="hover:text-white">Home</a>
+          <span class="mx-2">→</span>
+          <a href="/services" class="hover:text-white">Services</a>
+          <span class="mx-2">→</span>
+          <span class="text-white">Painting</span>
+        </nav>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Professional Painting Services
+        </h1>
+        <p class="text-xl text-blue-100 mb-8">
+          Transform your home with expert interior and exterior painting. Clean lines, quality paint, and meticulous attention to detail.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/contact"
+            class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg text-center"
+          >
+            Get a Free Estimate
+          </a>
+          <a
+            href="tel:+12565550123"
+            class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg text-center border border-white/30"
+          >
+            Call (256) 555-0123
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats Banner -->
+  <section class="bg-gray-800 text-white py-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-2xl md:text-3xl font-bold text-orange-400">500+</div>
+          <div class="text-sm text-gray-300">Rooms Painted</div>
+        </div>
+        <div>
+          <div class="text-2xl md:text-3xl font-bold text-orange-400">100%</div>
+          <div class="text-sm text-gray-300">Satisfaction Rate</div>
+        </div>
+        <div>
+          <div class="text-2xl md:text-3xl font-bold text-orange-400">3-5 Days</div>
+          <div class="text-sm text-gray-300">Typical Scheduling</div>
+        </div>
+        <div>
+          <div class="text-2xl md:text-3xl font-bold text-orange-400">Free</div>
+          <div class="text-sm text-gray-300">Estimates Always</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">What's Included</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Complete painting services for every surface in and around your home.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        {includedServices.map((category) => (
+          <div class="bg-gray-50 rounded-lg p-6 border border-gray-100">
+            <h3 class="text-xl font-bold text-blue-900 mb-4 flex items-center gap-2">
+              <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+              </svg>
+              {category.title}
+            </h3>
+            <ul class="space-y-2">
+              {category.items.map((item) => (
+                <li class="flex items-start gap-2 text-gray-700">
+                  <svg class="w-4 h-4 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Paint Finish Guide -->
+  <section class="py-12 bg-blue-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">Paint Finish Guide</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {paintTypes.map((paint) => (
+          <div class="bg-white rounded-lg p-4 shadow-sm">
+            <h3 class="font-bold text-blue-900 mb-2">{paint.name}</h3>
+            <p class="text-sm text-gray-600 mb-1"><strong>Best for:</strong> {paint.best}</p>
+            <p class="text-xs text-gray-500">{paint.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Problems We Solve -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Common Problems We Solve</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Whatever painting challenge you're facing, we have the expertise to fix it right.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {commonProblems.map((item) => (
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-2">{item.problem}</h3>
+                <p class="text-gray-600 text-sm flex items-start gap-2">
+                  <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  {item.solution}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Painting Process</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          A proven process that delivers beautiful, lasting results every time.
+        </p>
+      </div>
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100"></div>
+
+        <div class="space-y-8 md:space-y-12">
+          {processSteps.map((step, index) => (
+            <div class={`flex flex-col md:flex-row gap-4 md:gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              <div class={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                <div class={`bg-gray-50 rounded-lg p-6 border border-gray-100 ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="md:hidden w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      {step.step}
+                    </span>
+                    <h3 class="text-lg font-bold text-gray-800">{step.title}</h3>
+                  </div>
+                  <p class="text-gray-600 text-sm mb-2">{step.description}</p>
+                  <p class="text-xs text-blue-600 font-medium">{step.time}</p>
+                </div>
+              </div>
+              <div class="hidden md:flex items-center justify-center">
+                <div class="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold z-10">
+                  {step.step}
+                </div>
+              </div>
+              <div class="flex-1 hidden md:block"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 bg-blue-900 text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Why Choose Madison Handyman Pro</h2>
+        <p class="text-lg text-blue-100 max-w-2xl mx-auto">
+          What sets our painting services apart from other contractors.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white/10 rounded-lg p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Meticulous Prep Work</h3>
+          <p class="text-blue-100 text-sm">
+            90% of a great paint job is preparation. We don't cut corners — proper prep means paint that looks great and lasts.
+          </p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Premium Paint Products</h3>
+          <p class="text-blue-100 text-sm">
+            We use Sherwin-Williams, Benjamin Moore, and Behr premium paints. Quality products = better coverage, richer color, longer life.
+          </p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">We Show Up On Time</h3>
+          <p class="text-blue-100 text-sm">
+            Appointment confirmed 24 hours AND 2 hours before arrival. No waiting around wondering if we'll show. Your time matters.
+          </p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">We Protect Your Home</h3>
+          <p class="text-blue-100 text-sm">
+            Drop cloths, plastic sheeting, careful taping. Your furniture, floors, and fixtures are fully protected. We leave homes spotless.
+          </p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Transparent Pricing</h3>
+          <p class="text-blue-100 text-sm">
+            Detailed written quotes with no hidden fees. Your estimate is your price. We honor every quote we provide — no surprises.
+          </p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Satisfaction Guaranteed</h3>
+          <p class="text-blue-100 text-sm">
+            We don't consider the job done until you're completely happy. Final walkthrough ensures every detail meets your expectations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+        <p class="text-lg text-gray-600">
+          Common questions about our painting services.
+        </p>
+      </div>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="bg-white rounded-lg border border-gray-200 group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="font-semibold text-gray-800 pr-4">{faq.question}</h3>
+              <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6">
+              <p class="text-gray-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Painting Service Areas</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          We provide professional painting services throughout Madison County and North Alabama.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        {serviceAreas.map((area) => (
+          <div class={`rounded-lg p-4 text-center ${area.city === 'Madison' ? 'bg-blue-900 text-white' : 'bg-gray-50 border border-gray-200'}`}>
+            <div class="flex items-center justify-center gap-1 mb-1">
+              <svg class={`w-4 h-4 ${area.city === 'Madison' ? 'text-blue-200' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span class="font-semibold">{area.city}</span>
+              {area.city === 'Madison' && <span class="text-xs bg-orange-500 px-1.5 py-0.5 rounded ml-1">HQ</span>}
+            </div>
+            <p class={`text-xs ${area.city === 'Madison' ? 'text-blue-200' : 'text-gray-500'}`}>{area.driveTime}</p>
+            <p class={`text-xs mt-1 ${area.city === 'Madison' ? 'text-blue-100' : 'text-gray-600'}`}>{area.note}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-gray-500 text-sm mt-6">
+        Not sure if we service your area? <a href="/contact" class="text-blue-600 hover:underline">Contact us</a> — we're happy to discuss.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-orange-500 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Space?</h2>
+      <p class="text-xl mb-8 text-orange-100">
+        Get a free painting estimate today. Most projects scheduled within 3-5 days.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg"
+        >
+          Request Free Estimate
+        </a>
+        <a
+          href="tel:+12565550123"
+          class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg border border-orange-400"
+        >
+          Call (256) 555-0123
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
