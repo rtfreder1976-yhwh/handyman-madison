@@ -1,16 +1,48 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const services = [
+const featuredServices = [
+  {
+    name: "Drywall Installation & Repair",
+    description: "From small patches to full room installations. We handle hole repairs, water damage, cracks, and new construction drywall with seamless finishing.",
+    items: ["Hole and crack repair", "Water damage restoration", "New drywall installation", "Texture matching", "Seamless finishing"]
+  },
+  {
+    name: "Painting",
+    description: "Professional interior and exterior painting that transforms your space. Clean lines, quality paint, and meticulous prep work every time.",
+    items: ["Interior room painting", "Exterior house painting", "Cabinet painting", "Trim and door painting", "Deck and fence staining"]
+  },
+  {
+    name: "Flooring Installation & Repair",
+    description: "Expert flooring services for all types. We install, repair, and replace hardwood, laminate, vinyl, and tile flooring.",
+    items: ["Hardwood installation", "Laminate flooring", "Vinyl plank flooring", "Tile installation", "Floor repair and refinishing"]
+  },
+  {
+    name: "Finish Carpentry",
+    description: "Custom trim work that adds value and character to your home. Precision cuts and professional installation for a polished look.",
+    items: ["Crown molding", "Baseboards and trim", "Wainscoting", "Built-in shelving", "Door and window casing"]
+  },
+  {
+    name: "Gutter Cleaning",
+    description: "Protect your home from water damage with professional gutter cleaning. We remove debris, check for damage, and ensure proper drainage.",
+    items: ["Full gutter cleanout", "Downspout clearing", "Debris removal", "Damage inspection", "Minor repairs included"]
+  },
+  {
+    name: "Gutter Guard Installation",
+    description: "Stop cleaning gutters forever. We install quality gutter guards that keep leaves and debris out while letting water flow freely.",
+    items: ["Gutter guard installation", "Multiple guard styles available", "Existing gutter inspection", "Repairs before installation", "Lifetime maintenance reduction"]
+  }
+];
+
+const additionalServices = [
   {
     category: "Home Repairs",
     items: [
-      "Drywall repair and patching",
       "Door installation and repair",
       "Window repairs and weatherproofing",
-      "Trim and molding installation",
       "Caulking and sealing",
-      "Minor carpentry work"
+      "Minor carpentry work",
+      "Weatherstripping"
     ]
   },
   {
@@ -20,8 +52,7 @@ const services = [
       "Toilet repairs and replacement",
       "Garbage disposal installation",
       "Leak detection and repair",
-      "Showerhead and fixture replacement",
-      "Water heater maintenance"
+      "Showerhead and fixture replacement"
     ]
   },
   {
@@ -31,7 +62,6 @@ const services = [
       "Ceiling fan installation",
       "Outlet and switch replacement",
       "Dimmer switch installation",
-      "Smart home device setup",
       "Smoke detector installation"
     ]
   },
@@ -41,7 +71,6 @@ const services = [
       "Furniture assembly",
       "Shelving installation",
       "TV mounting",
-      "Exercise equipment assembly",
       "Closet organization systems",
       "Appliance installation"
     ]
@@ -51,50 +80,75 @@ const services = [
     items: [
       "Deck and fence repairs",
       "Power washing",
-      "Gutter cleaning and repair",
-      "Exterior painting touch-ups",
       "Screen and storm door installation",
-      "Mailbox installation"
-    ]
-  },
-  {
-    category: "Painting & Finishing",
-    items: [
-      "Interior painting",
-      "Touch-up painting",
-      "Cabinet refinishing",
-      "Staining and sealing",
-      "Wallpaper removal",
-      "Texture repair"
+      "Mailbox installation",
+      "Exterior caulking"
     ]
   }
 ];
 ---
 
-<Layout title="Services" description="Complete handyman services in Madison, Alabama including home repairs, plumbing, electrical, assembly, and more.">
+<Layout title="Services" description="Professional handyman services in Madison, Alabama: drywall, painting, flooring, finish carpentry, gutter cleaning and gutter guard installation.">
   <!-- Hero Section -->
   <section class="bg-blue-900 text-white py-16">
     <div class="max-w-6xl mx-auto px-4 text-center">
       <h1 class="text-4xl font-bold mb-4">Our Services</h1>
       <p class="text-xl text-blue-100 max-w-2xl mx-auto">
-        From small repairs to complete home improvements, we've got you covered.
+        Quality craftsmanship for your home. From drywall to flooring, painting to gutter protection.
       </p>
     </div>
   </section>
 
-  <!-- Services Grid -->
-  <section class="py-16 bg-gray-50">
+  <!-- Featured Services -->
+  <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">What We Do Best</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Featured Services</h2>
+      </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service) => (
-          <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-            <h2 class="text-xl font-bold text-blue-900 mb-4 pb-2 border-b border-gray-200">
-              {service.category}
-            </h2>
+        {featuredServices.map((service) => (
+          <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-100 hover:border-blue-200 transition-colors">
+            <h3 class="text-xl font-bold text-blue-900 mb-3">{service.name}</h3>
+            <p class="text-gray-600 mb-4 text-sm">{service.description}</p>
             <ul class="space-y-2">
               {service.items.map((item) => (
-                <li class="flex items-start gap-2 text-gray-700">
-                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <li class="flex items-start gap-2 text-gray-700 text-sm">
+                  <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="/contact"
+          class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
+        >
+          Get a Free Estimate
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Services -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-10 text-gray-800">Additional Services</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {additionalServices.map((service) => (
+          <div class="bg-white rounded-lg shadow-sm p-5">
+            <h3 class="text-lg font-bold text-blue-900 mb-3 pb-2 border-b border-gray-200">
+              {service.category}
+            </h3>
+            <ul class="space-y-1.5">
+              {service.items.map((item) => (
+                <li class="flex items-start gap-2 text-gray-700 text-sm">
+                  <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                   </svg>
                   {item}
@@ -107,21 +161,38 @@ const services = [
     </div>
   </section>
 
-  <!-- Additional Info -->
+  <!-- Why Choose Us for These Services -->
   <section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Don't See What You Need?</h2>
-      <p class="text-lg text-gray-600 text-center mb-8">
-        We handle a wide variety of home maintenance and repair tasks. If you have a project in mind
-        that's not listed above, just ask! We're happy to discuss your needs and provide a free estimate.
-      </p>
-      <div class="text-center">
-        <a
-          href="/contact"
-          class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
-        >
-          Request a Custom Quote
-        </a>
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Why Choose Us</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-gray-800">Free Estimates</h3>
+          <p class="text-gray-600 text-sm">No charge for quotes. Know exactly what you'll pay before we start.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-gray-800">Fast Scheduling</h3>
+          <p class="text-gray-600 text-sm">Most jobs scheduled within 3-5 days. We respect your time.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2 text-gray-800">Done Right Once</h3>
+          <p class="text-gray-600 text-sm">Quality workmanship. We don't leave until you're satisfied.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -134,12 +205,12 @@ const services = [
         <div class="text-center">
           <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
           <h3 class="font-semibold mb-2 text-gray-800">Contact Us</h3>
-          <p class="text-gray-600 text-sm">Reach out with your project details</p>
+          <p class="text-gray-600 text-sm">Call or message us with your project details</p>
         </div>
         <div class="text-center">
           <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
           <h3 class="font-semibold mb-2 text-gray-800">Free Estimate</h3>
-          <p class="text-gray-600 text-sm">We provide a detailed quote</p>
+          <p class="text-gray-600 text-sm">We provide a detailed written quote</p>
         </div>
         <div class="text-center">
           <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
@@ -152,6 +223,20 @@ const services = [
           <p class="text-gray-600 text-sm">Quality work, satisfaction guaranteed</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-orange-500 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+      <p class="text-xl mb-8">Contact us today for a free estimate on your project.</p>
+      <a
+        href="/contact"
+        class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
+      >
+        Contact Us Now
+      </a>
     </div>
   </section>
 </Layout>
