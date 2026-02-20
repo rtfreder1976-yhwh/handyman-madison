@@ -3,99 +3,91 @@ import Layout from '../../layouts/Layout.astro';
 
 const includedServices = [
   {
-    title: "Hardwood Flooring",
+    title: "Crown Molding & Trim",
     items: [
-      "Solid hardwood installation",
-      "Engineered hardwood installation",
-      "Hardwood floor refinishing",
-      "Board replacement and repair",
-      "Staining and color matching",
-      "Polyurethane finishing",
-      "Hardwood floor buffing",
-      "Transition strip installation"
+      "Crown molding installation",
+      "Crown molding repair",
+      "Chair rail installation",
+      "Picture rail molding",
+      "Ceiling medallions",
+      "Decorative corner blocks",
+      "Multi-piece crown assemblies",
+      "Painted vs stained options"
     ]
   },
   {
-    title: "Laminate Flooring",
+    title: "Baseboards & Casing",
     items: [
-      "Floating laminate installation",
-      "Click-lock system flooring",
-      "Laminate plank replacement",
-      "Underlayment installation",
-      "Moisture barrier installation",
-      "Quarter round and trim",
-      "Threshold transitions",
-      "Subfloor preparation"
+      "Baseboard installation",
+      "Baseboard replacement",
+      "Door casing and trim",
+      "Window casing and trim",
+      "Shoe molding installation",
+      "Quarter round installation",
+      "Baseboard heating covers",
+      "Custom profile matching"
     ]
   },
   {
-    title: "Vinyl & LVP Flooring",
+    title: "Wainscoting & Paneling",
     items: [
-      "Luxury vinyl plank (LVP) installation",
-      "Luxury vinyl tile (LVT) installation",
-      "Sheet vinyl installation",
-      "Waterproof flooring for bathrooms",
-      "Kitchen vinyl flooring",
-      "Vinyl plank repair",
-      "Glue-down vinyl installation",
-      "Commercial-grade vinyl"
+      "Wainscoting installation",
+      "Beadboard paneling",
+      "Shiplap installation",
+      "Board and batten",
+      "Raised panel wainscoting",
+      "Flat panel wainscoting",
+      "Full wall paneling",
+      "Accent wall treatments"
     ]
   },
   {
-    title: "Specialty Flooring",
+    title: "Custom Woodwork",
     items: [
-      "Waterproof flooring solutions",
-      "Pet-friendly flooring options",
-      "High-traffic area flooring",
-      "Basement flooring installation",
-      "Sunroom and enclosed porch flooring",
-      "Commercial-grade residential flooring",
-      "Eco-friendly flooring options",
-      "Stair treads and risers"
+      "Built-in shelving",
+      "Custom bookcases",
+      "Window seats",
+      "Fireplace mantels",
+      "Stair railings and balusters",
+      "Closet systems",
+      "Mudroom built-ins",
+      "Entertainment centers"
     ]
   }
 ];
 
-const flooringTypes = [
-  { name: "Hardwood", durability: "25+ years", best: "Living rooms, bedrooms", waterproof: "No", maintenance: "Refinish every 7-10 years" },
-  { name: "Engineered", durability: "20-30 years", best: "Any room, basements OK", waterproof: "Some", maintenance: "Low - sweep and mop" },
-  { name: "Laminate", durability: "15-25 years", best: "Bedrooms, offices", waterproof: "No", maintenance: "Very low - sweep and damp mop" },
-  { name: "LVP/LVT", durability: "15-20 years", best: "Kitchens, baths, anywhere", waterproof: "Yes", maintenance: "Very low - sweep and mop" },
-  { name: "Sheet Vinyl", durability: "10-20 years", best: "Bathrooms, laundry, kitchens", waterproof: "Yes", maintenance: "Very low - sweep and mop" }
-];
-
 const commonProblems = [
   {
-    problem: "Scratched or worn hardwood floors",
-    solution: "We sand, refinish, and restore hardwood floors to like-new condition. For minor scratches, we can spot-repair without full refinishing."
+    problem: "Gaps between trim and walls or ceilings",
+    solution: "We re-secure loose trim, caulk gaps, and repaint for seamless results. For severe gaps, we replace damaged sections."
   },
   {
-    problem: "Water-damaged flooring from leaks or floods",
-    solution: "We remove damaged sections, address moisture issues, and install matching replacement flooring. Emergency service available for active water damage."
+    problem: "Outdated or damaged baseboards",
+    solution: "We remove old baseboards and install new ones in your choice of style — from simple to ornate. We match existing trim or upgrade your entire home."
   },
   {
-    problem: "Squeaky or creaky floors",
-    solution: "We secure loose subfloor, add shims, or reinforce joists to eliminate squeaks permanently without visible repairs."
+    problem: "Missing or inconsistent trim throughout the home",
+    solution: "We install matching trim throughout your home for a cohesive, finished look that increases value."
   },
   {
-    problem: "Vinyl flooring peeling or lifting at edges",
-    solution: "We re-adhere or replace damaged vinyl sections with proper adhesive and seam sealing for a lasting repair."
+    problem: "Crown molding that's pulling away or cracking",
+    solution: "We re-secure crown molding, fill cracks, and touch up paint. For damaged pieces, we install matching replacements."
   },
   {
-    problem: "Laminate planks lifting, buckling, or separating",
-    solution: "We identify the cause (usually moisture), remove damaged sections, fix underlayment issues, and install new matching planks."
+    problem: "Bare walls needing character and style",
+    solution: "We add wainscoting, board and batten, or shiplap to transform plain walls into architectural features."
   },
   {
-    problem: "Outdated flooring making home feel dated",
-    solution: "We remove old flooring and install modern options like LVP or engineered hardwood that transform your space and increase home value."
+    problem: "Poorly done previous trim work with visible gaps or bad joints",
+    solution: "We correct amateur work with proper cutting techniques and professional installation for clean, tight joints."
   },
   {
-    problem: "Uneven or sloping floors",
-    solution: "We level subfloors with self-leveling compound or plywood before installation, ensuring flat, professional results."
+    problem: "Need for custom storage and built-ins",
+    solution: "We design and build custom shelving, bookcases, and storage solutions that maximize space and add value."
   },
   {
-    problem: "Gaps appearing between floorboards",
-    solution: "We fill gaps with matching wood filler or, for severe cases, remove and re-install boards for a tight, seamless floor."
+    problem: "Stair railings that are loose or outdated",
+    solution: "We repair or replace balusters, secure handrails, and refinish or paint railings to update your stairway."
   }
 ];
 
@@ -103,101 +95,93 @@ const processSteps = [
   {
     step: 1,
     title: "Contact & Consultation",
-    description: "Call or message us about your flooring project. We discuss your needs, preferences, and can recommend flooring types based on your lifestyle, budget, and room usage.",
+    description: "Call or message us about your trim and carpentry project. We discuss style options, wood types, and design possibilities for your space.",
     time: "Same day response"
   },
   {
     step: 2,
     title: "Free On-Site Estimate",
-    description: "We measure your space precisely, assess subfloor condition, check for moisture issues, and identify any prep work needed. You receive a detailed written quote.",
+    description: "We measure your space, assess wall conditions, and discuss style options. You receive a detailed written quote including materials and labor.",
     time: "Within 48 hours"
   },
   {
     step: 3,
     title: "Material Selection",
-    description: "We help you choose the right flooring — considering durability, water resistance, style, and budget. We can bring samples to your home to see how they look in your lighting.",
+    description: "Choose from various trim profiles, wood types (MDF, pine, oak, poplar), and finish options. We bring samples to help you visualize the final result.",
     time: "Flexible"
   },
   {
     step: 4,
     title: "Schedule Installation",
-    description: "Pick dates that work for you. We confirm appointments 24 hours and 2 hours before arrival. Most installations scheduled within 5-7 days of material availability.",
+    description: "Pick dates that work for you. We confirm appointments 24 hours and 2 hours before arrival. Most projects scheduled within 5-7 days.",
     time: "5-7 days typically"
   },
   {
     step: 5,
-    title: "Prepare the Space",
-    description: "We move furniture, remove old flooring (if needed), and prepare the subfloor. This includes leveling, moisture barriers, and underlayment as required.",
-    time: "Day 1"
+    title: "Precision Measuring & Cutting",
+    description: "We measure each piece precisely, accounting for corners and wall irregularities. All cuts made with professional miter saws for perfect joints.",
+    time: "Varies by scope"
   },
   {
     step: 6,
     title: "Professional Installation",
-    description: "Our skilled installers lay your new flooring with precision. Proper acclimation, staggered patterns, tight seams, and careful cuts around obstacles.",
+    description: "Trim is secured with appropriate fasteners, joints are tight and clean, and all pieces are aligned perfectly. We cope inside corners for seamless results.",
     time: "1-3 days typical"
   },
   {
     step: 7,
-    title: "Finishing Touches",
-    description: "We install transitions, quarter round, thresholds, and trim. Every edge is finished professionally. Furniture moved back into place.",
+    title: "Finishing & Caulking",
+    description: "We fill nail holes, caulk gaps between trim and walls, and sand any rough spots. Everything is prepped for paint or left ready for staining.",
     time: "Final day"
   },
   {
     step: 8,
     title: "Final Walkthrough",
-    description: "Walk through with you to ensure complete satisfaction. We explain care instructions and leave your space clean and ready to enjoy.",
+    description: "We inspect every joint and corner with you. We don't leave until you're completely satisfied with the craftsmanship.",
     time: "30 minutes"
   }
 ];
 
 const faqs = [
   {
-    question: "How much does flooring installation cost?",
-    answer: "Flooring costs vary by material and room size. Laminate runs $3-8/sq ft installed, LVP $4-10/sq ft, and hardwood $8-15/sq ft. A typical 300 sq ft room ranges from $900-4,500 depending on material. We provide free detailed estimates."
+    question: "How much does crown molding installation cost?",
+    answer: "Crown molding typically costs $8-15 per linear foot installed, depending on the profile size and complexity. A typical room (50 linear feet) runs $400-750. Multi-piece crown assemblies and custom work cost more. We provide free detailed estimates."
   },
   {
-    question: "How long does flooring installation take?",
-    answer: "A single room (up to 300 sq ft) typically takes 1 day. Larger areas or whole-house installations take 2-5 days. Hardwood refinishing requires 3-5 days including drying time. We'll give you a specific timeline with your estimate."
+    question: "What's the difference between MDF and wood trim?",
+    answer: "MDF (medium-density fiberboard) is more affordable, doesn't warp, and paints beautifully — ideal for painted trim. Solid wood (pine, oak, poplar) costs more but can be stained to show natural grain. We recommend MDF for most painted applications."
   },
   {
-    question: "Do I need to move my furniture?",
-    answer: "We handle furniture moving as part of our service. We'll move items out, install flooring, and move them back. For large or delicate items, we may ask you to empty the room beforehand. We use furniture pads to protect everything."
+    question: "Can you match my existing trim style?",
+    answer: "Usually, yes. We can match most standard profiles or have custom trim milled to match older or unique styles. Bring us a sample or photos and we'll find a solution."
   },
   {
-    question: "What flooring is best for kitchens and bathrooms?",
-    answer: "Waterproof options are essential: LVP (luxury vinyl plank) or sheet vinyl. We don't recommend hardwood or laminate in wet areas. LVP is our top recommendation — it's waterproof, durable, and looks like real wood."
+    question: "How long does baseboard installation take?",
+    answer: "A typical room takes 2-4 hours. A whole house (average 200 linear feet) usually takes 1-2 days including removing old baseboards, installation, and caulking."
   },
   {
-    question: "Can you install flooring over existing flooring?",
-    answer: "Sometimes. Floating floors (laminate, LVP) can often go over existing hard surfaces if they're flat and in good condition. However, installing over old flooring can raise floor height and affect doors/transitions. We'll advise on the best approach."
+    question: "Do you paint or stain the trim?",
+    answer: "We can! We offer primed trim ready for paint, or we can paint/stain as part of the project. Many customers prefer pre-primed MDF that we install and then paint after caulking."
   },
   {
-    question: "How do I care for new hardwood floors?",
-    answer: "Sweep or vacuum regularly (use soft settings). Damp mop occasionally with hardwood cleaner — never wet mop. Use furniture pads under legs. Maintain consistent humidity (35-55%). Avoid high heels and pet nail scratches. Refinish every 7-10 years."
+    question: "What is coping and why does it matter?",
+    answer: "Coping is a cutting technique for inside corners that creates tighter joints than simple miter cuts. As walls shift over time, coped joints stay tight while mitered joints can gap. We cope all inside corners for lasting results."
   },
   {
-    question: "What's the difference between LVP and laminate?",
-    answer: "LVP (luxury vinyl plank) is 100% waterproof and more durable — great for any room including bathrooms. Laminate has a wood-fiber core that swells when wet — avoid in kitchens/baths. LVP is slightly more expensive but worth it for versatility."
+    question: "Can you add trim to a room that has none?",
+    answer: "Absolutely! Adding baseboards, crown molding, and door/window casings transforms a basic room into a finished, polished space. It's one of the best value-add improvements for any home."
   },
   {
-    question: "Do you remove and dispose of old flooring?",
-    answer: "Yes, old flooring removal and disposal is included in our service. We remove laminate, vinyl, and old flooring materials and haul them away. Hardwood removal is more involved and priced separately if needed."
+    question: "Do you install wainscoting?",
+    answer: "Yes! We install all styles: beadboard, raised panel, flat panel, board and batten, and shiplap. Wainscoting adds character, protects walls, and increases home value."
   },
   {
-    question: "How long should flooring acclimate before installation?",
-    answer: "Most flooring should acclimate 48-72 hours in the room where it will be installed. This allows the material to adjust to your home's temperature and humidity, preventing expansion issues after installation."
+    question: "How do you handle corners that aren't square?",
+    answer: "Older homes often have out-of-square walls. We use techniques like back-cutting, scribing, and flexible caulk to achieve tight-fitting trim even on imperfect walls."
   },
   {
-    question: "Can you match existing flooring for repairs?",
-    answer: "We do our best to match existing flooring. For common products, we can often find exact matches. For discontinued or older flooring, we'll find the closest match available. Sometimes creative transitions between old and new look best."
-  },
-  {
-    question: "Do you offer emergency flooring service?",
-    answer: "Yes! For water damage situations where flooring needs immediate removal to prevent mold, we offer same-day and next-day emergency service. Call us directly for urgent flooring issues."
-  },
-  {
-    question: "What subfloor preparation is needed?",
-    answer: "We inspect and prep subfloors as part of every installation. This may include leveling with compound, replacing damaged sections, adding moisture barriers, or installing underlayment. Proper prep is key to flooring that lasts."
+    question: "Can you build custom bookcases or built-ins?",
+    answer: "Yes! We design and build custom shelving, bookcases, window seats, and entertainment centers. Built-ins maximize space and add significant value to your home."
   }
 ];
 
@@ -213,9 +197,17 @@ const serviceAreas = [
   { city: "Hampton Cove", driveTime: "20-30 min", note: "No travel fee" },
   { city: "Redstone Arsenal", driveTime: "15-25 min", note: "No travel fee" }
 ];
+
+const trimStyles = [
+  { name: "Colonial", description: "Classic American style with gentle curves", best: "Traditional homes" },
+  { name: "Craftsman", description: "Simple, flat profiles with clean lines", best: "Bungalows, modern homes" },
+  { name: "Victorian", description: "Ornate, detailed profiles", best: "Historic homes" },
+  { name: "Modern/Contemporary", description: "Minimal, square-edge profiles", best: "New construction, minimalist style" },
+  { name: "Farmhouse", description: "Simple baseboards with shiplap accents", best: "Farmhouse, rustic style" }
+];
 ---
 
-<Layout title="Flooring Installation & Repair" description="Professional flooring installation in Madison, Huntsville & North Alabama. Hardwood, laminate, LVP, vinyl plank. Free estimates, emergency water damage service.">
+<Layout title="Finish Carpentry" description="Professional finish carpentry in Madison, Huntsville & North Alabama. Crown molding, baseboards, wainscoting, built-ins. Free estimates, expert craftsmanship.">
   <!-- Hero Section -->
   <section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16 md:py-20">
     <div class="max-w-6xl mx-auto px-4">
@@ -225,13 +217,13 @@ const serviceAreas = [
           <span class="mx-2">→</span>
           <a href="/services" class="hover:text-white">Services</a>
           <span class="mx-2">→</span>
-          <span class="text-white">Flooring</span>
+          <span class="text-white">Finish Carpentry</span>
         </nav>
         <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          Flooring Installation & Repair
+          Finish Carpentry Services
         </h1>
         <p class="text-xl text-blue-100 mb-8">
-          Transform your home with beautiful new floors. Hardwood, laminate, and luxury vinyl plank installed by experts with attention to every detail.
+          Transform your home with custom trim work, crown molding, wainscoting, and built-ins. Precision craftsmanship that adds character and value.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
           <a
@@ -251,25 +243,26 @@ const serviceAreas = [
     </div>
   </section>
 
-  <!-- Emergency Banner -->
-  <section class="bg-orange-500 text-white py-4">
+  <!-- Value Proposition -->
+  <section class="bg-gray-800 text-white py-6">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <div class="flex items-center gap-3">
-          <svg class="w-8 h-8 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-          <div>
-            <p class="font-bold">Emergency Water Damage Service</p>
-            <p class="text-sm text-orange-100">Flooded floors? We offer same-day removal to prevent mold and further damage.</p>
-          </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-2xl md:text-3xl font-bold text-orange-400">Precision</div>
+          <div class="text-sm text-gray-300">Cuts & Joints</div>
         </div>
-        <a
-          href="tel:+12565550123"
-          class="bg-white text-orange-500 font-bold py-2 px-6 rounded-lg hover:bg-orange-50 transition-colors whitespace-nowrap"
-        >
-          Emergency Line
-        </a>
+        <div>
+          <div class="text-2xl md:text-3xl font-bold text-orange-400">+Value</div>
+          <div class="text-sm text-gray-300">Increases Home Value</div>
+        </div>
+        <div>
+          <div class="text-2xl md:text-3xl font-bold text-orange-400">Custom</div>
+          <div class="text-sm text-gray-300">Built-Ins & Shelving</div>
+        </div>
+        <div>
+          <div class="text-2xl md:text-3xl font-bold text-orange-400">Free</div>
+          <div class="text-sm text-gray-300">Estimates Always</div>
+        </div>
       </div>
     </div>
   </section>
@@ -280,7 +273,7 @@ const serviceAreas = [
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">What's Included</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Complete flooring services for every room in your home.
+          Complete finish carpentry services to add character and value to every room.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
@@ -288,7 +281,7 @@ const serviceAreas = [
           <div class="bg-gray-50 rounded-lg p-6 border border-gray-100">
             <h3 class="text-xl font-bold text-blue-900 mb-4 flex items-center gap-2">
               <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
               </svg>
               {category.title}
             </h3>
@@ -308,54 +301,21 @@ const serviceAreas = [
     </div>
   </section>
 
-  <!-- Flooring Comparison Guide -->
+  <!-- Trim Style Guide -->
   <section class="py-12 bg-blue-50">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">Flooring Comparison Guide</h2>
-      <div class="overflow-x-auto">
-        <table class="w-full bg-white rounded-lg shadow-sm">
-          <thead>
-            <tr class="bg-blue-900 text-white">
-              <th class="px-4 py-3 text-left font-semibold">Type</th>
-              <th class="px-4 py-3 text-left font-semibold">Lifespan</th>
-              <th class="px-4 py-3 text-left font-semibold">Best For</th>
-              <th class="px-4 py-3 text-left font-semibold">Waterproof</th>
-              <th class="px-4 py-3 text-left font-semibold">Maintenance</th>
-            </tr>
-          </thead>
-          <tbody>
-            {flooringTypes.map((floor, index) => (
-              <tr class={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
-                <td class="px-4 py-3 font-semibold text-blue-900">{floor.name}</td>
-                <td class="px-4 py-3 text-gray-700">{floor.durability}</td>
-                <td class="px-4 py-3 text-gray-700">{floor.best}</td>
-                <td class="px-4 py-3">
-                  {floor.waterproof === 'Yes' ? (
-                    <span class="inline-flex items-center gap-1 text-green-600">
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      Yes
-                    </span>
-                  ) : floor.waterproof === 'Some' ? (
-                    <span class="text-yellow-600">Some options</span>
-                  ) : (
-                    <span class="inline-flex items-center gap-1 text-red-500">
-                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                      </svg>
-                      No
-                    </span>
-                  )}
-                </td>
-                <td class="px-4 py-3 text-gray-600 text-sm">{floor.maintenance}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">Popular Trim Styles</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {trimStyles.map((style) => (
+          <div class="bg-white rounded-lg p-4 shadow-sm">
+            <h3 class="font-bold text-blue-900 mb-2">{style.name}</h3>
+            <p class="text-sm text-gray-600 mb-2">{style.description}</p>
+            <p class="text-xs text-gray-500"><strong>Best for:</strong> {style.best}</p>
+          </div>
+        ))}
       </div>
       <p class="text-center text-gray-500 text-sm mt-4">
-        Not sure which flooring is right for you? We'll help you choose based on your lifestyle, budget, and needs.
+        Not sure which style fits your home? We'll help you choose during your free consultation.
       </p>
     </div>
   </section>
@@ -366,7 +326,7 @@ const serviceAreas = [
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Common Problems We Solve</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Whatever flooring issue you're facing, we have the expertise to fix it right.
+          Whatever trim or carpentry challenge you're facing, we have the expertise to fix it right.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
@@ -398,15 +358,13 @@ const serviceAreas = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Installation Process</h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Carpentry Process</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          A proven process that delivers beautiful, lasting floors every time.
+          A proven process that delivers beautiful, lasting craftsmanship every time.
         </p>
       </div>
       <div class="relative">
-        <!-- Timeline line -->
         <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100"></div>
-
         <div class="space-y-8 md:space-y-12">
           {processSteps.map((step, index) => (
             <div class={`flex flex-col md:flex-row gap-4 md:gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
@@ -441,7 +399,7 @@ const serviceAreas = [
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold mb-4">Why Choose Madison Handyman Pro</h2>
         <p class="text-lg text-blue-100 max-w-2xl mx-auto">
-          What sets our flooring services apart from other contractors.
+          What sets our finish carpentry apart from other contractors.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -451,9 +409,9 @@ const serviceAreas = [
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">Proper Subfloor Prep</h3>
+          <h3 class="text-lg font-bold mb-2">Precision Craftsmanship</h3>
           <p class="text-blue-100 text-sm">
-            We don't skip steps. Subfloor leveling, moisture barriers, and underlayment done right mean flooring that lasts decades.
+            Tight joints, clean cuts, and perfect alignment. We use coping techniques and professional tools for results that last.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -464,7 +422,7 @@ const serviceAreas = [
           </div>
           <h3 class="text-lg font-bold mb-2">Quality Materials</h3>
           <p class="text-blue-100 text-sm">
-            We source flooring from trusted suppliers and can get contractor pricing on premium products. No cheap materials that fail early.
+            We use premium trim from trusted suppliers. MDF for paint-grade, solid wood for stain-grade. No cheap materials.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -475,18 +433,18 @@ const serviceAreas = [
           </div>
           <h3 class="text-lg font-bold mb-2">We Show Up On Time</h3>
           <p class="text-blue-100 text-sm">
-            Appointment confirmed 24 hours AND 2 hours before arrival. No waiting around wondering when we'll show. Your time matters.
+            Appointment confirmed 24 hours AND 2 hours before arrival. No waiting around wondering when we'll show.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
           <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">Emergency Service</h3>
+          <h3 class="text-lg font-bold mb-2">Adds Home Value</h3>
           <p class="text-blue-100 text-sm">
-            Water damage can't wait. We offer same-day emergency flooring removal to prevent mold — something most contractors don't do.
+            Crown molding, wainscoting, and built-ins are proven value-add improvements that buyers notice and pay for.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -497,7 +455,7 @@ const serviceAreas = [
           </div>
           <h3 class="text-lg font-bold mb-2">Transparent Pricing</h3>
           <p class="text-blue-100 text-sm">
-            Detailed written quotes include everything — materials, labor, removal, disposal. No surprise fees. Your estimate is your price.
+            Detailed written quotes include everything — materials, labor, finishing. No surprise fees. Your estimate is your price.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -508,7 +466,7 @@ const serviceAreas = [
           </div>
           <h3 class="text-lg font-bold mb-2">Clean Installation</h3>
           <p class="text-blue-100 text-sm">
-            We protect your home, minimize dust, and clean up completely. Furniture moved carefully and returned. You'll love your new floors.
+            We clean up sawdust, fill nail holes, and caulk gaps. Your trim is ready for paint or ready to enjoy.
           </p>
         </div>
       </div>
@@ -521,7 +479,7 @@ const serviceAreas = [
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
         <p class="text-lg text-gray-600">
-          Common questions about our flooring services.
+          Common questions about our finish carpentry services.
         </p>
       </div>
       <div class="space-y-4">
@@ -546,9 +504,9 @@ const serviceAreas = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Flooring Service Areas</h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Finish Carpentry Service Areas</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          We install and repair flooring throughout Madison County and North Alabama.
+          We provide finish carpentry services throughout Madison County and North Alabama.
         </p>
       </div>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -567,18 +525,15 @@ const serviceAreas = [
           </div>
         ))}
       </div>
-      <p class="text-center text-gray-500 text-sm mt-6">
-        Not sure if we service your area? <a href="/contact" class="text-blue-600 hover:underline">Contact us</a> — we're happy to discuss.
-      </p>
     </div>
   </section>
 
   <!-- CTA Section -->
   <section class="py-16 bg-orange-500 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4">Ready for Beautiful New Floors?</h2>
+      <h2 class="text-3xl font-bold mb-4">Ready to Add Character to Your Home?</h2>
       <p class="text-xl mb-8 text-orange-100">
-        Get a free flooring estimate today. We'll help you choose the perfect floor for your lifestyle and budget.
+        Get a free estimate for crown molding, baseboards, wainscoting, or custom built-ins.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a

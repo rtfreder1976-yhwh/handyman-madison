@@ -1,0 +1,442 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const serviceAreas = [
+  "Madison", "Huntsville", "Decatur", "Athens", "Harvest", "Meridianville"
+];
+
+const cleaningProcess = [
+  {
+    step: "1",
+    title: "Roof Inspection",
+    description: "We inspect your roof edge and gutter condition before starting work"
+  },
+  {
+    step: "2",
+    title: "Debris Removal",
+    description: "Hand removal of leaves, twigs, and accumulated debris from all gutters"
+  },
+  {
+    step: "3",
+    title: "Downspout Clearing",
+    description: "We clear all downspouts and ensure water flows freely"
+  },
+  {
+    step: "4",
+    title: "Gutter Flushing",
+    description: "Water flush to remove remaining sediment and test drainage"
+  },
+  {
+    step: "5",
+    title: "Damage Check",
+    description: "Inspection for rust, holes, loose hangers, and sagging sections"
+  },
+  {
+    step: "6",
+    title: "Minor Repairs",
+    description: "We fix small issues like loose brackets and minor leaks on the spot"
+  },
+  {
+    step: "7",
+    title: "Ground Cleanup",
+    description: "All debris collected and removed from your property"
+  },
+  {
+    step: "8",
+    title: "Final Inspection",
+    description: "Walk-through with you to show completed work and any concerns"
+  }
+];
+
+const warningSignsData = [
+  {
+    sign: "Water Overflowing During Rain",
+    cause: "Clogged gutters can't handle water flow",
+    risk: "Foundation damage, basement flooding, landscape erosion"
+  },
+  {
+    sign: "Sagging or Pulling Away",
+    cause: "Weight of debris and standing water",
+    risk: "Gutter collapse, fascia board damage"
+  },
+  {
+    sign: "Plants Growing in Gutters",
+    cause: "Decomposed debris creates soil",
+    risk: "Root damage, severe clogs, added weight"
+  },
+  {
+    sign: "Staining on Siding",
+    cause: "Water spilling over gutter edges",
+    risk: "Siding damage, mold growth, paint peeling"
+  },
+  {
+    sign: "Birds or Pests Around Gutters",
+    cause: "Debris provides nesting material",
+    risk: "Infestations, additional clogs, damage"
+  },
+  {
+    sign: "Ice Dams in Winter",
+    cause: "Poor drainage leads to ice buildup",
+    risk: "Roof damage, leaks, gutter destruction"
+  }
+];
+
+const faqs = [
+  {
+    question: "How often should gutters be cleaned?",
+    answer: "We recommend cleaning gutters at least twice a year - once in late spring after pollen season and once in late fall after leaves drop. Homes near pine trees or with heavy tree coverage may need more frequent cleaning, up to 4 times per year."
+  },
+  {
+    question: "What happens if I don't clean my gutters?",
+    answer: "Clogged gutters can cause water to overflow and damage your foundation, flood your basement, ruin landscaping, cause wood rot on fascia boards, create ice dams in winter, and provide nesting areas for pests. The cost of gutter cleaning is far less than repairing these damages."
+  },
+  {
+    question: "How long does gutter cleaning take?",
+    answer: "For most homes, gutter cleaning takes 1-2 hours depending on gutter length, debris amount, and home height. Larger homes or heavily clogged systems may take longer. We'll give you a time estimate when we provide your quote."
+  },
+  {
+    question: "Do you clean second and third-story gutters?",
+    answer: "Yes, we safely clean gutters on multi-story homes. We use professional-grade ladders and follow strict safety protocols. Our team is experienced with all home heights common in the Madison area."
+  },
+  {
+    question: "What do you do with the debris?",
+    answer: "We remove all debris from your property. Gutter contents are bagged and taken away, and we clean up any debris that falls during the cleaning process. Your yard will look the same or better when we leave."
+  },
+  {
+    question: "Can you repair gutters while cleaning?",
+    answer: "Yes! Minor repairs like reattaching loose hangers, sealing small leaks, and adjusting gutter slope are included with cleaning. For larger repairs or replacements, we'll provide a separate estimate and can often complete the work the same day."
+  },
+  {
+    question: "Do you offer gutter cleaning subscriptions?",
+    answer: "Yes, we offer seasonal maintenance plans that include two cleanings per year at a discounted rate. You'll never have to remember to schedule - we'll contact you when it's time. Ask about our annual maintenance program."
+  },
+  {
+    question: "What if it's raining on my scheduled day?",
+    answer: "Light rain doesn't stop us - it actually helps test drainage! However, we'll reschedule for heavy rain or storms for safety reasons. We'll contact you to reschedule at no extra charge."
+  },
+  {
+    question: "Do I need to be home during the cleaning?",
+    answer: "No, you don't need to be home. As long as we can access all sides of your house, we can complete the work. We'll send you before and after photos, and leave a summary of what we found and any recommendations."
+  },
+  {
+    question: "How much does gutter cleaning cost?",
+    answer: "Pricing depends on your home's size, gutter linear footage, and height. Most single-story homes range from $75-$150, while two-story homes typically range from $125-$200. We provide free estimates with exact pricing before any work begins."
+  }
+];
+---
+
+<Layout
+  title="Gutter Cleaning"
+  description="Professional gutter cleaning in Madison, Alabama. We remove debris, clear downspouts, and check for damage. Protect your home from water damage with regular gutter maintenance."
+>
+  <!-- Hero Section -->
+  <section class="bg-blue-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-3xl">
+        <span class="text-orange-400 font-semibold text-sm uppercase tracking-wide">Gutter Services</span>
+        <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Gutter Cleaning</h1>
+        <p class="text-xl text-blue-100 mb-6">
+          Protect your home from water damage with professional gutter cleaning. We remove debris, clear downspouts, check for damage, and ensure proper drainage.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+            Get Free Estimate
+          </a>
+          <a href="tel:2565550123" class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+            (256) 555-0123
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seasonal Alert Banner -->
+  <section class="bg-orange-500 text-white py-4">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="font-semibold">
+        <span class="mr-2">🍂</span>
+        Fall is prime gutter cleaning season! Schedule now before leaves fully drop.
+        <a href="/contact" class="underline ml-2 hover:text-orange-100">Book Today</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Gutter Cleaning Matters -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Protect Your Investment</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Why Gutter Cleaning Matters</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">Foundation Protection</h3>
+          <p class="text-gray-600 text-sm">Clogged gutters overflow, sending water directly to your foundation. This can cause cracks, basement flooding, and costly structural damage.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">Prevent Wood Rot</h3>
+          <p class="text-gray-600 text-sm">Standing water in gutters soaks into fascia boards and roof edges, causing rot that compromises your roof system and requires expensive repairs.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">Save Money Long-Term</h3>
+          <p class="text-gray-600 text-sm">A $100-200 cleaning prevents thousands in foundation repairs, landscape damage, and roof work. Regular maintenance is the smart investment.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">Pest Prevention</h3>
+          <p class="text-gray-600 text-sm">Debris-filled gutters attract mosquitoes, birds, squirrels, and other pests looking for water and nesting material. Clean gutters keep pests away.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">Extend Gutter Life</h3>
+          <p class="text-gray-600 text-sm">Regular cleaning prevents rust, corrosion, and sagging that lead to premature gutter replacement. Well-maintained gutters last 20+ years.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-800 mb-2">Curb Appeal</h3>
+          <p class="text-gray-600 text-sm">Overflowing, sagging gutters with visible debris look neglected. Clean gutters maintain your home's appearance and property value.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warning Signs -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Know the Signs</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">When Your Gutters Need Cleaning</h2>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-lg shadow-sm">
+          <thead>
+            <tr class="bg-blue-900 text-white">
+              <th class="px-6 py-4 text-left font-semibold">Warning Sign</th>
+              <th class="px-6 py-4 text-left font-semibold">What's Happening</th>
+              <th class="px-6 py-4 text-left font-semibold">Potential Damage</th>
+            </tr>
+          </thead>
+          <tbody>
+            {warningSignsData.map((item, index) => (
+              <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                <td class="px-6 py-4 font-medium text-gray-800">{item.sign}</td>
+                <td class="px-6 py-4 text-gray-600">{item.cause}</td>
+                <td class="px-6 py-4 text-red-600">{item.risk}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-8 text-center">
+        <p class="text-gray-600 mb-4">Seeing any of these signs? Don't wait for damage to occur.</p>
+        <a href="/contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors inline-block">
+          Schedule a Cleaning
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Our Process</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Thorough 8-Step Gutter Cleaning</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          We don't just scoop out leaves and leave. Our comprehensive process ensures your gutters are truly clean and functioning properly.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {cleaningProcess.map((item) => (
+          <div class="bg-gray-50 rounded-lg p-6 text-center">
+            <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+              {item.step}
+            </div>
+            <h3 class="font-bold text-gray-800 mb-2">{item.title}</h3>
+            <p class="text-gray-600 text-sm">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-16 bg-blue-900 text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">What's Included in Every Cleaning</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <div>
+            <h3 class="font-semibold">Complete Debris Removal</h3>
+            <p class="text-blue-100 text-sm">Every inch of gutter cleaned by hand</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <div>
+            <h3 class="font-semibold">Downspout Clearing</h3>
+            <p class="text-blue-100 text-sm">All downspouts checked and cleared</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <div>
+            <h3 class="font-semibold">Drainage Testing</h3>
+            <p class="text-blue-100 text-sm">Water flush to verify proper flow</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <div>
+            <h3 class="font-semibold">Damage Inspection</h3>
+            <p class="text-blue-100 text-sm">Full assessment of gutter condition</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <div>
+            <h3 class="font-semibold">Minor Repairs Included</h3>
+            <p class="text-blue-100 text-sm">Loose hangers and small leaks fixed</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <div>
+            <h3 class="font-semibold">Complete Cleanup</h3>
+            <p class="text-blue-100 text-sm">All debris removed from property</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <div>
+            <h3 class="font-semibold">Before/After Photos</h3>
+            <p class="text-blue-100 text-sm">Documentation of our work</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <div>
+            <h3 class="font-semibold">Written Report</h3>
+            <p class="text-blue-100 text-sm">Summary of findings and recommendations</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          </svg>
+          <div>
+            <h3 class="font-semibold">Satisfaction Guarantee</h3>
+            <p class="text-blue-100 text-sm">Not happy? We'll make it right</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Common Questions</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Gutter Cleaning FAQs</h2>
+      </div>
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <details class="bg-white rounded-lg shadow-sm group">
+            <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:text-blue-900 flex items-center justify-between">
+              {faq.question}
+              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-4 text-gray-600">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Coverage Area</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Gutter Cleaning Service Areas</h2>
+        <p class="text-gray-600 mt-4">
+          Professional gutter cleaning throughout Madison County and surrounding areas.
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-4">
+        {serviceAreas.map((area) => (
+          <span class="bg-blue-100 text-blue-900 px-6 py-3 rounded-full font-medium">
+            {area}, AL
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-orange-500 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready for Clean, Functioning Gutters?</h2>
+      <p class="text-xl mb-8">Contact us today for a free gutter cleaning estimate.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
+          Get Free Estimate
+        </a>
+        <a href="tel:2565550123" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
+          (256) 555-0123
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
