@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <a
-                    href="tel:+12565550123"
+                    href="tel:+12562210373"
                     class="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm"
                 >
                     <svg
@@ -100,7 +100,7 @@
                         ></path></svg
                     >
                     Prefer to call? <strong class="text-white"
-                        >(256) 555-0123</strong
+                        >(256) 221-0373</strong
                     >
                 </a>
             </div>
@@ -139,7 +139,7 @@
                                 name="phone"
                                 required
                                 class="w-full px-3 py-2.5 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-0 transition-colors text-gray-900 text-sm"
-                                placeholder="(256) 555-1234"
+                                placeholder="(256) 221-0373"
                             />
                         </div>
                     </div>
@@ -259,7 +259,7 @@
             const details = formData.get("details") || "";
 
             const smsBody = `QUOTE REQUEST\nName: ${name}\nPhone: ${phone}\nService: ${service}\nDetails: ${details}`;
-            const handymanNumber = "+12565550123";
+            const handymanNumber = "+12562210373";
             window.location.href = `sms:${handymanNumber}?body=${encodeURIComponent(smsBody)}`;
 
             inlineForm.classList.add("hidden");
