@@ -68,7 +68,7 @@ const { service, city } = Astro.props;
 const { slug } = Astro.params;
 
 const title = `${service.name} in ${city}, AL | Local Expert Handyman`;
-const description = `Need ${service.name.toLowerCase()} in ${city}, Alabama? Madison Handyman Pro offers fast, affordable, and professional services. Get your free estimate today!`;
+const description = `Need ${service.name.toLowerCase()} in ${city}, Alabama? Rittenworx offers fast, affordable, and professional services. Get your free estimate today!`;
 
 // Custom local schema for this specific combination
 const localSchema = {
@@ -77,7 +77,7 @@ const localSchema = {
         {
             "@type": "LocalBusiness",
             "@id": `https://madisonhandymanpro.com/services/${slug}/#business`,
-            name: `Madison Handyman Pro - ${city}`,
+            name: `Rittenworx - ${city}`,
             description: description,
             url: `https://madisonhandymanpro.com/services/${slug}`,
             telephone: "(256) 555-0123",
