@@ -1,0 +1,531 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const neighborhoods = [
+  {
+    name: "Hampton Cove Proper",
+    description: "The original Hampton Cove development featuring established homes on spacious lots with mature landscaping. Many homes here are 20+ years old and need updating, from kitchen renovations to deck repairs and exterior refreshes.",
+    responseTime: "Same day available",
+    commonServices: ["Kitchen updates", "Deck repair", "Exterior painting", "Gutter replacement"]
+  },
+  {
+    name: "The Ledges",
+    description: "Prestigious golf course community with luxury homes overlooking the Robert Trent Jones Golf Trail. High-end finishes require skilled craftsmen who understand quality materials and precise workmanship.",
+    responseTime: "Same day available",
+    commonServices: ["Crown molding", "Custom carpentry", "Premium painting", "Fixture installation"]
+  },
+  {
+    name: "Hampton Station",
+    description: "Newer townhome and single-family development near the schools. Young families appreciate quick, reliable service for busy household repairs and child-safety updates.",
+    responseTime: "Same day available",
+    commonServices: ["Drywall repair", "Flooring", "Safety updates", "Quick fixes"]
+  },
+  {
+    name: "Big Cove Area",
+    description: "Rural properties and farms surrounding Hampton Cove proper. Larger lots mean more outdoor structures, fencing, and outbuilding maintenance needs.",
+    responseTime: "Same day available",
+    commonServices: ["Fence repair", "Outbuilding work", "Storm damage", "Exterior repairs"]
+  },
+  {
+    name: "Monte Sano Adjacent",
+    description: "Properties near Monte Sano State Park with wooded lots and mountain views. Tree coverage means more gutter cleaning and occasional storm damage from falling branches.",
+    responseTime: "Same day available",
+    commonServices: ["Gutter cleaning", "Storm repairs", "Deck sealing", "Tree damage repair"]
+  },
+  {
+    name: "Owens Cross Roads Border",
+    description: "Growing area between Hampton Cove and Owens Cross Roads with new construction and established neighborhoods. Mix of home ages means diverse maintenance needs.",
+    responseTime: "Same day available",
+    commonServices: ["New home touch-ups", "Older home updates", "Flooring", "Painting"]
+  }
+];
+
+const majorEmployers = [
+  {
+    name: "Redstone Arsenal / Army",
+    employees: "40,000+",
+    description: "Many Hampton Cove residents are military or civilian Army employees. We understand PCS timelines, deployment schedules, and the need for quick, reliable service when preparing homes for sale or move-in."
+  },
+  {
+    name: "NASA Marshall Space Flight Center",
+    employees: "7,000+",
+    description: "Engineers and scientists who appreciate precision and attention to detail. Hampton Cove's excellent schools make it popular with NASA families seeking quality education for their children."
+  },
+  {
+    name: "Boeing / Lockheed Martin / Northrop Grumman",
+    employees: "10,000+",
+    description: "Defense contractors with demanding schedules. We offer flexible evening and weekend appointments to accommodate long work hours and frequent travel."
+  },
+  {
+    name: "Huntsville Hospital System",
+    employees: "8,000+",
+    description: "Healthcare workers with unpredictable shifts appreciate our flexible scheduling. We can work around rotating schedules and last-minute changes."
+  },
+  {
+    name: "Hudson Alpha Institute",
+    employees: "500+",
+    description: "Biotech researchers in nearby Research Park choose Hampton Cove for the schools and community feel. We serve many Hudson Alpha families with quality home maintenance."
+  },
+  {
+    name: "Remote Tech Workers",
+    employees: "Growing",
+    description: "Post-pandemic, many tech professionals work from home in Hampton Cove. Home office upgrades, soundproofing, and dedicated workspace buildouts are increasingly common requests."
+  }
+];
+
+const weatherChallenges = [
+  {
+    season: "Spring (March-May)",
+    challenge: "Severe Thunderstorms & Tornadoes",
+    impact: "Hampton Cove's location at the base of Monte Sano can create unique weather patterns. High winds, hail, and heavy rain damage roofs, siding, and outdoor structures.",
+    services: "Emergency repairs, roof damage assessment, gutter repair, siding replacement, window repairs"
+  },
+  {
+    season: "Summer (June-August)",
+    challenge: "Heat & Humidity",
+    impact: "90°F+ temperatures with high humidity cause paint peeling, wood warping on decks, and moisture issues. Wooded lots retain moisture longer, increasing mold risk.",
+    services: "Deck refinishing, exterior painting, moisture barriers, caulking, weatherstripping"
+  },
+  {
+    season: "Fall (September-November)",
+    challenge: "Heavy Leaf Drop",
+    impact: "Hampton Cove's mature trees and wooded lots create massive leaf accumulation. Clogged gutters and downspouts are extremely common throughout the community.",
+    services: "Gutter cleaning, leaf guard installation, downspout clearing, storm preparation"
+  },
+  {
+    season: "Winter (December-February)",
+    challenge: "Ice & Freeze Events",
+    impact: "Hampton Cove's elevation means occasional ice accumulation. Pipes in crawl spaces freeze, decks become hazardous, and ice dams form on north-facing roofs.",
+    services: "Pipe insulation, ice dam prevention, deck safety, emergency water damage repair"
+  }
+];
+
+const landmarks = [
+  {
+    name: "Hampton Cove Golf Course",
+    type: "Recreation",
+    directions: "Part of the Robert Trent Jones Golf Trail. The Ledges community surrounds this championship course, and we serve many golfers with home maintenance needs."
+  },
+  {
+    name: "Monte Sano State Park",
+    type: "Recreation",
+    directions: "Just minutes from Hampton Cove, this beautiful state park attracts outdoor enthusiasts. Many residents chose Hampton Cove specifically for park access."
+  },
+  {
+    name: "Hampton Cove Elementary",
+    type: "Education",
+    directions: "Heart of the community. Hampton Cove's excellent schools are a major draw for families, and we serve many homes in the school district."
+  },
+  {
+    name: "Big Cove Road Corridor",
+    type: "Main Road",
+    directions: "The primary route through Hampton Cove connecting to Huntsville and Owens Cross Roads. We know every turn and neighborhood along this corridor."
+  },
+  {
+    name: "Taylor Lane / Old Big Cove",
+    type: "Historic Area",
+    directions: "Original farming area with historic properties and newer estates. Unique maintenance needs from both old farmhouses and modern construction."
+  },
+  {
+    name: "Hampton Cove Town Center",
+    type: "Shopping",
+    directions: "Local shopping and dining hub. Convenient meeting point and landmark for directing service calls throughout the community."
+  }
+];
+
+const competitors = [
+  {
+    feature: "Answer Phone",
+    us: "Always, live person",
+    others: "Voicemail, callbacks"
+  },
+  {
+    feature: "Show Up On Time",
+    us: "Guaranteed",
+    others: "Often late or reschedule"
+  },
+  {
+    feature: "Written Estimates",
+    us: "Detailed, free",
+    others: "Verbal only"
+  },
+  {
+    feature: "Understand Hampton Cove",
+    us: "Know every neighborhood",
+    others: "GPS navigation"
+  },
+  {
+    feature: "Quality Materials",
+    us: "Premium options available",
+    others: "Cheapest available"
+  },
+  {
+    feature: "Licensed & Insured",
+    us: "Fully verified",
+    others: "Ask to verify"
+  },
+  {
+    feature: "Clean Work Site",
+    us: "Always, guaranteed",
+    others: "Inconsistent"
+  },
+  {
+    feature: "Follow-Up Service",
+    us: "Satisfaction check",
+    others: "Hope you don't call"
+  },
+  {
+    feature: "Weekend Availability",
+    us: "Saturday service",
+    others: "Weekdays only"
+  },
+  {
+    feature: "Small Jobs",
+    us: "Welcome, no minimums",
+    others: "Large jobs only"
+  }
+];
+
+const responseTimes = [
+  { area: "Hampton Cove Proper", time: "Same day", distance: "20 min" },
+  { area: "The Ledges", time: "Same day", distance: "22 min" },
+  { area: "Hampton Station", time: "Same day", distance: "20 min" },
+  { area: "Big Cove Road", time: "Same day", distance: "18 min" },
+  { area: "Taylor Lane Area", time: "Same day", distance: "22 min" },
+  { area: "Monte Sano Adjacent", time: "Same day", distance: "25 min" },
+  { area: "Owens Cross Roads", time: "Same day", distance: "25 min" },
+  { area: "New Market", time: "Next day typical", distance: "30 min" },
+  { area: "Grant / East", time: "Next day typical", distance: "35 min" }
+];
+
+const hamptonCoveFacts = [
+  "Master-planned community established in the 1990s",
+  "Population: approximately 5,000 residents",
+  "Home to Robert Trent Jones Golf Trail course",
+  "Part of Madison County, Huntsville city limits",
+  "Top-rated Hampton Cove Elementary School",
+  "Minutes from Monte Sano State Park"
+];
+---
+
+<Layout
+  title="Hampton Cove Alabama Handyman Services"
+  description="Professional handyman services in Hampton Cove, Alabama. Serving The Ledges, Hampton Station, Big Cove, and all Hampton Cove neighborhoods. Same-day service, free estimates."
+>
+  <!-- Hero Section -->
+  <section class="bg-blue-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-3xl">
+        <nav class="text-sm text-blue-200 mb-4">
+          <a href="/locations" class="hover:text-white">Service Areas</a>
+          <span class="mx-2">/</span>
+          <a href="/locations/huntsville" class="hover:text-white">Huntsville</a>
+          <span class="mx-2">/</span>
+          <span class="text-white">Hampton Cove</span>
+        </nav>
+        <span class="text-orange-400 font-semibold text-sm uppercase tracking-wide">Huntsville Area Community</span>
+        <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Hampton Cove, Alabama Handyman Services</h1>
+        <p class="text-xl text-blue-100 mb-6">
+          Quality handyman services for Hampton Cove and the Big Cove area. From The Ledges golf community to the rural properties of Big Cove Road, we deliver professional craftsmanship to one of Huntsville's most desirable communities. Same-day service available.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+            Get Free Estimate
+          </a>
+          <a href="tel:2565550123" class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+            (256) 555-0123
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="bg-white py-8 border-b">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <p class="text-3xl font-bold text-blue-900">Same Day</p>
+          <p class="text-gray-600 text-sm">Service Available</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-blue-900">Huntsville</p>
+          <p class="text-gray-600 text-sm">Area Community</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-blue-900">5,000+</p>
+          <p class="text-gray-600 text-sm">Residents Served</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-blue-900">Free</p>
+          <p class="text-gray-600 text-sm">Estimates Always</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Hampton Cove Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Golf, Nature & Community</span>
+          <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">Serving Hampton Cove Homeowners</h2>
+          <p class="text-gray-600 mb-4">
+            Hampton Cove represents the best of Huntsville living—championship golf, proximity to Monte Sano State Park, excellent schools, and a true sense of community. This master-planned development has grown from its 1990s origins into one of North Alabama's most sought-after addresses.
+          </p>
+          <p class="text-gray-600 mb-4">
+            We understand what makes Hampton Cove special. From the luxury homes of The Ledges overlooking the Robert Trent Jones Golf Trail to the family-friendly neighborhoods near Hampton Cove Elementary, each area has unique characteristics and maintenance needs. The mature trees that make Hampton Cove beautiful also mean more gutter cleaning, and those spacious decks need regular maintenance to stay pristine.
+          </p>
+          <p class="text-gray-600">
+            Whether you're a golf enthusiast in The Ledges, a young family in Hampton Station, or you've lived here since the beginning, we're here to help with all your home repair and improvement needs. We treat every Hampton Cove home with the care and precision this community deserves.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-blue-900 mb-4">Hampton Cove Quick Facts</h3>
+          <ul class="space-y-3">
+            {hamptonCoveFacts.map((fact) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{fact}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Neighborhood Coverage</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Hampton Cove Areas We Serve</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Every Hampton Cove neighborhood has unique characteristics. We know them all and tailor our service accordingly.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {neighborhoods.map((neighborhood) => (
+          <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-100 hover:border-blue-200 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-bold text-blue-900">{neighborhood.name}</h3>
+              <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">{neighborhood.responseTime}</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">{neighborhood.description}</p>
+            <div>
+              <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Common Services</p>
+              <div class="flex flex-wrap gap-1">
+                {neighborhood.commonServices.map((service) => (
+                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{service}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Response Times -->
+  <section class="py-16 bg-blue-900 text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Response Times for Hampton Cove Areas</h2>
+        <p class="text-blue-100 mt-4">We reach all Hampton Cove neighborhoods quickly with reliable scheduling.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        {responseTimes.map((item) => (
+          <div class="bg-white/10 rounded-lg p-4 flex items-center justify-between">
+            <div>
+              <p class="font-semibold">{item.area}</p>
+            </div>
+            <span class={`px-3 py-1 rounded-full text-sm font-medium ${
+              item.time === "Same day" ? "bg-green-500 text-white" : "bg-yellow-500 text-black"
+            }`}>
+              {item.time}
+            </span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <p class="text-blue-100">Emergency service available for all Hampton Cove areas. Call for urgent repairs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Major Employers -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Who We Serve</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Hampton Cove Professionals</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Hampton Cove attracts professionals from across the region. We understand their schedules and expectations.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {majorEmployers.map((employer) => (
+          <div class="bg-white rounded-lg p-6 shadow-md">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-bold text-blue-900">{employer.name}</h3>
+              <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">{employer.employees}</span>
+            </div>
+            <p class="text-gray-600 text-sm">{employer.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Weather Challenges -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Seasonal Expertise</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Hampton Cove Weather Challenges</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Hampton Cove's wooded lots and elevation create unique seasonal maintenance needs.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {weatherChallenges.map((challenge) => (
+          <div class="bg-gray-50 rounded-lg p-6 border-l-4 border-blue-500">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-2xl">
+                {challenge.season.includes("Spring") && "🌧️"}
+                {challenge.season.includes("Summer") && "☀️"}
+                {challenge.season.includes("Fall") && "🍂"}
+                {challenge.season.includes("Winter") && "❄️"}
+              </span>
+              <div>
+                <h3 class="font-bold text-gray-800">{challenge.season}</h3>
+                <p class="text-sm text-orange-600 font-medium">{challenge.challenge}</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm mb-3">{challenge.impact}</p>
+            <p class="text-xs text-blue-800"><strong>Services:</strong> {challenge.services}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Landmarks Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Local Knowledge</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Hampton Cove Landmarks</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          We know Hampton Cove inside and out. Here are the landmarks that guide our service area.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {landmarks.map((landmark) => (
+          <div class="bg-white rounded-lg p-6 shadow-md">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded">{landmark.type}</span>
+            </div>
+            <h3 class="font-bold text-gray-800 mb-2">{landmark.name}</h3>
+            <p class="text-gray-600 text-sm">{landmark.directions}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">The Difference</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Why Hampton Cove Chooses Us</h2>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-gray-50 rounded-lg overflow-hidden">
+          <thead class="bg-blue-900 text-white">
+            <tr>
+              <th class="px-6 py-4 text-left">Feature</th>
+              <th class="px-6 py-4 text-left">Our Service</th>
+              <th class="px-6 py-4 text-left">Other Contractors</th>
+            </tr>
+          </thead>
+          <tbody>
+            {competitors.map((row, index) => (
+              <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                <td class="px-6 py-4 font-medium text-gray-800">{row.feature}</td>
+                <td class="px-6 py-4 text-green-600 font-medium">{row.us}</td>
+                <td class="px-6 py-4 text-gray-500">{row.others}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Customer Stories</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">What Hampton Cove Says</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <div class="flex items-center gap-1 mb-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-600 mb-4">"Our deck in The Ledges needed serious work. They refinished it beautifully and now it looks better than when we moved in. Professional crew who respected our golf course views during the work."</p>
+          <p class="font-semibold text-gray-800">- The Ledges Homeowner</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <div class="flex items-center gap-1 mb-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-600 mb-4">"With three kids and a NASA schedule, I needed someone reliable. They came when they said, did great work on our kitchen cabinets, and cleaned up completely. Will definitely use again."</p>
+          <p class="font-semibold text-gray-800">- Hampton Station Parent</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-md">
+          <div class="flex items-center gap-1 mb-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-600 mb-4">"After that big storm, our gutters were destroyed and a tree hit the fence. They handled everything quickly and worked with our insurance. Total professionals who know Hampton Cove properties."</p>
+          <p class="font-semibold text-gray-800">- Big Cove Road Resident</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-orange-500 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready for Quality Hampton Cove Service?</h2>
+      <p class="text-xl mb-8">Same-day response for Hampton Cove residents. Free estimates and quality guaranteed.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors">
+          Get Free Estimate
+        </a>
+        <a href="tel:2565550123" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+          (256) 555-0123
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
