@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 
 const serviceAreas = [
-  { name: "Madison", primary: true },
+  { name: "Madison", primary: true, link: "/locations/madison" },
   { name: "Huntsville", primary: false },
   { name: "Decatur", primary: false },
   { name: "Athens", primary: false },
@@ -37,16 +37,32 @@ const serviceAreas = [
           <h2 class="text-2xl font-bold mb-6 text-gray-800">Areas We Serve</h2>
           <div class="grid grid-cols-2 gap-4">
             {serviceAreas.map((area) => (
-              <div class={`p-4 rounded-lg ${area.primary ? 'bg-blue-900 text-white' : 'bg-white shadow-md'}`}>
-                <div class="flex items-center gap-2">
-                  <svg class={`w-5 h-5 ${area.primary ? 'text-blue-200' : 'text-green-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                  </svg>
-                  <span class={`font-medium ${area.primary ? '' : 'text-gray-800'}`}>{area.name}</span>
-                  {area.primary && <span class="text-xs bg-orange-500 px-2 py-0.5 rounded">HQ</span>}
+              area.link ? (
+                <a href={area.link} class={`p-4 rounded-lg ${area.primary ? 'bg-blue-900 text-white hover:bg-blue-800' : 'bg-white shadow-md hover:shadow-lg'} transition-all block`}>
+                  <div class="flex items-center gap-2">
+                    <svg class={`w-5 h-5 ${area.primary ? 'text-blue-200' : 'text-green-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span class={`font-medium ${area.primary ? '' : 'text-gray-800'}`}>{area.name}</span>
+                    {area.primary && <span class="text-xs bg-orange-500 px-2 py-0.5 rounded">HQ</span>}
+                    <svg class="w-4 h-4 ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </a>
+              ) : (
+                <div class={`p-4 rounded-lg ${area.primary ? 'bg-blue-900 text-white' : 'bg-white shadow-md'}`}>
+                  <div class="flex items-center gap-2">
+                    <svg class={`w-5 h-5 ${area.primary ? 'text-blue-200' : 'text-green-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span class={`font-medium ${area.primary ? '' : 'text-gray-800'}`}>{area.name}</span>
+                    {area.primary && <span class="text-xs bg-orange-500 px-2 py-0.5 rounded">HQ</span>}
+                  </div>
                 </div>
-              </div>
+              )
             ))}
           </div>
         </div>
