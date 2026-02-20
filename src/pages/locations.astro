@@ -6,8 +6,7 @@ const cityHubs = [
     name: "Madison",
     link: "/locations/madison",
     description:
-      "Our primary service area including Harvest, Triana, and Research Park West.",
-    primary: true,
+      "Our service area including Harvest, Triana, and Research Park West.",
     subAreas: [
       { name: "Harvest", link: "/locations/madison/harvest" },
       { name: "Triana", link: null },
@@ -19,7 +18,6 @@ const cityHubs = [
     link: "/locations/huntsville",
     description:
       "Serving all Huntsville neighborhoods from Downtown to Hampton Cove.",
-    primary: false,
     subAreas: [
       { name: "Hampton Cove", link: "/locations/huntsville/hampton-cove" },
       { name: "Owens Cross Roads", link: null },
@@ -32,7 +30,6 @@ const cityHubs = [
     link: "/locations/decatur",
     description:
       "Morgan County coverage including Somerville and the Tennessee River corridor.",
-    primary: false,
     subAreas: [
       { name: "Somerville", link: "/locations/decatur/somerville" },
       { name: "Priceville", link: null },
@@ -43,7 +40,6 @@ const cityHubs = [
     link: "/locations/athens",
     description:
       "Limestone County's friendliest city and surrounding communities.",
-    primary: false,
     subAreas: [],
   },
 ];
@@ -118,50 +114,31 @@ const cityHubs = [
           cityHubs.map((city) => (
             <a
               href={city.link}
-              class={`block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow ${city.primary ? "ring-2 ring-orange-500" : ""}`}
+              class="block rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-white"
             >
-              <div
-                class={`p-6 ${city.primary ? "bg-blue-900 text-white" : "bg-white"}`}
-              >
+              <div class="p-6">
                 <div class="flex items-center justify-between mb-3">
-                  <h3 class="text-2xl font-bold">{city.name}</h3>
-                  {city.primary && (
-                    <span class="text-xs bg-orange-500 px-2 py-1 rounded">
-                      Primary Area
-                    </span>
-                  )}
+                  <h3 class="text-2xl font-bold text-gray-900">{city.name}</h3>
                 </div>
-                <p
-                  class={`mb-4 ${city.primary ? "text-blue-100" : "text-gray-600"}`}
-                >
-                  {city.description}
-                </p>
+                <p class="mb-4 text-gray-600">{city.description}</p>
                 {city.subAreas.length > 0 && (
-                  <div
-                    class={`pt-4 border-t ${city.primary ? "border-blue-700" : "border-gray-200"}`}
-                  >
-                    <p
-                      class={`text-sm font-semibold mb-2 ${city.primary ? "text-blue-200" : "text-gray-500"}`}
-                    >
+                  <div class="pt-4 border-t border-gray-200">
+                    <p class="text-sm font-semibold mb-2 text-gray-500">
                       Communities Served:
                     </p>
                     <div class="flex flex-wrap gap-2">
                       {city.subAreas.map((area) => (
-                        <span
-                          class={`text-sm px-2 py-1 rounded ${city.primary ? "bg-blue-800 text-blue-100" : "bg-gray-100 text-gray-700"}`}
-                        >
+                        <span class="text-sm px-2 py-1 rounded bg-blue-50 text-blue-900 font-medium">
                           {area.name}
                         </span>
                       ))}
                     </div>
                   </div>
                 )}
-                <div
-                  class={`mt-4 flex items-center gap-2 ${city.primary ? "text-orange-400" : "text-blue-600"}`}
-                >
+                <div class="mt-4 flex items-center gap-2 text-blue-600 font-bold">
                   <span class="font-medium">View {city.name} services</span>
                   <svg
-                    class="w-5 h-5"
+                    class="w-5 h-5 flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
