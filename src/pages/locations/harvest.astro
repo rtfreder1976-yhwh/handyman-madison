@@ -1,0 +1,568 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const neighborhoods = [
+  {
+    name: "Monrovia / Highway 53 Corridor",
+    description: "The heart of Harvest along the main corridor. Mix of established homes and newer developments with easy access to Madison and Huntsville. Growing retail and services make this a convenient location for families.",
+    responseTime: "Same day available",
+    commonServices: ["Drywall repair", "Interior painting", "Flooring installation", "General repairs"]
+  },
+  {
+    name: "Harvest Town Center Area",
+    description: "Newer developments surrounding the growing town center. Modern homes that occasionally need finishing touches and warranty-period repairs. Young families moving in appreciate quick, reliable service.",
+    responseTime: "Same day available",
+    commonServices: ["New home touch-ups", "Painting", "Trim installation", "Drywall finishing"]
+  },
+  {
+    name: "Jeff Road / Old Monrovia",
+    description: "Established rural-suburban area with larger lots and country properties. Mix of farmhouses and newer construction. Homeowners value privacy and quality workmanship from trusted contractors.",
+    responseTime: "Same day available",
+    commonServices: ["Deck building", "Exterior repairs", "Gutter installation", "Storm damage"]
+  },
+  {
+    name: "Capshaw Road Area",
+    description: "Growing residential corridor connecting Harvest to Madison. New subdivisions attracting families from across the region. Quick access from our Madison base makes this area especially convenient.",
+    responseTime: "Same day available",
+    commonServices: ["Flooring", "Painting", "Finish carpentry", "Quick repairs"]
+  },
+  {
+    name: "Toney / North Harvest",
+    description: "Rural community north of Harvest proper with spacious properties and country living. Established families who've lived here for generations alongside newcomers seeking affordable acreage.",
+    responseTime: "Same day available",
+    commonServices: ["Home maintenance", "Gutter cleaning", "Exterior painting", "Repairs"]
+  },
+  {
+    name: "Sparkman Drive / East Harvest",
+    description: "Area near Sparkman Ninth Grade School with family-oriented neighborhoods. Parents juggling work and school activities appreciate contractors who communicate clearly and respect schedules.",
+    responseTime: "Same day available",
+    commonServices: ["Quick fixes", "Drywall patching", "Door repairs", "Painting"]
+  }
+];
+
+const majorEmployers = [
+  {
+    name: "Commuters to Redstone Arsenal",
+    employees: "3,000+",
+    description: "Many Harvest residents work at Redstone Arsenal just 15-20 minutes away. Military and civilian defense workers who need reliable contractors that can work while they're on base."
+  },
+  {
+    name: "Commuters to Cummings Research Park",
+    employees: "2,500+",
+    description: "Engineers and tech workers who chose Harvest for affordable housing and good schools. They expect professionalism and clear communication from their contractors."
+  },
+  {
+    name: "Madison County Schools",
+    employees: "500+",
+    description: "Teachers and staff at Harvest, Monrovia, and surrounding schools. Summer availability for major projects and flexible scheduling during the school year."
+  },
+  {
+    name: "Huntsville Hospital System",
+    employees: "800+",
+    description: "Healthcare workers from Huntsville Hospital and Crestwood who live in Harvest for the commute and affordability. Shift work requires flexible contractor scheduling."
+  },
+  {
+    name: "Local Agriculture & Farming",
+    employees: "300+",
+    description: "Harvest maintains its agricultural roots with working farms and rural properties. Farm families need practical repairs done right the first time."
+  },
+  {
+    name: "Small Business Owners",
+    employees: "400+",
+    description: "Growing entrepreneurial community with home-based businesses and local shops. Business owners who understand the value of reliable, professional service."
+  }
+];
+
+const weatherChallenges = [
+  {
+    season: "Spring (March-May)",
+    challenge: "Severe Thunderstorms & Tornadoes",
+    impact: "North Madison County sits in prime tornado territory. Harvest's open terrain offers little protection from severe storms. High winds, large hail, and tornado risk threaten roofs, siding, windows, and outbuildings. Rural properties face additional debris from trees and farm structures.",
+    services: "Emergency storm repairs, roof assessment, siding repair, window replacement, outbuilding repairs, debris cleanup, drywall water damage"
+  },
+  {
+    season: "Summer (June-August)",
+    challenge: "Heat, Humidity & Afternoon Storms",
+    impact: "Hot, humid Alabama summers take a toll on exterior surfaces. Paint peels, decks weather rapidly, and sudden afternoon thunderstorms can cause flash flooding in low-lying areas. Rural properties face challenges from overgrown vegetation and gravel drive washouts.",
+    services: "Exterior painting, deck sealing and staining, moisture barriers, gutter maintenance, drainage improvements, caulking"
+  },
+  {
+    season: "Fall (September-November)",
+    challenge: "Leaf Accumulation & Prep Season",
+    impact: "Harvest's abundant trees—especially on larger rural lots—drop massive amounts of leaves. Gutters clog quickly, and properties need winterization before cold weather. Fall is prime time to address deferred maintenance before winter arrives.",
+    services: "Gutter cleaning, storm door installation, weatherization, exterior caulking, roof inspections, general maintenance"
+  },
+  {
+    season: "Winter (December-February)",
+    challenge: "Freezing Temperatures & Ice",
+    impact: "While winters are generally mild, Harvest experiences occasional hard freezes and ice storms. Rural properties with exposed pipes and older homes with inadequate insulation face freeze risks. Ice can damage trees and power lines.",
+    services: "Pipe insulation, ice damage repair, emergency water damage, weatherstripping, insulation improvements, generator hookup prep"
+  }
+];
+
+const landmarks = [
+  {
+    name: "Harvest Town Center",
+    address: "Highway 53, Harvest",
+    directions: "The growing commercial heart of Harvest. We're just 10 minutes from Harvest Town Center via Highway 53, providing quick response to all central Harvest neighborhoods."
+  },
+  {
+    name: "Sparkman Ninth Grade School",
+    address: "2692 Carters Gin Rd, Harvest",
+    directions: "Major school serving Harvest families. We serve all surrounding neighborhoods and understand the busy schedules of school families."
+  },
+  {
+    name: "Monrovia Church of Christ",
+    address: "2761 Jeff Rd, Harvest",
+    directions: "Historic Monrovia community landmark. We serve the established Jeff Road corridor and all of greater Monrovia with same-day availability."
+  },
+  {
+    name: "Highway 53 / Jeff Road Intersection",
+    address: "Central Harvest",
+    directions: "Main crossroads of the Harvest community. Located just 8 minutes from our Madison base, we reach this central location quickly for any service need."
+  },
+  {
+    name: "Toney Elementary School",
+    address: "10755 US-53, Toney",
+    directions: "Serving the northern Harvest/Toney area. We provide same-day service to all Toney and north Harvest properties, just 15 minutes away."
+  },
+  {
+    name: "Madison County Mega Site (Future)",
+    address: "Greenbrier Road Area",
+    directions: "Future economic development bringing jobs to Harvest. We're positioned to serve the growing workforce that will call Harvest home."
+  }
+];
+
+const competitorComparison = [
+  {
+    feature: "Answer Phone Calls",
+    us: "Real person, always",
+    others: "Often voicemail"
+  },
+  {
+    feature: "Serve Harvest Regularly",
+    us: "Yes, neighbors",
+    others: "May decline rural"
+  },
+  {
+    feature: "Show Up On Time",
+    us: "Guaranteed",
+    others: "Rural = low priority"
+  },
+  {
+    feature: "Written Estimates",
+    us: "Detailed, free",
+    others: "Verbal or vague"
+  },
+  {
+    feature: "Price Matches Quote",
+    us: "Always",
+    others: "Often adds fees"
+  },
+  {
+    feature: "Licensed & Insured",
+    us: "Fully verified",
+    others: "Often unclear"
+  },
+  {
+    feature: "Clean Up Jobsite",
+    us: "Every single job",
+    others: "Hit or miss"
+  },
+  {
+    feature: "Understand Rural Needs",
+    us: "Yes, experience",
+    others: "City-focused"
+  },
+  {
+    feature: "Weekend Service",
+    us: "Saturday available",
+    others: "Weekdays only"
+  },
+  {
+    feature: "Small Jobs Welcome",
+    us: "No minimums",
+    others: "Large jobs preferred"
+  }
+];
+
+const responseTimes = [
+  { area: "Capshaw Road Area", time: "Same day", distance: "8 min" },
+  { area: "Highway 53 / Monrovia", time: "Same day", distance: "10 min" },
+  { area: "Harvest Town Center", time: "Same day", distance: "10 min" },
+  { area: "Jeff Road / Old Monrovia", time: "Same day", distance: "12 min" },
+  { area: "Sparkman Drive Area", time: "Same day", distance: "12 min" },
+  { area: "Toney", time: "Same day", distance: "15 min" },
+  { area: "North Toney / Ardmore", time: "Same day", distance: "20 min" },
+  { area: "Hazel Green (east)", time: "Same day", distance: "18 min" },
+  { area: "New Market", time: "Next day typical", distance: "25 min" }
+];
+
+const harvestFacts = [
+  "Unincorporated community in Madison County",
+  "Population: 5,000+ and growing rapidly",
+  "Named for the area's agricultural heritage",
+  "Part of Huntsville-Decatur Metropolitan Area",
+  "Served by Madison County Schools",
+  "One of North Alabama's fastest-growing communities"
+];
+---
+
+<Layout
+  title="Harvest Alabama Handyman Services"
+  description="Professional handyman services in Harvest, Alabama. Serving Monrovia, Toney, Capshaw Road, and all Harvest neighborhoods. Same-day service, free estimates, quality guaranteed."
+>
+  <!-- Hero Section -->
+  <section class="bg-blue-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-3xl">
+        <span class="text-orange-400 font-semibold text-sm uppercase tracking-wide">Your Neighbors in Madison</span>
+        <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Harvest, Alabama Handyman Services</h1>
+        <p class="text-xl text-blue-100 mb-6">
+          Quality handyman services for Harvest and surrounding communities. Just minutes from our Madison base, we serve Monrovia, Toney, and all of greater Harvest with the fast response and quality workmanship your home deserves. Same-day service available.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+            Get Free Estimate
+          </a>
+          <a href="tel:2565550123" class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+            (256) 555-0123
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="bg-white py-8 border-b">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <p class="text-3xl font-bold text-blue-900">Same Day</p>
+          <p class="text-gray-600 text-sm">Service in Harvest</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-blue-900">10 min</p>
+          <p class="text-gray-600 text-sm">From Madison Base</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-blue-900">5,000+</p>
+          <p class="text-gray-600 text-sm">Harvest Residents</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-blue-900">Free</p>
+          <p class="text-gray-600 text-sm">Estimates Always</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Harvest Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Growing Community</span>
+          <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">Serving Harvest & North Madison County</h2>
+          <p class="text-gray-600 mb-4">
+            Harvest represents the best of North Alabama living—affordable homes, good schools, friendly neighbors, and easy access to Huntsville's jobs and amenities. Named for its agricultural heritage, this unincorporated community has grown from rural farmland into one of the region's most desirable addresses.
+          </p>
+          <p class="text-gray-600 mb-4">
+            Today's Harvest blends country charm with suburban convenience. You'll find established farmhouses on spacious lots alongside modern subdivisions filled with young families. Many residents commute to Redstone Arsenal, Cummings Research Park, or Huntsville while enjoying Harvest's lower cost of living and tight-knit community feel.
+          </p>
+          <p class="text-gray-600">
+            Based just 10 minutes away in Madison, Harvest is practically our backyard. We serve your community with the same care we'd give our own neighbors—because many of you are our neighbors. Whether you have a newer home needing finishing touches or an established property requiring updates, we deliver quality work at fair prices.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-blue-900 mb-4">Harvest Quick Facts</h3>
+          <ul class="space-y-3">
+            {harvestFacts.map((fact) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{fact}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="mt-6 pt-4 border-t border-gray-200">
+            <h4 class="font-semibold text-gray-800 mb-2">Why Harvest Homeowners Choose Us</h4>
+            <p class="text-gray-600 text-sm">Finding contractors who reliably serve unincorporated areas can be challenging. We're committed to Harvest because it's our community too. We show up when we say we will, do quality work, and treat your home with respect.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Neighborhood Coverage</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Harvest Neighborhoods We Serve</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          From the Highway 53 corridor to the rural roads of Toney, we serve every corner of greater Harvest.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {neighborhoods.map((neighborhood) => (
+          <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-100 hover:border-blue-200 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-bold text-blue-900">{neighborhood.name}</h3>
+              <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">{neighborhood.responseTime}</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">{neighborhood.description}</p>
+            <div>
+              <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Common Services</p>
+              <div class="flex flex-wrap gap-1">
+                {neighborhood.commonServices.map((service) => (
+                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{service}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Response Times -->
+  <section class="py-16 bg-blue-900 text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Response Times for Harvest Areas</h2>
+        <p class="text-blue-100 mt-4">Just minutes from Madison, we reach all Harvest neighborhoods quickly.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        {responseTimes.map((item) => (
+          <div class="bg-white/10 rounded-lg p-4 flex items-center justify-between">
+            <div>
+              <p class="font-semibold">{item.area}</p>
+              <p class="text-blue-200 text-sm">{item.distance} from base</p>
+            </div>
+            <span class={`px-3 py-1 rounded-full text-sm font-medium ${
+              item.time === "Same day" ? "bg-green-500 text-white" : "bg-yellow-500 text-black"
+            }`}>
+              {item.time}
+            </span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <p class="text-blue-100">Emergency service available for all Harvest areas. Call for urgent repairs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weather Challenges -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Local Expertise</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Harvest Weather Challenges</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          North Madison County's rural character brings specific weather challenges. We understand how local conditions affect your home.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {weatherChallenges.map((weather) => (
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                {weather.season.includes("Spring") && (
+                  <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                )}
+                {weather.season.includes("Summer") && (
+                  <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                  </svg>
+                )}
+                {weather.season.includes("Fall") && (
+                  <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                  </svg>
+                )}
+                {weather.season.includes("Winter") && (
+                  <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                  </svg>
+                )}
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-800">{weather.season}</h3>
+                <p class="text-orange-600 font-medium text-sm">{weather.challenge}</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">{weather.impact}</p>
+            <div>
+              <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Our Services</p>
+              <p class="text-sm text-blue-900">{weather.services}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Major Employers -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Serving Harvest Workers</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Who We Serve in Harvest</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Harvest residents work across the region. We accommodate your schedule wherever you work.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {majorEmployers.map((employer) => (
+          <div class="bg-gray-50 rounded-lg p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-bold text-blue-900">{employer.name}</h3>
+              <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{employer.employees}</span>
+            </div>
+            <p class="text-gray-600 text-sm">{employer.description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 bg-blue-50 rounded-lg p-6">
+        <div class="flex items-start gap-4">
+          <svg class="w-8 h-8 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+          <div>
+            <h3 class="text-lg font-bold text-blue-900 mb-2">We Understand Rural Living</h3>
+            <p class="text-gray-600 text-sm">Many contractors focus on city neighborhoods and treat rural areas as an afterthought. Not us. We understand the unique needs of country properties—larger lots, outbuildings, well and septic systems, gravel drives, and the self-reliant spirit of rural homeowners. When we give you a quote, we account for actual conditions, not assumptions. When we schedule a job, we show up ready to work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Directions from Landmarks -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Easy to Reach</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Directions from Harvest Landmarks</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          We're conveniently located to serve all of Harvest and surrounding communities.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {landmarks.map((landmark) => (
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-blue-900 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <div>
+                <h3 class="font-bold text-gray-800">{landmark.name}</h3>
+                <p class="text-gray-500 text-xs mb-2">{landmark.address}</p>
+                <p class="text-gray-600 text-sm">{landmark.directions}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitor Comparison -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">The Difference</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Why Harvest Residents Choose Us</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Rural and unincorporated areas often get overlooked by contractors. Here's why Harvest homeowners trust us.
+        </p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-lg shadow-sm">
+          <thead>
+            <tr class="bg-blue-900 text-white">
+              <th class="px-6 py-4 text-left font-semibold">What Matters</th>
+              <th class="px-6 py-4 text-left font-semibold">Madison Handyman Pro</th>
+              <th class="px-6 py-4 text-left font-semibold">Other Contractors</th>
+            </tr>
+          </thead>
+          <tbody>
+            {competitorComparison.map((row, index) => (
+              <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                <td class="px-6 py-4 font-medium text-gray-800">{row.feature}</td>
+                <td class="px-6 py-4 text-green-600 font-medium">{row.us}</td>
+                <td class="px-6 py-4 text-gray-500">{row.others}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Harvest Reviews -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Harvest Reviews</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">What Harvest Homeowners Say</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <div class="flex items-center gap-1 mb-3">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-600 text-sm mb-4">"Living on 5 acres in Toney, I've had contractors quote jobs and never show up. These guys came when they said, did excellent deck work, and even helped with a fence repair while they were here. Finally, someone who serves rural customers!"</p>
+          <p class="text-gray-800 font-medium">- James H., Toney</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <div class="flex items-center gap-1 mb-3">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-600 text-sm mb-4">"We just built in one of the new Harvest subdivisions and needed punch list items finished that the builder ignored. They handled all the drywall touch-ups, paint fixes, and trim work professionally. Our new house finally looks right."</p>
+          <p class="text-gray-800 font-medium">- Sarah M., Harvest Town Center Area</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <div class="flex items-center gap-1 mb-3">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-600 text-sm mb-4">"I work on the Arsenal and my wife's a nurse—our schedules are crazy. They worked around both of us, kept us updated by text, and installed beautiful new flooring throughout our Monrovia home. Couldn't be happier."</p>
+          <p class="text-gray-800 font-medium">- David & Karen T., Monrovia</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-orange-500 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready for Reliable Handyman Service in Harvest?</h2>
+      <p class="text-xl mb-8">Same-day service available. Free estimates, quality guaranteed.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
+          Get Free Estimate
+        </a>
+        <a href="tel:2565550123" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
+          (256) 555-0123
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
