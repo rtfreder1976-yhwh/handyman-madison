@@ -6,37 +6,43 @@ const featuredServices = [
     name: "Drywall Installation & Repair",
     description: "From small patches to full room installations. We handle hole repairs, water damage, cracks, and new construction drywall with seamless finishing.",
     items: ["Hole and crack repair", "Water damage restoration", "New drywall installation", "Texture matching", "Seamless finishing"],
-    link: "/services/drywall"
+    link: "/services/drywall",
+    image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop"
   },
   {
     name: "Painting",
     description: "Professional interior and exterior painting that transforms your space. Clean lines, quality paint, and meticulous prep work every time.",
     items: ["Interior room painting", "Exterior house painting", "Cabinet painting", "Trim and door painting", "Deck and fence staining"],
-    link: "/services/painting"
+    link: "/services/painting",
+    image: "https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?q=80&w=2070&auto=format&fit=crop"
   },
   {
     name: "Flooring Installation & Repair",
     description: "Expert flooring services for all types. We install, repair, and replace hardwood, laminate, and luxury vinyl plank flooring.",
     items: ["Hardwood installation", "Laminate flooring", "Luxury vinyl plank (LVP)", "Engineered hardwood", "Floor repair and refinishing"],
-    link: "/services/flooring"
+    link: "/services/flooring",
+    image: "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=1974&auto=format&fit=crop"
   },
   {
     name: "Finish Carpentry",
     description: "Custom trim work that adds value and character to your home. Precision cuts and professional installation for a polished look.",
     items: ["Crown molding", "Baseboards and trim", "Wainscoting", "Built-in shelving", "Door and window casing"],
-    link: "/services/finish-carpentry"
+    link: "/services/finish-carpentry",
+    image: "https://images.unsplash.com/photo-1604147706283-d7119b5b822c?q=80&w=1974&auto=format&fit=crop"
   },
   {
     name: "Gutter Cleaning",
     description: "Protect your home from water damage with professional gutter cleaning. We remove debris, check for damage, and ensure proper drainage.",
     items: ["Full gutter cleanout", "Downspout clearing", "Debris removal", "Damage inspection", "Minor repairs included"],
-    link: "/services/gutter-cleaning"
+    link: "/services/gutter-cleaning",
+    image: "https://images.unsplash.com/photo-1594818379496-da1e345b0dfe?q=80&w=2070&auto=format&fit=crop"
   },
   {
     name: "Gutter Installation",
     description: "Protect your home with professionally installed gutters. We install seamless gutters, downspouts, and complete gutter systems.",
     items: ["Seamless gutter installation", "Downspout installation", "Gutter replacement", "Gutter repairs", "Custom gutter solutions"],
-    link: "/services/gutter-installation"
+    link: "/services/gutter-installation",
+    image: "https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?q=80&w=2070&auto=format&fit=crop"
   }
 ];
 
@@ -94,163 +100,234 @@ const additionalServices = [
 ];
 ---
 
-<Layout title="Services" description="Professional handyman services in Madison, Alabama: drywall, painting, flooring, finish carpentry, gutter cleaning and gutter installation.">
+<Layout title="Services | Madison Handyman Pro" description="Professional handyman services in Madison, Alabama: drywall, painting, flooring, finish carpentry, gutter cleaning and gutter installation.">
   <!-- Hero Section -->
-  <section class="bg-blue-900 text-white py-16">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-4xl font-bold mb-4">Our Services</h1>
-      <p class="text-xl text-blue-100 max-w-2xl mx-auto">
-        Quality craftsmanship for your home. From drywall to flooring, painting to gutter protection.
+  <section class="relative bg-blue-900 text-white pt-32 pb-24 flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070&auto=format&fit=crop" alt="Tools background" class="w-full h-full object-cover opacity-20 scale-105 animate-[pulse_10s_ease-in-out_infinite_alternate]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-blue-950 via-blue-900/90 to-blue-900/60"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 relative z-10 w-full text-center">
+      <div class="inline-block px-4 py-2 rounded-full bg-orange-500/20 text-orange-400 font-bold mb-6 text-sm tracking-wider uppercase border border-orange-500/30">
+        Expert Craftsmanship
+      </div>
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+        Master <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Home Services</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+        From massive remodels to minor repairs, our master craftsmen deliver precision, durability, and a flawless finish on every project.
       </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <!-- AI text a photo CTA -->
+        <a
+          href="sms:2565550123"
+          class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 text-lg flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+          </svg>
+          Text a Photo for Price
+        </a>
+      </div>
+    </div>
+    
+    <!-- Decorative shape divider -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10 transform scale-y-[-1]">
+      <svg class="relative block w-full h-[50px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.06,155.15,112.5,231.2,88.45,264.44,77.83,296.88,67.36,321.39,56.44Z" class="fill-gray-50"></path>
+      </svg>
     </div>
   </section>
 
   <!-- Featured Services -->
-  <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">What We Do Best</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Featured Services</h2>
+  <section class="py-24 bg-gray-50 relative z-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">Featured Capabilities</h2>
+        <div class="w-24 h-1.5 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mt-6 rounded-full"></div>
       </div>
+      
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {featuredServices.map((service) => (
-          <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-100 hover:border-blue-200 transition-colors flex flex-col">
-            <h3 class="text-xl font-bold text-blue-900 mb-3">{service.name}</h3>
-            <p class="text-gray-600 mb-4 text-sm">{service.description}</p>
-            <ul class="space-y-2 flex-1">
-              {service.items.map((item) => (
-                <li class="flex items-start gap-2 text-gray-700 text-sm">
-                  <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            {service.link && (
-              <a href={service.link} class="mt-4 text-blue-600 hover:text-blue-800 font-medium text-sm inline-flex items-center gap-1">
-                Learn More
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
+          <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col border border-gray-100 hover:-translate-y-2 relative">
+            
+            <div class="h-64 overflow-hidden relative">
+              <img src={service.image} alt={service.name} class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/20 to-transparent"></div>
+              <h3 class="absolute bottom-6 left-6 right-6 text-2xl font-bold text-white mb-0 leading-tight">{service.name}</h3>
+            </div>
+            
+            <div class="p-8 flex-1 flex flex-col">
+              <p class="text-gray-600 mb-6 text-base leading-relaxed">{service.description}</p>
+              
+              <ul class="space-y-3 flex-1 mb-8">
+                {service.items.slice(0, 4).map((item) => (
+                  <li class="flex items-start gap-3 text-gray-700 font-medium text-sm">
+                    <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg class="w-3 h-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                    </div>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              
+              <!-- Placeholder link until programmatic SEO links are wired in next iteration if requested -->
+              <a href="#" class="mt-auto inline-flex items-center justify-center w-full bg-blue-50 text-blue-900 hover:bg-blue-900 hover:text-white font-bold py-3 px-6 rounded-xl transition-colors duration-300">
+                View Details
               </a>
-            )}
+            </div>
           </div>
         ))}
       </div>
-      <div class="text-center mt-10">
-        <a
-          href="/contact"
-          class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
-        >
-          Get a Free Estimate
+    </div>
+  </section>
+
+  <!-- Additional Services Grid -->
+  <section class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-orange-500 font-bold tracking-wider uppercase text-sm">Comprehensive Care</span>
+          <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2">Additional Services</h2>
+        </div>
+        <p class="text-gray-600 max-w-md text-lg">If it's in your house and it's broken, there's a 99% chance our master technicians can fix it.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {additionalServices.map((service, index) => (
+          <div class="group relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden">
+             <!-- Decorative background number -->
+             <div class="absolute -right-6 -bottom-8 text-9xl font-extrabold text-gray-50 opacity-50 group-hover:text-blue-50 transition-colors z-0 select-none">
+                0{index + 1}
+             </div>
+             
+            <div class="relative z-10">
+              <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                </div>
+                {service.category}
+              </h3>
+              <ul class="space-y-3">
+                {service.items.map((item) => (
+                  <li class="flex items-start gap-3 text-gray-700 font-medium">
+                    <svg class="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+        
+        <!-- CTA Card in Grid -->
+        <a href="/contact" class="group relative bg-gradient-to-br from-blue-900 to-blue-800 rounded-2xl p-8 shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-center items-center text-center hover:-translate-y-2">
+            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop')] opacity-10 object-cover mix-blend-overlay"></div>
+            <div class="relative z-10">
+              <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6 backdrop-blur-sm group-hover:scale-110 transition-transform">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-2">Need Something Else?</h3>
+              <p class="text-blue-100 mb-6">Describe your custom project.</p>
+              <span class="inline-block bg-orange-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg group-hover:bg-orange-600 transition-colors">
+                Request Custom Quote
+              </span>
+            </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Additional Services -->
-  <section class="py-16 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-center mb-10 text-gray-800">Additional Services</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {additionalServices.map((service) => (
-          <div class="bg-white rounded-lg shadow-sm p-5">
-            <h3 class="text-lg font-bold text-blue-900 mb-3 pb-2 border-b border-gray-200">
-              {service.category}
-            </h3>
-            <ul class="space-y-1.5">
-              {service.items.map((item) => (
-                <li class="flex items-start gap-2 text-gray-700 text-sm">
-                  <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+  <!-- Process / How it Works Section -->
+  <section class="py-24 bg-gray-50 relative overflow-hidden">
+    <!-- Abstract wavy background lines -->
+    <div class="absolute top-1/2 left-0 w-full h-px bg-gray-200 hidden lg:block transform -translate-y-1/2"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">The Madison Pro Process</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">Zero friction. Zero surprises. Just seamless service.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Us for These Services -->
-  <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Why Choose Us</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
+      
+      <div class="grid md:grid-cols-4 gap-8 lg:gap-12 text-center text-gray-900 border border-gray-200 lg:border-none p-8 lg:p-0 rounded-3xl bg-white lg:bg-transparent shadow-sm lg:shadow-none">
+        
+        <!-- Step 1 -->
+        <div class="relative group">
+          <div class="w-20 h-20 bg-white border-4 border-blue-900 text-blue-900 rounded-2xl shadow-xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold font-serif group-hover:-translate-y-2 transition-transform relative z-10">
+            1
           </div>
-          <h3 class="text-lg font-semibold mb-2 text-gray-800">Free Estimates</h3>
-          <p class="text-gray-600 text-sm">No charge for quotes. Know exactly what you'll pay before we start.</p>
+          <h3 class="text-xl font-bold mb-3">Snap & Send</h3>
+          <p class="text-gray-600 font-medium">Text us a photo of your project issue. No forms required.</p>
         </div>
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
+        
+        <!-- Step 2 -->
+        <div class="relative group">
+          <div class="w-20 h-20 bg-blue-900 border-4 border-blue-900 text-white rounded-2xl shadow-xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold font-serif group-hover:-translate-y-2 transition-transform relative z-10">
+            2
           </div>
-          <h3 class="text-lg font-semibold mb-2 text-gray-800">Fast Scheduling</h3>
-          <p class="text-gray-600 text-sm">Most jobs scheduled within 3-5 days. We respect your time.</p>
+          <h3 class="text-xl font-bold mb-3">Instant Estimate</h3>
+          <p class="text-gray-600 font-medium">Our AI system instantly replies with a rough cost range.</p>
         </div>
-        <div class="text-center">
-          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
+        
+        <!-- Step 3 -->
+        <div class="relative group">
+          <div class="w-20 h-20 bg-white border-4 border-blue-900 text-blue-900 rounded-2xl shadow-xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold font-serif group-hover:-translate-y-2 transition-transform relative z-10">
+            3
           </div>
-          <h3 class="text-lg font-semibold mb-2 text-gray-800">Done Right Once</h3>
-          <p class="text-gray-600 text-sm">Quality workmanship. We don't leave until you're satisfied.</p>
+          <h3 class="text-xl font-bold mb-3">Lock the Schedule</h3>
+          <p class="text-gray-600 font-medium">Pick a definitive time block securely from your phone.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process Section -->
-  <section class="py-16 bg-gray-100">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">How It Works</h2>
-      <div class="grid md:grid-cols-4 gap-8">
-        <div class="text-center">
-          <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
-          <h3 class="font-semibold mb-2 text-gray-800">Contact Us</h3>
-          <p class="text-gray-600 text-sm">Call or message us with your project details</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
-          <h3 class="font-semibold mb-2 text-gray-800">Free Estimate</h3>
-          <p class="text-gray-600 text-sm">We provide a detailed written quote</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
-          <h3 class="font-semibold mb-2 text-gray-800">Schedule</h3>
-          <p class="text-gray-600 text-sm">Pick a time that works for you</p>
-        </div>
-        <div class="text-center">
-          <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
-          <h3 class="font-semibold mb-2 text-gray-800">Job Complete</h3>
-          <p class="text-gray-600 text-sm">Quality work, satisfaction guaranteed</p>
+        
+        <!-- Step 4 -->
+        <div class="relative group">
+          <div class="w-20 h-20 bg-orange-500 border-4 border-orange-500 text-white rounded-2xl shadow-xl flex items-center justify-center mx-auto mb-6 text-2xl font-bold font-serif group-hover:-translate-y-2 transition-transform relative z-10">
+            4
+          </div>
+          <h3 class="text-xl font-bold mb-3">Execute & Clean</h3>
+          <p class="text-gray-600 font-medium">We arrive uniformly, execute flawlessly, and clean everything.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16 bg-orange-500 text-white">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-      <p class="text-xl mb-8">Contact us today for a free estimate on your project.</p>
-      <a
-        href="/contact"
-        class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
-      >
-        Contact Us Now
-      </a>
+  <section class="py-24 relative bg-blue-900 overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-800 rounded-full blur-[100px] opacity-50 mix-blend-screen -mr-40 -mt-40"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-600/30 rounded-full blur-[120px] opacity-50 mix-blend-screen -ml-40 -mb-40"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-white leading-tight">Ready to Get Started?</h2>
+      <p class="text-xl md:text-2xl mb-12 text-blue-100 font-light">
+        Don't let home repairs pile up. Text us a photo right now and let's cross it off your to-do list.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a
+          href="sms:2565550123"
+          class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 text-lg flex items-center justify-center gap-2 shadow-xl shadow-orange-500/20 hover:shadow-orange-500/40 hover:-translate-y-1 border border-orange-400/30"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+          </svg>
+          Text Us A Photo
+        </a>
+        <a
+          href="/contact"
+          class="bg-white hover:bg-gray-50 text-blue-900 font-bold py-4 px-10 rounded-xl transition-all duration-300 text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1"
+        >
+          Use Standard Form
+        </a>
+      </div>
     </div>
   </section>
 </Layout>
