@@ -1,0 +1,599 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const includedServices = [
+  {
+    title: "Hardwood Flooring",
+    items: [
+      "Solid hardwood installation",
+      "Engineered hardwood installation",
+      "Hardwood floor refinishing",
+      "Board replacement and repair",
+      "Staining and color matching",
+      "Polyurethane finishing",
+      "Hardwood floor buffing",
+      "Transition strip installation"
+    ]
+  },
+  {
+    title: "Laminate Flooring",
+    items: [
+      "Floating laminate installation",
+      "Click-lock system flooring",
+      "Laminate plank replacement",
+      "Underlayment installation",
+      "Moisture barrier installation",
+      "Quarter round and trim",
+      "Threshold transitions",
+      "Subfloor preparation"
+    ]
+  },
+  {
+    title: "Vinyl & LVP Flooring",
+    items: [
+      "Luxury vinyl plank (LVP) installation",
+      "Luxury vinyl tile (LVT) installation",
+      "Sheet vinyl installation",
+      "Waterproof flooring for bathrooms",
+      "Kitchen vinyl flooring",
+      "Vinyl plank repair",
+      "Glue-down vinyl installation",
+      "Commercial-grade vinyl"
+    ]
+  },
+  {
+    title: "Tile Flooring",
+    items: [
+      "Ceramic tile installation",
+      "Porcelain tile installation",
+      "Tile repair and replacement",
+      "Grout repair and regrouting",
+      "Tile floor leveling",
+      "Bathroom tile flooring",
+      "Kitchen backsplash tile",
+      "Entryway and mudroom tile"
+    ]
+  }
+];
+
+const flooringTypes = [
+  { name: "Hardwood", durability: "25+ years", best: "Living rooms, bedrooms", waterproof: "No", maintenance: "Refinish every 7-10 years" },
+  { name: "Engineered", durability: "20-30 years", best: "Any room, basements OK", waterproof: "Some", maintenance: "Low - sweep and mop" },
+  { name: "Laminate", durability: "15-25 years", best: "Bedrooms, offices", waterproof: "No", maintenance: "Very low - sweep and damp mop" },
+  { name: "LVP/LVT", durability: "15-20 years", best: "Kitchens, baths, anywhere", waterproof: "Yes", maintenance: "Very low - sweep and mop" },
+  { name: "Tile", durability: "50+ years", best: "Bathrooms, kitchens, entries", waterproof: "Yes", maintenance: "Low - clean grout periodically" }
+];
+
+const commonProblems = [
+  {
+    problem: "Scratched or worn hardwood floors",
+    solution: "We sand, refinish, and restore hardwood floors to like-new condition. For minor scratches, we can spot-repair without full refinishing."
+  },
+  {
+    problem: "Water-damaged flooring from leaks or floods",
+    solution: "We remove damaged sections, address moisture issues, and install matching replacement flooring. Emergency service available for active water damage."
+  },
+  {
+    problem: "Squeaky or creaky floors",
+    solution: "We secure loose subfloor, add shims, or reinforce joists to eliminate squeaks permanently without visible repairs."
+  },
+  {
+    problem: "Cracked, chipped, or loose tiles",
+    solution: "We carefully remove damaged tiles, prep the surface, and install matching replacements with fresh grout for seamless repairs."
+  },
+  {
+    problem: "Laminate planks lifting, buckling, or separating",
+    solution: "We identify the cause (usually moisture), remove damaged sections, fix underlayment issues, and install new matching planks."
+  },
+  {
+    problem: "Outdated flooring making home feel dated",
+    solution: "We remove old flooring and install modern options like LVP or engineered hardwood that transform your space and increase home value."
+  },
+  {
+    problem: "Uneven or sloping floors",
+    solution: "We level subfloors with self-leveling compound or plywood before installation, ensuring flat, professional results."
+  },
+  {
+    problem: "Gaps appearing between floorboards",
+    solution: "We fill gaps with matching wood filler or, for severe cases, remove and re-install boards for a tight, seamless floor."
+  }
+];
+
+const processSteps = [
+  {
+    step: 1,
+    title: "Contact & Consultation",
+    description: "Call or message us about your flooring project. We discuss your needs, preferences, and can recommend flooring types based on your lifestyle, budget, and room usage.",
+    time: "Same day response"
+  },
+  {
+    step: 2,
+    title: "Free On-Site Estimate",
+    description: "We measure your space precisely, assess subfloor condition, check for moisture issues, and identify any prep work needed. You receive a detailed written quote.",
+    time: "Within 48 hours"
+  },
+  {
+    step: 3,
+    title: "Material Selection",
+    description: "We help you choose the right flooring — considering durability, water resistance, style, and budget. We can bring samples to your home to see how they look in your lighting.",
+    time: "Flexible"
+  },
+  {
+    step: 4,
+    title: "Schedule Installation",
+    description: "Pick dates that work for you. We confirm appointments 24 hours and 2 hours before arrival. Most installations scheduled within 5-7 days of material availability.",
+    time: "5-7 days typically"
+  },
+  {
+    step: 5,
+    title: "Prepare the Space",
+    description: "We move furniture, remove old flooring (if needed), and prepare the subfloor. This includes leveling, moisture barriers, and underlayment as required.",
+    time: "Day 1"
+  },
+  {
+    step: 6,
+    title: "Professional Installation",
+    description: "Our skilled installers lay your new flooring with precision. Proper acclimation, staggered patterns, tight seams, and careful cuts around obstacles.",
+    time: "1-3 days typical"
+  },
+  {
+    step: 7,
+    title: "Finishing Touches",
+    description: "We install transitions, quarter round, thresholds, and trim. Every edge is finished professionally. Furniture moved back into place.",
+    time: "Final day"
+  },
+  {
+    step: 8,
+    title: "Final Walkthrough",
+    description: "Walk through with you to ensure complete satisfaction. We explain care instructions and leave your space clean and ready to enjoy.",
+    time: "30 minutes"
+  }
+];
+
+const faqs = [
+  {
+    question: "How much does flooring installation cost?",
+    answer: "Flooring costs vary by material and room size. Laminate runs $3-8/sq ft installed, LVP $4-10/sq ft, hardwood $8-15/sq ft, and tile $10-20/sq ft. A typical 300 sq ft room ranges from $900-4,500 depending on material. We provide free detailed estimates."
+  },
+  {
+    question: "How long does flooring installation take?",
+    answer: "A single room (up to 300 sq ft) typically takes 1 day. Larger areas or whole-house installations take 2-5 days. Hardwood refinishing requires 3-5 days including drying time. We'll give you a specific timeline with your estimate."
+  },
+  {
+    question: "Do I need to move my furniture?",
+    answer: "We handle furniture moving as part of our service. We'll move items out, install flooring, and move them back. For large or delicate items, we may ask you to empty the room beforehand. We use furniture pads to protect everything."
+  },
+  {
+    question: "What flooring is best for kitchens and bathrooms?",
+    answer: "Waterproof options are essential: LVP (luxury vinyl plank), tile, or sheet vinyl. We don't recommend hardwood or laminate in wet areas. LVP is our top recommendation — it's waterproof, durable, and looks like real wood."
+  },
+  {
+    question: "Can you install flooring over existing flooring?",
+    answer: "Sometimes. Floating floors (laminate, LVP) can often go over existing hard surfaces if they're flat and in good condition. However, installing over old flooring can raise floor height and affect doors/transitions. We'll advise on the best approach."
+  },
+  {
+    question: "How do I care for new hardwood floors?",
+    answer: "Sweep or vacuum regularly (use soft settings). Damp mop occasionally with hardwood cleaner — never wet mop. Use furniture pads under legs. Maintain consistent humidity (35-55%). Avoid high heels and pet nail scratches. Refinish every 7-10 years."
+  },
+  {
+    question: "What's the difference between LVP and laminate?",
+    answer: "LVP (luxury vinyl plank) is 100% waterproof and more durable — great for any room including bathrooms. Laminate has a wood-fiber core that swells when wet — avoid in kitchens/baths. LVP is slightly more expensive but worth it for versatility."
+  },
+  {
+    question: "Do you remove and dispose of old flooring?",
+    answer: "Yes, old flooring removal and disposal is included in our service. We remove carpet, laminate, vinyl, or tile and haul it away. Hardwood removal is more involved and priced separately if needed."
+  },
+  {
+    question: "How long should flooring acclimate before installation?",
+    answer: "Most flooring should acclimate 48-72 hours in the room where it will be installed. This allows the material to adjust to your home's temperature and humidity, preventing expansion issues after installation."
+  },
+  {
+    question: "Can you match existing flooring for repairs?",
+    answer: "We do our best to match existing flooring. For common products, we can often find exact matches. For discontinued or older flooring, we'll find the closest match available. Sometimes creative transitions between old and new look best."
+  },
+  {
+    question: "Do you offer emergency flooring service?",
+    answer: "Yes! For water damage situations where flooring needs immediate removal to prevent mold, we offer same-day and next-day emergency service. Call us directly for urgent flooring issues."
+  },
+  {
+    question: "What subfloor preparation is needed?",
+    answer: "We inspect and prep subfloors as part of every installation. This may include leveling with compound, replacing damaged sections, adding moisture barriers, or installing underlayment. Proper prep is key to flooring that lasts."
+  }
+];
+
+const serviceAreas = [
+  { city: "Madison", driveTime: "Local", note: "No travel fee" },
+  { city: "Huntsville", driveTime: "10-20 min", note: "No travel fee" },
+  { city: "Decatur", driveTime: "25-35 min", note: "Minimal travel fee may apply" },
+  { city: "Athens", driveTime: "20-30 min", note: "Minimal travel fee may apply" },
+  { city: "Harvest", driveTime: "15-25 min", note: "No travel fee" },
+  { city: "Meridianville", driveTime: "15-20 min", note: "No travel fee" },
+  { city: "Hazel Green", driveTime: "20-30 min", note: "No travel fee" },
+  { city: "Owens Cross Roads", driveTime: "25-35 min", note: "Minimal travel fee may apply" },
+  { city: "Hampton Cove", driveTime: "20-30 min", note: "No travel fee" },
+  { city: "Redstone Arsenal", driveTime: "15-25 min", note: "No travel fee" }
+];
+---
+
+<Layout title="Flooring Installation & Repair" description="Professional flooring installation in Madison, Huntsville & North Alabama. Hardwood, laminate, LVP, tile. Free estimates, emergency water damage service.">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-3xl">
+        <nav class="text-blue-200 text-sm mb-4">
+          <a href="/" class="hover:text-white">Home</a>
+          <span class="mx-2">→</span>
+          <a href="/services" class="hover:text-white">Services</a>
+          <span class="mx-2">→</span>
+          <span class="text-white">Flooring</span>
+        </nav>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Flooring Installation & Repair
+        </h1>
+        <p class="text-xl text-blue-100 mb-8">
+          Transform your home with beautiful new floors. Hardwood, laminate, LVP, and tile installed by experts with attention to every detail.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/contact"
+            class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg text-center"
+          >
+            Get a Free Estimate
+          </a>
+          <a
+            href="tel:+12565550123"
+            class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg text-center border border-white/30"
+          >
+            Call (256) 555-0123
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Banner -->
+  <section class="bg-orange-500 text-white py-4">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <svg class="w-8 h-8 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <div>
+            <p class="font-bold">Emergency Water Damage Service</p>
+            <p class="text-sm text-orange-100">Flooded floors? We offer same-day removal to prevent mold and further damage.</p>
+          </div>
+        </div>
+        <a
+          href="tel:+12565550123"
+          class="bg-white text-orange-500 font-bold py-2 px-6 rounded-lg hover:bg-orange-50 transition-colors whitespace-nowrap"
+        >
+          Emergency Line
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">What's Included</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Complete flooring services for every room in your home.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        {includedServices.map((category) => (
+          <div class="bg-gray-50 rounded-lg p-6 border border-gray-100">
+            <h3 class="text-xl font-bold text-blue-900 mb-4 flex items-center gap-2">
+              <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+              </svg>
+              {category.title}
+            </h3>
+            <ul class="space-y-2">
+              {category.items.map((item) => (
+                <li class="flex items-start gap-2 text-gray-700">
+                  <svg class="w-4 h-4 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Flooring Comparison Guide -->
+  <section class="py-12 bg-blue-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">Flooring Comparison Guide</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-lg shadow-sm">
+          <thead>
+            <tr class="bg-blue-900 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Type</th>
+              <th class="px-4 py-3 text-left font-semibold">Lifespan</th>
+              <th class="px-4 py-3 text-left font-semibold">Best For</th>
+              <th class="px-4 py-3 text-left font-semibold">Waterproof</th>
+              <th class="px-4 py-3 text-left font-semibold">Maintenance</th>
+            </tr>
+          </thead>
+          <tbody>
+            {flooringTypes.map((floor, index) => (
+              <tr class={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                <td class="px-4 py-3 font-semibold text-blue-900">{floor.name}</td>
+                <td class="px-4 py-3 text-gray-700">{floor.durability}</td>
+                <td class="px-4 py-3 text-gray-700">{floor.best}</td>
+                <td class="px-4 py-3">
+                  {floor.waterproof === 'Yes' ? (
+                    <span class="inline-flex items-center gap-1 text-green-600">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      Yes
+                    </span>
+                  ) : floor.waterproof === 'Some' ? (
+                    <span class="text-yellow-600">Some options</span>
+                  ) : (
+                    <span class="inline-flex items-center gap-1 text-red-500">
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                      No
+                    </span>
+                  )}
+                </td>
+                <td class="px-4 py-3 text-gray-600 text-sm">{floor.maintenance}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-gray-500 text-sm mt-4">
+        Not sure which flooring is right for you? We'll help you choose based on your lifestyle, budget, and needs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Common Problems We Solve -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Common Problems We Solve</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Whatever flooring issue you're facing, we have the expertise to fix it right.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {commonProblems.map((item) => (
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800 mb-2">{item.problem}</h3>
+                <p class="text-gray-600 text-sm flex items-start gap-2">
+                  <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  {item.solution}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Installation Process</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          A proven process that delivers beautiful, lasting floors every time.
+        </p>
+      </div>
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100"></div>
+
+        <div class="space-y-8 md:space-y-12">
+          {processSteps.map((step, index) => (
+            <div class={`flex flex-col md:flex-row gap-4 md:gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              <div class={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                <div class={`bg-gray-50 rounded-lg p-6 border border-gray-100 ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="md:hidden w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      {step.step}
+                    </span>
+                    <h3 class="text-lg font-bold text-gray-800">{step.title}</h3>
+                  </div>
+                  <p class="text-gray-600 text-sm mb-2">{step.description}</p>
+                  <p class="text-xs text-blue-600 font-medium">{step.time}</p>
+                </div>
+              </div>
+              <div class="hidden md:flex items-center justify-center">
+                <div class="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold z-10">
+                  {step.step}
+                </div>
+              </div>
+              <div class="flex-1 hidden md:block"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 bg-blue-900 text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold mb-4">Why Choose Madison Handyman Pro</h2>
+        <p class="text-lg text-blue-100 max-w-2xl mx-auto">
+          What sets our flooring services apart from other contractors.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white/10 rounded-lg p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Proper Subfloor Prep</h3>
+          <p class="text-blue-100 text-sm">
+            We don't skip steps. Subfloor leveling, moisture barriers, and underlayment done right mean flooring that lasts decades.
+          </p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Quality Materials</h3>
+          <p class="text-blue-100 text-sm">
+            We source flooring from trusted suppliers and can get contractor pricing on premium products. No cheap materials that fail early.
+          </p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">We Show Up On Time</h3>
+          <p class="text-blue-100 text-sm">
+            Appointment confirmed 24 hours AND 2 hours before arrival. No waiting around wondering when we'll show. Your time matters.
+          </p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Emergency Service</h3>
+          <p class="text-blue-100 text-sm">
+            Water damage can't wait. We offer same-day emergency flooring removal to prevent mold — something most contractors don't do.
+          </p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Transparent Pricing</h3>
+          <p class="text-blue-100 text-sm">
+            Detailed written quotes include everything — materials, labor, removal, disposal. No surprise fees. Your estimate is your price.
+          </p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-6">
+          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2">Clean Installation</h3>
+          <p class="text-blue-100 text-sm">
+            We protect your home, minimize dust, and clean up completely. Furniture moved carefully and returned. You'll love your new floors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+        <p class="text-lg text-gray-600">
+          Common questions about our flooring services.
+        </p>
+      </div>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="bg-white rounded-lg border border-gray-200 group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <h3 class="font-semibold text-gray-800 pr-4">{faq.question}</h3>
+              <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6">
+              <p class="text-gray-600">{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Flooring Service Areas</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          We install and repair flooring throughout Madison County and North Alabama.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        {serviceAreas.map((area) => (
+          <div class={`rounded-lg p-4 text-center ${area.city === 'Madison' ? 'bg-blue-900 text-white' : 'bg-gray-50 border border-gray-200'}`}>
+            <div class="flex items-center justify-center gap-1 mb-1">
+              <svg class={`w-4 h-4 ${area.city === 'Madison' ? 'text-blue-200' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span class="font-semibold">{area.city}</span>
+              {area.city === 'Madison' && <span class="text-xs bg-orange-500 px-1.5 py-0.5 rounded ml-1">HQ</span>}
+            </div>
+            <p class={`text-xs ${area.city === 'Madison' ? 'text-blue-200' : 'text-gray-500'}`}>{area.driveTime}</p>
+            <p class={`text-xs mt-1 ${area.city === 'Madison' ? 'text-blue-100' : 'text-gray-600'}`}>{area.note}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-gray-500 text-sm mt-6">
+        Not sure if we service your area? <a href="/contact" class="text-blue-600 hover:underline">Contact us</a> — we're happy to discuss.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-orange-500 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready for Beautiful New Floors?</h2>
+      <p class="text-xl mb-8 text-orange-100">
+        Get a free flooring estimate today. We'll help you choose the perfect floor for your lifestyle and budget.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg"
+        >
+          Request Free Estimate
+        </a>
+        <a
+          href="tel:+12565550123"
+          class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg border border-orange-400"
+        >
+          Call (256) 555-0123
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
