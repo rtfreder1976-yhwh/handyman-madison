@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import TrustCredentials from "../../components/TrustCredentials.astro";
+import InlineQuoteForm from "../../components/InlineQuoteForm.astro";
 
 export function getStaticPaths() {
     const services = [
@@ -660,6 +661,8 @@ const localSchema = {
             </div>
         </div>
     </section>
+
+    <InlineQuoteForm />
 
     <TrustCredentials />
 

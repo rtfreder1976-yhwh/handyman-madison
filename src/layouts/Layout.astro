@@ -418,84 +418,251 @@ const finalSchema = schema || schemaData;
     </script>
   </head>
   <body class="min-h-screen flex flex-col bg-gray-50">
-    <header class="bg-blue-900 text-white shadow-lg">
-      <nav class="max-w-6xl mx-auto px-4 py-4">
-        <div
-          class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+    <!-- Emergency Hotline Banner -->
+    <div
+      class="bg-orange-500 text-white text-center py-2 px-4 text-sm font-semibold relative z-50"
+    >
+      <div
+        class="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap"
+      >
+        <svg
+          class="w-4 h-4 flex-shrink-0 animate-pulse"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"
+          ></path></svg
         >
+        <span>Emergency Repairs Available —</span>
+        <a
+          href="tel:+12565550123"
+          class="underline font-bold hover:text-white/90 transition-colors"
+          >(256) 555-0123</a
+        >
+        <span class="hidden sm:inline">— We respond within 3 hours</span>
+      </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header
+      class="bg-blue-900 text-white shadow-lg sticky top-0 z-40 transition-shadow duration-300"
+      id="main-header"
+    >
+      <nav class="max-w-7xl mx-auto px-4 py-3">
+        <div class="flex items-center justify-between">
           <a
             href="/"
-            class="text-2xl font-bold hover:text-blue-200 transition-colors"
+            class="text-xl md:text-2xl font-bold hover:text-blue-200 transition-colors flex-shrink-0"
           >
             Madison Handyman Pro
           </a>
-          <ul class="flex flex-wrap gap-1 md:gap-2">
-            <li>
-              <a
-                href="/"
-                class:list={[
-                  "px-4 py-2 rounded-lg transition-colors inline-block",
-                  currentPath === "/"
-                    ? "bg-blue-700 text-white"
-                    : "hover:bg-blue-800",
-                ]}
+          <!-- Desktop Nav -->
+          <div class="hidden lg:flex items-center gap-1">
+            <a
+              href="/"
+              class:list={[
+                "px-3 py-2 rounded-lg transition-colors text-sm font-medium",
+                currentPath === "/"
+                  ? "bg-blue-700 text-white"
+                  : "hover:bg-blue-800",
+              ]}>Home</a
+            >
+            <a
+              href="/services"
+              class:list={[
+                "px-3 py-2 rounded-lg transition-colors text-sm font-medium",
+                currentPath.startsWith("/services")
+                  ? "bg-blue-700 text-white"
+                  : "hover:bg-blue-800",
+              ]}>Services</a
+            >
+            <a
+              href="/locations"
+              class:list={[
+                "px-3 py-2 rounded-lg transition-colors text-sm font-medium",
+                currentPath.startsWith("/locations")
+                  ? "bg-blue-700 text-white"
+                  : "hover:bg-blue-800",
+              ]}>Locations</a
+            >
+            <a
+              href="/about"
+              class:list={[
+                "px-3 py-2 rounded-lg transition-colors text-sm font-medium",
+                currentPath.startsWith("/about")
+                  ? "bg-blue-700 text-white"
+                  : "hover:bg-blue-800",
+              ]}>About</a
+            >
+            <a
+              href="/contact"
+              class:list={[
+                "px-3 py-2 rounded-lg transition-colors text-sm font-medium",
+                currentPath.startsWith("/contact")
+                  ? "bg-blue-700 text-white"
+                  : "hover:bg-blue-800",
+              ]}>Contact</a
+            >
+          </div>
+          <!-- Desktop CTA -->
+          <div class="hidden lg:flex items-center gap-3">
+            <a
+              href="tel:+12565550123"
+              class="flex items-center gap-2 text-blue-100 hover:text-white transition-colors text-sm font-medium"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path></svg
               >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="/services"
-                class:list={[
-                  "px-4 py-2 rounded-lg transition-colors inline-block",
-                  currentPath === "/services/"
-                    ? "bg-blue-700 text-white"
-                    : "hover:bg-blue-800",
-                ]}
+              (256) 555-0123
+            </a>
+            <a
+              href="/quote"
+              class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-5 rounded-lg transition-all duration-200 text-sm hover:-translate-y-0.5 shadow-md hover:shadow-lg"
+              >Get Quote</a
+            >
+          </div>
+          <!-- Mobile -->
+          <div class="flex lg:hidden items-center gap-3">
+            <a
+              href="tel:+12565550123"
+              class="bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition-colors"
+              aria-label="Call us"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path></svg
               >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="/locations"
-                class:list={[
-                  "px-4 py-2 rounded-lg transition-colors inline-block",
-                  currentPath === "/locations/"
-                    ? "bg-blue-700 text-white"
-                    : "hover:bg-blue-800",
-                ]}
+            </a>
+            <button
+              id="mobile-menu-btn"
+              class="p-2 rounded-lg hover:bg-blue-800 transition-colors"
+              aria-label="Open menu"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                id="menu-icon-open"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path></svg
               >
-                Locations
-              </a>
-            </li>
-            <li>
-              <a
-                href="/about"
-                class:list={[
-                  "px-4 py-2 rounded-lg transition-colors inline-block",
-                  currentPath === "/about/"
-                    ? "bg-blue-700 text-white"
-                    : "hover:bg-blue-800",
-                ]}
+              <svg
+                class="w-6 h-6 hidden"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                id="menu-icon-close"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path></svg
               >
-                About
-              </a>
-            </li>
-            <li>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div
+          class="lg:hidden hidden mt-4 pb-4 border-t border-blue-800 pt-4"
+          id="mobile-menu"
+        >
+          <div class="flex flex-col gap-2">
+            <a
+              href="/"
+              class:list={[
+                "px-4 py-3 rounded-lg transition-colors font-medium",
+                currentPath === "/"
+                  ? "bg-blue-700 text-white"
+                  : "hover:bg-blue-800",
+              ]}>Home</a
+            >
+            <a
+              href="/services"
+              class:list={[
+                "px-4 py-3 rounded-lg transition-colors font-medium",
+                currentPath.startsWith("/services")
+                  ? "bg-blue-700 text-white"
+                  : "hover:bg-blue-800",
+              ]}>Services</a
+            >
+            <a
+              href="/locations"
+              class:list={[
+                "px-4 py-3 rounded-lg transition-colors font-medium",
+                currentPath.startsWith("/locations")
+                  ? "bg-blue-700 text-white"
+                  : "hover:bg-blue-800",
+              ]}>Locations</a
+            >
+            <a
+              href="/about"
+              class:list={[
+                "px-4 py-3 rounded-lg transition-colors font-medium",
+                currentPath.startsWith("/about")
+                  ? "bg-blue-700 text-white"
+                  : "hover:bg-blue-800",
+              ]}>About</a
+            >
+            <a
+              href="/contact"
+              class:list={[
+                "px-4 py-3 rounded-lg transition-colors font-medium",
+                currentPath.startsWith("/contact")
+                  ? "bg-blue-700 text-white"
+                  : "hover:bg-blue-800",
+              ]}>Contact</a
+            >
+            <div class="border-t border-blue-800 mt-2 pt-4 flex flex-col gap-3">
               <a
-                href="/contact"
-                class:list={[
-                  "px-4 py-2 rounded-lg transition-colors inline-block",
-                  currentPath === "/contact/"
-                    ? "bg-blue-700 text-white"
-                    : "hover:bg-blue-800",
-                ]}
+                href="tel:+12565550123"
+                class="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
               >
-                Contact
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  ></path></svg
+                >
+                Call (256) 555-0123
               </a>
-            </li>
-          </ul>
+              <a
+                href="/quote"
+                class="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                >Get Free Quote</a
+              >
+            </div>
+          </div>
         </div>
       </nav>
     </header>
@@ -504,50 +671,249 @@ const finalSchema = schema || schemaData;
       <slot />
     </main>
 
-    <footer class="bg-gray-800 text-gray-300 py-8 mt-auto">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="grid md:grid-cols-3 gap-8">
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-auto">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 class="text-white font-bold text-lg mb-3">
+            <h3 class="text-white font-bold text-lg mb-4">
               Madison Handyman Pro
             </h3>
-            <p class="text-sm">
-              Your trusted local handyman serving Madison, Alabama and
-              surrounding areas.
+            <p class="text-sm text-gray-400 mb-4">
+              Family-owned, certified carpentry. 7 years serving North Alabama
+              with a $1M liability policy backing every project.
             </p>
+            <div class="flex items-center gap-2 text-sm">
+              <svg
+                class="w-4 h-4 text-green-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path></svg
+              >
+              <span class="text-green-400">Licensed &amp; Insured</span>
+            </div>
           </div>
           <div>
-            <h3 class="text-white font-bold text-lg mb-3">Quick Links</h3>
+            <h3 class="text-white font-bold text-lg mb-4">Services</h3>
             <ul class="space-y-2 text-sm">
               <li>
-                <a href="/services" class="hover:text-white transition-colors"
-                  >Our Services</a>
+                <a
+                  href="/services/drywall"
+                  class="hover:text-white transition-colors">Drywall</a
+                >
               </li>
               <li>
-                <a href="/locations" class="hover:text-white transition-colors"
-                  >Service Areas</a>
+                <a
+                  href="/services/painting"
+                  class="hover:text-white transition-colors">Painting</a
+                >
               </li>
               <li>
-                <a href="/contact" class="hover:text-white transition-colors"
-                  >Get a Quote</a>
+                <a
+                  href="/services/flooring"
+                  class="hover:text-white transition-colors">Flooring</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/services/finish-carpentry"
+                  class="hover:text-white transition-colors">Finish Carpentry</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/services/gutter-cleaning"
+                  class="hover:text-white transition-colors">Gutter Cleaning</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/services/gutter-installation"
+                  class="hover:text-white transition-colors"
+                  >Gutter Installation</a
+                >
               </li>
             </ul>
           </div>
           <div>
-            <h3 class="text-white font-bold text-lg mb-3">Contact</h3>
+            <h3 class="text-white font-bold text-lg mb-4">Service Areas</h3>
             <ul class="space-y-2 text-sm">
-              <li>Madison, Alabama</li>
-              <li>Phone: (256) 555-0123</li>
-              <li>Email: info@madisonhandymanpro.com</li>
+              <li>
+                <a
+                  href="/locations/madison"
+                  class="hover:text-white transition-colors">Madison</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/locations/huntsville"
+                  class="hover:text-white transition-colors">Huntsville</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/locations/decatur"
+                  class="hover:text-white transition-colors">Decatur</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/locations/athens"
+                  class="hover:text-white transition-colors">Athens</a
+                >
+              </li>
             </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-lg mb-4">Contact</h3>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a
+                  href="tel:+12565550123"
+                  class="flex items-center gap-2 hover:text-white transition-colors"
+                  ><svg
+                    class="w-4 h-4 text-green-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    ></path></svg
+                  >(256) 555-0123</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:info@madisonhandymanpro.com"
+                  class="flex items-center gap-2 hover:text-white transition-colors"
+                  ><svg
+                    class="w-4 h-4 text-blue-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    ><path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    ></path></svg
+                  >info@madisonhandymanpro.com</a
+                >
+              </li>
+              <li class="text-gray-400">Madison, Alabama</li>
+              <li class="text-gray-400 text-xs mt-2">
+                Mon-Fri 8AM-6PM | Sat 9AM-3PM
+              </li>
+            </ul>
+            <div class="mt-4 flex gap-2">
+              <a
+                href="/quote"
+                class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+                >Get Quote</a
+              >
+              <a
+                href="tel:+12565550123"
+                class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-sm"
+                >Call Now</a
+              >
+            </div>
           </div>
         </div>
-        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+        <div
+          class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500"
+        >
           <p>
             &copy; {new Date().getFullYear()} Madison Handyman Pro. All rights reserved.
+            | Family Owned | $1M Insured | Certified Carpenter
           </p>
         </div>
       </div>
     </footer>
+
+    <!-- Floating Mobile CTA -->
+    <div
+      class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 p-3 flex gap-2 z-50 lg:hidden transform translate-y-full transition-transform duration-300"
+      id="mobile-cta-bar"
+    >
+      <a
+        href="tel:+12565550123"
+        class="flex-1 flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl transition-colors text-sm"
+      >
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+          ></path></svg
+        >
+        Call Now
+      </a>
+      <a
+        href="/quote"
+        class="flex-1 flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-xl transition-colors text-sm"
+      >
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+          ></path></svg
+        >
+        Get Quote
+      </a>
+    </div>
+
+    <script>
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIconOpen = document.getElementById("menu-icon-open");
+      const menuIconClose = document.getElementById("menu-icon-close");
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          menuIconOpen?.classList.toggle("hidden");
+          menuIconClose?.classList.toggle("hidden");
+        });
+      }
+      const header = document.getElementById("main-header");
+      const mobileCta = document.getElementById("mobile-cta-bar");
+      window.addEventListener(
+        "scroll",
+        () => {
+          const scrollY = window.scrollY;
+          if (scrollY > 10) {
+            header?.classList.add("shadow-xl");
+          } else {
+            header?.classList.remove("shadow-xl");
+          }
+          if (scrollY > 300) {
+            mobileCta?.classList.remove("translate-y-full");
+            mobileCta?.classList.add("translate-y-0");
+          } else {
+            mobileCta?.classList.add("translate-y-full");
+            mobileCta?.classList.remove("translate-y-0");
+          }
+        },
+        { passive: true },
+      );
+    </script>
   </body>
 </html>
