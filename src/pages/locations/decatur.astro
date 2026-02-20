@@ -1,221 +1,293 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 
 const neighborhoods = [
   {
     name: "Downtown Decatur / Old Decatur",
-    description: "Historic district along the Tennessee River with beautiful Victorian homes, Bank Street entertainment district, and revitalized urban living. Many homes are on the historic register and require careful restoration work.",
+    description:
+      "Historic district along the Tennessee River with beautiful Victorian homes, Bank Street entertainment district, and revitalized urban living. Many homes are on the historic register and require careful restoration work.",
     responseTime: "Same day available",
-    commonServices: ["Historic restoration", "Trim repair", "Interior painting", "Plaster repair"]
+    commonServices: [
+      "Historic restoration",
+      "Trim repair",
+      "Interior painting",
+      "Plaster repair",
+    ],
   },
   {
     name: "Albany / Country Club Area",
-    description: "Established upscale neighborhood surrounding the Decatur Country Club. Well-maintained homes from the 1960s-90s with mature landscaping. Homeowners expect quality workmanship and attention to detail.",
+    description:
+      "Established upscale neighborhood surrounding the Decatur Country Club. Well-maintained homes from the 1960s-90s with mature landscaping. Homeowners expect quality workmanship and attention to detail.",
     responseTime: "Same day available",
-    commonServices: ["Crown molding", "Deck restoration", "Exterior painting", "Flooring updates"]
+    commonServices: [
+      "Crown molding",
+      "Deck restoration",
+      "Exterior painting",
+      "Flooring updates",
+    ],
   },
   {
     name: "Point Mallard Area",
-    description: "Family-friendly area near Point Mallard Park and the aquatic center. Mix of established neighborhoods and newer developments. Popular with families who appreciate the recreational amenities.",
+    description:
+      "Family-friendly area near Point Mallard Park and the aquatic center. Mix of established neighborhoods and newer developments. Popular with families who appreciate the recreational amenities.",
     responseTime: "Same day available",
-    commonServices: ["Family home repairs", "Drywall repair", "Painting", "Quick fixes"]
+    commonServices: [
+      "Family home repairs",
+      "Drywall repair",
+      "Painting",
+      "Quick fixes",
+    ],
   },
   {
     name: "Brookmeade / Southwest Decatur",
-    description: "Growing residential area with newer subdivisions and easy access to I-65 and Beltline Road. Popular with young families and commuters to Huntsville.",
+    description:
+      "Growing residential area with newer subdivisions and easy access to I-65 and Beltline Road. Popular with young families and commuters to Huntsville.",
     responseTime: "Same day available",
-    commonServices: ["New home touch-ups", "Flooring installation", "Finish carpentry", "Painting"]
+    commonServices: [
+      "New home touch-ups",
+      "Flooring installation",
+      "Finish carpentry",
+      "Painting",
+    ],
   },
   {
     name: "Austinville / East Decatur",
-    description: "Established working-class neighborhood with affordable housing and strong community ties. Practical homeowners who value honest pricing and reliable service.",
+    description:
+      "Established working-class neighborhood with affordable housing and strong community ties. Practical homeowners who value honest pricing and reliable service.",
     responseTime: "Same day available",
-    commonServices: ["Home repairs", "Gutter cleaning", "Drywall patching", "Exterior maintenance"]
+    commonServices: [
+      "Home repairs",
+      "Gutter cleaning",
+      "Drywall patching",
+      "Exterior maintenance",
+    ],
   },
   {
     name: "Priceville / Highway 67 Corridor",
-    description: "Rapidly growing area between Decatur and Hartselle with new construction and established farms. Easy I-65 access attracts commuters from across the region.",
+    description:
+      "Rapidly growing area between Decatur and Hartselle with new construction and established farms. Easy I-65 access attracts commuters from across the region.",
     responseTime: "Same day available",
-    commonServices: ["New construction punch lists", "Flooring", "Painting", "Deck building"]
+    commonServices: [
+      "New construction punch lists",
+      "Flooring",
+      "Painting",
+      "Deck building",
+    ],
   },
   {
     name: "Moulton Heights / Northwest Decatur",
-    description: "Quiet residential area with mid-century homes and tree-lined streets. Many original owners updating homes for modern living while maintaining neighborhood character.",
+    description:
+      "Quiet residential area with mid-century homes and tree-lined streets. Many original owners updating homes for modern living while maintaining neighborhood character.",
     responseTime: "Same day available",
-    commonServices: ["Kitchen updates", "Bathroom repairs", "Flooring", "Crown molding"]
+    commonServices: [
+      "Kitchen updates",
+      "Bathroom repairs",
+      "Flooring",
+      "Crown molding",
+    ],
   },
   {
     name: "Hartselle (Nearby)",
-    description: "Charming small city just south of Decatur with historic downtown and growing residential areas. Known as the 'City of Southern Hospitality' with strong community values.",
+    description:
+      "Charming small city just south of Decatur with historic downtown and growing residential areas. Known as the 'City of Southern Hospitality' with strong community values.",
     responseTime: "Same day available",
-    commonServices: ["Historic home repair", "Painting", "Flooring", "General repairs"]
-  }
+    commonServices: [
+      "Historic home repair",
+      "Painting",
+      "Flooring",
+      "General repairs",
+    ],
+  },
 ];
 
 const majorEmployers = [
   {
     name: "3M Decatur",
     employees: "1,200+",
-    description: "Major manufacturing facility producing industrial products. Shift workers who need flexible scheduling and contractors who can work while they're at the plant."
+    description:
+      "Major manufacturing facility producing industrial products. Shift workers who need flexible scheduling and contractors who can work while they're at the plant.",
   },
   {
     name: "Daikin America",
     employees: "3,500+",
-    description: "HVAC manufacturing giant and one of Decatur's largest employers. Engineers and production workers with busy schedules who appreciate reliable, punctual contractors."
+    description:
+      "HVAC manufacturing giant and one of Decatur's largest employers. Engineers and production workers with busy schedules who appreciate reliable, punctual contractors.",
   },
   {
     name: "Nucor Steel",
     employees: "1,000+",
-    description: "Steel manufacturing with workers on rotating shifts. We accommodate manufacturing schedules and can complete projects while you're at work."
+    description:
+      "Steel manufacturing with workers on rotating shifts. We accommodate manufacturing schedules and can complete projects while you're at work.",
   },
   {
     name: "Decatur Morgan Hospital",
     employees: "1,500+",
-    description: "Regional healthcare center serving Morgan County. Healthcare workers with unpredictable schedules need flexible contractors who understand when plans change."
+    description:
+      "Regional healthcare center serving Morgan County. Healthcare workers with unpredictable schedules need flexible contractors who understand when plans change.",
   },
   {
     name: "Decatur City Schools",
     employees: "1,800+",
-    description: "Teachers and staff who need summer projects completed before school starts. We schedule around the academic calendar and deliver on teacher timelines."
+    description:
+      "Teachers and staff who need summer projects completed before school starts. We schedule around the academic calendar and deliver on teacher timelines.",
   },
   {
     name: "United Launch Alliance",
     employees: "800+",
-    description: "Aerospace manufacturer building rockets in Decatur. Engineers and technicians who expect precision and professionalism in their contractors."
+    description:
+      "Aerospace manufacturer building rockets in Decatur. Engineers and technicians who expect precision and professionalism in their contractors.",
   },
   {
     name: "Commuters to Huntsville",
     employees: "8,000+",
-    description: "Many Decatur residents commute to Huntsville and Redstone Arsenal via I-565. We serve your home while you're at work and keep you updated throughout the day."
+    description:
+      "Many Decatur residents commute to Huntsville and Redstone Arsenal via I-565. We serve your home while you're at work and keep you updated throughout the day.",
   },
   {
     name: "Toyota Motor Manufacturing",
     employees: "1,500+ (nearby)",
-    description: "Major automotive plant in nearby Huntsville with many employees living in Decatur for affordability. Manufacturing schedules require flexible contractor availability."
-  }
+    description:
+      "Major automotive plant in nearby Huntsville with many employees living in Decatur for affordability. Manufacturing schedules require flexible contractor availability.",
+  },
 ];
 
 const weatherChallenges = [
   {
     season: "Spring (March-May)",
     challenge: "Severe Storms & Tornado Risk",
-    impact: "The Tennessee Valley is prone to severe spring storms. Decatur's location near the river creates unique weather patterns. High winds, large hail, heavy rain, and tornado risk can damage roofs, siding, windows, and cause flooding in low-lying areas near the river.",
-    services: "Emergency storm repairs, roof assessment, window replacement, siding repair, water damage restoration, flood damage cleanup, drywall repair"
+    impact:
+      "The Tennessee Valley is prone to severe spring storms. Decatur's location near the river creates unique weather patterns. High winds, large hail, heavy rain, and tornado risk can damage roofs, siding, windows, and cause flooding in low-lying areas near the river.",
+    services:
+      "Emergency storm repairs, roof assessment, window replacement, siding repair, water damage restoration, flood damage cleanup, drywall repair",
   },
   {
     season: "Summer (June-August)",
     challenge: "River Humidity & Heat",
-    impact: "Decatur's Tennessee River location creates especially high humidity. Combined with 90°F+ temperatures, this accelerates paint failure, wood rot, mold growth, and deck deterioration. Homes near the river face increased moisture challenges.",
-    services: "Exterior painting, deck sealing and restoration, moisture barriers, mold remediation support, caulking, weatherstripping, ventilation"
+    impact:
+      "Decatur's Tennessee River location creates especially high humidity. Combined with 90°F+ temperatures, this accelerates paint failure, wood rot, mold growth, and deck deterioration. Homes near the river face increased moisture challenges.",
+    services:
+      "Exterior painting, deck sealing and restoration, moisture barriers, mold remediation support, caulking, weatherstripping, ventilation",
   },
   {
     season: "Fall (September-November)",
     challenge: "Leaf Season & Storm Prep",
-    impact: "Decatur's abundant trees drop massive amounts of leaves, clogging gutters and covering roofs. River properties face additional debris from waterfront vegetation. Time to prepare homes for winter weather.",
-    services: "Gutter cleaning, storm door installation, weatherization, exterior caulking, roof debris removal, winterization"
+    impact:
+      "Decatur's abundant trees drop massive amounts of leaves, clogging gutters and covering roofs. River properties face additional debris from waterfront vegetation. Time to prepare homes for winter weather.",
+    services:
+      "Gutter cleaning, storm door installation, weatherization, exterior caulking, roof debris removal, winterization",
   },
   {
     season: "Winter (December-February)",
     challenge: "River Valley Cold & Ice",
-    impact: "The Tennessee River valley can trap cold air, making Decatur winters feel colder than surrounding areas. Ice storms occasionally cause significant damage to trees and power lines. Older homes may lack adequate insulation.",
-    services: "Pipe insulation, ice damage repair, emergency water damage, gutter repair, weatherstripping, insulation improvements"
-  }
+    impact:
+      "The Tennessee River valley can trap cold air, making Decatur winters feel colder than surrounding areas. Ice storms occasionally cause significant damage to trees and power lines. Older homes may lack adequate insulation.",
+    services:
+      "Pipe insulation, ice damage repair, emergency water damage, gutter repair, weatherstripping, insulation improvements",
+  },
 ];
 
 const landmarks = [
   {
     name: "Point Mallard Park",
     address: "2901 Point Mallard Dr, Decatur",
-    directions: "Decatur's premier recreation destination. We're 30 minutes from Point Mallard via I-565 and serve all surrounding neighborhoods with same-day availability."
+    directions:
+      "Decatur's premier recreation destination. We're 30 minutes from Point Mallard via I-565 and serve all surrounding neighborhoods with same-day availability.",
   },
   {
     name: "Decatur Morgan Hospital",
     address: "1201 7th St SE, Decatur",
-    directions: "The region's major healthcare facility. We serve hospital employees throughout Decatur with flexible scheduling for demanding healthcare shifts."
+    directions:
+      "The region's major healthcare facility. We serve hospital employees throughout Decatur with flexible scheduling for demanding healthcare shifts.",
   },
   {
     name: "Bank Street / Downtown",
     address: "Downtown Decatur",
-    directions: "Historic entertainment district along the river. We're 30 minutes from downtown and serve all Old Decatur historic homes with appropriate restoration techniques."
+    directions:
+      "Historic entertainment district along the river. We're 30 minutes from downtown and serve all Old Decatur historic homes with appropriate restoration techniques.",
   },
   {
     name: "Beltline Road / I-65",
     address: "Southwest Decatur",
-    directions: "Major commercial corridor with easy interstate access. We reach the Beltline area in about 25 minutes, serving all southwest Decatur neighborhoods."
+    directions:
+      "Major commercial corridor with easy interstate access. We reach the Beltline area in about 25 minutes, serving all southwest Decatur neighborhoods.",
   },
   {
     name: "Rhodes Ferry Park",
     address: "Tennessee River, Decatur",
-    directions: "Beautiful riverfront park. We serve waterfront properties throughout Decatur, understanding the unique moisture challenges river homes face."
+    directions:
+      "Beautiful riverfront park. We serve waterfront properties throughout Decatur, understanding the unique moisture challenges river homes face.",
   },
   {
     name: "Decatur Mall Area",
     address: "1801 Beltline Rd SW, Decatur",
-    directions: "Central shopping district easily accessible from I-65. We serve all surrounding residential areas including Brookmeade and southwest neighborhoods."
+    directions:
+      "Central shopping district easily accessible from I-65. We serve all surrounding residential areas including Brookmeade and southwest neighborhoods.",
   },
   {
     name: "I-565/I-65 Interchange",
     address: "East Decatur",
-    directions: "The gateway connecting Decatur to Huntsville. Easy access makes Decatur convenient for same-day service."
+    directions:
+      "The gateway connecting Decatur to Huntsville. Easy access makes Decatur convenient for same-day service.",
   },
   {
     name: "Wheeler Wildlife Refuge",
     address: "2700 Refuge Headquarters Rd",
-    directions: "Scenic wildlife area between Decatur and Athens. We serve rural properties throughout the refuge area and eastern Morgan County."
-  }
+    directions:
+      "Scenic wildlife area between Decatur and Athens. We serve rural properties throughout the refuge area and eastern Morgan County.",
+  },
 ];
 
 const competitorComparison = [
   {
     feature: "Answer Phone Calls",
     us: "Real person, always",
-    others: "Often voicemail"
+    others: "Often voicemail",
   },
   {
     feature: "Serve Decatur Weekly",
     us: "Yes, regular jobs",
-    others: "May not travel"
+    others: "May not travel",
   },
   {
     feature: "Show Up On Time",
     us: "Guaranteed",
-    others: "Frequently late"
+    others: "Frequently late",
   },
   {
     feature: "Written Estimates",
     us: "Detailed, free",
-    others: "Verbal or vague"
+    others: "Verbal or vague",
   },
   {
     feature: "Price Matches Quote",
     us: "Always",
-    others: "Often increases"
+    others: "Often increases",
   },
   {
     feature: "Licensed & Insured",
     us: "Fully verified",
-    others: "Unclear status"
+    others: "Unclear status",
   },
   {
     feature: "Clean Up After Work",
     us: "Every single job",
-    others: "Inconsistent"
+    others: "Inconsistent",
   },
   {
     feature: "Communication",
     us: "Updates via text",
-    others: "Hard to reach"
+    others: "Hard to reach",
   },
   {
     feature: "Weekend Service",
     us: "Saturday available",
-    others: "Weekdays only"
+    others: "Weekdays only",
   },
   {
     feature: "Small Jobs Welcome",
     us: "No minimums",
-    others: "Large jobs only"
-  }
+    others: "Large jobs only",
+  },
 ];
 
 const responseTimes = [
@@ -227,7 +299,11 @@ const responseTimes = [
   { area: "Austinville / East", time: "Same day", distance: "28 min" },
   { area: "Priceville", time: "Same day", distance: "22 min" },
   { area: "Hartselle", time: "Same day", distance: "30 min" },
-  { area: "Trinity / West Morgan", time: "Next day typical", distance: "35 min" }
+  {
+    area: "Trinity / West Morgan",
+    time: "Next day typical",
+    distance: "35 min",
+  },
 ];
 
 const decaturFacts = [
@@ -236,7 +312,7 @@ const decaturFacts = [
   "Home to Point Mallard, America's first wave pool",
   "Major manufacturing hub with aerospace, steel, and HVAC industries",
   "Historic Bank Street district on the National Register",
-  "Population: 57,000+ in Morgan County's largest city"
+  "Population: 57,000+ in Morgan County's largest city",
 ];
 ---
 
@@ -253,16 +329,30 @@ const decaturFacts = [
           <span class="mx-2">/</span>
           <span class="text-white">Decatur</span>
         </nav>
-        <span class="text-orange-400 font-semibold text-sm uppercase tracking-wide">City Hub</span>
-        <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Decatur, Alabama Handyman Services</h1>
+        <span
+          class="text-orange-400 font-semibold text-sm uppercase tracking-wide"
+          >City Hub</span
+        >
+        <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
+          Decatur, Alabama Handyman Services
+        </h1>
         <p class="text-xl text-blue-100 mb-6">
-          Quality handyman services for Decatur and Morgan County. From historic Old Decatur to the newest Priceville subdivisions, we bring professional craftsmanship to the River City. Same-day service available for most Decatur areas.
+          Quality handyman services for Decatur and Morgan County. From historic
+          Old Decatur to the newest Priceville subdivisions, we bring
+          professional craftsmanship to the River City. Same-day service
+          available for most Decatur areas.
         </p>
         <div class="flex flex-wrap gap-4">
-          <a href="/contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          <a
+            href="/contact"
+            class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+          >
             Get Free Estimate
           </a>
-          <a href="tel:2565550123" class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          <a
+            href="tel:2565550123"
+            class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+          >
             (256) 555-0123
           </a>
         </div>
@@ -298,15 +388,31 @@ const decaturFacts = [
   <section class="py-8 bg-blue-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex flex-wrap items-center justify-between gap-4">
-        <h2 class="text-lg font-semibold text-gray-800">Decatur Area Communities:</h2>
+        <h2 class="text-lg font-semibold text-gray-800">
+          Decatur Area Communities:
+        </h2>
         <div class="flex flex-wrap gap-3">
-          <a href="/locations/decatur/somerville" class="bg-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow text-blue-900 font-medium flex items-center gap-2">
+          <a
+            href="/locations/decatur/somerville"
+            class="bg-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow text-blue-900 font-medium flex items-center gap-2"
+          >
             Somerville
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
             </svg>
           </a>
-          <span class="bg-gray-100 px-4 py-2 rounded-lg text-gray-600">Priceville</span>
+          <span class="bg-gray-100 px-4 py-2 rounded-lg text-gray-600"
+            >Priceville</span
+          >
         </div>
       </div>
     </div>
@@ -317,35 +423,149 @@ const decaturFacts = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">The River City</span>
-          <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">Serving Decatur & Morgan County</h2>
+          <span
+            class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+            >The River City</span
+          >
+          <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">
+            Serving Decatur & Morgan County
+          </h2>
           <p class="text-gray-600 mb-4">
-            Decatur sits beautifully along the Tennessee River, combining Southern charm with industrial strength. Founded in 1820, the city has grown into Morgan County's largest municipality and a major manufacturing center. From the historic Victorian homes of Old Decatur to the modern developments along Beltline Road, Decatur offers diverse housing that reflects its rich history and promising future.
+            Decatur sits beautifully along the Tennessee River, combining
+            Southern charm with industrial strength. Founded in 1820, the city
+            has grown into Morgan County's largest municipality and a major
+            manufacturing center. From the historic Victorian homes of Old
+            Decatur to the modern developments along Beltline Road, Decatur
+            offers diverse housing that reflects its rich history and promising
+            future.
           </p>
           <p class="text-gray-600 mb-4">
-            The city's manufacturing base—including Daikin, 3M, Nucor, and United Launch Alliance—brings skilled workers who expect quality in everything, including their home contractors. Many Decatur residents also commute to Huntsville for aerospace and defense jobs, seeking affordable housing with reasonable commute times.
+            The city's manufacturing base—including Daikin, 3M, Nucor, and
+            United Launch Alliance—brings skilled workers who expect quality in
+            everything, including their home contractors. Many Decatur residents
+            also commute to Huntsville for aerospace and defense jobs, seeking
+            affordable housing with reasonable commute times.
           </p>
           <p class="text-gray-600">
-            Based 30 minutes away in Madison, we serve all of Decatur and Morgan County with same-day availability. Whether you own a historic riverfront home or a new build in Priceville, we deliver the quality workmanship Decatur homeowners expect at prices that respect your budget.
+            Based 30 minutes away in Madison, we serve all of Decatur and Morgan
+            County with same-day availability. Whether you own a historic
+            riverfront home or a new build in Priceville, we deliver the quality
+            workmanship Decatur homeowners expect at prices that respect your
+            budget.
           </p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold text-blue-900 mb-4">Decatur Quick Facts</h3>
+          <h3 class="text-xl font-bold text-blue-900 mb-4">
+            Decatur Quick Facts
+          </h3>
           <ul class="space-y-3">
-            {decaturFacts.map((fact) => (
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-                <span class="text-gray-700">{fact}</span>
-              </li>
-            ))}
+            {
+              decaturFacts.map((fact) => (
+                <li class="flex items-start gap-3">
+                  <svg
+                    class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-gray-700">{fact}</span>
+                </li>
+              ))
+            }
           </ul>
           <div class="mt-6 pt-4 border-t border-gray-200">
-            <h4 class="font-semibold text-gray-800 mb-2">River City Expertise</h4>
-            <p class="text-gray-600 text-sm">Decatur's Tennessee River location creates unique home maintenance challenges. High humidity, riverfront moisture, and valley weather patterns require contractors who understand local conditions. We know Decatur's specific needs.</p>
+            <h4 class="font-semibold text-gray-800 mb-2">
+              River City Expertise
+            </h4>
+            <p class="text-gray-600 text-sm">
+              Decatur's Tennessee River location creates unique home maintenance
+              challenges. High humidity, riverfront moisture, and valley weather
+              patterns require contractors who understand local conditions. We
+              know Decatur's specific needs.
+            </p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Elevated Direct Response: Decatur Home Intelligence -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">
+          The River City Factor: What Decatur Homeowners Cannot Afford to Ignore
+        </h2>
+        <p>
+          Decatur's Tennessee River location is simultaneously its greatest
+          asset and its most persistent home maintenance challenge. The same
+          waterfront proximity that makes Bank Street beautiful, that fills
+          Point Mallard with families every summer, and that gives riverfront
+          homeowners some of the most spectacular views in North Alabama also
+          creates a microclimate that accelerates every form of material
+          deterioration. Humidity from the river basin infiltrates wood, paint,
+          caulk joints, and roofing materials with a persistence that homeowners
+          from drier climates simply do not anticipate. If you have moved to
+          Decatur from outside the Tennessee Valley, this is the single most
+          important environmental factor to understand about your home.
+        </p>
+        <p>
+          The mathematics are straightforward. A properly sealed and painted
+          exterior in a typical North Alabama neighborhood might last eight to
+          ten years before requiring significant attention. That same exterior
+          treatment on a Decatur home within two miles of the river will show
+          signs of fatigue in five to seven. Deck stains fail sooner. Caulk
+          around windows and doors deteriorates faster. Gutter systems, already
+          taxed by the heavy leaf canopy throughout Decatur, accumulate
+          moisture-related corrosion that shortens their functional lifespan.
+          None of this is speculation. It is the observable, repeatable
+          consequence of living near a major river in a subtropical climate.
+          Acknowledging it early saves thousands. Ignoring it guarantees an
+          expensive correction later.
+        </p>
+        <p>
+          Decatur's manufacturing heritage has shaped the character of its
+          neighborhoods in ways that directly influence home maintenance
+          patterns. Workers at Daikin, 3M, and Nucor operate on rotating shift
+          schedules that make traditional contractor appointments nearly
+          impossible. These are households where someone may be sleeping at 10
+          AM and leaving for work at 2 PM. Standard business-hours-only
+          contractors are structurally incompatible with how Decatur actually
+          operates. We are not. We schedule around your shifts, communicate via
+          text rather than expecting you to answer calls during sleep hours, and
+          structure our workdays around the real rhythms of a manufacturing
+          community.
+        </p>
+        <p>
+          The historic homes of Old Decatur present a separate category of
+          challenge entirely. Victorian-era construction along the river bluffs
+          used materials and techniques that most modern handyman services have
+          never encountered. Original plaster walls respond differently than
+          modern drywall. Period-appropriate trim profiles require custom
+          matching, not off-the-shelf replacement. Paint removal on surfaces
+          with multiple decades of lead-era coatings demands careful technique.
+          We do not pretend to be historic preservation specialists—but we do
+          understand the distinction between restoration and remodeling, and we
+          know when a project calls for one versus the other.
+        </p>
+        <p>
+          What we offer Decatur is consistency. It is the same crew, the same
+          communication standards, the same written estimates, and the same
+          follow-through every time you call. In a city where many contractors
+          from Huntsville treat Decatur as an afterthought—a service area they
+          reach when convenient rather than one they commit to—we have made a
+          deliberate decision to serve Morgan County with the same urgency and
+          attention we bring to jobs in our home base. Decatur homeowners
+          deserve contractors who treat the River City as a priority, not a
+          convenience. We do.
+        </p>
       </div>
     </div>
   </section>
@@ -354,30 +574,48 @@ const decaturFacts = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Neighborhood Coverage</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Decatur Neighborhoods We Serve</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Neighborhood Coverage</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Decatur Neighborhoods We Serve
+        </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          From riverfront historic districts to growing suburban communities, we serve every corner of Decatur and Morgan County.
+          From riverfront historic districts to growing suburban communities, we
+          serve every corner of Decatur and Morgan County.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {neighborhoods.map((neighborhood) => (
-          <div class="bg-gray-50 rounded-lg p-5 border-2 border-gray-100 hover:border-blue-200 transition-colors">
-            <div class="flex items-center justify-between mb-2">
-              <h3 class="text-md font-bold text-blue-900">{neighborhood.name}</h3>
-            </div>
-            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">{neighborhood.responseTime}</span>
-            <p class="text-gray-600 text-sm mt-3 mb-3">{neighborhood.description}</p>
-            <div>
-              <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Common Services</p>
-              <div class="flex flex-wrap gap-1">
-                {neighborhood.commonServices.slice(0, 3).map((service) => (
-                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{service}</span>
-                ))}
+        {
+          neighborhoods.map((neighborhood) => (
+            <div class="bg-gray-50 rounded-lg p-5 border-2 border-gray-100 hover:border-blue-200 transition-colors">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-md font-bold text-blue-900">
+                  {neighborhood.name}
+                </h3>
+              </div>
+              <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                {neighborhood.responseTime}
+              </span>
+              <p class="text-gray-600 text-sm mt-3 mb-3">
+                {neighborhood.description}
+              </p>
+              <div>
+                <p class="text-xs font-semibold text-gray-500 uppercase mb-2">
+                  Common Services
+                </p>
+                <div class="flex flex-wrap gap-1">
+                  {neighborhood.commonServices.slice(0, 3).map((service) => (
+                    <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                      {service}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -387,24 +625,36 @@ const decaturFacts = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold">Response Times for Decatur Areas</h2>
-        <p class="text-blue-100 mt-4">Just 30 minutes via I-565, we reach all Decatur neighborhoods efficiently.</p>
+        <p class="text-blue-100 mt-4">
+          Just 30 minutes via I-565, we reach all Decatur neighborhoods
+          efficiently.
+        </p>
       </div>
       <div class="grid md:grid-cols-3 gap-4">
-        {responseTimes.map((item) => (
-          <div class="bg-white/10 rounded-lg p-4 flex items-center justify-between">
-            <div>
-              <p class="font-semibold">{item.area}</p>
+        {
+          responseTimes.map((item) => (
+            <div class="bg-white/10 rounded-lg p-4 flex items-center justify-between">
+              <div>
+                <p class="font-semibold">{item.area}</p>
+              </div>
+              <span
+                class={`px-3 py-1 rounded-full text-sm font-medium ${
+                  item.time === "Same day"
+                    ? "bg-green-500 text-white"
+                    : "bg-yellow-500 text-black"
+                }`}
+              >
+                {item.time}
+              </span>
             </div>
-            <span class={`px-3 py-1 rounded-full text-sm font-medium ${
-              item.time === "Same day" ? "bg-green-500 text-white" : "bg-yellow-500 text-black"
-            }`}>
-              {item.time}
-            </span>
-          </div>
-        ))}
+          ))
+        }
       </div>
       <div class="mt-8 text-center">
-        <p class="text-blue-100">Emergency service available for all Decatur areas. Call for urgent repairs.</p>
+        <p class="text-blue-100">
+          Emergency service available for all Decatur areas. Call for urgent
+          repairs.
+        </p>
       </div>
     </div>
   </section>
@@ -413,50 +663,104 @@ const decaturFacts = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">River City Expertise</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Decatur Weather Challenges</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >River City Expertise</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Decatur Weather Challenges
+        </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Decatur's Tennessee River location creates specific climate challenges. We understand how river valley weather affects your home.
+          Decatur's Tennessee River location creates specific climate
+          challenges. We understand how river valley weather affects your home.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
-        {weatherChallenges.map((weather) => (
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                {weather.season.includes("Spring") && (
-                  <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                  </svg>
-                )}
-                {weather.season.includes("Summer") && (
-                  <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                  </svg>
-                )}
-                {weather.season.includes("Fall") && (
-                  <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                  </svg>
-                )}
-                {weather.season.includes("Winter") && (
-                  <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
-                  </svg>
-                )}
+        {
+          weatherChallenges.map((weather) => (
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  {weather.season.includes("Spring") && (
+                    <svg
+                      class="w-6 h-6 text-green-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
+                  )}
+                  {weather.season.includes("Summer") && (
+                    <svg
+                      class="w-6 h-6 text-yellow-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                      />
+                    </svg>
+                  )}
+                  {weather.season.includes("Fall") && (
+                    <svg
+                      class="w-6 h-6 text-orange-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                      />
+                    </svg>
+                  )}
+                  {weather.season.includes("Winter") && (
+                    <svg
+                      class="w-6 h-6 text-blue-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+                      />
+                    </svg>
+                  )}
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-gray-800">
+                    {weather.season}
+                  </h3>
+                  <p class="text-orange-600 font-medium text-sm">
+                    {weather.challenge}
+                  </p>
+                </div>
               </div>
+              <p class="text-gray-600 text-sm mb-4">{weather.impact}</p>
               <div>
-                <h3 class="text-lg font-bold text-gray-800">{weather.season}</h3>
-                <p class="text-orange-600 font-medium text-sm">{weather.challenge}</p>
+                <p class="text-xs font-semibold text-gray-500 uppercase mb-2">
+                  Our Services
+                </p>
+                <p class="text-sm text-blue-900">{weather.services}</p>
               </div>
             </div>
-            <p class="text-gray-600 text-sm mb-4">{weather.impact}</p>
-            <div>
-              <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Our Services</p>
-              <p class="text-sm text-blue-900">{weather.services}</p>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -465,31 +769,60 @@ const decaturFacts = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Serving Decatur's Workforce</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Major Employers We Serve</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Serving Decatur's Workforce</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Major Employers We Serve
+        </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Decatur's strong manufacturing base and growing economy bring hardworking people who expect reliability from their contractors.
+          Decatur's strong manufacturing base and growing economy bring
+          hardworking people who expect reliability from their contractors.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {majorEmployers.map((employer) => (
-          <div class="bg-gray-50 rounded-lg p-5">
-            <div class="flex items-center justify-between mb-2">
-              <h3 class="text-md font-bold text-blue-900">{employer.name}</h3>
+        {
+          majorEmployers.map((employer) => (
+            <div class="bg-gray-50 rounded-lg p-5">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-md font-bold text-blue-900">{employer.name}</h3>
+              </div>
+              <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                {employer.employees}
+              </span>
+              <p class="text-gray-600 text-sm mt-3">{employer.description}</p>
             </div>
-            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{employer.employees}</span>
-            <p class="text-gray-600 text-sm mt-3">{employer.description}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
       <div class="mt-10 bg-blue-50 rounded-lg p-6">
         <div class="flex items-start gap-4">
-          <svg class="w-8 h-8 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+          <svg
+            class="w-8 h-8 text-blue-900 flex-shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+            ></path>
           </svg>
           <div>
-            <h3 class="text-lg font-bold text-blue-900 mb-2">Manufacturing Town Reliability</h3>
-            <p class="text-gray-600 text-sm">Decatur's manufacturing heritage means residents value reliability, punctuality, and honest work. Shift workers need flexible scheduling. Engineers expect precision. Busy families need contractors who communicate clearly and respect their time. We match Decatur's work ethic with our own commitment to showing up, doing quality work, and standing behind it.</p>
+            <h3 class="text-lg font-bold text-blue-900 mb-2">
+              Manufacturing Town Reliability
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Decatur's manufacturing heritage means residents value
+              reliability, punctuality, and honest work. Shift workers need
+              flexible scheduling. Engineers expect precision. Busy families
+              need contractors who communicate clearly and respect their time.
+              We match Decatur's work ethic with our own commitment to showing
+              up, doing quality work, and standing behind it.
+            </p>
           </div>
         </div>
       </div>
@@ -500,27 +833,53 @@ const decaturFacts = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Easy Access</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Directions from Decatur Landmarks</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Easy Access</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Directions from Decatur Landmarks
+        </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
           We're conveniently located to serve all of Decatur via I-565 and I-65.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {landmarks.map((landmark) => (
-          <div class="bg-white rounded-lg p-5 shadow-sm">
-            <div class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-blue-900 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              <div>
-                <h3 class="font-bold text-gray-800 text-sm">{landmark.name}</h3>
-                <p class="text-gray-600 text-xs mt-1">{landmark.directions}</p>
+        {
+          landmarks.map((landmark) => (
+            <div class="bg-white rounded-lg p-5 shadow-sm">
+              <div class="flex items-start gap-3">
+                <svg
+                  class="w-5 h-5 text-blue-900 flex-shrink-0 mt-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <div>
+                  <h3 class="font-bold text-gray-800 text-sm">
+                    {landmark.name}
+                  </h3>
+                  <p class="text-gray-600 text-xs mt-1">
+                    {landmark.directions}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -529,10 +888,16 @@ const decaturFacts = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">The Difference</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Why Decatur Residents Choose Us</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >The Difference</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Why Decatur Residents Choose Us
+        </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Finding contractors willing to serve Decatur consistently can be challenging. Here's why Morgan County homeowners trust us.
+          Finding contractors willing to serve Decatur consistently can be
+          challenging. Here's why Morgan County homeowners trust us.
         </p>
       </div>
       <div class="overflow-x-auto">
@@ -540,18 +905,26 @@ const decaturFacts = [
           <thead>
             <tr class="bg-blue-900 text-white">
               <th class="px-6 py-4 text-left font-semibold">What Matters</th>
-              <th class="px-6 py-4 text-left font-semibold">Madison Handyman Pro</th>
-              <th class="px-6 py-4 text-left font-semibold">Other Contractors</th>
+              <th class="px-6 py-4 text-left font-semibold"
+                >Madison Handyman Pro</th
+              >
+              <th class="px-6 py-4 text-left font-semibold"
+                >Other Contractors</th
+              >
             </tr>
           </thead>
           <tbody>
-            {competitorComparison.map((row, index) => (
-              <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                <td class="px-6 py-4 font-medium text-gray-800">{row.feature}</td>
-                <td class="px-6 py-4 text-green-600 font-medium">{row.us}</td>
-                <td class="px-6 py-4 text-gray-500">{row.others}</td>
-              </tr>
-            ))}
+            {
+              competitorComparison.map((row, index) => (
+                <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <td class="px-6 py-4 font-medium text-gray-800">
+                    {row.feature}
+                  </td>
+                  <td class="px-6 py-4 text-green-600 font-medium">{row.us}</td>
+                  <td class="px-6 py-4 text-gray-500">{row.others}</td>
+                </tr>
+              ))
+            }
           </tbody>
         </table>
       </div>
@@ -562,42 +935,82 @@ const decaturFacts = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Decatur Reviews</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">What Decatur Homeowners Say</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Decatur Reviews</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          What Decatur Homeowners Say
+        </h2>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-white rounded-lg p-6 shadow-sm">
           <div class="flex items-center gap-1 mb-3">
-            {[1,2,3,4,5].map(() => (
-              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-            ))}
+            {
+              [1, 2, 3, 4, 5].map(() => (
+                <svg
+                  class="w-5 h-5 text-yellow-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))
+            }
           </div>
-          <p class="text-gray-600 text-sm mb-4">"Our historic home in Old Decatur needed the original trim repaired without losing character. They matched the 1890s profile perfectly and you can't tell the new from the original. Finally, someone who respects old houses."</p>
+          <p class="text-gray-600 text-sm mb-4">
+            "Our historic home in Old Decatur needed the original trim repaired
+            without losing character. They matched the 1890s profile perfectly
+            and you can't tell the new from the original. Finally, someone who
+            respects old houses."
+          </p>
           <p class="text-gray-800 font-medium">- Catherine B., Old Decatur</p>
         </div>
         <div class="bg-white rounded-lg p-6 shadow-sm">
           <div class="flex items-center gap-1 mb-3">
-            {[1,2,3,4,5].map(() => (
-              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-            ))}
+            {
+              [1, 2, 3, 4, 5].map(() => (
+                <svg
+                  class="w-5 h-5 text-yellow-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))
+            }
           </div>
-          <p class="text-gray-600 text-sm mb-4">"I work rotating shifts at 3M and getting contractors to work around my schedule is impossible. These guys texted me updates, worked while I slept, and the new flooring looks amazing. They get manufacturing life."</p>
+          <p class="text-gray-600 text-sm mb-4">
+            "I work rotating shifts at 3M and getting contractors to work around
+            my schedule is impossible. These guys texted me updates, worked
+            while I slept, and the new flooring looks amazing. They get
+            manufacturing life."
+          </p>
           <p class="text-gray-800 font-medium">- Marcus T., Brookmeade</p>
         </div>
         <div class="bg-white rounded-lg p-6 shadow-sm">
           <div class="flex items-center gap-1 mb-3">
-            {[1,2,3,4,5].map(() => (
-              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-            ))}
+            {
+              [1, 2, 3, 4, 5].map(() => (
+                <svg
+                  class="w-5 h-5 text-yellow-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))
+            }
           </div>
-          <p class="text-gray-600 text-sm mb-4">"Our deck near the river was rotting from the humidity. They replaced the bad boards, sealed everything properly, and explained how to maintain it. Three years later, still looks great. Worth the call to Madison."</p>
-          <p class="text-gray-800 font-medium">- William R., Point Mallard Area</p>
+          <p class="text-gray-600 text-sm mb-4">
+            "Our deck near the river was rotting from the humidity. They
+            replaced the bad boards, sealed everything properly, and explained
+            how to maintain it. Three years later, still looks great. Worth the
+            call to Madison."
+          </p>
+          <p class="text-gray-800 font-medium">
+            - William R., Point Mallard Area
+          </p>
         </div>
       </div>
     </div>
@@ -606,13 +1019,23 @@ const decaturFacts = [
   <!-- CTA -->
   <section class="py-16 bg-orange-500 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4">Ready for Reliable Handyman Service in Decatur?</h2>
-      <p class="text-xl mb-8">Same-day service available. Free estimates, quality guaranteed.</p>
+      <h2 class="text-3xl font-bold mb-4">
+        Ready for Reliable Handyman Service in Decatur?
+      </h2>
+      <p class="text-xl mb-8">
+        Same-day service available. Free estimates, quality guaranteed.
+      </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="/contact" class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
+        <a
+          href="/contact"
+          class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
+        >
           Get Free Estimate
         </a>
-        <a href="tel:2565550123" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
+        <a
+          href="tel:2565550123"
+          class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
+        >
           (256) 555-0123
         </a>
       </div>

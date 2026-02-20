@@ -1,179 +1,235 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 
 const neighborhoods = [
   {
     name: "Downtown Madison",
-    description: "Historic downtown area with charming older homes and established trees. Common needs include older home repairs, historic restoration work, and modernization updates.",
+    description:
+      "Historic downtown area with charming older homes and established trees. Common needs include older home repairs, historic restoration work, and modernization updates.",
     responseTime: "Same day available",
-    commonServices: ["Drywall repair", "Interior painting", "Crown molding", "Window repairs"]
+    commonServices: [
+      "Drywall repair",
+      "Interior painting",
+      "Crown molding",
+      "Window repairs",
+    ],
   },
   {
     name: "Madison City Schools District",
-    description: "Family-friendly neighborhoods near top-rated schools like Madison Elementary, Liberty Middle, and Bob Jones High School. Busy families appreciate our flexible scheduling.",
+    description:
+      "Family-friendly neighborhoods near top-rated schools like Madison Elementary, Liberty Middle, and Bob Jones High School. Busy families appreciate our flexible scheduling.",
     responseTime: "Same day available",
-    commonServices: ["Quick repairs", "Child safety updates", "Deck repairs", "Flooring installation"]
+    commonServices: [
+      "Quick repairs",
+      "Child safety updates",
+      "Deck repairs",
+      "Flooring installation",
+    ],
   },
   {
     name: "Providence / Hughes Road Area",
-    description: "Newer developments with modern homes. Even new construction needs finishing touches and occasional repairs from settling foundations.",
+    description:
+      "Newer developments with modern homes. Even new construction needs finishing touches and occasional repairs from settling foundations.",
     responseTime: "Same day available",
-    commonServices: ["Drywall cracks", "Paint touch-ups", "Trim installation", "Gutter adjustments"]
+    commonServices: [
+      "Drywall cracks",
+      "Paint touch-ups",
+      "Trim installation",
+      "Gutter adjustments",
+    ],
   },
   {
     name: "Bradford Creek / Celtic Drive",
-    description: "Well-established neighborhoods with mature landscaping. Trees mean more gutter cleaning and occasional storm damage repairs.",
+    description:
+      "Well-established neighborhoods with mature landscaping. Trees mean more gutter cleaning and occasional storm damage repairs.",
     responseTime: "Same day available",
-    commonServices: ["Gutter cleaning", "Storm repairs", "Fence repair", "Exterior painting"]
+    commonServices: [
+      "Gutter cleaning",
+      "Storm repairs",
+      "Fence repair",
+      "Exterior painting",
+    ],
   },
   {
     name: "Clift's Cove / Lake Area",
-    description: "Beautiful lakeside properties that face unique challenges from humidity and water exposure. We understand waterfront home maintenance needs.",
+    description:
+      "Beautiful lakeside properties that face unique challenges from humidity and water exposure. We understand waterfront home maintenance needs.",
     responseTime: "Same day available",
-    commonServices: ["Moisture damage", "Deck maintenance", "Exterior sealing", "Dock repairs"]
+    commonServices: [
+      "Moisture damage",
+      "Deck maintenance",
+      "Exterior sealing",
+      "Dock repairs",
+    ],
   },
   {
     name: "Palmer Road / Wall Triana",
-    description: "Mix of established homes and newer construction along major corridors. Easy access means quick response times for this growing area.",
+    description:
+      "Mix of established homes and newer construction along major corridors. Easy access means quick response times for this growing area.",
     responseTime: "Same day available",
-    commonServices: ["Full renovations", "Flooring", "Painting", "Finish carpentry"]
-  }
+    commonServices: [
+      "Full renovations",
+      "Flooring",
+      "Painting",
+      "Finish carpentry",
+    ],
+  },
 ];
 
 const majorEmployers = [
   {
     name: "Redstone Arsenal / Army",
     employees: "40,000+",
-    description: "Military families with PCS moves need quick home repairs before selling or after buying. We understand military timelines and can work around deployment schedules."
+    description:
+      "Military families with PCS moves need quick home repairs before selling or after buying. We understand military timelines and can work around deployment schedules.",
   },
   {
     name: "NASA Marshall Space Flight Center",
     employees: "7,000+",
-    description: "Engineers and scientists who appreciate precision work and clear communication. Many NASA employees live in Madison for the excellent schools."
+    description:
+      "Engineers and scientists who appreciate precision work and clear communication. Many NASA employees live in Madison for the excellent schools.",
   },
   {
     name: "FBI Huntsville",
     employees: "1,500+",
-    description: "Federal employees with security clearances who need reliable, trustworthy contractors. Background-checked and professional service."
+    description:
+      "Federal employees with security clearances who need reliable, trustworthy contractors. Background-checked and professional service.",
   },
   {
     name: "Boeing / Lockheed Martin / Northrop Grumman",
     employees: "10,000+",
-    description: "Defense contractors with busy schedules. We offer flexible evening and weekend appointments to work around demanding work hours."
+    description:
+      "Defense contractors with busy schedules. We offer flexible evening and weekend appointments to work around demanding work hours.",
   },
   {
     name: "Huntsville Hospital / Crestwood",
     employees: "8,000+",
-    description: "Healthcare workers with unpredictable shifts. We can schedule around rotating shifts and be flexible when emergencies change plans."
+    description:
+      "Healthcare workers with unpredictable shifts. We can schedule around rotating shifts and be flexible when emergencies change plans.",
   },
   {
     name: "Madison City Schools",
     employees: "2,000+",
-    description: "Teachers and staff who need work done during summer break or school hours. We can complete projects while you're at work."
-  }
+    description:
+      "Teachers and staff who need work done during summer break or school hours. We can complete projects while you're at work.",
+  },
 ];
 
 const weatherChallenges = [
   {
     season: "Spring (March-May)",
     challenge: "Severe Thunderstorms & Tornadoes",
-    impact: "Alabama's tornado season brings high winds, hail, and heavy rain. Homes sustain roof damage, broken windows, damaged siding, and flooded basements.",
-    services: "Emergency repairs, drywall water damage, window replacement, exterior repairs, gutter repair"
+    impact:
+      "Alabama's tornado season brings high winds, hail, and heavy rain. Homes sustain roof damage, broken windows, damaged siding, and flooded basements.",
+    services:
+      "Emergency repairs, drywall water damage, window replacement, exterior repairs, gutter repair",
   },
   {
     season: "Summer (June-August)",
     challenge: "Extreme Heat & Humidity",
-    impact: "90°F+ temperatures with 80%+ humidity causes paint peeling, wood warping, mold growth, and AC strain. Exterior materials expand and contract.",
-    services: "Exterior painting, deck sealing, moisture barriers, caulking, weatherstripping"
+    impact:
+      "90°F+ temperatures with 80%+ humidity causes paint peeling, wood warping, mold growth, and AC strain. Exterior materials expand and contract.",
+    services:
+      "Exterior painting, deck sealing, moisture barriers, caulking, weatherstripping",
   },
   {
     season: "Fall (September-November)",
     challenge: "Leaf Drop & Storm Prep",
-    impact: "Massive leaf accumulation clogs gutters. Falling branches cause damage. Time to prepare homes for winter.",
-    services: "Gutter cleaning, storm door installation, weatherization, exterior repairs"
+    impact:
+      "Massive leaf accumulation clogs gutters. Falling branches cause damage. Time to prepare homes for winter.",
+    services:
+      "Gutter cleaning, storm door installation, weatherization, exterior repairs",
   },
   {
     season: "Winter (December-February)",
     challenge: "Freezing Temps & Ice Storms",
-    impact: "While mild, Madison gets occasional ice storms and freezing temperatures. Pipes freeze, ice dams form, and heating systems strain.",
-    services: "Pipe insulation, ice dam repair, gutter repair, emergency water damage"
-  }
+    impact:
+      "While mild, Madison gets occasional ice storms and freezing temperatures. Pipes freeze, ice dams form, and heating systems strain.",
+    services:
+      "Pipe insulation, ice dam repair, gutter repair, emergency water damage",
+  },
 ];
 
 const landmarks = [
   {
     name: "Madison Square Mall / Target",
     address: "5901 University Dr, Madison",
-    directions: "Located just 2 minutes from our service area. Take Hughes Road to University Drive."
+    directions:
+      "Located just 2 minutes from our service area. Take Hughes Road to University Drive.",
   },
   {
     name: "Madison Hospital",
     address: "8375 Hwy 72 W, Madison",
-    directions: "We're 5 minutes from Madison Hospital. Quick access via Highway 72."
+    directions:
+      "We're 5 minutes from Madison Hospital. Quick access via Highway 72.",
   },
   {
     name: "James Clemens High School",
     address: "11306 County Line Rd, Madison",
-    directions: "Located near the Madison/Limestone County line. We serve all homes in this fast-growing area."
+    directions:
+      "Located near the Madison/Limestone County line. We serve all homes in this fast-growing area.",
   },
   {
     name: "Bridge Street Town Centre",
     address: "365 The Bridge St, Huntsville",
-    directions: "10 minutes from Bridge Street via I-565. Easy access to all of Madison from this central location."
+    directions:
+      "10 minutes from Bridge Street via I-565. Easy access to all of Madison from this central location.",
   },
   {
     name: "Redstone Arsenal Gate 9",
     address: "Rideout Rd, Huntsville",
-    directions: "15 minutes from Arsenal gates. We serve many military families living in Madison who work on base."
+    directions:
+      "15 minutes from Arsenal gates. We serve many military families living in Madison who work on base.",
   },
   {
     name: "Huntsville International Airport",
     address: "1000 Glenn Hearn Blvd SW",
-    directions: "20 minutes from the airport. Convenient for business travelers who need work done while traveling."
-  }
+    directions:
+      "20 minutes from the airport. Convenient for business travelers who need work done while traveling.",
+  },
 ];
 
 const competitorComparison = [
   {
     feature: "Phone Answered by Real Person",
     us: "Yes, always",
-    others: "Often voicemail"
+    others: "Often voicemail",
   },
   {
     feature: "Free Written Estimates",
     us: "Yes, detailed quotes",
-    others: "Sometimes, or verbal only"
+    others: "Sometimes, or verbal only",
   },
   {
     feature: "Show Up When Promised",
     us: "On-time guarantee",
-    others: "Frequently late or no-show"
+    others: "Frequently late or no-show",
   },
   {
     feature: "Licensed & Insured",
     us: "Fully covered",
-    others: "Not always verified"
+    others: "Not always verified",
   },
   {
     feature: "Clean Up After Work",
     us: "Always, every job",
-    others: "Hit or miss"
+    others: "Hit or miss",
   },
   {
     feature: "Same Pricing as Quote",
     us: "Guaranteed",
-    others: "Often changes"
+    others: "Often changes",
   },
   {
     feature: "Return Calls Promptly",
     us: "Within 2 hours",
-    others: "Days or never"
+    others: "Days or never",
   },
   {
     feature: "Weekend Availability",
     us: "Saturday service",
-    others: "Limited or none"
-  }
+    others: "Limited or none",
+  },
 ];
 
 const responseTimes = [
@@ -185,7 +241,7 @@ const responseTimes = [
   { area: "Downtown Huntsville", time: "Next day typical", distance: "15 min" },
   { area: "Hampton Cove", time: "Next day typical", distance: "25 min" },
   { area: "Decatur", time: "2-3 days", distance: "30 min" },
-  { area: "Athens", time: "2-3 days", distance: "25 min" }
+  { area: "Athens", time: "2-3 days", distance: "25 min" },
 ];
 ---
 
@@ -202,16 +258,29 @@ const responseTimes = [
           <span class="mx-2">/</span>
           <span class="text-white">Madison</span>
         </nav>
-        <span class="text-orange-400 font-semibold text-sm uppercase tracking-wide">City Hub</span>
-        <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Madison, Alabama Handyman Services</h1>
+        <span
+          class="text-orange-400 font-semibold text-sm uppercase tracking-wide"
+          >City Hub</span
+        >
+        <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
+          Madison, Alabama Handyman Services
+        </h1>
         <p class="text-xl text-blue-100 mb-6">
-          Locally owned and operated in Madison. We're your neighbors, serving the community we call home with professional handyman services, fast response times, and honest pricing.
+          Locally owned and operated in Madison. We're your neighbors, serving
+          the community we call home with professional handyman services, fast
+          response times, and honest pricing.
         </p>
         <div class="flex flex-wrap gap-4">
-          <a href="/contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          <a
+            href="/contact"
+            class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+          >
             Get Free Estimate
           </a>
-          <a href="tel:2565550123" class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          <a
+            href="tel:2565550123"
+            class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+          >
             (256) 555-0123
           </a>
         </div>
@@ -247,16 +316,34 @@ const responseTimes = [
   <section class="py-8 bg-blue-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex flex-wrap items-center justify-between gap-4">
-        <h2 class="text-lg font-semibold text-gray-800">Madison Area Communities:</h2>
+        <h2 class="text-lg font-semibold text-gray-800">
+          Madison Area Communities:
+        </h2>
         <div class="flex flex-wrap gap-3">
-          <a href="/locations/madison/harvest" class="bg-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow text-blue-900 font-medium flex items-center gap-2">
+          <a
+            href="/locations/madison/harvest"
+            class="bg-white px-4 py-2 rounded-lg shadow-sm hover:shadow-md transition-shadow text-blue-900 font-medium flex items-center gap-2"
+          >
             Harvest
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"></path>
             </svg>
           </a>
-          <span class="bg-gray-100 px-4 py-2 rounded-lg text-gray-600">Triana</span>
-          <span class="bg-gray-100 px-4 py-2 rounded-lg text-gray-600">Research Park</span>
+          <span class="bg-gray-100 px-4 py-2 rounded-lg text-gray-600"
+            >Triana</span
+          >
+          <span class="bg-gray-100 px-4 py-2 rounded-lg text-gray-600"
+            >Research Park</span
+          >
         </div>
       </div>
     </div>
@@ -267,53 +354,195 @@ const responseTimes = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Local Service Area</span>
-          <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">Why We Love Serving Madison</h2>
+          <span
+            class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+            >Local Service Area</span
+          >
+          <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">
+            Why We Love Serving Madison
+          </h2>
           <p class="text-gray-600 mb-4">
-            Madison is one of Alabama's fastest-growing cities and consistently ranked among the best places to live in the South. With top-rated schools, safe neighborhoods, and a thriving economy driven by aerospace and defense, Madison attracts families and professionals from across the country.
+            Madison is one of Alabama's fastest-growing cities and consistently
+            ranked among the best places to live in the South. With top-rated
+            schools, safe neighborhoods, and a thriving economy driven by
+            aerospace and defense, Madison attracts families and professionals
+            from across the country.
           </p>
           <p class="text-gray-600 mb-4">
-            We understand what makes the Madison community special. From the historic charm of downtown to the newest developments along County Line Road, we know every neighborhood and the unique challenges each one faces.
+            We understand what makes the Madison community special. From the
+            historic charm of downtown to the newest developments along County
+            Line Road, we know every neighborhood and the unique challenges each
+            one faces.
           </p>
           <p class="text-gray-600">
-            Whether you're a military family stationed at Redstone Arsenal, a NASA engineer, or a longtime Madison resident, we're here to help with all your home repair and improvement needs. No job is too small, and we treat every home like our own.
+            Whether you're a military family stationed at Redstone Arsenal, a
+            NASA engineer, or a longtime Madison resident, we're here to help
+            with all your home repair and improvement needs. No job is too
+            small, and we treat every home like our own.
           </p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold text-blue-900 mb-4">Madison Quick Facts</h3>
+          <h3 class="text-xl font-bold text-blue-900 mb-4">
+            Madison Quick Facts
+          </h3>
           <ul class="space-y-3">
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-700"><strong>Population:</strong> 55,000+ and growing</span>
+              <span class="text-gray-700"
+                ><strong>Population:</strong> 55,000+ and growing</span
+              >
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-700"><strong>Schools:</strong> A-rated Madison City Schools</span>
+              <span class="text-gray-700"
+                ><strong>Schools:</strong> A-rated Madison City Schools</span
+              >
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-700"><strong>Founded:</strong> 1856, rich history</span>
+              <span class="text-gray-700"
+                ><strong>Founded:</strong> 1856, rich history</span
+              >
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-700"><strong>Economy:</strong> Aerospace, defense, tech hub</span>
+              <span class="text-gray-700"
+                ><strong>Economy:</strong> Aerospace, defense, tech hub</span
+              >
             </li>
             <li class="flex items-start gap-3">
-              <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              <svg
+                class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
               </svg>
-              <span class="text-gray-700"><strong>Recognition:</strong> "Best Places to Live" - Money Magazine</span>
+              <span class="text-gray-700"
+                ><strong>Recognition:</strong> "Best Places to Live" - Money Magazine</span
+              >
             </li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Elevated Direct Response: The Madison Advantage -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">
+          The Real Cost of Deferred Home Maintenance in Madison, Alabama
+        </h2>
+        <p>
+          Madison homeowners carry a distinct advantage in the North Alabama
+          real estate market. Properties here appreciate consistently, driven by
+          proximity to Redstone Arsenal, NASA Marshall Space Flight Center, and
+          a school system routinely ranked among Alabama's finest. But that
+          advantage only holds if the home itself holds up. A cracked drywall
+          seam ignored for six months becomes a structural concern. Peeling
+          exterior paint accelerates rot in Alabama's humidity. Clogged gutters
+          channel water into your foundation instead of away from it. These are
+          not cosmetic inconveniences. They are compounding liabilities.
+        </p>
+        <p>
+          The professionals who choose Madison—engineers at Boeing, program
+          managers at Lockheed Martin, physicians at Crestwood Medical
+          Center—understand compound effects intuitively. A small investment in
+          preventive maintenance today eliminates an exponentially larger repair
+          bill tomorrow. That is not a sales pitch. It is a mathematical
+          certainty that every homeowner in the Providence subdivision, along
+          Celtic Drive, or near Clift's Cove eventually discovers firsthand.
+        </p>
+        <p>
+          Our approach to serving Madison reflects the community itself:
+          methodical, detail-oriented, and built on earned trust rather than
+          marketing promises. When we arrive at your home, we conduct an honest
+          assessment. If a repair is unnecessary, we say so. If a project
+          requires specialized licensing beyond our scope, we tell you that
+          too—and recommend someone qualified. The result is a relationship
+          built on transparency, not transactions.
+        </p>
+        <p>
+          Madison's rapid growth along County Line Road and the Hughes Road
+          corridor has introduced thousands of newer homes into the market.
+          These properties, while beautiful, are not immune to settling-related
+          drywall cracks, builder-grade trim that loosens within two years, or
+          gutter systems that were never properly pitched. Newer does not mean
+          maintenance-free. It simply means the maintenance window has not yet
+          expired.
+        </p>
+        <p>
+          For established neighborhoods like Bradford Creek, Downtown Madison,
+          and the areas surrounding Palmer Road, the challenges are different
+          but equally pressing. Mature trees deposit debris into gutters at an
+          astonishing rate during Alabama's fall season. Decades of thermal
+          cycling have fatigued caulk lines around windows and doors. Original
+          paint jobs from the early 2000s have long exhausted their protective
+          lifespan. Every season in Madison creates a new maintenance
+          priority—and ignoring any of them accelerates the deterioration of the
+          ones you have already addressed.
+        </p>
+        <p>
+          This is precisely why we structured our service around rapid, same-day
+          response for Madison residents. When you notice a problem, the window
+          for a clean, affordable fix is measured in days, not months. We answer
+          our phone. We provide a written estimate with no ambiguity. We arrive
+          when we say we will, execute the work to a standard that reflects well
+          on both of us, and leave your home cleaner than we found it. That is
+          not a differentiator. That should be the baseline. We simply happen to
+          be the team in Madison that actually delivers it.
+        </p>
       </div>
     </div>
   </section>
@@ -322,30 +551,48 @@ const responseTimes = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Neighborhood Coverage</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Madison Neighborhoods We Serve</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Neighborhood Coverage</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Madison Neighborhoods We Serve
+        </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Every Madison neighborhood has unique characteristics and home maintenance needs. We know them all.
+          Every Madison neighborhood has unique characteristics and home
+          maintenance needs. We know them all.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {neighborhoods.map((neighborhood) => (
-          <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-100 hover:border-blue-200 transition-colors">
-            <div class="flex items-center justify-between mb-3">
-              <h3 class="text-lg font-bold text-blue-900">{neighborhood.name}</h3>
-              <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">{neighborhood.responseTime}</span>
-            </div>
-            <p class="text-gray-600 text-sm mb-4">{neighborhood.description}</p>
-            <div>
-              <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Common Services</p>
-              <div class="flex flex-wrap gap-1">
-                {neighborhood.commonServices.map((service) => (
-                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{service}</span>
-                ))}
+        {
+          neighborhoods.map((neighborhood) => (
+            <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-100 hover:border-blue-200 transition-colors">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-lg font-bold text-blue-900">
+                  {neighborhood.name}
+                </h3>
+                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
+                  {neighborhood.responseTime}
+                </span>
+              </div>
+              <p class="text-gray-600 text-sm mb-4">
+                {neighborhood.description}
+              </p>
+              <div>
+                <p class="text-xs font-semibold text-gray-500 uppercase mb-2">
+                  Common Services
+                </p>
+                <div class="flex flex-wrap gap-1">
+                  {neighborhood.commonServices.map((service) => (
+                    <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                      {service}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -355,26 +602,36 @@ const responseTimes = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold">Response Times by Area</h2>
-        <p class="text-blue-100 mt-4">Madison is our primary service area with fast response times.</p>
+        <p class="text-blue-100 mt-4">
+          Madison is our primary service area with fast response times.
+        </p>
       </div>
       <div class="grid md:grid-cols-3 gap-4">
-        {responseTimes.map((item) => (
-          <div class="bg-white/10 rounded-lg p-4 flex items-center justify-between">
-            <div>
-              <p class="font-semibold">{item.area}</p>
+        {
+          responseTimes.map((item) => (
+            <div class="bg-white/10 rounded-lg p-4 flex items-center justify-between">
+              <div>
+                <p class="font-semibold">{item.area}</p>
+              </div>
+              <span
+                class={`px-3 py-1 rounded-full text-sm font-medium ${
+                  item.time === "Same day"
+                    ? "bg-green-500 text-white"
+                    : item.time === "Next day typical"
+                      ? "bg-yellow-500 text-black"
+                      : "bg-orange-500 text-white"
+                }`}
+              >
+                {item.time}
+              </span>
             </div>
-            <span class={`px-3 py-1 rounded-full text-sm font-medium ${
-              item.time === "Same day" ? "bg-green-500 text-white" :
-              item.time === "Next day typical" ? "bg-yellow-500 text-black" :
-              "bg-orange-500 text-white"
-            }`}>
-              {item.time}
-            </span>
-          </div>
-        ))}
+          ))
+        }
       </div>
       <div class="mt-8 text-center">
-        <p class="text-blue-100">Emergency service available for all areas. Call for urgent repairs.</p>
+        <p class="text-blue-100">
+          Emergency service available for all areas. Call for urgent repairs.
+        </p>
       </div>
     </div>
   </section>
@@ -383,50 +640,104 @@ const responseTimes = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Local Expertise</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Madison Weather Challenges</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Local Expertise</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Madison Weather Challenges
+        </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Alabama's climate creates year-round home maintenance challenges. We understand local weather patterns and how they affect your home.
+          Alabama's climate creates year-round home maintenance challenges. We
+          understand local weather patterns and how they affect your home.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
-        {weatherChallenges.map((weather) => (
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                {weather.season.includes("Spring") && (
-                  <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                  </svg>
-                )}
-                {weather.season.includes("Summer") && (
-                  <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                  </svg>
-                )}
-                {weather.season.includes("Fall") && (
-                  <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                  </svg>
-                )}
-                {weather.season.includes("Winter") && (
-                  <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
-                  </svg>
-                )}
+        {
+          weatherChallenges.map((weather) => (
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  {weather.season.includes("Spring") && (
+                    <svg
+                      class="w-6 h-6 text-green-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
+                  )}
+                  {weather.season.includes("Summer") && (
+                    <svg
+                      class="w-6 h-6 text-yellow-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                      />
+                    </svg>
+                  )}
+                  {weather.season.includes("Fall") && (
+                    <svg
+                      class="w-6 h-6 text-orange-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                      />
+                    </svg>
+                  )}
+                  {weather.season.includes("Winter") && (
+                    <svg
+                      class="w-6 h-6 text-blue-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+                      />
+                    </svg>
+                  )}
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-gray-800">
+                    {weather.season}
+                  </h3>
+                  <p class="text-orange-600 font-medium text-sm">
+                    {weather.challenge}
+                  </p>
+                </div>
               </div>
+              <p class="text-gray-600 text-sm mb-4">{weather.impact}</p>
               <div>
-                <h3 class="text-lg font-bold text-gray-800">{weather.season}</h3>
-                <p class="text-orange-600 font-medium text-sm">{weather.challenge}</p>
+                <p class="text-xs font-semibold text-gray-500 uppercase mb-2">
+                  Our Services
+                </p>
+                <p class="text-sm text-blue-900">{weather.services}</p>
               </div>
             </div>
-            <p class="text-gray-600 text-sm mb-4">{weather.impact}</p>
-            <div>
-              <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Our Services</p>
-              <p class="text-sm text-blue-900">{weather.services}</p>
-            </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -435,31 +746,59 @@ const responseTimes = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Serving Madison's Workforce</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Major Employers We Serve</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Serving Madison's Workforce</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Major Employers We Serve
+        </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Madison is home to professionals from these major employers. We understand your busy schedules and unique needs.
+          Madison is home to professionals from these major employers. We
+          understand your busy schedules and unique needs.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {majorEmployers.map((employer) => (
-          <div class="bg-gray-50 rounded-lg p-6">
-            <div class="flex items-center justify-between mb-3">
-              <h3 class="text-lg font-bold text-blue-900">{employer.name}</h3>
-              <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{employer.employees}</span>
+        {
+          majorEmployers.map((employer) => (
+            <div class="bg-gray-50 rounded-lg p-6">
+              <div class="flex items-center justify-between mb-3">
+                <h3 class="text-lg font-bold text-blue-900">{employer.name}</h3>
+                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                  {employer.employees}
+                </span>
+              </div>
+              <p class="text-gray-600 text-sm">{employer.description}</p>
             </div>
-            <p class="text-gray-600 text-sm">{employer.description}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
       <div class="mt-10 bg-blue-50 rounded-lg p-6">
         <div class="flex items-start gap-4">
-          <svg class="w-8 h-8 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          <svg
+            class="w-8 h-8 text-blue-900 flex-shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            ></path>
           </svg>
           <div>
-            <h3 class="text-lg font-bold text-blue-900 mb-2">Military & Government Friendly</h3>
-            <p class="text-gray-600 text-sm">We proudly serve military families and government employees. We understand PCS timelines, deployment schedules, and the need for trustworthy contractors with professional conduct. Background-checked and ready to work on or near secure installations.</p>
+            <h3 class="text-lg font-bold text-blue-900 mb-2">
+              Military & Government Friendly
+            </h3>
+            <p class="text-gray-600 text-sm">
+              We proudly serve military families and government employees. We
+              understand PCS timelines, deployment schedules, and the need for
+              trustworthy contractors with professional conduct.
+              Background-checked and ready to work on or near secure
+              installations.
+            </p>
           </div>
         </div>
       </div>
@@ -470,28 +809,51 @@ const responseTimes = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Easy to Find</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Directions from Madison Landmarks</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Easy to Find</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Directions from Madison Landmarks
+        </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          We're centrally located to serve all of Madison quickly. Here's how far we are from places you know.
+          We're centrally located to serve all of Madison quickly. Here's how
+          far we are from places you know.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {landmarks.map((landmark) => (
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-blue-900 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              <div>
-                <h3 class="font-bold text-gray-800">{landmark.name}</h3>
-                <p class="text-gray-500 text-xs mb-2">{landmark.address}</p>
-                <p class="text-gray-600 text-sm">{landmark.directions}</p>
+        {
+          landmarks.map((landmark) => (
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+              <div class="flex items-start gap-3">
+                <svg
+                  class="w-6 h-6 text-blue-900 flex-shrink-0 mt-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <div>
+                  <h3 class="font-bold text-gray-800">{landmark.name}</h3>
+                  <p class="text-gray-500 text-xs mb-2">{landmark.address}</p>
+                  <p class="text-gray-600 text-sm">{landmark.directions}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -500,10 +862,16 @@ const responseTimes = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">The Difference</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Why Madison Residents Choose Us</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >The Difference</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Why Madison Residents Choose Us
+        </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          We know you have choices for handyman services in Madison. Here's what sets us apart from other local contractors.
+          We know you have choices for handyman services in Madison. Here's what
+          sets us apart from other local contractors.
         </p>
       </div>
       <div class="overflow-x-auto">
@@ -511,23 +879,34 @@ const responseTimes = [
           <thead>
             <tr class="bg-blue-900 text-white">
               <th class="px-6 py-4 text-left font-semibold">What Matters</th>
-              <th class="px-6 py-4 text-left font-semibold">Madison Handyman Pro</th>
-              <th class="px-6 py-4 text-left font-semibold">Other Contractors</th>
+              <th class="px-6 py-4 text-left font-semibold"
+                >Madison Handyman Pro</th
+              >
+              <th class="px-6 py-4 text-left font-semibold"
+                >Other Contractors</th
+              >
             </tr>
           </thead>
           <tbody>
-            {competitorComparison.map((row, index) => (
-              <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                <td class="px-6 py-4 font-medium text-gray-800">{row.feature}</td>
-                <td class="px-6 py-4 text-green-600 font-medium">{row.us}</td>
-                <td class="px-6 py-4 text-gray-500">{row.others}</td>
-              </tr>
-            ))}
+            {
+              competitorComparison.map((row, index) => (
+                <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <td class="px-6 py-4 font-medium text-gray-800">
+                    {row.feature}
+                  </td>
+                  <td class="px-6 py-4 text-green-600 font-medium">{row.us}</td>
+                  <td class="px-6 py-4 text-gray-500">{row.others}</td>
+                </tr>
+              ))
+            }
           </tbody>
         </table>
       </div>
       <div class="mt-8 text-center">
-        <p class="text-gray-600 mb-4">Don't just take our word for it - ask your neighbors. We've built our reputation one job at a time in Madison.</p>
+        <p class="text-gray-600 mb-4">
+          Don't just take our word for it - ask your neighbors. We've built our
+          reputation one job at a time in Madison.
+        </p>
       </div>
     </div>
   </section>
@@ -536,42 +915,81 @@ const responseTimes = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Madison Reviews</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">What Your Madison Neighbors Say</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Madison Reviews</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          What Your Madison Neighbors Say
+        </h2>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-white rounded-lg p-6 shadow-sm">
           <div class="flex items-center gap-1 mb-3">
-            {[1,2,3,4,5].map(() => (
-              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-            ))}
+            {
+              [1, 2, 3, 4, 5].map(() => (
+                <svg
+                  class="w-5 h-5 text-yellow-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))
+            }
           </div>
-          <p class="text-gray-600 text-sm mb-4">"Finally, a contractor who actually shows up! They repaired our drywall after a plumbing leak and you can't even tell there was ever damage. Highly recommend to anyone in Madison."</p>
+          <p class="text-gray-600 text-sm mb-4">
+            "Finally, a contractor who actually shows up! They repaired our
+            drywall after a plumbing leak and you can't even tell there was ever
+            damage. Highly recommend to anyone in Madison."
+          </p>
           <p class="text-gray-800 font-medium">- Sarah M., Bradford Creek</p>
         </div>
         <div class="bg-white rounded-lg p-6 shadow-sm">
           <div class="flex items-center gap-1 mb-3">
-            {[1,2,3,4,5].map(() => (
-              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-            ))}
+            {
+              [1, 2, 3, 4, 5].map(() => (
+                <svg
+                  class="w-5 h-5 text-yellow-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))
+            }
           </div>
-          <p class="text-gray-600 text-sm mb-4">"We're a military family and needed work done before our PCS move. They understood our timeline, worked around our schedule, and got everything done perfectly. The new owners complimented our home!"</p>
-          <p class="text-gray-800 font-medium">- Lt. Col. James R., Providence</p>
+          <p class="text-gray-600 text-sm mb-4">
+            "We're a military family and needed work done before our PCS move.
+            They understood our timeline, worked around our schedule, and got
+            everything done perfectly. The new owners complimented our home!"
+          </p>
+          <p class="text-gray-800 font-medium">
+            - Lt. Col. James R., Providence
+          </p>
         </div>
         <div class="bg-white rounded-lg p-6 shadow-sm">
           <div class="flex items-center gap-1 mb-3">
-            {[1,2,3,4,5].map(() => (
-              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-              </svg>
-            ))}
+            {
+              [1, 2, 3, 4, 5].map(() => (
+                <svg
+                  class="w-5 h-5 text-yellow-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))
+            }
           </div>
-          <p class="text-gray-600 text-sm mb-4">"Crown molding installation throughout our home was perfect. They measured twice, cut once, and the corners are seamless. Fair price, great communication, and beautiful results."</p>
-          <p class="text-gray-800 font-medium">- Michelle T., Downtown Madison</p>
+          <p class="text-gray-600 text-sm mb-4">
+            "Crown molding installation throughout our home was perfect. They
+            measured twice, cut once, and the corners are seamless. Fair price,
+            great communication, and beautiful results."
+          </p>
+          <p class="text-gray-800 font-medium">
+            - Michelle T., Downtown Madison
+          </p>
         </div>
       </div>
     </div>
@@ -580,13 +998,24 @@ const responseTimes = [
   <!-- CTA -->
   <section class="py-16 bg-orange-500 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4">Ready for Madison's Best Handyman Service?</h2>
-      <p class="text-xl mb-8">Same-day response for Madison residents. Free estimates and quality guaranteed.</p>
+      <h2 class="text-3xl font-bold mb-4">
+        Ready for Madison's Best Handyman Service?
+      </h2>
+      <p class="text-xl mb-8">
+        Same-day response for Madison residents. Free estimates and quality
+        guaranteed.
+      </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="/contact" class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
+        <a
+          href="/contact"
+          class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
+        >
           Get Free Estimate
         </a>
-        <a href="tel:2565550123" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
+        <a
+          href="tel:2565550123"
+          class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
+        >
           (256) 555-0123
         </a>
       </div>
