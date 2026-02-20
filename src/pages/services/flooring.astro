@@ -560,7 +560,6 @@ const serviceAreas = [
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
               </svg>
               <span class="font-semibold">{area.city}</span>
-              {area.city === 'Madison' && <span class="text-xs bg-orange-500 px-1.5 py-0.5 rounded ml-1">HQ</span>}
             </div>
             <p class={`text-xs ${area.city === 'Madison' ? 'text-blue-200' : 'text-gray-500'}`}>{area.driveTime}</p>
             <p class={`text-xs mt-1 ${area.city === 'Madison' ? 'text-blue-100' : 'text-gray-600'}`}>{area.note}</p>
