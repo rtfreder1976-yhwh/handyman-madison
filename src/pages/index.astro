@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Your Trusted Handyman in Madison, Alabama
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+        Professional repairs, maintenance, and home improvement services. No job too small!
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg"
+        >
+          Get a Free Quote
+        </a>
+        <a
+          href="/services"
+          class="bg-white hover:bg-gray-100 text-blue-900 font-bold py-3 px-8 rounded-lg transition-colors text-lg"
+        >
+          View Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Why Choose Madison Handyman Pro?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Licensed & Insured</h3>
+          <p class="text-gray-600">Fully licensed and insured for your peace of mind. Quality work guaranteed.</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">On-Time Service</h3>
+          <p class="text-gray-600">We respect your time. Prompt arrivals and efficient service every time.</p>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Fair Pricing</h3>
+          <p class="text-gray-600">Transparent, competitive pricing with no hidden fees. Free estimates provided.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Services -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Most Popular Services</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-semibold mb-2 text-gray-800">Home Repairs</h3>
+          <p class="text-gray-600 text-sm">Drywall, doors, windows, and general fixes</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-semibold mb-2 text-gray-800">Plumbing</h3>
+          <p class="text-gray-600 text-sm">Faucets, toilets, garbage disposals, and leaks</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-semibold mb-2 text-gray-800">Electrical</h3>
+          <p class="text-gray-600 text-sm">Outlets, switches, fixtures, and ceiling fans</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-semibold mb-2 text-gray-800">Assembly</h3>
+          <p class="text-gray-600 text-sm">Furniture, shelving, and equipment assembly</p>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="/services" class="text-blue-900 font-semibold hover:text-blue-700 transition-colors">
+          View All Services →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-orange-500 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+      <p class="text-xl mb-8">Contact us today for a free estimate on your next project.</p>
+      <a
+        href="/contact"
+        class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
+      >
+        Contact Us Now
+      </a>
+    </div>
+  </section>
+</Layout>

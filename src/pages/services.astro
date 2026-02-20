@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    category: "Home Repairs",
+    items: [
+      "Drywall repair and patching",
+      "Door installation and repair",
+      "Window repairs and weatherproofing",
+      "Trim and molding installation",
+      "Caulking and sealing",
+      "Minor carpentry work"
+    ]
+  },
+  {
+    category: "Plumbing Services",
+    items: [
+      "Faucet installation and repair",
+      "Toilet repairs and replacement",
+      "Garbage disposal installation",
+      "Leak detection and repair",
+      "Showerhead and fixture replacement",
+      "Water heater maintenance"
+    ]
+  },
+  {
+    category: "Electrical Work",
+    items: [
+      "Light fixture installation",
+      "Ceiling fan installation",
+      "Outlet and switch replacement",
+      "Dimmer switch installation",
+      "Smart home device setup",
+      "Smoke detector installation"
+    ]
+  },
+  {
+    category: "Assembly & Installation",
+    items: [
+      "Furniture assembly",
+      "Shelving installation",
+      "TV mounting",
+      "Exercise equipment assembly",
+      "Closet organization systems",
+      "Appliance installation"
+    ]
+  },
+  {
+    category: "Exterior Services",
+    items: [
+      "Deck and fence repairs",
+      "Power washing",
+      "Gutter cleaning and repair",
+      "Exterior painting touch-ups",
+      "Screen and storm door installation",
+      "Mailbox installation"
+    ]
+  },
+  {
+    category: "Painting & Finishing",
+    items: [
+      "Interior painting",
+      "Touch-up painting",
+      "Cabinet refinishing",
+      "Staining and sealing",
+      "Wallpaper removal",
+      "Texture repair"
+    ]
+  }
+];
+---
+
+<Layout title="Services" description="Complete handyman services in Madison, Alabama including home repairs, plumbing, electrical, assembly, and more.">
+  <!-- Hero Section -->
+  <section class="bg-blue-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold mb-4">Our Services</h1>
+      <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+        From small repairs to complete home improvements, we've got you covered.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+            <h2 class="text-xl font-bold text-blue-900 mb-4 pb-2 border-b border-gray-200">
+              {service.category}
+            </h2>
+            <ul class="space-y-2">
+              {service.items.map((item) => (
+                <li class="flex items-start gap-2 text-gray-700">
+                  <svg class="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Info -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Don't See What You Need?</h2>
+      <p class="text-lg text-gray-600 text-center mb-8">
+        We handle a wide variety of home maintenance and repair tasks. If you have a project in mind
+        that's not listed above, just ask! We're happy to discuss your needs and provide a free estimate.
+      </p>
+      <div class="text-center">
+        <a
+          href="/contact"
+          class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
+        >
+          Request a Custom Quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">How It Works</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+          <h3 class="font-semibold mb-2 text-gray-800">Contact Us</h3>
+          <p class="text-gray-600 text-sm">Reach out with your project details</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+          <h3 class="font-semibold mb-2 text-gray-800">Free Estimate</h3>
+          <p class="text-gray-600 text-sm">We provide a detailed quote</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+          <h3 class="font-semibold mb-2 text-gray-800">Schedule</h3>
+          <p class="text-gray-600 text-sm">Pick a time that works for you</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+          <h3 class="font-semibold mb-2 text-gray-800">Job Complete</h3>
+          <p class="text-gray-600 text-sm">Quality work, satisfaction guaranteed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

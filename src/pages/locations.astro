@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const serviceAreas = [
+  { name: "Madison", primary: true },
+  { name: "Huntsville", primary: false },
+  { name: "Decatur", primary: false },
+  { name: "Athens", primary: false },
+  { name: "Harvest", primary: false },
+  { name: "Meridianville", primary: false },
+  { name: "Hazel Green", primary: false },
+  { name: "Triana", primary: false },
+  { name: "Redstone Arsenal", primary: false },
+  { name: "Research Park", primary: false },
+  { name: "Hampton Cove", primary: false },
+  { name: "Owens Cross Roads", primary: false }
+];
+---
+
+<Layout title="Service Areas" description="Madison Handyman Pro serves Madison, Huntsville, Decatur, Athens, and surrounding areas in North Alabama.">
+  <!-- Hero Section -->
+  <section class="bg-blue-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl font-bold mb-4">Service Areas</h1>
+      <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+        Proudly serving Madison County and the greater North Alabama region.
+      </p>
+    </div>
+  </section>
+
+  <!-- Service Areas Grid -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Areas List -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6 text-gray-800">Areas We Serve</h2>
+          <div class="grid grid-cols-2 gap-4">
+            {serviceAreas.map((area) => (
+              <div class={`p-4 rounded-lg ${area.primary ? 'bg-blue-900 text-white' : 'bg-white shadow-md'}`}>
+                <div class="flex items-center gap-2">
+                  <svg class={`w-5 h-5 ${area.primary ? 'text-blue-200' : 'text-green-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  </svg>
+                  <span class={`font-medium ${area.primary ? '' : 'text-gray-800'}`}>{area.name}</span>
+                  {area.primary && <span class="text-xs bg-orange-500 px-2 py-0.5 rounded">HQ</span>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Map Placeholder / Info -->
+        <div>
+          <h2 class="text-2xl font-bold mb-6 text-gray-800">Based in Madison, AL</h2>
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center mb-6">
+              <div class="text-center text-gray-500">
+                <svg class="w-16 h-16 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <p>Madison, Alabama</p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <h3 class="font-semibold text-gray-800">Service Radius</h3>
+                <p class="text-gray-600">We typically serve customers within a 30-mile radius of Madison, Alabama.</p>
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-800">Travel Fees</h3>
+                <p class="text-gray-600">No travel fees for Madison and most Huntsville locations. Small travel fee may apply for distant areas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Info -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Serving Our Community</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center p-6">
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Local Knowledge</h3>
+          <p class="text-gray-600">
+            As Madison residents ourselves, we understand the unique needs of homes in our area,
+            from older properties to new construction.
+          </p>
+        </div>
+        <div class="text-center p-6">
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Quick Response</h3>
+          <p class="text-gray-600">
+            Being locally based means faster response times. We can often accommodate
+            same-day or next-day service for urgent repairs.
+          </p>
+        </div>
+        <div class="text-center p-6">
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Community Focused</h3>
+          <p class="text-gray-600">
+            We're proud to serve our neighbors and build lasting relationships
+            with families throughout Madison County.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-orange-500 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Not Sure If We Service Your Area?</h2>
+      <p class="text-xl mb-8">Give us a call or send a message - we're happy to discuss your location.</p>
+      <a
+        href="/contact"
+        class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,125 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Professional handyman services in Madison, Alabama. Quality repairs, maintenance, and home improvement." } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Madison Handyman Pro</title>
+  </head>
+  <body class="min-h-screen flex flex-col bg-gray-50">
+    <header class="bg-blue-900 text-white shadow-lg">
+      <nav class="max-w-6xl mx-auto px-4 py-4">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <a href="/" class="text-2xl font-bold hover:text-blue-200 transition-colors">
+            Madison Handyman Pro
+          </a>
+          <ul class="flex flex-wrap gap-1 md:gap-2">
+            <li>
+              <a
+                href="/"
+                class:list={[
+                  "px-4 py-2 rounded-lg transition-colors inline-block",
+                  currentPath === "/" ? "bg-blue-700 text-white" : "hover:bg-blue-800"
+                ]}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="/services"
+                class:list={[
+                  "px-4 py-2 rounded-lg transition-colors inline-block",
+                  currentPath === "/services/" ? "bg-blue-700 text-white" : "hover:bg-blue-800"
+                ]}
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="/locations"
+                class:list={[
+                  "px-4 py-2 rounded-lg transition-colors inline-block",
+                  currentPath === "/locations/" ? "bg-blue-700 text-white" : "hover:bg-blue-800"
+                ]}
+              >
+                Locations
+              </a>
+            </li>
+            <li>
+              <a
+                href="/about"
+                class:list={[
+                  "px-4 py-2 rounded-lg transition-colors inline-block",
+                  currentPath === "/about/" ? "bg-blue-700 text-white" : "hover:bg-blue-800"
+                ]}
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contact"
+                class:list={[
+                  "px-4 py-2 rounded-lg transition-colors inline-block",
+                  currentPath === "/contact/" ? "bg-blue-700 text-white" : "hover:bg-blue-800"
+                ]}
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-8 mt-auto">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-white font-bold text-lg mb-3">Madison Handyman Pro</h3>
+            <p class="text-sm">Your trusted local handyman serving Madison, Alabama and surrounding areas.</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-lg mb-3">Quick Links</h3>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/services" class="hover:text-white transition-colors">Our Services</a></li>
+              <li><a href="/locations" class="hover:text-white transition-colors">Service Areas</a></li>
+              <li><a href="/contact" class="hover:text-white transition-colors">Get a Quote</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-lg mb-3">Contact</h3>
+            <ul class="space-y-2 text-sm">
+              <li>Madison, Alabama</li>
+              <li>Phone: (256) 555-0123</li>
+              <li>Email: info@madisonhandymanpro.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
+          <p>&copy; {new Date().getFullYear()} Madison Handyman Pro. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
