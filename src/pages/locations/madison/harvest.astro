@@ -1,75 +1,75 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../../layouts/Layout.astro';
 
 const neighborhoods = [
   {
-    name: "Downtown Somerville",
-    description: "Historic town square surrounding the Morgan County Courthouse. Charming small-town atmosphere with historic homes and buildings dating back to the 1800s. Property owners value preserving the character of this Alabama treasure.",
+    name: "Monrovia / Highway 53 Corridor",
+    description: "The heart of Harvest along the main corridor. Mix of established homes and newer developments with easy access to Madison and Huntsville. Growing retail and services make this a convenient location for families.",
     responseTime: "Same day available",
-    commonServices: ["Historic restoration", "Trim repair", "Interior painting", "Porch repairs"]
+    commonServices: ["Drywall repair", "Interior painting", "Flooring installation", "General repairs"]
   },
   {
-    name: "Highway 36 Corridor",
-    description: "Main route through Somerville connecting to Hartselle and Lacey's Spring. Mix of established homes and rural properties with convenient access. Growing area as more families discover Somerville's charm.",
+    name: "Harvest Town Center Area",
+    description: "Newer developments surrounding the growing town center. Modern homes that occasionally need finishing touches and warranty-period repairs. Young families moving in appreciate quick, reliable service.",
     responseTime: "Same day available",
-    commonServices: ["General repairs", "Painting", "Flooring", "Drywall work"]
+    commonServices: ["New home touch-ups", "Painting", "Trim installation", "Drywall finishing"]
   },
   {
-    name: "Lacon / East Somerville",
-    description: "Rural community east of town with spacious properties and agricultural heritage. Families who've lived here for generations alongside newcomers seeking country living at affordable prices.",
+    name: "Jeff Road / Old Monrovia",
+    description: "Established rural-suburban area with larger lots and country properties. Mix of farmhouses and newer construction. Homeowners value privacy and quality workmanship from trusted contractors.",
     responseTime: "Same day available",
     commonServices: ["Deck building", "Exterior repairs", "Gutter installation", "Storm damage"]
   },
   {
-    name: "Neel / North Morgan County",
-    description: "Small community north of Somerville with rural character and close-knit neighbors. Working families who appreciate honest contractors who show up when promised.",
+    name: "Capshaw Road Area",
+    description: "Growing residential corridor connecting Harvest to Madison. New subdivisions attracting families from across the region. Quick access makes this area especially convenient for same-day service.",
     responseTime: "Same day available",
-    commonServices: ["Home maintenance", "Repairs", "Exterior painting", "Flooring"]
+    commonServices: ["Flooring", "Painting", "Finish carpentry", "Quick repairs"]
   },
   {
-    name: "Priceville Adjacent Areas",
-    description: "Properties between Somerville and the growing Priceville area. Convenient access to I-65 while maintaining rural character. Popular with commuters to Decatur and Huntsville.",
+    name: "Toney / North Harvest",
+    description: "Rural community north of Harvest proper with spacious properties and country living. Established families who've lived here for generations alongside newcomers seeking affordable acreage.",
     responseTime: "Same day available",
-    commonServices: ["Renovations", "Painting", "Finish carpentry", "Quick repairs"]
+    commonServices: ["Home maintenance", "Gutter cleaning", "Exterior painting", "Repairs"]
   },
   {
-    name: "Rural Morgan County",
-    description: "Farms, acreages, and country homes throughout greater Somerville. Large properties with outbuildings, barns, and unique maintenance needs that require experienced rural contractors.",
+    name: "Sparkman Drive / East Harvest",
+    description: "Area near Sparkman Ninth Grade School with family-oriented neighborhoods. Parents juggling work and school activities appreciate contractors who communicate clearly and respect schedules.",
     responseTime: "Same day available",
-    commonServices: ["Outbuilding repairs", "Fencing help", "Storm damage", "General maintenance"]
+    commonServices: ["Quick fixes", "Drywall patching", "Door repairs", "Painting"]
   }
 ];
 
 const majorEmployers = [
   {
-    name: "Morgan County Government",
-    employees: "400+",
-    description: "Somerville is the Morgan County seat, home to the courthouse and county offices. Government employees who appreciate reliable local contractors for their homes."
+    name: "Commuters to Redstone Arsenal",
+    employees: "3,000+",
+    description: "Many Harvest residents work at Redstone Arsenal just 15-20 minutes away. Military and civilian defense workers who need reliable contractors that can work while they're on base."
   },
   {
-    name: "Morgan County Schools",
-    employees: "300+",
-    description: "Teachers and staff at Somerville and surrounding schools. Summer availability for major projects and flexible scheduling during the school year."
+    name: "Commuters to Cummings Research Park",
+    employees: "2,500+",
+    description: "Engineers and tech workers who chose Harvest for affordable housing and good schools. They expect professionalism and clear communication from their contractors."
   },
   {
-    name: "Commuters to Decatur",
-    employees: "800+",
-    description: "Many Somerville residents work in Decatur's manufacturing plants—3M, Daikin, Nucor. We serve your home while you're at work and keep you updated."
-  },
-  {
-    name: "Commuters to Huntsville",
+    name: "Madison County Schools",
     employees: "500+",
-    description: "Growing number of residents commute to Huntsville and Redstone Arsenal via I-65 and Highway 36. Affordable housing with reasonable commute times."
+    description: "Teachers and staff at Harvest, Monrovia, and surrounding schools. Summer availability for major projects and flexible scheduling during the school year."
   },
   {
-    name: "Local Agriculture",
-    employees: "400+",
-    description: "Farming remains important to Somerville's economy and identity. Farm families need practical repairs done right the first time by contractors who understand rural life."
+    name: "Huntsville Hospital System",
+    employees: "800+",
+    description: "Healthcare workers from Huntsville Hospital and Crestwood who live in Harvest for the commute and affordability. Shift work requires flexible contractor scheduling."
   },
   {
-    name: "Small Businesses & Trades",
+    name: "Local Agriculture & Farming",
     employees: "300+",
-    description: "Local shop owners, tradespeople, and entrepreneurs who built Somerville's economy. Business owners who understand the value of quality work at fair prices."
+    description: "Harvest maintains its agricultural roots with working farms and rural properties. Farm families need practical repairs done right the first time."
+  },
+  {
+    name: "Small Business Owners",
+    employees: "400+",
+    description: "Growing entrepreneurial community with home-based businesses and local shops. Business owners who understand the value of reliable, professional service."
   }
 ];
 
@@ -77,59 +77,59 @@ const weatherChallenges = [
   {
     season: "Spring (March-May)",
     challenge: "Severe Thunderstorms & Tornadoes",
-    impact: "Morgan County sits in prime tornado territory. Somerville's rural setting means less shelter from severe storms. High winds, large hail, and tornado risk threaten homes, outbuildings, barns, and fencing. Spring storms can cause widespread damage across rural properties.",
-    services: "Emergency storm repairs, roof assessment, siding repair, outbuilding repairs, fence repair, debris cleanup, drywall water damage restoration"
+    impact: "North Madison County sits in prime tornado territory. Harvest's open terrain offers little protection from severe storms. High winds, large hail, and tornado risk threaten roofs, siding, windows, and outbuildings. Rural properties face additional debris from trees and farm structures.",
+    services: "Emergency storm repairs, roof assessment, siding repair, window replacement, outbuilding repairs, debris cleanup, drywall water damage"
   },
   {
     season: "Summer (June-August)",
-    challenge: "Alabama Heat & Humidity",
-    impact: "Hot, humid summers take a toll on exterior surfaces throughout rural properties. Paint peels, decks weather rapidly, and older homes struggle with moisture. Large properties mean more maintenance—more fencing, more outbuildings, more exterior surfaces to protect.",
-    services: "Exterior painting, deck sealing and staining, moisture barriers, barn and outbuilding repairs, caulking, weatherstripping"
+    challenge: "Heat, Humidity & Afternoon Storms",
+    impact: "Hot, humid Alabama summers take a toll on exterior surfaces. Paint peels, decks weather rapidly, and sudden afternoon thunderstorms can cause flash flooding in low-lying areas. Rural properties face challenges from overgrown vegetation and gravel drive washouts.",
+    services: "Exterior painting, deck sealing and staining, moisture barriers, gutter maintenance, drainage improvements, caulking"
   },
   {
     season: "Fall (September-November)",
-    challenge: "Leaf Season & Winterization",
-    impact: "Rural properties with abundant trees face massive leaf accumulation. Gutters clog, debris covers roofs, and properties need winterization before cold weather. Fall is the time to address deferred maintenance before winter makes repairs harder.",
-    services: "Gutter cleaning, storm door installation, weatherization, exterior caulking, roof debris removal, general maintenance catch-up"
+    challenge: "Leaf Accumulation & Prep Season",
+    impact: "Harvest's abundant trees—especially on larger rural lots—drop massive amounts of leaves. Gutters clog quickly, and properties need winterization before cold weather. Fall is prime time to address deferred maintenance before winter arrives.",
+    services: "Gutter cleaning, storm door installation, weatherization, exterior caulking, roof inspections, general maintenance"
   },
   {
     season: "Winter (December-February)",
-    challenge: "Cold Snaps & Ice Storms",
-    impact: "While winters are mild, Somerville experiences occasional hard freezes and ice storms. Rural properties with exposed pipes, older homes, and outbuildings face freeze risks. Ice storms can damage trees and knock out power for extended periods.",
-    services: "Pipe insulation, ice damage repair, emergency repairs, weatherstripping, insulation improvements, generator prep assistance"
+    challenge: "Freezing Temperatures & Ice",
+    impact: "While winters are generally mild, Harvest experiences occasional hard freezes and ice storms. Rural properties with exposed pipes and older homes with inadequate insulation face freeze risks. Ice can damage trees and power lines.",
+    services: "Pipe insulation, ice damage repair, emergency water damage, weatherstripping, insulation improvements, generator hookup prep"
   }
 ];
 
 const landmarks = [
   {
-    name: "Morgan County Courthouse",
-    address: "302 Lee St NE, Somerville",
-    directions: "Historic courthouse in the heart of Somerville. We're 35 minutes from the courthouse square and serve all downtown and surrounding historic properties."
+    name: "Harvest Town Center",
+    address: "Highway 53, Harvest",
+    directions: "The growing commercial heart of Harvest. We're just 10 minutes from Harvest Town Center via Highway 53, providing quick response to all central Harvest neighborhoods."
   },
   {
-    name: "Somerville Town Square",
-    address: "Downtown Somerville",
-    directions: "Charming town square surrounded by local businesses. We serve all properties around the square and throughout greater Somerville."
+    name: "Sparkman Ninth Grade School",
+    address: "2692 Carters Gin Rd, Harvest",
+    directions: "Major school serving Harvest families. We serve all surrounding neighborhoods and understand the busy schedules of school families."
   },
   {
-    name: "Highway 36 / Highway 67 Junction",
-    address: "East of Somerville",
-    directions: "Key intersection connecting Somerville to Hartselle and Lacey's Spring. We reach this area in about 30 minutes for quick service."
+    name: "Monrovia Church of Christ",
+    address: "2761 Jeff Rd, Harvest",
+    directions: "Historic Monrovia community landmark. We serve the established Jeff Road corridor and all of greater Monrovia with same-day availability."
   },
   {
-    name: "Priceville / I-65 Access",
-    address: "West of Somerville",
-    directions: "Closest interstate access for Somerville residents. We're 25 minutes from the Priceville I-65 interchange, making Somerville easily accessible."
+    name: "Highway 53 / Jeff Road Intersection",
+    address: "Central Harvest",
+    directions: "Main crossroads of the Harvest community. We reach this central location quickly for any service need."
   },
   {
-    name: "Morgan County Lake",
-    address: "North of Somerville",
-    directions: "Popular recreation area north of town. We serve lakeside properties and all rural homes in the northern Somerville area."
+    name: "Toney Elementary School",
+    address: "10755 US-53, Toney",
+    directions: "Serving the northern Harvest/Toney area. We provide same-day service to all Toney and north Harvest properties, just 15 minutes away."
   },
   {
-    name: "Hartselle (Nearby)",
-    address: "Highway 36 West",
-    directions: "Neighboring city just 10 minutes west. Many Somerville residents shop and work in Hartselle. We serve both communities with equal commitment."
+    name: "Madison County Mega Site (Future)",
+    address: "Greenbrier Road Area",
+    directions: "Future economic development bringing jobs to Harvest. We're positioned to serve the growing workforce that will call Harvest home."
   }
 ];
 
@@ -140,8 +140,8 @@ const competitorComparison = [
     others: "Often voicemail"
   },
   {
-    feature: "Serve Somerville",
-    us: "Yes, committed",
+    feature: "Serve Harvest Regularly",
+    us: "Yes, neighbors",
     others: "May decline rural"
   },
   {
@@ -152,12 +152,12 @@ const competitorComparison = [
   {
     feature: "Written Estimates",
     us: "Detailed, free",
-    others: "Verbal or none"
+    others: "Verbal or vague"
   },
   {
     feature: "Price Matches Quote",
     us: "Always",
-    others: "Often adds charges"
+    others: "Often adds fees"
   },
   {
     feature: "Licensed & Insured",
@@ -165,14 +165,14 @@ const competitorComparison = [
     others: "Often unclear"
   },
   {
-    feature: "Understand Rural Needs",
-    us: "Yes, experienced",
-    others: "City-focused"
+    feature: "Clean Up Jobsite",
+    us: "Every single job",
+    others: "Hit or miss"
   },
   {
-    feature: "Clean Up Jobsite",
-    us: "Every job",
-    others: "Inconsistent"
+    feature: "Understand Rural Needs",
+    us: "Yes, experience",
+    others: "City-focused"
   },
   {
     feature: "Weekend Service",
@@ -182,44 +182,51 @@ const competitorComparison = [
   {
     feature: "Small Jobs Welcome",
     us: "No minimums",
-    others: "Large jobs only"
+    others: "Large jobs preferred"
   }
 ];
 
 const responseTimes = [
-  { area: "Priceville Area", time: "Same day", distance: "25 min" },
-  { area: "Highway 36 Corridor", time: "Same day", distance: "30 min" },
-  { area: "Downtown Somerville", time: "Same day", distance: "35 min" },
-  { area: "Lacon / East Somerville", time: "Same day", distance: "38 min" },
-  { area: "Neel / North Morgan", time: "Same day", distance: "40 min" },
-  { area: "Hartselle", time: "Same day", distance: "28 min" },
-  { area: "Rural Morgan County", time: "Same day", distance: "35-45 min" },
-  { area: "Lacey's Spring", time: "Next day typical", distance: "45 min" },
-  { area: "Danville / Southeast Morgan", time: "Next day typical", distance: "50 min" }
+  { area: "Capshaw Road Area", time: "Same day", distance: "8 min" },
+  { area: "Highway 53 / Monrovia", time: "Same day", distance: "10 min" },
+  { area: "Harvest Town Center", time: "Same day", distance: "10 min" },
+  { area: "Jeff Road / Old Monrovia", time: "Same day", distance: "12 min" },
+  { area: "Sparkman Drive Area", time: "Same day", distance: "12 min" },
+  { area: "Toney", time: "Same day", distance: "15 min" },
+  { area: "North Toney / Ardmore", time: "Same day", distance: "20 min" },
+  { area: "Hazel Green (east)", time: "Same day", distance: "18 min" },
+  { area: "New Market", time: "Next day typical", distance: "25 min" }
 ];
 
-const somervilleFacts = [
-  "Morgan County seat since 1891",
-  "Population: approximately 700 residents",
-  "Founded in 1819, one of Alabama's oldest towns",
-  "Historic courthouse square on National Register",
-  "Named for Lt. Robert Somerville, War of 1812 veteran",
-  "Small-town values with rich Southern heritage"
+const harvestFacts = [
+  "Unincorporated community in Madison County",
+  "Population: 5,000+ and growing rapidly",
+  "Named for the area's agricultural heritage",
+  "Part of Huntsville-Decatur Metropolitan Area",
+  "Served by Madison County Schools",
+  "One of North Alabama's fastest-growing communities"
 ];
 ---
 
 <Layout
-  title="Somerville Alabama Handyman Services"
-  description="Professional handyman services in Somerville, Alabama and Morgan County. Serving the county seat, rural Morgan County, and surrounding communities. Same-day service, free estimates."
+  title="Harvest Alabama Handyman Services"
+  description="Professional handyman services in Harvest, Alabama. Serving Monrovia, Toney, Capshaw Road, and all Harvest neighborhoods. Same-day service, free estimates, quality guaranteed."
 >
   <!-- Hero Section -->
   <section class="bg-blue-900 text-white py-16">
     <div class="max-w-6xl mx-auto px-4">
       <div class="max-w-3xl">
-        <span class="text-orange-400 font-semibold text-sm uppercase tracking-wide">Morgan County Seat</span>
-        <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Somerville, Alabama Handyman Services</h1>
+        <nav class="text-sm text-blue-200 mb-4">
+          <a href="/locations" class="hover:text-white">Service Areas</a>
+          <span class="mx-2">/</span>
+          <a href="/locations/madison" class="hover:text-white">Madison</a>
+          <span class="mx-2">/</span>
+          <span class="text-white">Harvest</span>
+        </nav>
+        <span class="text-orange-400 font-semibold text-sm uppercase tracking-wide">Madison Area Community</span>
+        <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Harvest, Alabama Handyman Services</h1>
         <p class="text-xl text-blue-100 mb-6">
-          Quality handyman services for Somerville and rural Morgan County. From the historic courthouse square to the farms and country homes throughout the area, we bring professional craftsmanship to Alabama's small-town heart. Same-day service available.
+          Quality handyman services for Harvest and surrounding communities. We serve Monrovia, Toney, and all of greater Harvest with fast response and quality workmanship. Same-day service available.
         </p>
         <div class="flex flex-wrap gap-4">
           <a href="/contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
@@ -239,15 +246,15 @@ const somervilleFacts = [
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div>
           <p class="text-3xl font-bold text-blue-900">Same Day</p>
-          <p class="text-gray-600 text-sm">Service Available</p>
+          <p class="text-gray-600 text-sm">Service in Harvest</p>
         </div>
         <div>
-          <p class="text-3xl font-bold text-blue-900">35 min</p>
-          <p class="text-gray-600 text-sm">From Madison Base</p>
+          <p class="text-3xl font-bold text-blue-900">Madison</p>
+          <p class="text-gray-600 text-sm">Area Community</p>
         </div>
         <div>
-          <p class="text-3xl font-bold text-blue-900">1819</p>
-          <p class="text-gray-600 text-sm">Year Founded</p>
+          <p class="text-3xl font-bold text-blue-900">5,000+</p>
+          <p class="text-gray-600 text-sm">Harvest Residents</p>
         </div>
         <div>
           <p class="text-3xl font-bold text-blue-900">Free</p>
@@ -257,27 +264,27 @@ const somervilleFacts = [
     </div>
   </section>
 
-  <!-- About Somerville Section -->
+  <!-- About Harvest Section -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Historic County Seat</span>
-          <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">Serving Somerville & Rural Morgan County</h2>
+          <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Growing Community</span>
+          <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">Serving Harvest & North Madison County</h2>
           <p class="text-gray-600 mb-4">
-            Somerville holds a special place in Alabama history. Founded in 1819 and serving as the Morgan County seat since 1891, this small town of around 700 residents maintains the authentic Southern charm that larger cities have lost. The historic courthouse square, listed on the National Register of Historic Places, anchors a community where neighbors know each other and heritage matters.
+            Harvest represents the best of North Alabama living—affordable homes, good schools, friendly neighbors, and easy access to Huntsville's jobs and amenities. Named for its agricultural heritage, this unincorporated community has grown from rural farmland into one of the region's most desirable addresses.
           </p>
           <p class="text-gray-600 mb-4">
-            Beyond the town square, rural Morgan County spreads across farms, forests, and country homes where families have lived for generations. These properties require contractors who understand rural life—larger lots, outbuildings, well and septic systems, and the self-reliant spirit of country living. Many newer residents have discovered Somerville's affordable land and peaceful lifestyle while commuting to jobs in Decatur or Huntsville.
+            Today's Harvest blends country charm with suburban convenience. You'll find established farmhouses on spacious lots alongside modern subdivisions filled with young families. Many residents commute to Redstone Arsenal, Cummings Research Park, or Huntsville while enjoying Harvest's lower cost of living and tight-knit community feel.
           </p>
           <p class="text-gray-600">
-            Based 35 minutes away in Madison, we're committed to serving Somerville and rural Morgan County. We understand that finding reliable contractors in small towns can be challenging—many won't make the drive or treat rural customers as a priority. We're different. When we schedule a job in Somerville, we show up on time, do quality work, and treat your property with respect.
+            Based just 10 minutes away in Madison, Harvest is practically our backyard. We serve your community with the same care we'd give our own neighbors—because many of you are our neighbors. Whether you have a newer home needing finishing touches or an established property requiring updates, we deliver quality work at fair prices.
           </p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-bold text-blue-900 mb-4">Somerville Quick Facts</h3>
+          <h3 class="text-xl font-bold text-blue-900 mb-4">Harvest Quick Facts</h3>
           <ul class="space-y-3">
-            {somervilleFacts.map((fact) => (
+            {harvestFacts.map((fact) => (
               <li class="flex items-start gap-3">
                 <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -287,8 +294,8 @@ const somervilleFacts = [
             ))}
           </ul>
           <div class="mt-6 pt-4 border-t border-gray-200">
-            <h4 class="font-semibold text-gray-800 mb-2">Our Commitment to Small Towns</h4>
-            <p class="text-gray-600 text-sm">Small towns like Somerville deserve the same quality service as big cities. We don't add surcharges for rural areas or treat country customers as second-class. You get the same professionalism, the same quality, and the same respect we provide everywhere.</p>
+            <h4 class="font-semibold text-gray-800 mb-2">Why Harvest Homeowners Choose Us</h4>
+            <p class="text-gray-600 text-sm">Finding contractors who reliably serve unincorporated areas can be challenging. We're committed to Harvest because it's our community too. We show up when we say we will, do quality work, and treat your home with respect.</p>
           </div>
         </div>
       </div>
@@ -299,10 +306,10 @@ const somervilleFacts = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Area Coverage</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Somerville Areas We Serve</h2>
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Neighborhood Coverage</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Harvest Neighborhoods We Serve</h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          From the courthouse square to the farthest farmstead, we serve all of Somerville and surrounding Morgan County.
+          From the Highway 53 corridor to the rural roads of Toney, we serve every corner of greater Harvest.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -331,8 +338,8 @@ const somervilleFacts = [
   <section class="py-16 bg-blue-900 text-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">Response Times for Somerville Areas</h2>
-        <p class="text-blue-100 mt-4">We reach all Somerville and Morgan County areas efficiently.</p>
+        <h2 class="text-3xl font-bold">Response Times for Harvest Areas</h2>
+        <p class="text-blue-100 mt-4">Just minutes from Madison, we reach all Harvest neighborhoods quickly.</p>
       </div>
       <div class="grid md:grid-cols-3 gap-4">
         {responseTimes.map((item) => (
@@ -349,7 +356,7 @@ const somervilleFacts = [
         ))}
       </div>
       <div class="mt-8 text-center">
-        <p class="text-blue-100">Emergency service available for all areas. Call for urgent repairs.</p>
+        <p class="text-blue-100">Emergency service available for all Harvest areas. Call for urgent repairs.</p>
       </div>
     </div>
   </section>
@@ -358,10 +365,10 @@ const somervilleFacts = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Rural Expertise</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Somerville Weather Challenges</h2>
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Local Expertise</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Harvest Weather Challenges</h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Rural Morgan County faces unique weather challenges. We understand how Alabama's climate affects country properties.
+          North Madison County's rural character brings specific weather challenges. We understand how local conditions affect your home.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
@@ -410,10 +417,10 @@ const somervilleFacts = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Serving Somerville Workers</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Who We Serve in Somerville</h2>
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Serving Harvest Workers</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Who We Serve in Harvest</h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Somerville residents work locally and across the region. We accommodate your schedule wherever you work.
+          Harvest residents work across the region. We accommodate your schedule wherever you work.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -433,8 +440,8 @@ const somervilleFacts = [
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
           </svg>
           <div>
-            <h3 class="text-lg font-bold text-blue-900 mb-2">Small Town, Big Commitment</h3>
-            <p class="text-gray-600 text-sm">In a small town like Somerville, reputation is everything. You can't hide behind a big company name or move on to the next neighborhood if you do poor work. We understand that serving Somerville means building relationships, not just completing jobs. When we work on your home, we know we might see you at the grocery store next week. That accountability makes us better contractors.</p>
+            <h3 class="text-lg font-bold text-blue-900 mb-2">We Understand Rural Living</h3>
+            <p class="text-gray-600 text-sm">Many contractors focus on city neighborhoods and treat rural areas as an afterthought. Not us. We understand the unique needs of country properties—larger lots, outbuildings, well and septic systems, gravel drives, and the self-reliant spirit of rural homeowners. When we give you a quote, we account for actual conditions, not assumptions. When we schedule a job, we show up ready to work.</p>
           </div>
         </div>
       </div>
@@ -445,10 +452,10 @@ const somervilleFacts = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Finding Us</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Directions from Area Landmarks</h2>
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Easy to Reach</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Directions from Harvest Landmarks</h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          We're conveniently located to serve Somerville and all of eastern Morgan County.
+          We're conveniently located to serve all of Harvest and surrounding communities.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -476,9 +483,9 @@ const somervilleFacts = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">The Difference</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Why Somerville Residents Choose Us</h2>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Why Harvest Residents Choose Us</h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Finding reliable contractors who serve small towns can be challenging. Here's why Morgan County homeowners trust us.
+          Rural and unincorporated areas often get overlooked by contractors. Here's why Harvest homeowners trust us.
         </p>
       </div>
       <div class="overflow-x-auto">
@@ -504,12 +511,12 @@ const somervilleFacts = [
     </div>
   </section>
 
-  <!-- Somerville Reviews -->
+  <!-- Harvest Reviews -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Local Reviews</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">What Somerville Area Homeowners Say</h2>
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Harvest Reviews</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">What Harvest Homeowners Say</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-white rounded-lg p-6 shadow-sm">
@@ -520,8 +527,8 @@ const somervilleFacts = [
               </svg>
             ))}
           </div>
-          <p class="text-gray-600 text-sm mb-4">"Our 1890s farmhouse near the courthouse needed porch repairs that matched the original woodwork. They took the time to find the right materials and did beautiful restoration work. You'd never know it wasn't original. A contractor who respects old houses is rare."</p>
-          <p class="text-gray-800 font-medium">- Margaret L., Downtown Somerville</p>
+          <p class="text-gray-600 text-sm mb-4">"Living on 5 acres in Toney, I've had contractors quote jobs and never show up. These guys came when they said, did excellent deck work, and even helped with a fence repair while they were here. Finally, someone who serves rural customers!"</p>
+          <p class="text-gray-800 font-medium">- James H., Toney</p>
         </div>
         <div class="bg-white rounded-lg p-6 shadow-sm">
           <div class="flex items-center gap-1 mb-3">
@@ -531,8 +538,8 @@ const somervilleFacts = [
               </svg>
             ))}
           </div>
-          <p class="text-gray-600 text-sm mb-4">"I've called three contractors who said they'd come out to our place in Lacon—none ever showed. Madison Handyman Pro came when they said, quoted fair, and did excellent drywall work. Finally, someone who actually serves rural customers."</p>
-          <p class="text-gray-800 font-medium">- Tommy R., Lacon</p>
+          <p class="text-gray-600 text-sm mb-4">"We just built in one of the new Harvest subdivisions and needed punch list items finished that the builder ignored. They handled all the drywall touch-ups, paint fixes, and trim work professionally. Our new house finally looks right."</p>
+          <p class="text-gray-800 font-medium">- Sarah M., Harvest Town Center Area</p>
         </div>
         <div class="bg-white rounded-lg p-6 shadow-sm">
           <div class="flex items-center gap-1 mb-3">
@@ -542,8 +549,8 @@ const somervilleFacts = [
               </svg>
             ))}
           </div>
-          <p class="text-gray-600 text-sm mb-4">"Storm damage to our barn and house after spring storms. They handled both buildings, worked with our insurance, and finished before the next round of weather. Professional, efficient, and they understood farm property needs."</p>
-          <p class="text-gray-800 font-medium">- Harold & Betty S., Rural Morgan County</p>
+          <p class="text-gray-600 text-sm mb-4">"I work on the Arsenal and my wife's a nurse—our schedules are crazy. They worked around both of us, kept us updated by text, and installed beautiful new flooring throughout our Monrovia home. Couldn't be happier."</p>
+          <p class="text-gray-800 font-medium">- David & Karen T., Monrovia</p>
         </div>
       </div>
     </div>
@@ -552,7 +559,7 @@ const somervilleFacts = [
   <!-- CTA -->
   <section class="py-16 bg-orange-500 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4">Ready for Reliable Service in Somerville?</h2>
+      <h2 class="text-3xl font-bold mb-4">Ready for Reliable Handyman Service in Harvest?</h2>
       <p class="text-xl mb-8">Same-day service available. Free estimates, quality guaranteed.</p>
       <div class="flex flex-wrap justify-center gap-4">
         <a href="/contact" class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
