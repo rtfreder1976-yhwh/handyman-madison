@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import TrustCredentials from "../../components/TrustCredentials.astro";
 
 export function getStaticPaths() {
     const services = [
@@ -659,6 +660,8 @@ const localSchema = {
             </div>
         </div>
     </section>
+
+    <TrustCredentials />
 
     <!-- Final Call to Action -->
     <section class="relative py-24 bg-blue-900 overflow-hidden mt-12">

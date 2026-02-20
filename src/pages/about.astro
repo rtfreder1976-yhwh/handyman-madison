@@ -1,14 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import TrustCredentials from "../components/TrustCredentials.astro";
 ---
 
-<Layout title="About Us" description="Madison Handyman Pro: Licensed, insured handyman serving Madison & Huntsville AL. 10+ years experience. Quality workmanship guaranteed. Meet our team.">
+<Layout
+  title="About Us"
+  description="Madison Handyman Pro: Licensed, insured handyman serving Madison & Huntsville AL. 10+ years experience. Quality workmanship guaranteed. Meet our team."
+>
   <!-- Hero Section -->
   <section class="bg-blue-900 text-white py-16">
     <div class="max-w-6xl mx-auto px-4 text-center">
       <h1 class="text-4xl font-bold mb-4">About Madison Handyman Pro</h1>
       <p class="text-xl text-blue-100 max-w-2xl mx-auto">
-        Your trusted partner for home repairs and improvements in Madison, Alabama.
+        Your trusted partner for home repairs and improvements in Madison,
+        Alabama.
       </p>
     </div>
   </section>
@@ -19,21 +24,23 @@ import Layout from '../layouts/Layout.astro';
       <div class="prose prose-lg mx-auto">
         <h2 class="text-3xl font-bold mb-6 text-gray-800">Our Story</h2>
         <p class="text-gray-600 mb-6">
-          Madison Handyman Pro was founded with a simple mission: to provide reliable, high-quality
-          handyman services to homeowners in Madison and the surrounding North Alabama communities.
-          We understand that your home is your biggest investment, and we treat every project with
-          the care and attention it deserves.
+          Madison Handyman Pro was founded with a simple mission: to provide
+          reliable, high-quality handyman services to homeowners in Madison and
+          the surrounding North Alabama communities. We understand that your
+          home is your biggest investment, and we treat every project with the
+          care and attention it deserves.
         </p>
         <p class="text-gray-600 mb-6">
-          What started as helping neighbors with small repairs has grown into a full-service
-          handyman business. Our growth has been built on word-of-mouth recommendations from
-          satisfied customers who appreciate our honest pricing, quality workmanship, and
-          reliable service.
+          What started as helping neighbors with small repairs has grown into a
+          full-service handyman business. Our growth has been built on
+          word-of-mouth recommendations from satisfied customers who appreciate
+          our honest pricing, quality workmanship, and reliable service.
         </p>
         <p class="text-gray-600">
-          Whether you need a simple repair or a complete room makeover, we bring the same
-          level of professionalism and dedication to every job. No project is too small,
-          and we take pride in getting things done right the first time.
+          Whether you need a simple repair or a complete room makeover, we bring
+          the same level of professionalism and dedication to every job. No
+          project is too small, and we take pride in getting things done right
+          the first time.
         </p>
       </div>
     </div>
@@ -42,50 +49,103 @@ import Layout from '../layouts/Layout.astro';
   <!-- Values Section -->
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Our Values</h2>
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+        Our Values
+      </h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-blue-900"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
             </svg>
           </div>
           <h3 class="text-lg font-semibold mb-2 text-gray-800">Integrity</h3>
           <p class="text-gray-600 text-sm">
-            Honest assessments and fair pricing. We'll never recommend work you don't need.
+            Honest assessments and fair pricing. We'll never recommend work you
+            don't need.
           </p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-blue-900"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
           <h3 class="text-lg font-semibold mb-2 text-gray-800">Efficiency</h3>
           <p class="text-gray-600 text-sm">
-            We respect your time and complete projects efficiently without cutting corners.
+            We respect your time and complete projects efficiently without
+            cutting corners.
           </p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-blue-900"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+              ></path>
             </svg>
           </div>
           <h3 class="text-lg font-semibold mb-2 text-gray-800">Care</h3>
           <p class="text-gray-600 text-sm">
-            We treat your home like our own, keeping workspaces clean and respecting your property.
+            We treat your home like our own, keeping workspaces clean and
+            respecting your property.
           </p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-blue-900"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+              ></path>
             </svg>
           </div>
           <h3 class="text-lg font-semibold mb-2 text-gray-800">Quality</h3>
           <p class="text-gray-600 text-sm">
-            Every repair and installation meets our high standards. Satisfaction guaranteed.
+            Every repair and installation meets our high standards. Satisfaction
+            guaranteed.
           </p>
         </div>
       </div>
@@ -95,7 +155,9 @@ import Layout from '../layouts/Layout.astro';
   <!-- Credentials Section -->
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Why Trust Us</h2>
+      <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+        Why Trust Us
+      </h2>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="text-center">
           <div class="text-4xl font-bold text-blue-900 mb-2">10+</div>
@@ -113,23 +175,52 @@ import Layout from '../layouts/Layout.astro';
       <div class="mt-12 bg-gray-50 p-8 rounded-lg">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h3 class="text-xl font-bold mb-4 text-gray-800">Fully Licensed & Insured</h3>
+            <h3 class="text-xl font-bold mb-4 text-gray-800">
+              Fully Licensed & Insured
+            </h3>
             <ul class="space-y-3">
               <li class="flex items-center gap-2 text-gray-700">
-                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                <svg
+                  class="w-5 h-5 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
                 </svg>
                 General liability insurance
               </li>
               <li class="flex items-center gap-2 text-gray-700">
-                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                <svg
+                  class="w-5 h-5 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
                 </svg>
                 Workers' compensation coverage
               </li>
               <li class="flex items-center gap-2 text-gray-700">
-                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                <svg
+                  class="w-5 h-5 text-green-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
                 </svg>
                 Background checked
               </li>
@@ -138,9 +229,9 @@ import Layout from '../layouts/Layout.astro';
           <div>
             <h3 class="text-xl font-bold mb-4 text-gray-800">Our Guarantee</h3>
             <p class="text-gray-600">
-              We stand behind our work. If you're not completely satisfied with any repair or
-              installation, we'll make it right at no additional cost. Your satisfaction is
-              our top priority.
+              We stand behind our work. If you're not completely satisfied with
+              any repair or installation, we'll make it right at no additional
+              cost. Your satisfaction is our top priority.
             </p>
           </div>
         </div>
@@ -148,11 +239,15 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <TrustCredentials />
+
   <!-- CTA Section -->
   <section class="py-16 bg-orange-500 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-4">Ready to Work Together?</h2>
-      <p class="text-xl mb-8">Let us show you why your neighbors trust Madison Handyman Pro.</p>
+      <p class="text-xl mb-8">
+        Let us show you why your neighbors trust Madison Handyman Pro.
+      </p>
       <a
         href="/contact"
         class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
