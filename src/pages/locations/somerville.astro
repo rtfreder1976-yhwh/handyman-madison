@@ -1,0 +1,568 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const neighborhoods = [
+  {
+    name: "Downtown Somerville",
+    description: "Historic town square surrounding the Morgan County Courthouse. Charming small-town atmosphere with historic homes and buildings dating back to the 1800s. Property owners value preserving the character of this Alabama treasure.",
+    responseTime: "Same day available",
+    commonServices: ["Historic restoration", "Trim repair", "Interior painting", "Porch repairs"]
+  },
+  {
+    name: "Highway 36 Corridor",
+    description: "Main route through Somerville connecting to Hartselle and Lacey's Spring. Mix of established homes and rural properties with convenient access. Growing area as more families discover Somerville's charm.",
+    responseTime: "Same day available",
+    commonServices: ["General repairs", "Painting", "Flooring", "Drywall work"]
+  },
+  {
+    name: "Lacon / East Somerville",
+    description: "Rural community east of town with spacious properties and agricultural heritage. Families who've lived here for generations alongside newcomers seeking country living at affordable prices.",
+    responseTime: "Same day available",
+    commonServices: ["Deck building", "Exterior repairs", "Gutter installation", "Storm damage"]
+  },
+  {
+    name: "Neel / North Morgan County",
+    description: "Small community north of Somerville with rural character and close-knit neighbors. Working families who appreciate honest contractors who show up when promised.",
+    responseTime: "Same day available",
+    commonServices: ["Home maintenance", "Repairs", "Exterior painting", "Flooring"]
+  },
+  {
+    name: "Priceville Adjacent Areas",
+    description: "Properties between Somerville and the growing Priceville area. Convenient access to I-65 while maintaining rural character. Popular with commuters to Decatur and Huntsville.",
+    responseTime: "Same day available",
+    commonServices: ["Renovations", "Painting", "Finish carpentry", "Quick repairs"]
+  },
+  {
+    name: "Rural Morgan County",
+    description: "Farms, acreages, and country homes throughout greater Somerville. Large properties with outbuildings, barns, and unique maintenance needs that require experienced rural contractors.",
+    responseTime: "Same day available",
+    commonServices: ["Outbuilding repairs", "Fencing help", "Storm damage", "General maintenance"]
+  }
+];
+
+const majorEmployers = [
+  {
+    name: "Morgan County Government",
+    employees: "400+",
+    description: "Somerville is the Morgan County seat, home to the courthouse and county offices. Government employees who appreciate reliable local contractors for their homes."
+  },
+  {
+    name: "Morgan County Schools",
+    employees: "300+",
+    description: "Teachers and staff at Somerville and surrounding schools. Summer availability for major projects and flexible scheduling during the school year."
+  },
+  {
+    name: "Commuters to Decatur",
+    employees: "800+",
+    description: "Many Somerville residents work in Decatur's manufacturing plants—3M, Daikin, Nucor. We serve your home while you're at work and keep you updated."
+  },
+  {
+    name: "Commuters to Huntsville",
+    employees: "500+",
+    description: "Growing number of residents commute to Huntsville and Redstone Arsenal via I-65 and Highway 36. Affordable housing with reasonable commute times."
+  },
+  {
+    name: "Local Agriculture",
+    employees: "400+",
+    description: "Farming remains important to Somerville's economy and identity. Farm families need practical repairs done right the first time by contractors who understand rural life."
+  },
+  {
+    name: "Small Businesses & Trades",
+    employees: "300+",
+    description: "Local shop owners, tradespeople, and entrepreneurs who built Somerville's economy. Business owners who understand the value of quality work at fair prices."
+  }
+];
+
+const weatherChallenges = [
+  {
+    season: "Spring (March-May)",
+    challenge: "Severe Thunderstorms & Tornadoes",
+    impact: "Morgan County sits in prime tornado territory. Somerville's rural setting means less shelter from severe storms. High winds, large hail, and tornado risk threaten homes, outbuildings, barns, and fencing. Spring storms can cause widespread damage across rural properties.",
+    services: "Emergency storm repairs, roof assessment, siding repair, outbuilding repairs, fence repair, debris cleanup, drywall water damage restoration"
+  },
+  {
+    season: "Summer (June-August)",
+    challenge: "Alabama Heat & Humidity",
+    impact: "Hot, humid summers take a toll on exterior surfaces throughout rural properties. Paint peels, decks weather rapidly, and older homes struggle with moisture. Large properties mean more maintenance—more fencing, more outbuildings, more exterior surfaces to protect.",
+    services: "Exterior painting, deck sealing and staining, moisture barriers, barn and outbuilding repairs, caulking, weatherstripping"
+  },
+  {
+    season: "Fall (September-November)",
+    challenge: "Leaf Season & Winterization",
+    impact: "Rural properties with abundant trees face massive leaf accumulation. Gutters clog, debris covers roofs, and properties need winterization before cold weather. Fall is the time to address deferred maintenance before winter makes repairs harder.",
+    services: "Gutter cleaning, storm door installation, weatherization, exterior caulking, roof debris removal, general maintenance catch-up"
+  },
+  {
+    season: "Winter (December-February)",
+    challenge: "Cold Snaps & Ice Storms",
+    impact: "While winters are mild, Somerville experiences occasional hard freezes and ice storms. Rural properties with exposed pipes, older homes, and outbuildings face freeze risks. Ice storms can damage trees and knock out power for extended periods.",
+    services: "Pipe insulation, ice damage repair, emergency repairs, weatherstripping, insulation improvements, generator prep assistance"
+  }
+];
+
+const landmarks = [
+  {
+    name: "Morgan County Courthouse",
+    address: "302 Lee St NE, Somerville",
+    directions: "Historic courthouse in the heart of Somerville. We're 35 minutes from the courthouse square and serve all downtown and surrounding historic properties."
+  },
+  {
+    name: "Somerville Town Square",
+    address: "Downtown Somerville",
+    directions: "Charming town square surrounded by local businesses. We serve all properties around the square and throughout greater Somerville."
+  },
+  {
+    name: "Highway 36 / Highway 67 Junction",
+    address: "East of Somerville",
+    directions: "Key intersection connecting Somerville to Hartselle and Lacey's Spring. We reach this area in about 30 minutes for quick service."
+  },
+  {
+    name: "Priceville / I-65 Access",
+    address: "West of Somerville",
+    directions: "Closest interstate access for Somerville residents. We're 25 minutes from the Priceville I-65 interchange, making Somerville easily accessible."
+  },
+  {
+    name: "Morgan County Lake",
+    address: "North of Somerville",
+    directions: "Popular recreation area north of town. We serve lakeside properties and all rural homes in the northern Somerville area."
+  },
+  {
+    name: "Hartselle (Nearby)",
+    address: "Highway 36 West",
+    directions: "Neighboring city just 10 minutes west. Many Somerville residents shop and work in Hartselle. We serve both communities with equal commitment."
+  }
+];
+
+const competitorComparison = [
+  {
+    feature: "Answer Phone Calls",
+    us: "Real person, always",
+    others: "Often voicemail"
+  },
+  {
+    feature: "Serve Somerville",
+    us: "Yes, committed",
+    others: "May decline rural"
+  },
+  {
+    feature: "Show Up On Time",
+    us: "Guaranteed",
+    others: "Rural = low priority"
+  },
+  {
+    feature: "Written Estimates",
+    us: "Detailed, free",
+    others: "Verbal or none"
+  },
+  {
+    feature: "Price Matches Quote",
+    us: "Always",
+    others: "Often adds charges"
+  },
+  {
+    feature: "Licensed & Insured",
+    us: "Fully verified",
+    others: "Often unclear"
+  },
+  {
+    feature: "Understand Rural Needs",
+    us: "Yes, experienced",
+    others: "City-focused"
+  },
+  {
+    feature: "Clean Up Jobsite",
+    us: "Every job",
+    others: "Inconsistent"
+  },
+  {
+    feature: "Weekend Service",
+    us: "Saturday available",
+    others: "Weekdays only"
+  },
+  {
+    feature: "Small Jobs Welcome",
+    us: "No minimums",
+    others: "Large jobs only"
+  }
+];
+
+const responseTimes = [
+  { area: "Priceville Area", time: "Same day", distance: "25 min" },
+  { area: "Highway 36 Corridor", time: "Same day", distance: "30 min" },
+  { area: "Downtown Somerville", time: "Same day", distance: "35 min" },
+  { area: "Lacon / East Somerville", time: "Same day", distance: "38 min" },
+  { area: "Neel / North Morgan", time: "Same day", distance: "40 min" },
+  { area: "Hartselle", time: "Same day", distance: "28 min" },
+  { area: "Rural Morgan County", time: "Same day", distance: "35-45 min" },
+  { area: "Lacey's Spring", time: "Next day typical", distance: "45 min" },
+  { area: "Danville / Southeast Morgan", time: "Next day typical", distance: "50 min" }
+];
+
+const somervilleFacts = [
+  "Morgan County seat since 1891",
+  "Population: approximately 700 residents",
+  "Founded in 1819, one of Alabama's oldest towns",
+  "Historic courthouse square on National Register",
+  "Named for Lt. Robert Somerville, War of 1812 veteran",
+  "Small-town values with rich Southern heritage"
+];
+---
+
+<Layout
+  title="Somerville Alabama Handyman Services"
+  description="Professional handyman services in Somerville, Alabama and Morgan County. Serving the county seat, rural Morgan County, and surrounding communities. Same-day service, free estimates."
+>
+  <!-- Hero Section -->
+  <section class="bg-blue-900 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="max-w-3xl">
+        <span class="text-orange-400 font-semibold text-sm uppercase tracking-wide">Morgan County Seat</span>
+        <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Somerville, Alabama Handyman Services</h1>
+        <p class="text-xl text-blue-100 mb-6">
+          Quality handyman services for Somerville and rural Morgan County. From the historic courthouse square to the farms and country homes throughout the area, we bring professional craftsmanship to Alabama's small-town heart. Same-day service available.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+            Get Free Estimate
+          </a>
+          <a href="tel:2565550123" class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+            (256) 555-0123
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats -->
+  <section class="bg-white py-8 border-b">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <p class="text-3xl font-bold text-blue-900">Same Day</p>
+          <p class="text-gray-600 text-sm">Service Available</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-blue-900">35 min</p>
+          <p class="text-gray-600 text-sm">From Madison Base</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-blue-900">1819</p>
+          <p class="text-gray-600 text-sm">Year Founded</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-blue-900">Free</p>
+          <p class="text-gray-600 text-sm">Estimates Always</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Somerville Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Historic County Seat</span>
+          <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">Serving Somerville & Rural Morgan County</h2>
+          <p class="text-gray-600 mb-4">
+            Somerville holds a special place in Alabama history. Founded in 1819 and serving as the Morgan County seat since 1891, this small town of around 700 residents maintains the authentic Southern charm that larger cities have lost. The historic courthouse square, listed on the National Register of Historic Places, anchors a community where neighbors know each other and heritage matters.
+          </p>
+          <p class="text-gray-600 mb-4">
+            Beyond the town square, rural Morgan County spreads across farms, forests, and country homes where families have lived for generations. These properties require contractors who understand rural life—larger lots, outbuildings, well and septic systems, and the self-reliant spirit of country living. Many newer residents have discovered Somerville's affordable land and peaceful lifestyle while commuting to jobs in Decatur or Huntsville.
+          </p>
+          <p class="text-gray-600">
+            Based 35 minutes away in Madison, we're committed to serving Somerville and rural Morgan County. We understand that finding reliable contractors in small towns can be challenging—many won't make the drive or treat rural customers as a priority. We're different. When we schedule a job in Somerville, we show up on time, do quality work, and treat your property with respect.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold text-blue-900 mb-4">Somerville Quick Facts</h3>
+          <ul class="space-y-3">
+            {somervilleFacts.map((fact) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-gray-700">{fact}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="mt-6 pt-4 border-t border-gray-200">
+            <h4 class="font-semibold text-gray-800 mb-2">Our Commitment to Small Towns</h4>
+            <p class="text-gray-600 text-sm">Small towns like Somerville deserve the same quality service as big cities. We don't add surcharges for rural areas or treat country customers as second-class. You get the same professionalism, the same quality, and the same respect we provide everywhere.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neighborhoods Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Area Coverage</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Somerville Areas We Serve</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          From the courthouse square to the farthest farmstead, we serve all of Somerville and surrounding Morgan County.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {neighborhoods.map((neighborhood) => (
+          <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-100 hover:border-blue-200 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-bold text-blue-900">{neighborhood.name}</h3>
+              <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">{neighborhood.responseTime}</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">{neighborhood.description}</p>
+            <div>
+              <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Common Services</p>
+              <div class="flex flex-wrap gap-1">
+                {neighborhood.commonServices.map((service) => (
+                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{service}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Response Times -->
+  <section class="py-16 bg-blue-900 text-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold">Response Times for Somerville Areas</h2>
+        <p class="text-blue-100 mt-4">We reach all Somerville and Morgan County areas efficiently.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        {responseTimes.map((item) => (
+          <div class="bg-white/10 rounded-lg p-4 flex items-center justify-between">
+            <div>
+              <p class="font-semibold">{item.area}</p>
+              <p class="text-blue-200 text-sm">{item.distance} from base</p>
+            </div>
+            <span class={`px-3 py-1 rounded-full text-sm font-medium ${
+              item.time === "Same day" ? "bg-green-500 text-white" : "bg-yellow-500 text-black"
+            }`}>
+              {item.time}
+            </span>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center">
+        <p class="text-blue-100">Emergency service available for all areas. Call for urgent repairs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weather Challenges -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Rural Expertise</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Somerville Weather Challenges</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Rural Morgan County faces unique weather challenges. We understand how Alabama's climate affects country properties.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        {weatherChallenges.map((weather) => (
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                {weather.season.includes("Spring") && (
+                  <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                )}
+                {weather.season.includes("Summer") && (
+                  <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                  </svg>
+                )}
+                {weather.season.includes("Fall") && (
+                  <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                  </svg>
+                )}
+                {weather.season.includes("Winter") && (
+                  <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                  </svg>
+                )}
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-800">{weather.season}</h3>
+                <p class="text-orange-600 font-medium text-sm">{weather.challenge}</p>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">{weather.impact}</p>
+            <div>
+              <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Our Services</p>
+              <p class="text-sm text-blue-900">{weather.services}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Major Employers -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Serving Somerville Workers</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Who We Serve in Somerville</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Somerville residents work locally and across the region. We accommodate your schedule wherever you work.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {majorEmployers.map((employer) => (
+          <div class="bg-gray-50 rounded-lg p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-bold text-blue-900">{employer.name}</h3>
+              <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">{employer.employees}</span>
+            </div>
+            <p class="text-gray-600 text-sm">{employer.description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 bg-blue-50 rounded-lg p-6">
+        <div class="flex items-start gap-4">
+          <svg class="w-8 h-8 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          </svg>
+          <div>
+            <h3 class="text-lg font-bold text-blue-900 mb-2">Small Town, Big Commitment</h3>
+            <p class="text-gray-600 text-sm">In a small town like Somerville, reputation is everything. You can't hide behind a big company name or move on to the next neighborhood if you do poor work. We understand that serving Somerville means building relationships, not just completing jobs. When we work on your home, we know we might see you at the grocery store next week. That accountability makes us better contractors.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Directions from Landmarks -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Finding Us</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Directions from Area Landmarks</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          We're conveniently located to serve Somerville and all of eastern Morgan County.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {landmarks.map((landmark) => (
+          <div class="bg-white rounded-lg p-6 shadow-sm">
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-blue-900 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <div>
+                <h3 class="font-bold text-gray-800">{landmark.name}</h3>
+                <p class="text-gray-500 text-xs mb-2">{landmark.address}</p>
+                <p class="text-gray-600 text-sm">{landmark.directions}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitor Comparison -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">The Difference</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">Why Somerville Residents Choose Us</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Finding reliable contractors who serve small towns can be challenging. Here's why Morgan County homeowners trust us.
+        </p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white rounded-lg shadow-sm">
+          <thead>
+            <tr class="bg-blue-900 text-white">
+              <th class="px-6 py-4 text-left font-semibold">What Matters</th>
+              <th class="px-6 py-4 text-left font-semibold">Madison Handyman Pro</th>
+              <th class="px-6 py-4 text-left font-semibold">Other Contractors</th>
+            </tr>
+          </thead>
+          <tbody>
+            {competitorComparison.map((row, index) => (
+              <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                <td class="px-6 py-4 font-medium text-gray-800">{row.feature}</td>
+                <td class="px-6 py-4 text-green-600 font-medium">{row.us}</td>
+                <td class="px-6 py-4 text-gray-500">{row.others}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Somerville Reviews -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Local Reviews</span>
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">What Somerville Area Homeowners Say</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <div class="flex items-center gap-1 mb-3">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-600 text-sm mb-4">"Our 1890s farmhouse near the courthouse needed porch repairs that matched the original woodwork. They took the time to find the right materials and did beautiful restoration work. You'd never know it wasn't original. A contractor who respects old houses is rare."</p>
+          <p class="text-gray-800 font-medium">- Margaret L., Downtown Somerville</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <div class="flex items-center gap-1 mb-3">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-600 text-sm mb-4">"I've called three contractors who said they'd come out to our place in Lacon—none ever showed. Madison Handyman Pro came when they said, quoted fair, and did excellent drywall work. Finally, someone who actually serves rural customers."</p>
+          <p class="text-gray-800 font-medium">- Tommy R., Lacon</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <div class="flex items-center gap-1 mb-3">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+            ))}
+          </div>
+          <p class="text-gray-600 text-sm mb-4">"Storm damage to our barn and house after spring storms. They handled both buildings, worked with our insurance, and finished before the next round of weather. Professional, efficient, and they understood farm property needs."</p>
+          <p class="text-gray-800 font-medium">- Harold & Betty S., Rural Morgan County</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-orange-500 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Ready for Reliable Service in Somerville?</h2>
+      <p class="text-xl mb-8">Same-day service available. Free estimates, quality guaranteed.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
+          Get Free Estimate
+        </a>
+        <a href="tel:2565550123" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
+          (256) 555-0123
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
