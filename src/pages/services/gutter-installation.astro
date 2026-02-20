@@ -1,164 +1,197 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 
-const serviceAreas = [
-  "Madison", "Huntsville", "Decatur", "Athens", "Harvest"
-];
+const serviceAreas = ["Madison", "Huntsville", "Decatur", "Athens", "Harvest"];
 
 const gutterTypes = [
   {
     name: "Seamless Aluminum",
-    description: "Our most popular option. Custom-formed on-site to fit your home perfectly with no seams to leak.",
-    benefits: ["No seams = no leaks", "Custom fit to your home", "20+ year lifespan", "Multiple color options"],
-    bestFor: "Most residential homes"
+    description:
+      "Our most popular option. Custom-formed on-site to fit your home perfectly with no seams to leak.",
+    benefits: [
+      "No seams = no leaks",
+      "Custom fit to your home",
+      "20+ year lifespan",
+      "Multiple color options",
+    ],
+    bestFor: "Most residential homes",
   },
   {
     name: "K-Style Gutters",
-    description: "The industry standard profile that handles heavy rainfall and complements most home styles.",
-    benefits: ["High water capacity", "Decorative profile", "Works with all roofs", "Cost-effective"],
-    bestFor: "Traditional and modern homes"
+    description:
+      "The industry standard profile that handles heavy rainfall and complements most home styles.",
+    benefits: [
+      "High water capacity",
+      "Decorative profile",
+      "Works with all roofs",
+      "Cost-effective",
+    ],
+    bestFor: "Traditional and modern homes",
   },
   {
     name: "Half-Round Gutters",
-    description: "Classic rounded profile ideal for historic homes or those wanting a distinctive look.",
-    benefits: ["Historic appearance", "Easy to clean", "Less debris buildup", "Elegant aesthetics"],
-    bestFor: "Historic or craftsman-style homes"
+    description:
+      "Classic rounded profile ideal for historic homes or those wanting a distinctive look.",
+    benefits: [
+      "Historic appearance",
+      "Easy to clean",
+      "Less debris buildup",
+      "Elegant aesthetics",
+    ],
+    bestFor: "Historic or craftsman-style homes",
   },
   {
     name: "Box Gutters",
-    description: "Built into the roof structure for a clean, hidden appearance on modern or commercial buildings.",
-    benefits: ["Hidden appearance", "High capacity", "Modern aesthetic", "Commercial grade"],
-    bestFor: "Commercial buildings and modern architecture"
-  }
+    description:
+      "Built into the roof structure for a clean, hidden appearance on modern or commercial buildings.",
+    benefits: [
+      "Hidden appearance",
+      "High capacity",
+      "Modern aesthetic",
+      "Commercial grade",
+    ],
+    bestFor: "Commercial buildings and modern architecture",
+  },
 ];
 
 const installationProcess = [
   {
     step: "1",
     title: "On-Site Assessment",
-    description: "We measure your roofline, assess drainage needs, and discuss options"
+    description:
+      "We measure your roofline, assess drainage needs, and discuss options",
   },
   {
     step: "2",
     title: "Custom Quote",
-    description: "Detailed written estimate with material options and pricing"
+    description: "Detailed written estimate with material options and pricing",
   },
   {
     step: "3",
     title: "Material Selection",
-    description: "Choose your gutter style, color, and any accessories"
+    description: "Choose your gutter style, color, and any accessories",
   },
   {
     step: "4",
     title: "Old Gutter Removal",
-    description: "Careful removal of existing gutters if replacing"
+    description: "Careful removal of existing gutters if replacing",
   },
   {
     step: "5",
     title: "Fascia Inspection",
-    description: "Check and repair fascia boards before installation"
+    description: "Check and repair fascia boards before installation",
   },
   {
     step: "6",
     title: "Custom Fabrication",
-    description: "Seamless gutters formed on-site to exact measurements"
+    description: "Seamless gutters formed on-site to exact measurements",
   },
   {
     step: "7",
     title: "Professional Installation",
-    description: "Secure mounting with proper slope for optimal drainage"
+    description: "Secure mounting with proper slope for optimal drainage",
   },
   {
     step: "8",
     title: "Final Inspection",
-    description: "Water test and walk-through to ensure satisfaction"
-  }
+    description: "Water test and walk-through to ensure satisfaction",
+  },
 ];
 
 const comparisonData = [
   {
     feature: "Leak Potential",
     seamless: "Minimal - no seams",
-    sectional: "Higher - joints can fail"
+    sectional: "Higher - joints can fail",
   },
   {
     feature: "Custom Fit",
     seamless: "Yes - made on-site",
-    sectional: "No - standard lengths"
+    sectional: "No - standard lengths",
   },
   {
     feature: "Installation",
     seamless: "Professional required",
-    sectional: "DIY possible"
+    sectional: "DIY possible",
   },
   {
     feature: "Lifespan",
     seamless: "20-30+ years",
-    sectional: "10-20 years"
+    sectional: "10-20 years",
   },
   {
     feature: "Maintenance",
     seamless: "Low",
-    sectional: "Higher - seal joints"
+    sectional: "Higher - seal joints",
   },
   {
     feature: "Appearance",
     seamless: "Clean, continuous lines",
-    sectional: "Visible seams"
+    sectional: "Visible seams",
   },
   {
     feature: "Cost",
     seamless: "Higher upfront",
-    sectional: "Lower upfront"
+    sectional: "Lower upfront",
   },
   {
     feature: "Long-term Value",
     seamless: "Better ROI",
-    sectional: "More repairs needed"
-  }
+    sectional: "More repairs needed",
+  },
 ];
 
 const faqs = [
   {
     question: "How long do new gutters last?",
-    answer: "Quality aluminum seamless gutters typically last 20-30+ years with proper maintenance. Factors affecting lifespan include material quality, installation technique, weather exposure, and regular cleaning. We use heavy-gauge aluminum and proper mounting techniques for maximum longevity."
+    answer:
+      "Quality aluminum seamless gutters typically last 20-30+ years with proper maintenance. Factors affecting lifespan include material quality, installation technique, weather exposure, and regular cleaning. We use heavy-gauge aluminum and proper mounting techniques for maximum longevity.",
   },
   {
     question: "What size gutters do I need?",
-    answer: "Most residential homes use 5-inch K-style gutters, which handle up to 1.2 gallons per foot. Homes with large roof areas, steep pitches, or heavy rainfall may benefit from 6-inch gutters. We'll assess your specific needs and recommend the appropriate size during your estimate."
+    answer:
+      "Most residential homes use 5-inch K-style gutters, which handle up to 1.2 gallons per foot. Homes with large roof areas, steep pitches, or heavy rainfall may benefit from 6-inch gutters. We'll assess your specific needs and recommend the appropriate size during your estimate.",
   },
   {
     question: "How much does gutter installation cost?",
-    answer: "Gutter installation costs vary based on linear footage, gutter style, home height, and complexity. Typical residential projects range from $1,000-$2,500 for a complete system. We provide free detailed estimates so you know exact costs before work begins."
+    answer:
+      "Gutter installation costs vary based on linear footage, gutter style, home height, and complexity. Typical residential projects range from $1,000-$2,500 for a complete system. We provide free detailed estimates so you know exact costs before work begins.",
   },
   {
     question: "Can you match my existing gutters?",
-    answer: "Yes! We offer a wide range of colors and can match most existing gutter colors. If you're replacing damaged sections, we can often fabricate matching gutters on-site. We'll bring color samples during your estimate."
+    answer:
+      "Yes! We offer a wide range of colors and can match most existing gutter colors. If you're replacing damaged sections, we can often fabricate matching gutters on-site. We'll bring color samples during your estimate.",
   },
   {
     question: "Do you install gutter guards?",
-    answer: "We can discuss gutter guard options with you. While guards reduce debris, they're not maintenance-free and may not be ideal for all situations. We'll help you understand the pros and cons for your specific trees and roof setup."
+    answer:
+      "We can discuss gutter guard options with you. While guards reduce debris, they're not maintenance-free and may not be ideal for all situations. We'll help you understand the pros and cons for your specific trees and roof setup.",
   },
   {
     question: "How long does installation take?",
-    answer: "Most residential gutter installations are completed in one day. A typical single-story home takes 4-6 hours, while larger or two-story homes may take a full day. We'll give you a time estimate with your quote."
+    answer:
+      "Most residential gutter installations are completed in one day. A typical single-story home takes 4-6 hours, while larger or two-story homes may take a full day. We'll give you a time estimate with your quote.",
   },
   {
     question: "Will you repair my fascia boards?",
-    answer: "Yes! Damaged or rotted fascia boards should be repaired before gutter installation for proper mounting. We inspect fascia during our assessment and include any necessary repairs in your estimate. Healthy fascia means secure gutters."
+    answer:
+      "Yes! Damaged or rotted fascia boards should be repaired before gutter installation for proper mounting. We inspect fascia during our assessment and include any necessary repairs in your estimate. Healthy fascia means secure gutters.",
   },
   {
     question: "What happens to my old gutters?",
-    answer: "We remove and dispose of all old gutters, downspouts, and hardware. Everything is hauled away as part of the installation - you don't need to worry about disposal. We leave your property clean and ready."
+    answer:
+      "We remove and dispose of all old gutters, downspouts, and hardware. Everything is hauled away as part of the installation - you don't need to worry about disposal. We leave your property clean and ready.",
   },
   {
     question: "Do you warranty your work?",
-    answer: "Yes, we provide a workmanship warranty on all gutter installations. This covers installation defects, not normal wear or damage from impacts. We stand behind our work and will address any installation issues promptly."
+    answer:
+      "Yes, we provide a workmanship warranty on all gutter installations. This covers installation defects, not normal wear or damage from impacts. We stand behind our work and will address any installation issues promptly.",
   },
   {
     question: "Should I replace or repair my gutters?",
-    answer: "Consider replacement if gutters are 15+ years old, have multiple leaking seams, show widespread rust/damage, or sag despite repairs. Isolated damage can often be repaired. During your estimate, we'll honestly assess whether repair or replacement makes more sense."
-  }
+    answer:
+      "Consider replacement if gutters are 15+ years old, have multiple leaking seams, show widespread rust/damage, or sag despite repairs. Isolated damage can often be repaired. During your estimate, we'll honestly assess whether repair or replacement makes more sense.",
+  },
 ];
 
 const signsCTA = [
@@ -167,7 +200,7 @@ const signsCTA = [
   "Gutters pulling away from house",
   "Water damage beneath gutters",
   "Frequent overflows despite cleaning",
-  "Gutters over 15 years old"
+  "Gutters over 15 years old",
 ];
 ---
 
@@ -175,24 +208,170 @@ const signsCTA = [
   title="Gutter Installation"
   description="Professional gutter installation in Madison, Alabama. Seamless aluminum gutters custom-fit to your home. Free estimates, quality materials, expert installation."
 >
-  <!-- Hero Section -->
-  <section class="bg-blue-900 text-white py-16">
-    <div class="max-w-6xl mx-auto px-4">
+  <!-- Premium Hero Section -->
+  <section
+    class="relative bg-blue-900 text-white pt-32 pb-24 flex items-center overflow-hidden"
+  >
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1543329188-4eabc82d1c68?q=80&w=2070&auto=format&fit=crop"
+        alt="Gutter Installation Services"
+        class="w-full h-full object-cover opacity-20 scale-105 animate-[pulse_10s_ease-in-out_infinite_alternate]"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-blue-950 via-blue-900/90 to-blue-900/60"
+      >
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 relative z-10 w-full">
       <div class="max-w-3xl">
-        <span class="text-orange-400 font-semibold text-sm uppercase tracking-wide">Gutter Services</span>
-        <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">Gutter Installation</h1>
-        <p class="text-xl text-blue-100 mb-6">
-          Protect your home with professionally installed seamless gutters. Custom-fabricated on-site to fit your home perfectly, with no seams to leak.
+        <nav
+          class="text-blue-200 text-sm mb-6 flex items-center gap-2 font-medium tracking-wide"
+        >
+          <a href="/" class="hover:text-white transition-colors">Home</a>
+          <span class="opacity-50">/</span>
+          <a href="/services" class="hover:text-white transition-colors"
+            >Services</a
+          >
+          <span class="opacity-50">/</span>
+          <span class="text-orange-400">Gutter Installation</span>
+        </nav>
+
+        <div
+          class="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 text-sm font-medium text-blue-100"
+        >
+          <span
+            class="w-2 h-2 inline-block rounded-full bg-orange-400 mr-2 animate-pulse"
+          ></span>
+          Seamless Gutter Solutions
+        </div>
+
+        <h1
+          class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight"
+        >
+          Gutter <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600"
+            >Installation</span
+          >
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-blue-100 mb-10 font-light leading-relaxed"
+        >
+          Protect your home with professionally installed seamless gutters.
+          Custom-fabricated on-site to fit your home perfectly, with no seams to
+          leak.
         </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="/contact" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-            Get Free Estimate
-          </a>
-          <a href="tel:2565550123" class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition-colors">
-            (256) 555-0123
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="sms:2565550123"
+            class="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 text-lg flex items-center justify-center gap-3 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-1 border border-orange-400/30"
+          >
+            <svg
+              class="w-6 h-6 group-hover:scale-110 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+              ></path>
+            </svg>
+            Text A Photo For Instant Quote
           </a>
         </div>
       </div>
+    </div>
+
+    <!-- Decorative shape divider -->
+    <div
+      class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10"
+    >
+      <svg
+        class="relative block w-full h-[50px] md:h-[100px]"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.06,155.15,112.5,231.2,88.45,264.44,77.83,296.88,67.36,321.39,56.44Z"
+          class="fill-white"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Comprehensive SEO Introduction -->
+  <section class="py-20 bg-white border-b border-gray-100">
+    <div class="max-w-4xl mx-auto px-4 prose prose-lg prose-blue">
+      <h2
+        class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 font-display tracking-tight"
+      >
+        Premium Seamless Gutter Installation Services
+      </h2>
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        A high-functioning, properly calibrated gutter system is arguably the
+        most critical exterior component protecting the long-term structural
+        integrity of your home. While often overlooked by homeowners until a
+        catastrophic failure occurs, gutters perform the essential task of
+        aggressively routing thousands of gallons of destructive rainwater
+        safely away from your delicate foundation, expensive landscaping, and
+        exterior siding. At Madison Handyman Pro, we specialize in the premium
+        fabrication and precise installation of heavy-duty seamless aluminum
+        gutters, actively safeguarding properties across Madison, Huntsville,
+        and the broader North Alabama region against the severe consequences of
+        chronic water damage.
+      </p>
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        We exclusively install continuous, seamless gutter systems because
+        outdated, sectional gutters pieced together with messy sealants are
+        inherently prone to inevitable failure. Every single seam in a
+        traditional gutter system represents a weak point where heavy water
+        weight, thermal expansion, and accumulating debris will eventually cause
+        highly destructive leaks. By custom-extruding your new gutters directly
+        on-site at your home to the exact, precise measurements of your
+        roofline, we completely eliminate these vulnerable joints. The result is
+        a beautifully sleek, incredibly durable drainage system that
+        effortlessly handles the torrential downpours characteristic of our
+        unpredictable local Alabama climate.
+      </p>
+
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 mt-14">
+        Precision Pitching and Foundation Water Management
+      </h3>
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        Hanging a gutter properly requires significantly more technical
+        expertise than simply attaching a metal trough to a wooden fascia board.
+        The true science of effective gutter installation lies in the precise
+        calculation of the "pitch" or slope. If a gutter is hung perfectly
+        level, standing water will stagnate, drastically accelerating the
+        rusting or oxidation process while simultaneously creating a prime
+        breeding ground for thousands of disease-carrying mosquitoes.
+        Conversely, if it is pitched too steeply, the visual aesthetics of your
+        roofline are jarringly ruined, and water may rapidly overrun the
+        downspout capacity during heavy storms. Our highly trained technicians
+        utilize advanced leveling tools to ensure the absolute perfect
+        micro-pitch, silently and efficiently directing water precisely where it
+        needs to go without compromising your home’s beautiful curb appeal.
+      </p>
+      <p class="text-gray-700 text-lg leading-relaxed mb-10">
+        Beyond the gutters themselves, we comprehensively address the entire
+        holistic water management system. We meticulously install oversized
+        downspouts that drastically increase the overall water volume capacity
+        by over 50% compared to standard builder-grade sizes, effectively
+        preventing dangerous backlogs during torrential thunderstorms.
+        Furthermore, we actively analyze where the water is being discharged at
+        ground level, frequently implementing strategic underground routing
+        solutions or extended splash blocks to guarantee that heavy moisture is
+        driven far away from your concrete basement walls or sensitive
+        crawlspace environment, thereby locking out the threat of foundational
+        cracking and toxic mold infiltration.
+      </p>
     </div>
   </section>
 
@@ -201,62 +380,133 @@ const signsCTA = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Time for New Gutters?</span>
-          <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">Signs You Need Gutter Replacement</h2>
+          <span
+            class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+            >Time for New Gutters?</span
+          >
+          <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">
+            Signs You Need Gutter Replacement
+          </h2>
           <ul class="space-y-3">
-            {signsCTA.map((sign) => (
-              <li class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                </svg>
-                <span class="text-gray-700">{sign}</span>
-              </li>
-            ))}
+            {
+              signsCTA.map((sign) => (
+                <li class="flex items-start gap-3">
+                  <svg
+                    class="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    />
+                  </svg>
+                  <span class="text-gray-700">{sign}</span>
+                </li>
+              ))
+            }
           </ul>
           <p class="mt-6 text-gray-600">
-            Don't wait for water damage. New gutters protect your foundation, landscaping, and home exterior for decades.
+            Don't wait for water damage. New gutters protect your foundation,
+            landscaping, and home exterior for decades.
           </p>
-          <a href="/contact" class="mt-6 inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+          <a
+            href="/contact"
+            class="mt-6 inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+          >
             Schedule Free Assessment
           </a>
         </div>
         <div class="bg-blue-50 p-8 rounded-lg">
-          <h3 class="text-xl font-bold text-blue-900 mb-4">Why Seamless Gutters?</h3>
+          <h3 class="text-xl font-bold text-blue-900 mb-4">
+            Why Seamless Gutters?
+          </h3>
           <div class="space-y-4">
             <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              <svg
+                class="w-6 h-6 text-green-500 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
               </svg>
               <div>
                 <h4 class="font-semibold text-gray-800">No Seams = No Leaks</h4>
-                <p class="text-gray-600 text-sm">Traditional gutters have joints every 10 feet that can fail. Seamless gutters are one continuous piece.</p>
+                <p class="text-gray-600 text-sm">
+                  Traditional gutters have joints every 10 feet that can fail.
+                  Seamless gutters are one continuous piece.
+                </p>
               </div>
             </div>
             <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              <svg
+                class="w-6 h-6 text-green-500 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
               </svg>
               <div>
                 <h4 class="font-semibold text-gray-800">Custom Fit</h4>
-                <p class="text-gray-600 text-sm">We fabricate gutters on-site to match your exact roofline. Perfect fit, every time.</p>
+                <p class="text-gray-600 text-sm">
+                  We fabricate gutters on-site to match your exact roofline.
+                  Perfect fit, every time.
+                </p>
               </div>
             </div>
             <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              <svg
+                class="w-6 h-6 text-green-500 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
               </svg>
               <div>
                 <h4 class="font-semibold text-gray-800">Better Aesthetics</h4>
-                <p class="text-gray-600 text-sm">Clean, continuous lines without visible seams. Your home looks better.</p>
+                <p class="text-gray-600 text-sm">
+                  Clean, continuous lines without visible seams. Your home looks
+                  better.
+                </p>
               </div>
             </div>
             <div class="flex items-start gap-3">
-              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              <svg
+                class="w-6 h-6 text-green-500 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
               </svg>
               <div>
                 <h4 class="font-semibold text-gray-800">Less Maintenance</h4>
-                <p class="text-gray-600 text-sm">No seams means less debris buildup and fewer clogs. Easier to clean and maintain.</p>
+                <p class="text-gray-600 text-sm">
+                  No seams means less debris buildup and fewer clogs. Easier to
+                  clean and maintain.
+                </p>
               </div>
             </div>
           </div>
@@ -269,29 +519,48 @@ const signsCTA = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Options</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Gutter Styles We Install</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Options</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Gutter Styles We Install
+        </h2>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
-        {gutterTypes.map((gutter) => (
-          <div class="bg-white rounded-lg p-6 shadow-sm">
-            <h3 class="text-xl font-bold text-blue-900 mb-2">{gutter.name}</h3>
-            <p class="text-gray-600 mb-4">{gutter.description}</p>
-            <ul class="space-y-2 mb-4">
-              {gutter.benefits.map((benefit) => (
-                <li class="flex items-center gap-2 text-gray-700 text-sm">
-                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  {benefit}
-                </li>
-              ))}
-            </ul>
-            <p class="text-sm text-blue-900 font-medium">
-              <span class="text-gray-500">Best for:</span> {gutter.bestFor}
-            </p>
-          </div>
-        ))}
+        {
+          gutterTypes.map((gutter) => (
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+              <h3 class="text-xl font-bold text-blue-900 mb-2">
+                {gutter.name}
+              </h3>
+              <p class="text-gray-600 mb-4">{gutter.description}</p>
+              <ul class="space-y-2 mb-4">
+                {gutter.benefits.map((benefit) => (
+                  <li class="flex items-center gap-2 text-gray-700 text-sm">
+                    <svg
+                      class="w-4 h-4 text-green-500 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+              <p class="text-sm text-blue-900 font-medium">
+                <span class="text-gray-500">Best for:</span> {gutter.bestFor}
+              </p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -300,10 +569,16 @@ const signsCTA = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Comparison</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Seamless vs. Sectional Gutters</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Comparison</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Seamless vs. Sectional Gutters
+        </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Understanding the difference helps you make the right choice for your home.
+          Understanding the difference helps you make the right choice for your
+          home.
         </p>
       </div>
       <div class="overflow-x-auto">
@@ -311,23 +586,33 @@ const signsCTA = [
           <thead>
             <tr class="bg-blue-900 text-white">
               <th class="px-6 py-4 text-left font-semibold">Feature</th>
-              <th class="px-6 py-4 text-left font-semibold">Seamless Gutters</th>
-              <th class="px-6 py-4 text-left font-semibold">Sectional Gutters</th>
+              <th class="px-6 py-4 text-left font-semibold">Seamless Gutters</th
+              >
+              <th class="px-6 py-4 text-left font-semibold"
+                >Sectional Gutters</th
+              >
             </tr>
           </thead>
           <tbody>
-            {comparisonData.map((row, index) => (
-              <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                <td class="px-6 py-4 font-medium text-gray-800">{row.feature}</td>
-                <td class="px-6 py-4 text-green-600">{row.seamless}</td>
-                <td class="px-6 py-4 text-gray-600">{row.sectional}</td>
-              </tr>
-            ))}
+            {
+              comparisonData.map((row, index) => (
+                <tr class={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <td class="px-6 py-4 font-medium text-gray-800">
+                    {row.feature}
+                  </td>
+                  <td class="px-6 py-4 text-green-600">{row.seamless}</td>
+                  <td class="px-6 py-4 text-gray-600">{row.sectional}</td>
+                </tr>
+              ))
+            }
           </tbody>
         </table>
       </div>
       <div class="mt-8 text-center">
-        <p class="text-gray-600 mb-4">We recommend seamless gutters for most homes due to their superior performance and longevity.</p>
+        <p class="text-gray-600 mb-4">
+          We recommend seamless gutters for most homes due to their superior
+          performance and longevity.
+        </p>
       </div>
     </div>
   </section>
@@ -336,22 +621,30 @@ const signsCTA = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Our Process</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Professional Installation Steps</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Our Process</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Professional Installation Steps
+        </h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
-          From assessment to completion, we handle every detail for a perfect installation.
+          From assessment to completion, we handle every detail for a perfect
+          installation.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {installationProcess.map((item) => (
-          <div class="bg-white rounded-lg p-6 text-center shadow-sm">
-            <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-              {item.step}
+        {
+          installationProcess.map((item) => (
+            <div class="bg-white rounded-lg p-6 text-center shadow-sm">
+              <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                {item.step}
+              </div>
+              <h3 class="font-bold text-gray-800 mb-2">{item.title}</h3>
+              <p class="text-gray-600 text-sm">{item.description}</p>
             </div>
-            <h3 class="font-bold text-gray-800 mb-2">{item.title}</h3>
-            <p class="text-gray-600 text-sm">{item.description}</p>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -361,12 +654,23 @@ const signsCTA = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold">Complete Gutter System Installation</h2>
-        <p class="text-blue-100 mt-4">Everything you need for proper water management.</p>
+        <p class="text-blue-100 mt-4">
+          Everything you need for proper water management.
+        </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          <svg
+            class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"></path>
           </svg>
           <div>
             <h3 class="font-semibold">Seamless Gutters</h3>
@@ -374,17 +678,37 @@ const signsCTA = [
           </div>
         </div>
         <div class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          <svg
+            class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"></path>
           </svg>
           <div>
             <h3 class="font-semibold">Downspouts</h3>
-            <p class="text-blue-100 text-sm">Properly sized for your roof area</p>
+            <p class="text-blue-100 text-sm">
+              Properly sized for your roof area
+            </p>
           </div>
         </div>
         <div class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          <svg
+            class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"></path>
           </svg>
           <div>
             <h3 class="font-semibold">End Caps & Corners</h3>
@@ -392,17 +716,37 @@ const signsCTA = [
           </div>
         </div>
         <div class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          <svg
+            class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"></path>
           </svg>
           <div>
             <h3 class="font-semibold">Hidden Hangers</h3>
-            <p class="text-blue-100 text-sm">Secure mounting, clean appearance</p>
+            <p class="text-blue-100 text-sm">
+              Secure mounting, clean appearance
+            </p>
           </div>
         </div>
         <div class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          <svg
+            class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"></path>
           </svg>
           <div>
             <h3 class="font-semibold">Outlet Drops</h3>
@@ -410,17 +754,37 @@ const signsCTA = [
           </div>
         </div>
         <div class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          <svg
+            class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"></path>
           </svg>
           <div>
             <h3 class="font-semibold">Elbows & Extensions</h3>
-            <p class="text-blue-100 text-sm">Direct water away from foundation</p>
+            <p class="text-blue-100 text-sm">
+              Direct water away from foundation
+            </p>
           </div>
         </div>
         <div class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          <svg
+            class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"></path>
           </svg>
           <div>
             <h3 class="font-semibold">Splash Blocks</h3>
@@ -428,8 +792,17 @@ const signsCTA = [
           </div>
         </div>
         <div class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          <svg
+            class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"></path>
           </svg>
           <div>
             <h3 class="font-semibold">Fascia Repair</h3>
@@ -437,8 +810,17 @@ const signsCTA = [
           </div>
         </div>
         <div class="flex items-start gap-3">
-          <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          <svg
+            class="w-6 h-6 text-orange-400 flex-shrink-0 mt-0.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"></path>
           </svg>
           <div>
             <h3 class="font-semibold">Old Gutter Removal</h3>
@@ -453,23 +835,38 @@ const signsCTA = [
   <section class="py-16 bg-white">
     <div class="max-w-4xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Common Questions</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Gutter Installation FAQs</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Common Questions</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Gutter Installation FAQs
+        </h2>
       </div>
       <div class="space-y-4">
-        {faqs.map((faq, index) => (
-          <details class="bg-gray-50 rounded-lg shadow-sm group">
-            <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:text-blue-900 flex items-center justify-between">
-              {faq.question}
-              <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <div class="px-6 pb-4 text-gray-600">
-              {faq.answer}
-            </div>
-          </details>
-        ))}
+        {
+          faqs.map((faq, index) => (
+            <details class="bg-gray-50 rounded-lg shadow-sm group">
+              <summary class="px-6 py-4 cursor-pointer font-semibold text-gray-800 hover:text-blue-900 flex items-center justify-between">
+                {faq.question}
+                <svg
+                  class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <div class="px-6 pb-4 text-gray-600">{faq.answer}</div>
+            </details>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -478,35 +875,87 @@ const signsCTA = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">The Madison Handyman Pro Difference</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Why Madison Homeowners Trust Us</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >The Madison Handyman Pro Difference</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Why Madison Homeowners Trust Us
+        </h2>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="bg-white rounded-lg p-6 shadow-sm">
-          <h3 class="text-lg font-bold text-blue-900 mb-3">On-Site Custom Fabrication</h3>
-          <p class="text-gray-600 text-sm">We bring our seamless gutter machine to your property and fabricate gutters on-site. This means perfect measurements, no delivery delays, and gutters cut to the exact length your home needs. No splicing, no extra seams, no compromises.</p>
+          <h3 class="text-lg font-bold text-blue-900 mb-3">
+            On-Site Custom Fabrication
+          </h3>
+          <p class="text-gray-600 text-sm">
+            We bring our seamless gutter machine to your property and fabricate
+            gutters on-site. This means perfect measurements, no delivery
+            delays, and gutters cut to the exact length your home needs. No
+            splicing, no extra seams, no compromises.
+          </p>
         </div>
         <div class="bg-white rounded-lg p-6 shadow-sm">
-          <h3 class="text-lg font-bold text-blue-900 mb-3">Heavy-Gauge Aluminum</h3>
-          <p class="text-gray-600 text-sm">We use 0.027-inch aluminum, thicker than the industry standard 0.025-inch material. This extra thickness provides better dent resistance, longer lifespan, and superior performance in Alabama's summer heat and winter freezes.</p>
+          <h3 class="text-lg font-bold text-blue-900 mb-3">
+            Heavy-Gauge Aluminum
+          </h3>
+          <p class="text-gray-600 text-sm">
+            We use 0.027-inch aluminum, thicker than the industry standard
+            0.025-inch material. This extra thickness provides better dent
+            resistance, longer lifespan, and superior performance in Alabama's
+            summer heat and winter freezes.
+          </p>
         </div>
         <div class="bg-white rounded-lg p-6 shadow-sm">
-          <h3 class="text-lg font-bold text-blue-900 mb-3">Proper Slope and Drainage</h3>
-          <p class="text-gray-600 text-sm">Gutters must slope correctly toward downspouts for proper drainage. We carefully calculate and install the correct pitch, typically one-quarter inch per ten feet, ensuring water flows efficiently and never pools in your gutters.</p>
+          <h3 class="text-lg font-bold text-blue-900 mb-3">
+            Proper Slope and Drainage
+          </h3>
+          <p class="text-gray-600 text-sm">
+            Gutters must slope correctly toward downspouts for proper drainage.
+            We carefully calculate and install the correct pitch, typically
+            one-quarter inch per ten feet, ensuring water flows efficiently and
+            never pools in your gutters.
+          </p>
         </div>
         <div class="bg-white rounded-lg p-6 shadow-sm">
-          <h3 class="text-lg font-bold text-blue-900 mb-3">Hidden Hanger System</h3>
-          <p class="text-gray-600 text-sm">We install gutters using internal hidden hangers spaced every 24 inches, providing secure mounting without visible hardware. This creates a cleaner appearance and stronger attachment than spike-and-ferrule systems that can loosen over time.</p>
+          <h3 class="text-lg font-bold text-blue-900 mb-3">
+            Hidden Hanger System
+          </h3>
+          <p class="text-gray-600 text-sm">
+            We install gutters using internal hidden hangers spaced every 24
+            inches, providing secure mounting without visible hardware. This
+            creates a cleaner appearance and stronger attachment than
+            spike-and-ferrule systems that can loosen over time.
+          </p>
         </div>
       </div>
       <div class="mt-8 bg-blue-50 rounded-lg p-6">
         <div class="flex items-start gap-4">
-          <svg class="w-8 h-8 text-blue-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          <svg
+            class="w-8 h-8 text-blue-900 flex-shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            ></path>
           </svg>
           <div>
-            <h3 class="text-lg font-bold text-blue-900 mb-2">Our Commitment to Madison Homeowners</h3>
-            <p class="text-gray-600 text-sm">We're not a big box store or a fly-by-night contractor. We're your neighbors in Madison County. When you call us, a real person answers. When we schedule an appointment, we show up on time. When we give you a quote, that's the price you pay. We stand behind every gutter we install because our reputation in this community matters to us.</p>
+            <h3 class="text-lg font-bold text-blue-900 mb-2">
+              Our Commitment to Madison Homeowners
+            </h3>
+            <p class="text-gray-600 text-sm">
+              We're not a big box store or a fly-by-night contractor. We're your
+              neighbors in Madison County. When you call us, a real person
+              answers. When we schedule an appointment, we show up on time. When
+              we give you a quote, that's the price you pay. We stand behind
+              every gutter we install because our reputation in this community
+              matters to us.
+            </p>
           </div>
         </div>
       </div>
@@ -517,18 +966,85 @@ const signsCTA = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <span class="text-orange-500 font-semibold text-sm uppercase tracking-wide">Coverage Area</span>
-        <h2 class="text-3xl font-bold text-gray-800 mt-2">Gutter Installation Service Areas</h2>
+        <span
+          class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+          >Coverage Area</span
+        >
+        <h2 class="text-3xl font-bold text-gray-800 mt-2">
+          Gutter Installation Service Areas
+        </h2>
         <p class="text-gray-600 mt-4">
-          Professional gutter installation throughout Madison County and surrounding areas.
+          Professional gutter installation throughout Madison County and
+          surrounding areas.
         </p>
       </div>
-      <div class="flex flex-wrap justify-center gap-4">
-        {serviceAreas.map((area) => (
-          <span class="bg-blue-100 text-blue-900 px-6 py-3 rounded-full font-medium">
-            {area}, AL
-          </span>
-        ))}
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {
+          serviceAreas.map((area) => {
+            const citySlug = area.toLowerCase().replace(/ /g, "-");
+            const finalSlug = `gutter-installation-${citySlug}-al`;
+
+            return (
+              <a
+                href={`/services/${finalSlug}`}
+                class={`block group rounded-2xl p-6 text-center transition-all duration-300 ${area === "Madison" ? "bg-gradient-to-br from-blue-900 to-blue-800 text-white shadow-xl shadow-blue-900/20 hover:-translate-y-1" : "bg-white border border-gray-100 shadow-lg hover:shadow-xl hover:border-blue-100 hover:-translate-y-1"}`}
+              >
+                <div
+                  class={`w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4 ${area === "Madison" ? "bg-white/20" : "bg-blue-50 group-hover:bg-blue-100 transition-colors"}`}
+                >
+                  <svg
+                    class={`w-6 h-6 ${area === "Madison" ? "text-white" : "text-blue-600"}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class={`text-xl font-bold mb-2 ${area === "Madison" ? "text-white" : "text-gray-900 group-hover:text-blue-900"}`}
+                >
+                  {area}
+                </h3>
+                <p
+                  class={`text-sm mb-4 ${area === "Madison" ? "text-blue-100" : "text-gray-500"}`}
+                >
+                  Professional Service
+                </p>
+
+                <div
+                  class={`inline-flex items-center gap-2 text-sm font-bold ${area === "Madison" ? "text-orange-400" : "text-blue-600"}`}
+                >
+                  View Details
+                  <svg
+                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+              </a>
+            );
+          })
+        }
       </div>
     </div>
   </section>
@@ -537,12 +1053,20 @@ const signsCTA = [
   <section class="py-16 bg-orange-500 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-4">Ready for New Gutters?</h2>
-      <p class="text-xl mb-8">Get a free on-site estimate for seamless gutter installation.</p>
+      <p class="text-xl mb-8">
+        Get a free on-site estimate for seamless gutter installation.
+      </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="/contact" class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
+        <a
+          href="/contact"
+          class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
+        >
           Get Free Estimate
         </a>
-        <a href="tel:2565550123" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block">
+        <a
+          href="tel:2565550123"
+          class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg inline-block"
+        >
           (256) 555-0123
         </a>
       </div>

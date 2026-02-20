@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -7,210 +7,225 @@ interface Props {
   schema?: any;
 }
 
-const { 
-  title, 
+const {
+  title,
   description = "Professional handyman services in Madison, Alabama. Quality repairs, maintenance, and home improvement.",
-  schema
+  schema,
 } = Astro.props;
 const currentPath = Astro.url.pathname;
-const canonicalURL = new URL(Astro.url.pathname, 'https://madisonhandymanpro.com');
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  "https://madisonhandymanpro.com",
+);
 
 // LocalBusiness + HomeAndConstructionBusiness Schema
 const schemaData = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "HandymanService"],
-      "@id": "https://madisonhandymanpro.com/#business",
-      "name": "Madison Handyman Pro",
-      "description": "Professional handyman services in Madison, Alabama. Drywall, painting, flooring, finish carpentry, gutter cleaning, and gutter installation.",
-      "url": "https://madisonhandymanpro.com",
-      "telephone": "(256) 555-0123",
-      "email": "info@madisonhandymanpro.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Madison",
-        "addressRegion": "AL",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "34.6993",
-        "longitude": "-86.7483"
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Madison", "addressRegion": "AL" },
-        { "@type": "City", "name": "Huntsville", "addressRegion": "AL" },
-        { "@type": "City", "name": "Decatur", "addressRegion": "AL" },
-        { "@type": "City", "name": "Athens", "addressRegion": "AL" },
-        { "@type": "City", "name": "Harvest", "addressRegion": "AL" },
-        { "@type": "City", "name": "Meridianville", "addressRegion": "AL" }
+      "@type": [
+        "LocalBusiness",
+        "HomeAndConstructionBusiness",
+        "HandymanService",
       ],
-      "openingHoursSpecification": [
+      "@id": "https://madisonhandymanpro.com/#business",
+      name: "Madison Handyman Pro",
+      description:
+        "Professional handyman services in Madison, Alabama. Drywall, painting, flooring, finish carpentry, gutter cleaning, and gutter installation.",
+      url: "https://madisonhandymanpro.com",
+      telephone: "(256) 555-0123",
+      email: "info@madisonhandymanpro.com",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Madison",
+        addressRegion: "AL",
+        addressCountry: "US",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "34.6993",
+        longitude: "-86.7483",
+      },
+      areaServed: [
+        { "@type": "City", name: "Madison", addressRegion: "AL" },
+        { "@type": "City", name: "Huntsville", addressRegion: "AL" },
+        { "@type": "City", name: "Decatur", addressRegion: "AL" },
+        { "@type": "City", name: "Athens", addressRegion: "AL" },
+        { "@type": "City", name: "Harvest", addressRegion: "AL" },
+        { "@type": "City", name: "Meridianville", addressRegion: "AL" },
+      ],
+      openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "18:00"
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "08:00",
+          closes: "18:00",
         },
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "09:00",
-          "closes": "15:00"
-        }
+          dayOfWeek: "Saturday",
+          opens: "09:00",
+          closes: "15:00",
+        },
       ],
-      "priceRange": "$$",
-      "paymentAccepted": ["Cash", "Check", "Credit Card"],
-      "hasOfferCatalog": {
+      priceRange: "$$",
+      paymentAccepted: ["Cash", "Check", "Credit Card"],
+      hasOfferCatalog: {
         "@type": "OfferCatalog",
-        "name": "Handyman Services",
-        "itemListElement": [
+        name: "Handyman Services",
+        itemListElement: [
           {
             "@type": "OfferCatalog",
-            "name": "Drywall Services",
-            "itemListElement": [
+            name: "Drywall Services",
+            itemListElement: [
               {
                 "@type": "Offer",
-                "itemOffered": {
+                itemOffered: {
                   "@type": "Service",
-                  "name": "Drywall Installation",
-                  "description": "Professional drywall installation for new construction and renovations"
-                }
+                  name: "Drywall Installation",
+                  description:
+                    "Professional drywall installation for new construction and renovations",
+                },
               },
               {
                 "@type": "Offer",
-                "itemOffered": {
+                itemOffered: {
                   "@type": "Service",
-                  "name": "Drywall Repair",
-                  "description": "Hole repair, crack repair, and water damage restoration"
-                }
-              }
-            ]
+                  name: "Drywall Repair",
+                  description:
+                    "Hole repair, crack repair, and water damage restoration",
+                },
+              },
+            ],
           },
           {
             "@type": "OfferCatalog",
-            "name": "Painting Services",
-            "itemListElement": [
+            name: "Painting Services",
+            itemListElement: [
               {
                 "@type": "Offer",
-                "itemOffered": {
+                itemOffered: {
                   "@type": "Service",
-                  "name": "Interior Painting",
-                  "description": "Professional interior room and wall painting"
-                }
+                  name: "Interior Painting",
+                  description: "Professional interior room and wall painting",
+                },
               },
               {
                 "@type": "Offer",
-                "itemOffered": {
+                itemOffered: {
                   "@type": "Service",
-                  "name": "Exterior Painting",
-                  "description": "House exterior and trim painting services"
-                }
+                  name: "Exterior Painting",
+                  description: "House exterior and trim painting services",
+                },
               },
               {
                 "@type": "Offer",
-                "itemOffered": {
+                itemOffered: {
                   "@type": "Service",
-                  "name": "Cabinet Painting",
-                  "description": "Kitchen and bathroom cabinet painting and refinishing"
-                }
-              }
-            ]
+                  name: "Cabinet Painting",
+                  description:
+                    "Kitchen and bathroom cabinet painting and refinishing",
+                },
+              },
+            ],
           },
           {
             "@type": "OfferCatalog",
-            "name": "Flooring Services",
-            "itemListElement": [
+            name: "Flooring Services",
+            itemListElement: [
               {
                 "@type": "Offer",
-                "itemOffered": {
+                itemOffered: {
                   "@type": "Service",
-                  "name": "Flooring Installation",
-                  "description": "Hardwood, laminate, and luxury vinyl plank flooring installation"
-                }
+                  name: "Flooring Installation",
+                  description:
+                    "Hardwood, laminate, and luxury vinyl plank flooring installation",
+                },
               },
               {
                 "@type": "Offer",
-                "itemOffered": {
+                itemOffered: {
                   "@type": "Service",
-                  "name": "Flooring Repair",
-                  "description": "Floor repair and refinishing services"
-                }
-              }
-            ]
+                  name: "Flooring Repair",
+                  description: "Floor repair and refinishing services",
+                },
+              },
+            ],
           },
           {
             "@type": "OfferCatalog",
-            "name": "Carpentry Services",
-            "itemListElement": [
+            name: "Carpentry Services",
+            itemListElement: [
               {
                 "@type": "Offer",
-                "itemOffered": {
+                itemOffered: {
                   "@type": "Service",
-                  "name": "Finish Carpentry",
-                  "description": "Crown molding, baseboards, trim, and custom woodwork"
-                }
+                  name: "Finish Carpentry",
+                  description:
+                    "Crown molding, baseboards, trim, and custom woodwork",
+                },
               },
               {
                 "@type": "Offer",
-                "itemOffered": {
+                itemOffered: {
                   "@type": "Service",
-                  "name": "Built-in Shelving",
-                  "description": "Custom built-in shelving and storage solutions"
-                }
-              }
-            ]
+                  name: "Built-in Shelving",
+                  description: "Custom built-in shelving and storage solutions",
+                },
+              },
+            ],
           },
           {
             "@type": "OfferCatalog",
-            "name": "Gutter Services",
-            "itemListElement": [
+            name: "Gutter Services",
+            itemListElement: [
               {
                 "@type": "Offer",
-                "itemOffered": {
+                itemOffered: {
                   "@type": "Service",
-                  "name": "Gutter Cleaning",
-                  "description": "Professional gutter cleaning and debris removal"
-                }
+                  name: "Gutter Cleaning",
+                  description:
+                    "Professional gutter cleaning and debris removal",
+                },
               },
               {
                 "@type": "Offer",
-                "itemOffered": {
+                itemOffered: {
                   "@type": "Service",
-                  "name": "Gutter Installation",
-                  "description": "Seamless gutter and downspout installation and replacement"
-                }
-              }
-            ]
-          }
-        ]
+                  name: "Gutter Installation",
+                  description:
+                    "Seamless gutter and downspout installation and replacement",
+                },
+              },
+            ],
+          },
+        ],
       },
-      "sameAs": []
+      sameAs: [],
     },
     {
       "@type": "WebSite",
       "@id": "https://madisonhandymanpro.com/#website",
-      "url": "https://madisonhandymanpro.com",
-      "name": "Madison Handyman Pro",
-      "publisher": {
-        "@id": "https://madisonhandymanpro.com/#business"
-      }
+      url: "https://madisonhandymanpro.com",
+      name: "Madison Handyman Pro",
+      publisher: {
+        "@id": "https://madisonhandymanpro.com/#business",
+      },
     },
     {
       "@type": "WebPage",
       "@id": `${canonicalURL}#webpage`,
-      "url": canonicalURL.href,
-      "name": `${title} | Madison Handyman Pro`,
-      "isPartOf": {
-        "@id": "https://madisonhandymanpro.com/#website"
+      url: canonicalURL.href,
+      name: `${title} | Madison Handyman Pro`,
+      isPartOf: {
+        "@id": "https://madisonhandymanpro.com/#website",
       },
-      "about": {
-        "@id": "https://madisonhandymanpro.com/#business"
+      about: {
+        "@id": "https://madisonhandymanpro.com/#business",
       },
-      "description": description
-    }
-  ]
+      description: description,
+    },
+  ],
 };
 
 const finalSchema = schema || schemaData;
@@ -220,7 +235,10 @@ const finalSchema = schema || schemaData;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
 
     <!-- Performance: Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -245,25 +263,89 @@ const finalSchema = schema || schemaData;
     <!-- Critical CSS: Above-fold styles inlined for faster FCP -->
     <style>
       /* Critical rendering path - inline above-fold styles */
-      :root{--color-primary:#1e3a8a;--color-accent:#f97316}
-      *,::before,::after{box-sizing:border-box;border:0 solid}
-      html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:system-ui,-apple-system,sans-serif}
-      body{margin:0;min-height:100vh;min-height:100dvh;background-color:#f9fafb}
-      .bg-blue-900{background-color:#1e3a8a}
-      .text-white{color:#fff}
-      .bg-gray-50{background-color:#f9fafb}
-      .min-h-screen{min-height:100vh;min-height:100dvh}
-      .flex{display:flex}
-      .flex-col{flex-direction:column}
-      .flex-1{flex:1 1 0%}
-      .font-bold{font-weight:700}
-      .text-2xl{font-size:1.5rem;line-height:2rem}
-      .text-4xl{font-size:2.25rem;line-height:2.5rem}
-      .py-4{padding-top:1rem;padding-bottom:1rem}
-      .px-4{padding-left:1rem;padding-right:1rem}
-      .max-w-6xl{max-width:72rem}
-      .mx-auto{margin-left:auto;margin-right:auto}
-      @media(min-width:768px){.md\\:flex-row{flex-direction:row}.md\\:items-center{align-items:center}.md\\:justify-between{justify-content:space-between}}
+      :root {
+        --color-primary: #1e3a8a;
+        --color-accent: #f97316;
+      }
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+        border: 0 solid;
+      }
+      html {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        min-height: 100dvh;
+        background-color: #f9fafb;
+      }
+      .bg-blue-900 {
+        background-color: #1e3a8a;
+      }
+      .text-white {
+        color: #fff;
+      }
+      .bg-gray-50 {
+        background-color: #f9fafb;
+      }
+      .min-h-screen {
+        min-height: 100vh;
+        min-height: 100dvh;
+      }
+      .flex {
+        display: flex;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .flex-1 {
+        flex: 1 1 0%;
+      }
+      .font-bold {
+        font-weight: 700;
+      }
+      .text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+      .text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+      .py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .max-w-6xl {
+        max-width: 72rem;
+      }
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media (min-width: 768px) {
+        .md\\:flex-row {
+          flex-direction: row;
+        }
+        .md\\:items-center {
+          align-items: center;
+        }
+        .md\\:justify-between {
+          justify-content: space-between;
+        }
+      }
     </style>
 
     <!-- SEO Meta Tags -->
@@ -292,8 +374,14 @@ const finalSchema = schema || schemaData;
 
     <!-- Additional SEO -->
     <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta
+      name="googlebot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta
+      name="bingbot"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
 
     <meta name="generator" content={Astro.generator} />
 
@@ -303,34 +391,42 @@ const finalSchema = schema || schemaData;
     <!-- Performance: Defer non-critical JS -->
     <script>
       // Optimize Web Vitals - report metrics
-      if ('connection' in navigator) {
+      if ("connection" in navigator) {
         // Adapt to network conditions
-        const conn = navigator.connection;
-        if (conn.saveData || conn.effectiveType === '2g') {
-          document.documentElement.classList.add('save-data');
+        const conn = (navigator as any).connection;
+        if (conn && (conn.saveData || conn.effectiveType === "2g")) {
+          document.documentElement.classList.add("save-data");
         }
       }
 
       // Intersection Observer for lazy loading below-fold content
-      if ('IntersectionObserver' in window) {
-        const lazyElements = document.querySelectorAll('.below-fold');
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { rootMargin: '100px' });
-        lazyElements.forEach(el => observer.observe(el));
+      if ("IntersectionObserver" in window) {
+        const lazyElements = document.querySelectorAll(".below-fold");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: "100px" },
+        );
+        lazyElements.forEach((el) => observer.observe(el));
       }
     </script>
   </head>
   <body class="min-h-screen flex flex-col bg-gray-50">
     <header class="bg-blue-900 text-white shadow-lg">
       <nav class="max-w-6xl mx-auto px-4 py-4">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <a href="/" class="text-2xl font-bold hover:text-blue-200 transition-colors">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <a
+            href="/"
+            class="text-2xl font-bold hover:text-blue-200 transition-colors"
+          >
             Madison Handyman Pro
           </a>
           <ul class="flex flex-wrap gap-1 md:gap-2">
@@ -339,7 +435,9 @@ const finalSchema = schema || schemaData;
                 href="/"
                 class:list={[
                   "px-4 py-2 rounded-lg transition-colors inline-block",
-                  currentPath === "/" ? "bg-blue-700 text-white" : "hover:bg-blue-800"
+                  currentPath === "/"
+                    ? "bg-blue-700 text-white"
+                    : "hover:bg-blue-800",
                 ]}
               >
                 Home
@@ -350,7 +448,9 @@ const finalSchema = schema || schemaData;
                 href="/services"
                 class:list={[
                   "px-4 py-2 rounded-lg transition-colors inline-block",
-                  currentPath === "/services/" ? "bg-blue-700 text-white" : "hover:bg-blue-800"
+                  currentPath === "/services/"
+                    ? "bg-blue-700 text-white"
+                    : "hover:bg-blue-800",
                 ]}
               >
                 Services
@@ -361,7 +461,9 @@ const finalSchema = schema || schemaData;
                 href="/locations"
                 class:list={[
                   "px-4 py-2 rounded-lg transition-colors inline-block",
-                  currentPath === "/locations/" ? "bg-blue-700 text-white" : "hover:bg-blue-800"
+                  currentPath === "/locations/"
+                    ? "bg-blue-700 text-white"
+                    : "hover:bg-blue-800",
                 ]}
               >
                 Locations
@@ -372,7 +474,9 @@ const finalSchema = schema || schemaData;
                 href="/about"
                 class:list={[
                   "px-4 py-2 rounded-lg transition-colors inline-block",
-                  currentPath === "/about/" ? "bg-blue-700 text-white" : "hover:bg-blue-800"
+                  currentPath === "/about/"
+                    ? "bg-blue-700 text-white"
+                    : "hover:bg-blue-800",
                 ]}
               >
                 About
@@ -383,7 +487,9 @@ const finalSchema = schema || schemaData;
                 href="/contact"
                 class:list={[
                   "px-4 py-2 rounded-lg transition-colors inline-block",
-                  currentPath === "/contact/" ? "bg-blue-700 text-white" : "hover:bg-blue-800"
+                  currentPath === "/contact/"
+                    ? "bg-blue-700 text-white"
+                    : "hover:bg-blue-800",
                 ]}
               >
                 Contact
@@ -402,15 +508,29 @@ const finalSchema = schema || schemaData;
       <div class="max-w-6xl mx-auto px-4">
         <div class="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 class="text-white font-bold text-lg mb-3">Madison Handyman Pro</h3>
-            <p class="text-sm">Your trusted local handyman serving Madison, Alabama and surrounding areas.</p>
+            <h3 class="text-white font-bold text-lg mb-3">
+              Madison Handyman Pro
+            </h3>
+            <p class="text-sm">
+              Your trusted local handyman serving Madison, Alabama and
+              surrounding areas.
+            </p>
           </div>
           <div>
             <h3 class="text-white font-bold text-lg mb-3">Quick Links</h3>
             <ul class="space-y-2 text-sm">
-              <li><a href="/services" class="hover:text-white transition-colors">Our Services</a></li>
-              <li><a href="/locations" class="hover:text-white transition-colors">Service Areas</a></li>
-              <li><a href="/contact" class="hover:text-white transition-colors">Get a Quote</a></li>
+              <li>
+                <a href="/services" class="hover:text-white transition-colors"
+                  >Our Services</a>
+              </li>
+              <li>
+                <a href="/locations" class="hover:text-white transition-colors"
+                  >Service Areas</a>
+              </li>
+              <li>
+                <a href="/contact" class="hover:text-white transition-colors"
+                  >Get a Quote</a>
+              </li>
             </ul>
           </div>
           <div>
@@ -423,7 +543,9 @@ const finalSchema = schema || schemaData;
           </div>
         </div>
         <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm">
-          <p>&copy; {new Date().getFullYear()} Madison Handyman Pro. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Madison Handyman Pro. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

@@ -1,5 +1,5 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 
 const includedServices = [
   {
@@ -12,8 +12,8 @@ const includedServices = [
       "Ceiling medallions",
       "Decorative corner blocks",
       "Multi-piece crown assemblies",
-      "Painted vs stained options"
-    ]
+      "Painted vs stained options",
+    ],
   },
   {
     title: "Baseboards & Casing",
@@ -25,8 +25,8 @@ const includedServices = [
       "Shoe molding installation",
       "Quarter round installation",
       "Baseboard heating covers",
-      "Custom profile matching"
-    ]
+      "Custom profile matching",
+    ],
   },
   {
     title: "Wainscoting & Paneling",
@@ -38,8 +38,8 @@ const includedServices = [
       "Raised panel wainscoting",
       "Flat panel wainscoting",
       "Full wall paneling",
-      "Accent wall treatments"
-    ]
+      "Accent wall treatments",
+    ],
   },
   {
     title: "Custom Woodwork",
@@ -51,138 +51,164 @@ const includedServices = [
       "Stair railings and balusters",
       "Closet systems",
       "Mudroom built-ins",
-      "Entertainment centers"
-    ]
-  }
+      "Entertainment centers",
+    ],
+  },
 ];
 
 const commonProblems = [
   {
     problem: "Gaps between trim and walls or ceilings",
-    solution: "We re-secure loose trim, caulk gaps, and repaint for seamless results. For severe gaps, we replace damaged sections."
+    solution:
+      "We re-secure loose trim, caulk gaps, and repaint for seamless results. For severe gaps, we replace damaged sections.",
   },
   {
     problem: "Outdated or damaged baseboards",
-    solution: "We remove old baseboards and install new ones in your choice of style — from simple to ornate. We match existing trim or upgrade your entire home."
+    solution:
+      "We remove old baseboards and install new ones in your choice of style — from simple to ornate. We match existing trim or upgrade your entire home.",
   },
   {
     problem: "Missing or inconsistent trim throughout the home",
-    solution: "We install matching trim throughout your home for a cohesive, finished look that increases value."
+    solution:
+      "We install matching trim throughout your home for a cohesive, finished look that increases value.",
   },
   {
     problem: "Crown molding that's pulling away or cracking",
-    solution: "We re-secure crown molding, fill cracks, and touch up paint. For damaged pieces, we install matching replacements."
+    solution:
+      "We re-secure crown molding, fill cracks, and touch up paint. For damaged pieces, we install matching replacements.",
   },
   {
     problem: "Bare walls needing character and style",
-    solution: "We add wainscoting, board and batten, or shiplap to transform plain walls into architectural features."
+    solution:
+      "We add wainscoting, board and batten, or shiplap to transform plain walls into architectural features.",
   },
   {
     problem: "Poorly done previous trim work with visible gaps or bad joints",
-    solution: "We correct amateur work with proper cutting techniques and professional installation for clean, tight joints."
+    solution:
+      "We correct amateur work with proper cutting techniques and professional installation for clean, tight joints.",
   },
   {
     problem: "Need for custom storage and built-ins",
-    solution: "We design and build custom shelving, bookcases, and storage solutions that maximize space and add value."
+    solution:
+      "We design and build custom shelving, bookcases, and storage solutions that maximize space and add value.",
   },
   {
     problem: "Stair railings that are loose or outdated",
-    solution: "We repair or replace balusters, secure handrails, and refinish or paint railings to update your stairway."
-  }
+    solution:
+      "We repair or replace balusters, secure handrails, and refinish or paint railings to update your stairway.",
+  },
 ];
 
 const processSteps = [
   {
     step: 1,
     title: "Contact & Consultation",
-    description: "Call or message us about your trim and carpentry project. We discuss style options, wood types, and design possibilities for your space.",
-    time: "Same day response"
+    description:
+      "Call or message us about your trim and carpentry project. We discuss style options, wood types, and design possibilities for your space.",
+    time: "Same day response",
   },
   {
     step: 2,
     title: "Free On-Site Estimate",
-    description: "We measure your space, assess wall conditions, and discuss style options. You receive a detailed written quote including materials and labor.",
-    time: "Within 48 hours"
+    description:
+      "We measure your space, assess wall conditions, and discuss style options. You receive a detailed written quote including materials and labor.",
+    time: "Within 48 hours",
   },
   {
     step: 3,
     title: "Material Selection",
-    description: "Choose from various trim profiles, wood types (MDF, pine, oak, poplar), and finish options. We bring samples to help you visualize the final result.",
-    time: "Flexible"
+    description:
+      "Choose from various trim profiles, wood types (MDF, pine, oak, poplar), and finish options. We bring samples to help you visualize the final result.",
+    time: "Flexible",
   },
   {
     step: 4,
     title: "Schedule Installation",
-    description: "Pick dates that work for you. We confirm appointments 24 hours and 2 hours before arrival. Most projects scheduled within 5-7 days.",
-    time: "5-7 days typically"
+    description:
+      "Pick dates that work for you. We confirm appointments 24 hours and 2 hours before arrival. Most projects scheduled within 5-7 days.",
+    time: "5-7 days typically",
   },
   {
     step: 5,
     title: "Precision Measuring & Cutting",
-    description: "We measure each piece precisely, accounting for corners and wall irregularities. All cuts made with professional miter saws for perfect joints.",
-    time: "Varies by scope"
+    description:
+      "We measure each piece precisely, accounting for corners and wall irregularities. All cuts made with professional miter saws for perfect joints.",
+    time: "Varies by scope",
   },
   {
     step: 6,
     title: "Professional Installation",
-    description: "Trim is secured with appropriate fasteners, joints are tight and clean, and all pieces are aligned perfectly. We cope inside corners for seamless results.",
-    time: "1-3 days typical"
+    description:
+      "Trim is secured with appropriate fasteners, joints are tight and clean, and all pieces are aligned perfectly. We cope inside corners for seamless results.",
+    time: "1-3 days typical",
   },
   {
     step: 7,
     title: "Finishing & Caulking",
-    description: "We fill nail holes, caulk gaps between trim and walls, and sand any rough spots. Everything is prepped for paint or left ready for staining.",
-    time: "Final day"
+    description:
+      "We fill nail holes, caulk gaps between trim and walls, and sand any rough spots. Everything is prepped for paint or left ready for staining.",
+    time: "Final day",
   },
   {
     step: 8,
     title: "Final Walkthrough",
-    description: "We inspect every joint and corner with you. We don't leave until you're completely satisfied with the craftsmanship.",
-    time: "30 minutes"
-  }
+    description:
+      "We inspect every joint and corner with you. We don't leave until you're completely satisfied with the craftsmanship.",
+    time: "30 minutes",
+  },
 ];
 
 const faqs = [
   {
     question: "How much does crown molding installation cost?",
-    answer: "Crown molding typically costs $8-15 per linear foot installed, depending on the profile size and complexity. A typical room (50 linear feet) runs $400-750. Multi-piece crown assemblies and custom work cost more. We provide free detailed estimates."
+    answer:
+      "Crown molding typically costs $8-15 per linear foot installed, depending on the profile size and complexity. A typical room (50 linear feet) runs $400-750. Multi-piece crown assemblies and custom work cost more. We provide free detailed estimates.",
   },
   {
     question: "What's the difference between MDF and wood trim?",
-    answer: "MDF (medium-density fiberboard) is more affordable, doesn't warp, and paints beautifully — ideal for painted trim. Solid wood (pine, oak, poplar) costs more but can be stained to show natural grain. We recommend MDF for most painted applications."
+    answer:
+      "MDF (medium-density fiberboard) is more affordable, doesn't warp, and paints beautifully — ideal for painted trim. Solid wood (pine, oak, poplar) costs more but can be stained to show natural grain. We recommend MDF for most painted applications.",
   },
   {
     question: "Can you match my existing trim style?",
-    answer: "Usually, yes. We can match most standard profiles or have custom trim milled to match older or unique styles. Bring us a sample or photos and we'll find a solution."
+    answer:
+      "Usually, yes. We can match most standard profiles or have custom trim milled to match older or unique styles. Bring us a sample or photos and we'll find a solution.",
   },
   {
     question: "How long does baseboard installation take?",
-    answer: "A typical room takes 2-4 hours. A whole house (average 200 linear feet) usually takes 1-2 days including removing old baseboards, installation, and caulking."
+    answer:
+      "A typical room takes 2-4 hours. A whole house (average 200 linear feet) usually takes 1-2 days including removing old baseboards, installation, and caulking.",
   },
   {
     question: "Do you paint or stain the trim?",
-    answer: "We can! We offer primed trim ready for paint, or we can paint/stain as part of the project. Many customers prefer pre-primed MDF that we install and then paint after caulking."
+    answer:
+      "We can! We offer primed trim ready for paint, or we can paint/stain as part of the project. Many customers prefer pre-primed MDF that we install and then paint after caulking.",
   },
   {
     question: "What is coping and why does it matter?",
-    answer: "Coping is a cutting technique for inside corners that creates tighter joints than simple miter cuts. As walls shift over time, coped joints stay tight while mitered joints can gap. We cope all inside corners for lasting results."
+    answer:
+      "Coping is a cutting technique for inside corners that creates tighter joints than simple miter cuts. As walls shift over time, coped joints stay tight while mitered joints can gap. We cope all inside corners for lasting results.",
   },
   {
     question: "Can you add trim to a room that has none?",
-    answer: "Absolutely! Adding baseboards, crown molding, and door/window casings transforms a basic room into a finished, polished space. It's one of the best value-add improvements for any home."
+    answer:
+      "Absolutely! Adding baseboards, crown molding, and door/window casings transforms a basic room into a finished, polished space. It's one of the best value-add improvements for any home.",
   },
   {
     question: "Do you install wainscoting?",
-    answer: "Yes! We install all styles: beadboard, raised panel, flat panel, board and batten, and shiplap. Wainscoting adds character, protects walls, and increases home value."
+    answer:
+      "Yes! We install all styles: beadboard, raised panel, flat panel, board and batten, and shiplap. Wainscoting adds character, protects walls, and increases home value.",
   },
   {
     question: "How do you handle corners that aren't square?",
-    answer: "Older homes often have out-of-square walls. We use techniques like back-cutting, scribing, and flexible caulk to achieve tight-fitting trim even on imperfect walls."
+    answer:
+      "Older homes often have out-of-square walls. We use techniques like back-cutting, scribing, and flexible caulk to achieve tight-fitting trim even on imperfect walls.",
   },
   {
     question: "Can you build custom bookcases or built-ins?",
-    answer: "Yes! We design and build custom shelving, bookcases, window seats, and entertainment centers. Built-ins maximize space and add significant value to your home."
-  }
+    answer:
+      "Yes! We design and build custom shelving, bookcases, window seats, and entertainment centers. Built-ins maximize space and add significant value to your home.",
+  },
 ];
 
 const serviceAreas = [
@@ -191,53 +217,213 @@ const serviceAreas = [
   { city: "Decatur", driveTime: "25-35 min", note: "Serving this area" },
   { city: "Athens", driveTime: "20-30 min", note: "Serving this area" },
   { city: "Harvest", driveTime: "15-25 min", note: "Same-day available" },
-  { city: "Owens Cross Roads", driveTime: "25-35 min", note: "Serving this area" },
+  {
+    city: "Owens Cross Roads",
+    driveTime: "25-35 min",
+    note: "Serving this area",
+  },
   { city: "Hampton Cove", driveTime: "20-30 min", note: "Serving this area" },
-  { city: "Redstone Arsenal", driveTime: "15-25 min", note: "Same-day available" }
+  {
+    city: "Redstone Arsenal",
+    driveTime: "15-25 min",
+    note: "Same-day available",
+  },
 ];
 
 const trimStyles = [
-  { name: "Colonial", description: "Classic American style with gentle curves", best: "Traditional homes" },
-  { name: "Craftsman", description: "Simple, flat profiles with clean lines", best: "Bungalows, modern homes" },
-  { name: "Victorian", description: "Ornate, detailed profiles", best: "Historic homes" },
-  { name: "Modern/Contemporary", description: "Minimal, square-edge profiles", best: "New construction, minimalist style" },
-  { name: "Farmhouse", description: "Simple baseboards with shiplap accents", best: "Farmhouse, rustic style" }
+  {
+    name: "Colonial",
+    description: "Classic American style with gentle curves",
+    best: "Traditional homes",
+  },
+  {
+    name: "Craftsman",
+    description: "Simple, flat profiles with clean lines",
+    best: "Bungalows, modern homes",
+  },
+  {
+    name: "Victorian",
+    description: "Ornate, detailed profiles",
+    best: "Historic homes",
+  },
+  {
+    name: "Modern/Contemporary",
+    description: "Minimal, square-edge profiles",
+    best: "New construction, minimalist style",
+  },
+  {
+    name: "Farmhouse",
+    description: "Simple baseboards with shiplap accents",
+    best: "Farmhouse, rustic style",
+  },
 ];
 ---
 
-<Layout title="Finish Carpentry" description="Professional finish carpentry in Madison, Huntsville & North Alabama. Crown molding, baseboards, wainscoting, built-ins. Free estimates, expert craftsmanship.">
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16 md:py-20">
-    <div class="max-w-6xl mx-auto px-4">
+<Layout
+  title="Finish Carpentry"
+  description="Professional finish carpentry in Madison, Huntsville & North Alabama. Crown molding, baseboards, wainscoting, built-ins. Free estimates, expert craftsmanship."
+>
+  <!-- Premium Hero Section -->
+  <section
+    class="relative bg-blue-900 text-white pt-32 pb-24 flex items-center overflow-hidden"
+  >
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop"
+        alt="Carpentry Services"
+        class="w-full h-full object-cover opacity-20 scale-105 animate-[pulse_10s_ease-in-out_infinite_alternate]"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-blue-950 via-blue-900/90 to-blue-900/60"
+      >
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 relative z-10 w-full">
       <div class="max-w-3xl">
-        <nav class="text-blue-200 text-sm mb-4">
-          <a href="/" class="hover:text-white">Home</a>
-          <span class="mx-2">→</span>
-          <a href="/services" class="hover:text-white">Services</a>
-          <span class="mx-2">→</span>
-          <span class="text-white">Finish Carpentry</span>
+        <nav
+          class="text-blue-200 text-sm mb-6 flex items-center gap-2 font-medium tracking-wide"
+        >
+          <a href="/" class="hover:text-white transition-colors">Home</a>
+          <span class="opacity-50">/</span>
+          <a href="/services" class="hover:text-white transition-colors"
+            >Services</a
+          >
+          <span class="opacity-50">/</span>
+          <span class="text-orange-400">Finish Carpentry</span>
         </nav>
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          Finish Carpentry Services
+
+        <div
+          class="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 text-sm font-medium text-blue-100"
+        >
+          <span
+            class="w-2 h-2 inline-block rounded-full bg-orange-400 mr-2 animate-pulse"
+          ></span>
+          Master Craftsmanship
+        </div>
+
+        <h1
+          class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight"
+        >
+          Finish <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600"
+            >Carpentry Services</span
+          >
         </h1>
-        <p class="text-xl text-blue-100 mb-8">
-          Transform your home with custom trim work, crown molding, wainscoting, and built-ins. Precision craftsmanship that adds character and value.
+
+        <p
+          class="text-xl md:text-2xl text-blue-100 mb-10 font-light leading-relaxed"
+        >
+          Transform your home with custom trim work, crown molding, wainscoting,
+          and built-ins. Precision craftsmanship that adds character and value.
         </p>
+
         <div class="flex flex-col sm:flex-row gap-4">
           <a
-            href="/contact"
-            class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg text-center"
+            href="sms:2565550123"
+            class="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 text-lg flex items-center justify-center gap-3 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-1 border border-orange-400/30"
           >
-            Get a Free Estimate
-          </a>
-          <a
-            href="tel:+12565550123"
-            class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg text-center border border-white/30"
-          >
-            Call (256) 555-0123
+            <svg
+              class="w-6 h-6 group-hover:scale-110 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+              ></path>
+            </svg>
+            Text A Photo For Instant Quote
           </a>
         </div>
       </div>
+    </div>
+
+    <!-- Decorative shape divider -->
+    <div
+      class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10"
+    >
+      <svg
+        class="relative block w-full h-[50px] md:h-[100px]"
+        data-name="Layer 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1200 120"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.06,155.15,112.5,231.2,88.45,264.44,77.83,296.88,67.36,321.39,56.44Z"
+          class="fill-white"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Comprehensive SEO Introduction -->
+  <section class="py-20 bg-white border-b border-gray-100">
+    <div class="max-w-4xl mx-auto px-4 prose prose-lg prose-blue">
+      <h2
+        class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 font-display tracking-tight"
+      >
+        Exquisite Finish Carpentry and Custom Millwork
+      </h2>
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        While the foundational framing holds your house together, it is the
+        meticulous detail of finish carpentry that truly transforms a basic
+        structure into an elegant, highly personalized home. The precise
+        installation of sophisticated crown molding, classic wainscoting,
+        intricate baseboards, and beautiful custom cabinetry acts as the
+        defining architectural signature of your interior spaces. At Madison
+        Handyman Pro, we deliver exceptional, artisan-level finish carpentry
+        services that add immediate, tangible financial value and profound
+        visual depth to residential properties located throughout Madison,
+        Huntsville, and the surrounding premier North Alabama neighborhoods.
+      </p>
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        Finish carpentry is a highly specialized, exacting discipline that
+        absolutely demands an uncompromising eye for geometric perfection and
+        years of patient, hands-on experience. Unlike rough framing, where a
+        quarter-inch discrepancy can be easily hidden behind thick drywall,
+        finish millwork is placed prominently on visual display. A poorly cut
+        miter joint, a slightly misaligned casing, or an improperly coped inside
+        corner will instantly draw the human eye, aggressively detracting from
+        the perceived quality of the entire room. Our master carpenters uniquely
+        treat every single linear foot of trim as a piece of fine furniture,
+        executing flawless, microscopically tight joints that seamlessly blend
+        into the overall architectural flow of your beautiful home.
+      </p>
+
+      <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 mt-14">
+        Elevating Interior Aesthetics and Property Value
+      </h3>
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+        The strategic addition of high-quality architectural trim is universally
+        recognized by leading real estate experts as one of the very few
+        interior home improvement projects that consistently yields a
+        substantial return on your initial financial investment. Upgrading from
+        standard, narrow builder-grade baseboards to substantial, tall
+        architectural profiles, or introducing elegant coffered ceilings into a
+        stark, boring dining room, immediately establishes a powerful sense of
+        permanence, premium luxury, and rich character. These seemingly minor
+        architectural upgrades powerfully signal to prospective buyers and
+        visiting guests alike that your property has been exceptionally cared
+        for and thoughtfully designed.
+      </p>
+      <p class="text-gray-700 text-lg leading-relaxed mb-10">
+        We approach every individual custom carpentry project with a holistic,
+        design-oriented mindset. We actively consult with you to carefully
+        select the perfect wood species, architectural styles, and precise
+        dimensional proportions that harmoniously complement your home's
+        specific era and your family's personal tastes. Whether you are seeking
+        to faithfully restore historic, century-old true-wood trim to its former
+        glory, or you are deeply looking to inject sleek, minimalist modern
+        lines into a brand newly constructed home, our highly skilled team
+        utilizes state-of-the-art precision tools alongside time-honored
+        traditional woodworking techniques to absolutely guarantee an
+        impeccable, stunning final result that you will proudly admire for
+        decades.
+      </p>
     </div>
   </section>
 
@@ -246,15 +432,21 @@ const trimStyles = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div>
-          <div class="text-2xl md:text-3xl font-bold text-orange-400">Precision</div>
+          <div class="text-2xl md:text-3xl font-bold text-orange-400">
+            Precision
+          </div>
           <div class="text-sm text-gray-300">Cuts & Joints</div>
         </div>
         <div>
-          <div class="text-2xl md:text-3xl font-bold text-orange-400">+Value</div>
+          <div class="text-2xl md:text-3xl font-bold text-orange-400">
+            +Value
+          </div>
           <div class="text-sm text-gray-300">Increases Home Value</div>
         </div>
         <div>
-          <div class="text-2xl md:text-3xl font-bold text-orange-400">Custom</div>
+          <div class="text-2xl md:text-3xl font-bold text-orange-400">
+            Custom
+          </div>
           <div class="text-sm text-gray-300">Built-Ins & Shelving</div>
         </div>
         <div>
@@ -271,30 +463,53 @@ const trimStyles = [
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">What's Included</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Complete finish carpentry services to add character and value to every room.
+          Complete finish carpentry services to add character and value to every
+          room.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
-        {includedServices.map((category) => (
-          <div class="bg-gray-50 rounded-lg p-6 border border-gray-100">
-            <h3 class="text-xl font-bold text-blue-900 mb-4 flex items-center gap-2">
-              <svg class="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
-              </svg>
-              {category.title}
-            </h3>
-            <ul class="space-y-2">
-              {category.items.map((item) => (
-                <li class="flex items-start gap-2 text-gray-700">
-                  <svg class="w-4 h-4 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {
+          includedServices.map((category) => (
+            <div class="bg-gray-50 rounded-lg p-6 border border-gray-100">
+              <h3 class="text-xl font-bold text-blue-900 mb-4 flex items-center gap-2">
+                <svg
+                  class="w-6 h-6 text-orange-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 10h16M4 14h16M4 18h16"
+                  />
+                </svg>
+                {category.title}
+              </h3>
+              <ul class="space-y-2">
+                {category.items.map((item) => (
+                  <li class="flex items-start gap-2 text-gray-700">
+                    <svg
+                      class="w-4 h-4 text-green-500 mt-1 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -302,18 +517,25 @@ const trimStyles = [
   <!-- Trim Style Guide -->
   <section class="py-12 bg-blue-50">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">Popular Trim Styles</h2>
+      <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">
+        Popular Trim Styles
+      </h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        {trimStyles.map((style) => (
-          <div class="bg-white rounded-lg p-4 shadow-sm">
-            <h3 class="font-bold text-blue-900 mb-2">{style.name}</h3>
-            <p class="text-sm text-gray-600 mb-2">{style.description}</p>
-            <p class="text-xs text-gray-500"><strong>Best for:</strong> {style.best}</p>
-          </div>
-        ))}
+        {
+          trimStyles.map((style) => (
+            <div class="bg-white rounded-lg p-4 shadow-sm">
+              <h3 class="font-bold text-blue-900 mb-2">{style.name}</h3>
+              <p class="text-sm text-gray-600 mb-2">{style.description}</p>
+              <p class="text-xs text-gray-500">
+                <strong>Best for:</strong> {style.best}
+              </p>
+            </div>
+          ))
+        }
       </div>
       <p class="text-center text-gray-500 text-sm mt-4">
-        Not sure which style fits your home? We'll help you choose during your free consultation.
+        Not sure which style fits your home? We'll help you choose during your
+        free consultation.
       </p>
     </div>
   </section>
@@ -322,32 +544,59 @@ const trimStyles = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Common Problems We Solve</h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          Common Problems We Solve
+        </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Whatever trim or carpentry challenge you're facing, we have the expertise to fix it right.
+          Whatever trim or carpentry challenge you're facing, we have the
+          expertise to fix it right.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
-        {commonProblems.map((item) => (
-          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
-            <div class="flex gap-4">
-              <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="font-semibold text-gray-800 mb-2">{item.problem}</h3>
-                <p class="text-gray-600 text-sm flex items-start gap-2">
-                  <svg class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        {
+          commonProblems.map((item) => (
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+              <div class="flex gap-4">
+                <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg
+                    class="w-5 h-5 text-red-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                    />
                   </svg>
-                  {item.solution}
-                </p>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-800 mb-2">
+                    {item.problem}
+                  </h3>
+                  <p class="text-gray-600 text-sm flex items-start gap-2">
+                    <svg
+                      class="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    {item.solution}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </section>
@@ -356,36 +605,52 @@ const trimStyles = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Carpentry Process</h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          Our Carpentry Process
+        </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          A proven process that delivers beautiful, lasting craftsmanship every time.
+          A proven process that delivers beautiful, lasting craftsmanship every
+          time.
         </p>
       </div>
       <div class="relative">
-        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100"></div>
+        <div
+          class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100"
+        >
+        </div>
         <div class="space-y-8 md:space-y-12">
-          {processSteps.map((step, index) => (
-            <div class={`flex flex-col md:flex-row gap-4 md:gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-              <div class={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                <div class={`bg-gray-50 rounded-lg p-6 border border-gray-100 ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}`}>
-                  <div class="flex items-center gap-3 mb-2">
-                    <span class="md:hidden w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                      {step.step}
-                    </span>
-                    <h3 class="text-lg font-bold text-gray-800">{step.title}</h3>
+          {
+            processSteps.map((step, index) => (
+              <div
+                class={`flex flex-col md:flex-row gap-4 md:gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+              >
+                <div
+                  class={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}
+                >
+                  <div
+                    class={`bg-gray-50 rounded-lg p-6 border border-gray-100 ${index % 2 === 0 ? "md:mr-8" : "md:ml-8"}`}
+                  >
+                    <div class="flex items-center gap-3 mb-2">
+                      <span class="md:hidden w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                        {step.step}
+                      </span>
+                      <h3 class="text-lg font-bold text-gray-800">
+                        {step.title}
+                      </h3>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-2">{step.description}</p>
+                    <p class="text-xs text-blue-600 font-medium">{step.time}</p>
                   </div>
-                  <p class="text-gray-600 text-sm mb-2">{step.description}</p>
-                  <p class="text-xs text-blue-600 font-medium">{step.time}</p>
                 </div>
-              </div>
-              <div class="hidden md:flex items-center justify-center">
-                <div class="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold z-10">
-                  {step.step}
+                <div class="hidden md:flex items-center justify-center">
+                  <div class="w-10 h-10 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold z-10">
+                    {step.step}
+                  </div>
                 </div>
+                <div class="flex-1 hidden md:block" />
               </div>
-              <div class="flex-1 hidden md:block"></div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </div>
@@ -402,69 +667,144 @@ const trimStyles = [
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white/10 rounded-lg p-6">
-          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
           <h3 class="text-lg font-bold mb-2">Precision Craftsmanship</h3>
           <p class="text-blue-100 text-sm">
-            Tight joints, clean cuts, and perfect alignment. We use coping techniques and professional tools for results that last.
+            Tight joints, clean cuts, and perfect alignment. We use coping
+            techniques and professional tools for results that last.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
-          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+              ></path>
             </svg>
           </div>
           <h3 class="text-lg font-bold mb-2">Quality Materials</h3>
           <p class="text-blue-100 text-sm">
-            We use premium trim from trusted suppliers. MDF for paint-grade, solid wood for stain-grade. No cheap materials.
+            We use premium trim from trusted suppliers. MDF for paint-grade,
+            solid wood for stain-grade. No cheap materials.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
-          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
           <h3 class="text-lg font-bold mb-2">We Show Up On Time</h3>
           <p class="text-blue-100 text-sm">
-            Appointment confirmed 24 hours AND 2 hours before arrival. No waiting around wondering when we'll show.
+            Appointment confirmed 24 hours AND 2 hours before arrival. No
+            waiting around wondering when we'll show.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
-          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+              ></path>
             </svg>
           </div>
           <h3 class="text-lg font-bold mb-2">Adds Home Value</h3>
           <p class="text-blue-100 text-sm">
-            Crown molding, wainscoting, and built-ins are proven value-add improvements that buyers notice and pay for.
+            Crown molding, wainscoting, and built-ins are proven value-add
+            improvements that buyers notice and pay for.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
-          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
             </svg>
           </div>
           <h3 class="text-lg font-bold mb-2">Transparent Pricing</h3>
           <p class="text-blue-100 text-sm">
-            Detailed written quotes include everything — materials, labor, finishing. No surprise fees. Your estimate is your price.
+            Detailed written quotes include everything — materials, labor,
+            finishing. No surprise fees. Your estimate is your price.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
-          <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+          <div
+            class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4"
+          >
+            <svg
+              class="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
           <h3 class="text-lg font-bold mb-2">Clean Installation</h3>
           <p class="text-blue-100 text-sm">
-            We clean up sawdust, fill nail holes, and caulk gaps. Your trim is ready for paint or ready to enjoy.
+            We clean up sawdust, fill nail holes, and caulk gaps. Your trim is
+            ready for paint or ready to enjoy.
           </p>
         </div>
       </div>
@@ -475,25 +815,39 @@ const trimStyles = [
   <section class="py-16 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          Frequently Asked Questions
+        </h2>
         <p class="text-lg text-gray-600">
           Common questions about our finish carpentry services.
         </p>
       </div>
       <div class="space-y-4">
-        {faqs.map((faq) => (
-          <details class="bg-white rounded-lg border border-gray-200 group">
-            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-              <h3 class="font-semibold text-gray-800 pr-4">{faq.question}</h3>
-              <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <div class="px-6 pb-6">
-              <p class="text-gray-600">{faq.answer}</p>
-            </div>
-          </details>
-        ))}
+        {
+          faqs.map((faq) => (
+            <details class="bg-white rounded-lg border border-gray-200 group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                <h3 class="font-semibold text-gray-800 pr-4">{faq.question}</h3>
+                <svg
+                  class="w-5 h-5 text-gray-500 flex-shrink-0 transition-transform group-open:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <div class="px-6 pb-6">
+                <p class="text-gray-600">{faq.answer}</p>
+              </div>
+            </details>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -502,24 +856,81 @@ const trimStyles = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Finish Carpentry Service Areas</h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+          Finish Carpentry Service Areas
+        </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          We provide finish carpentry services throughout Madison County and North Alabama.
+          We provide finish carpentry services throughout Madison County and
+          North Alabama.
         </p>
       </div>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        {serviceAreas.map((area) => (
-          <div class={`rounded-lg p-4 text-center ${area.city === 'Madison' ? 'bg-blue-900 text-white' : 'bg-gray-50 border border-gray-200'}`}>
-            <div class="flex items-center justify-center gap-1 mb-1">
-              <svg class={`w-4 h-4 ${area.city === 'Madison' ? 'text-blue-200' : 'text-blue-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
-              <span class="font-semibold">{area.city}</span>
-            </div>
-            <p class={`text-xs mt-1 ${area.city === 'Madison' ? 'text-blue-100' : 'text-gray-600'}`}>{area.note}</p>
-          </div>
-        ))}
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {
+          serviceAreas.map((area) => {
+            const citySlug = area.city.toLowerCase().replace(/ /g, "-");
+            const finalSlug = `finish-carpentry-${citySlug}-al`;
+
+            return (
+              <a
+                href={`/services/${finalSlug}`}
+                class={`block group rounded-2xl p-6 text-center transition-all duration-300 ${area.city === "Madison" ? "bg-gradient-to-br from-blue-900 to-blue-800 text-white shadow-xl shadow-blue-900/20 hover:-translate-y-1" : "bg-white border border-gray-100 shadow-lg hover:shadow-xl hover:border-blue-100 hover:-translate-y-1"}`}
+              >
+                <div
+                  class={`w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4 ${area.city === "Madison" ? "bg-white/20" : "bg-blue-50 group-hover:bg-blue-100 transition-colors"}`}
+                >
+                  <svg
+                    class={`w-6 h-6 ${area.city === "Madison" ? "text-white" : "text-blue-600"}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class={`text-xl font-bold mb-2 ${area.city === "Madison" ? "text-white" : "text-gray-900 group-hover:text-blue-900"}`}
+                >
+                  {area.city}
+                </h3>
+                <p
+                  class={`text-sm mb-4 ${area.city === "Madison" ? "text-blue-100" : "text-gray-500"}`}
+                >
+                  {area.note}
+                </p>
+
+                <div
+                  class={`inline-flex items-center gap-2 text-sm font-bold ${area.city === "Madison" ? "text-orange-400" : "text-blue-600"}`}
+                >
+                  View Details
+                  <svg
+                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+              </a>
+            );
+          })
+        }
       </div>
     </div>
   </section>
@@ -527,9 +938,12 @@ const trimStyles = [
   <!-- CTA Section -->
   <section class="py-16 bg-orange-500 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4">Ready to Add Character to Your Home?</h2>
+      <h2 class="text-3xl font-bold mb-4">
+        Ready to Add Character to Your Home?
+      </h2>
       <p class="text-xl mb-8 text-orange-100">
-        Get a free estimate for crown molding, baseboards, wainscoting, or custom built-ins.
+        Get a free estimate for crown molding, baseboards, wainscoting, or
+        custom built-ins.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a

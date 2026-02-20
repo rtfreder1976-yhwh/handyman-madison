@@ -112,186 +112,591 @@ const localSchema = {
 ---
 
 <Layout title={title} description={description} schema={localSchema}>
-    <section class="bg-blue-900 text-white py-16">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <nav
-                class="text-sm text-blue-200 mb-4 flex justify-center items-center gap-2"
+    <!-- Premium Hero Section -->
+    <section
+        class="relative bg-blue-900 text-white pt-32 pb-24 flex items-center overflow-hidden"
+    >
+        <div class="absolute inset-0 z-0">
+            <img
+                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop"
+                alt={`${service.name} Services in ${city}`}
+                class="w-full h-full object-cover opacity-20 scale-105 animate-[pulse_10s_ease-in-out_infinite_alternate]"
+            />
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-blue-950 via-blue-900/90 to-blue-900/60"
             >
-                <a href="/locations" class="hover:text-white">Locations</a>
-                <span>/</span>
-                <a
-                    href={`/locations/${city.toLowerCase()}`}
-                    class="hover:text-white">{city}</a
-                >
-                <span>/</span>
-                <span class="text-white">{service.name}</span>
-            </nav>
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">
-                {service.name} in {city}, AL
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-                {service.shortDesc} for homes in {city}. Fast, reliable, and
-                professional.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <!-- AI text a photo CTA on landing pages -->
-                <a
-                    href="sms:2565550123"
-                    class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30"
-                >
-                    <svg
-                        class="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
-                        ></path>
-                    </svg>
-                    Text a Photo for Price
-                </a>
             </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10 w-full">
+            <div class="max-w-3xl">
+                <nav
+                    class="text-blue-200 text-sm mb-6 flex items-center gap-2 font-medium tracking-wide"
+                >
+                    <a
+                        href="/locations"
+                        class="hover:text-white transition-colors">Locations</a
+                    >
+                    <span class="opacity-50">/</span>
+                    <a
+                        href={`/locations/${city.toLowerCase()}`}
+                        class="hover:text-white transition-colors">{city}</a
+                    >
+                    <span class="opacity-50">/</span>
+                    <span class="text-orange-400">{service.name}</span>
+                </nav>
+
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 text-sm font-medium text-blue-100"
+                >
+                    <span
+                        class="w-2 h-2 inline-block rounded-full bg-orange-400 mr-2 animate-pulse"
+                    ></span>
+                    Top-Rated {city} Contractor
+                </div>
+
+                <h1
+                    class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight"
+                >
+                    {service.name}
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600"
+                        >in {city}, AL</span
+                    >
+                </h1>
+
+                <p
+                    class="text-xl md:text-2xl text-blue-100 mb-10 font-light leading-relaxed"
+                >
+                    {service.shortDesc} tailored specifically for homes in {
+                        city
+                    }. Fast, reliable, and backed by a commitment to absolute
+                    professionalism.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a
+                        href="sms:2565550123"
+                        class="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 text-lg flex items-center justify-center gap-3 shadow-lg shadow-orange-500/30 hover:shadow-orange-500/50 hover:-translate-y-1 border border-orange-400/30"
+                    >
+                        <svg
+                            class="w-6 h-6 group-hover:scale-110 transition-transform"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                            ></path>
+                        </svg>
+                        Text A Photo For Instant Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative shape divider -->
+        <div
+            class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10"
+        >
+            <svg
+                class="relative block w-full h-[50px] md:h-[100px]"
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 120"
+                preserveAspectRatio="none"
+            >
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.06,155.15,112.5,231.2,88.45,264.44,77.83,296.88,67.36,321.39,56.44Z"
+                    class="fill-white"></path>
+            </svg>
         </div>
     </section>
 
-    <section class="py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 prose prose-lg">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">
-                Your Expert {service.name} Contractor in {city}
+    <!-- Main Content -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2
+                class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 font-display tracking-tight"
+            >
+                Your Trusted {service.name} Experts in {city}, Alabama
             </h2>
-            <p class="text-gray-600 mb-6">
-                When your {city} home needs <strong
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                When your home or business in {city} requires professional <strong
                     >{service.name.toLowerCase()}</strong
-                >, you don't have time to wait around for contractors who don't
-                show up. At Madison Handyman Pro, we specialize in delivering
-                high-quality <em>{service.shortDesc.toLowerCase()}</em> directly to
-                your neighborhood.
+                >, you need a contractor you can implicitly trust to deliver
+                high-quality results on time and within your budget. At Madison
+                Handyman Pro, we are deeply committed to providing our local
+                community with the absolute best in home improvement and repair
+                services. We fully understand that finding a reliable contractor
+                can often be a stressful and overwhelming experience. That is
+                exactly why we have meticulously built our reputation upon a
+                foundation of clear, honest communication, arriving on schedule
+                every time, and producing meticulous, long-lasting work that
+                speaks for itself.
+            </p>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                Our comprehensive approach to {service.shortDesc.toLowerCase()} is
+                purposefully designed to take the hassle completely out of your hands.
+                Whether you are dealing with a sudden, unexpected repair emergency,
+                strategically preparing your property for the real estate market to
+                maximize its value, or simply updating your living space to better
+                match your evolving personal tastes, our experienced team approaches
+                every single project with the very same high level of care, precision,
+                and dedication. Because our team is locally based right here in the
+                area, we instinctively understand the unique architectural styles,
+                common construction materials, and environmental factors that specifically
+                affect homes in {city}. This deep local awareness allows us to
+                quickly recommend and implement the most effective, durable
+                solutions for your property.
+            </p>
+
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 mt-14">
+                Comprehensive {service.name} Solutions Designed to Last
+            </h3>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                Attempting DIY fixes or hiring unverified, unlicensed workers
+                for {service.name.toLowerCase()} can tragically often lead to much
+                more costly, complex problems down the road. Our professional, comprehensive
+                solutions are expertly tailored specifically to the exact needs of
+                each individual client we serve in {city}. We simply do not
+                believe in applying one-size-fits-all fixes to nuanced home
+                repair challenges. Instead, we take the dedicated time necessary
+                to thoroughly assess your specific situation, discuss your
+                overarching goals, and transparently outline a clear,
+                step-by-step plan of action that makes sense for both your home
+                and your bank account.
+            </p>
+            <p class="text-gray-700 text-lg leading-relaxed mb-10">
+                By utilizing only top-tier, industry-standard materials and
+                adhering strictly to established best practices, we guarantee
+                that our work will safely and beautifully stand the test of
+                time. From the critical initial preparation of the
+                workspace—where we take extraordinary care to protect your
+                surrounding property—to the final, detailed cleanup process, our
+                crew maintains an attitude of absolute respect for your home.
+                Ultimately, our primary goal is not just to fix a surface-level
+                problem, but to significantly elevate the comfort, safety, and
+                overall aesthetic appeal of your most valuable asset.
             </p>
 
             <div
-                class="bg-gray-50 p-6 rounded-lg border border-gray-100 my-8 shadow-sm"
+                class="bg-gradient-to-br from-blue-50 to-white p-8 md:p-10 rounded-3xl border border-blue-100 my-16 shadow-lg shadow-blue-900/5 relative overflow-hidden group hover:border-blue-200 transition-colors"
             >
-                <h3 class="text-xl font-bold text-blue-900 mb-4">
-                    Why Handled Locally in {city}?
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full blur-[80px] opacity-40 -mr-20 -mt-20 pointer-events-none group-hover:opacity-60 transition-opacity"
+                >
+                </div>
+                <h3 class="text-2xl font-bold text-blue-900 mb-8 relative z-10">
+                    The Local Advantage: Why Choose Us in {city}?
                 </h3>
-                <ul class="space-y-3">
-                    <li class="flex items-start gap-3">
-                        <svg
-                            class="w-6 h-6 text-green-500 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                <ul class="space-y-6 relative z-10">
+                    <li class="flex items-start gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1 shadow-sm border border-green-200"
                         >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        <span class="text-gray-700"
-                            ><strong
-                                >We understand local building codes and weather
-                                challenges</strong
-                            > specific to {city}.</span
-                        >
+                            <svg
+                                class="w-5 h-5 text-green-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path></svg
+                            >
+                        </div>
+                        <div>
+                            <strong class="text-gray-900 block text-xl mb-1"
+                                >Deep Local Knowledge & Understanding</strong
+                            >
+                            <span class="text-gray-600 leading-relaxed block"
+                                >We possess an intricate understanding of the
+                                local building codes, unique weather challenges,
+                                and typical residential construction methods
+                                specific to {city} and Madison County. This ensures
+                                our work is always strictly compliant and highly optimized
+                                for your specific local environment.</span
+                            >
+                        </div>
                     </li>
-                    <li class="flex items-start gap-3">
-                        <svg
-                            class="w-6 h-6 text-green-500 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                    <li class="flex items-start gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1 shadow-sm border border-green-200"
                         >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        <span class="text-gray-700"
-                            ><strong>Rapid response times</strong> for {city} residents.
-                            (Often same or next-day!)</span
-                        >
+                            <svg
+                                class="w-5 h-5 text-green-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path></svg
+                            >
+                        </div>
+                        <div>
+                            <strong class="text-gray-900 block text-xl mb-1"
+                                >Rapid, Dependable Response Times</strong
+                            >
+                            <span class="text-gray-600 leading-relaxed block"
+                                >Because our operational hub is local, we retain
+                                the unique ability to mobilize rapidly. Whether
+                                you find yourself facing an urgent, stressful
+                                repair or simply want to aggressively kickstart
+                                a planned improvement project without delay, {
+                                    city
+                                } residents routinely enjoy priority scheduling. We
+                                often provide same-day or next-day availability for
+                                estimates.</span
+                            >
+                        </div>
                     </li>
-                    <li class="flex items-start gap-3">
-                        <svg
-                            class="w-6 h-6 text-green-500 flex-shrink-0"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                    <li class="flex items-start gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1 shadow-sm border border-green-200"
                         >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M5 13l4 4L19 7"></path>
-                        </svg>
-                        <span class="text-gray-700"
-                            ><strong>Fully licensed and insured</strong> to safely
-                            work on your property.</span
+                            <svg
+                                class="w-5 h-5 text-green-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path></svg
+                            >
+                        </div>
+                        <div>
+                            <strong class="text-gray-900 block text-xl mb-1"
+                                >Fully Licensed & Insured Protection</strong
+                            >
+                            <span class="text-gray-600 leading-relaxed block"
+                                >Your absolute peace of mind is our utmost
+                                priority. We carry comprehensive insurance
+                                policies and hold all proper, authorized
+                                licensing to safely conduct work on your
+                                property. This rigidly protects you from any
+                                liability and firmly guarantees professional
+                                accountability and standard adherence on every
+                                single job.</span
+                            >
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mt-1 shadow-sm border border-green-200"
                         >
+                            <svg
+                                class="w-5 h-5 text-green-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path></svg
+                            >
+                        </div>
+                        <div>
+                            <strong class="text-gray-900 block text-xl mb-1"
+                                >Transparent, Honest, No-Surprise Pricing</strong
+                            >
+                            <span class="text-gray-600 leading-relaxed block"
+                                >We firmly believe in doing business with
+                                unwavering integrity. You will always, without
+                                exception, receive a clear, highly detailed, and
+                                fully itemized estimate before any physical work
+                                begins. We guarantee absolutely no hidden fees,
+                                upcharges, or nasty surprise billings added at
+                                the final completion of the project.</span
+                            >
+                        </div>
                     </li>
                 </ul>
             </div>
 
-            <h3 class="text-2xl font-bold text-gray-800 mb-4 mt-8">
-                Common {service.name} Questions
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 mt-16">
+                Our Proven Operational Process for Guaranteeing Results
             </h3>
-            <div class="space-y-4">
-                <div class="border-b border-gray-200 pb-4">
-                    <h4 class="font-bold text-gray-900 text-lg">
-                        Do you offer {service.name.toLowerCase()} in {city}, AL?
-                    </h4>
-                    <p class="text-gray-600 mt-2">
-                        Yes, we provide professional {
-                            service.name.toLowerCase()
-                        } services to residents throughout {city} and the surrounding
-                        areas in Alabama. Our fully-equipped vehicles handle jobs
-                        of all sizes.
+            <p class="text-gray-700 text-lg leading-relaxed mb-8">
+                Reliable consistency is the ultimate key to our incredibly high
+                customer satisfaction rates. Over the course of many years
+                actively working in the industry, we have rigorously refined our
+                daily operational processes. This continual optimization ensures
+                that absolutely every {service.name.toLowerCase()} project we undertake
+                in {city} is executed flawlessly from the very first introductory
+                phone call all the way to the final, celebratory handshake. Here is
+                exactly what you can expect when you make the smart decision to hire
+                our professional team:
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 mb-16">
+                <div
+                    class="bg-white border hover:border-orange-300 border-gray-200 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all group"
+                >
+                    <div class="flex items-center gap-3 mb-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 font-bold flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 group-hover:text-white transition-colors"
+                        >
+                            01
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-xl">
+                            Thorough Initial Assessment
+                        </h4>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        We begin the entire process by carefully and formally
+                        evaluating your distinct needs, taking precise
+                        structural measurements, documenting the space, and
+                        expertly identifying any underlying, hidden issues that
+                        could potentially or unexpectedly complicate the project
+                        down the road.
                     </p>
                 </div>
-                <div class="border-b border-gray-200 pb-4">
-                    <h4 class="font-bold text-gray-900 text-lg">
-                        How much does {service.name.toLowerCase()} cost in {
-                            city
-                        }?
+                <div
+                    class="bg-white border hover:border-orange-300 border-gray-200 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all group"
+                >
+                    <div class="flex items-center gap-3 mb-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 font-bold flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 group-hover:text-white transition-colors"
+                        >
+                            02
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-xl">
+                            Meticulous Detailed Preparation
+                        </h4>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Physically protecting your interior or exterior home
+                        environment is crucial to our methodology. We
+                        meticulously prepare the designated work area,
+                        diligently laying down high-grade protective floor
+                        coverings, tape, and shields to ensure your surrounding
+                        property layout remains completely pristine and
+                        untouched.
+                    </p>
+                </div>
+                <div
+                    class="bg-white border hover:border-orange-300 border-gray-200 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all group"
+                >
+                    <div class="flex items-center gap-3 mb-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 font-bold flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 group-hover:text-white transition-colors"
+                        >
+                            03
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-xl">
+                            High-Quality Professional Execution
+                        </h4>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our fully trained, highly skilled technicians carry out
+                        the required contracted work utilizing premium,
+                        commercial-grade materials and advanced, proven
+                        installation techniques. We proudly refuse to cut
+                        corners, maintaining an unwavering, singular focus on
+                        structural safety and long-term aesthetic durability.
+                    </p>
+                </div>
+                <div
+                    class="bg-white border hover:border-orange-300 border-gray-200 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all group"
+                >
+                    <div class="flex items-center gap-3 mb-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 font-bold flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500 group-hover:text-white transition-colors"
+                        >
+                            04
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-xl">
+                            Final Cleanup & Client Review
+                        </h4>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Upon mechanical completion, we thoroughly and deeply
+                        clean the entire workspace. Finally, we conduct a
+                        comprehensive, guided final walk-through with you
+                        personally to ensure absolutely every minor detail of
+                        the completed job firmly meets your absolute
+                        satisfaction before we ever consider it officially
+                        complete.
+                    </p>
+                </div>
+            </div>
+
+            <h3
+                class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 mt-16 pb-2 border-b-2 border-gray-100"
+            >
+                Frequently Asked Questions About {service.name} in {city}
+            </h3>
+            <div class="space-y-6">
+                <div
+                    class="bg-white border border-gray-200 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                >
+                    <h4
+                        class="font-bold text-gray-900 text-xl flex items-start gap-3"
+                    >
+                        <span class="text-orange-500 font-black mt-1">Q:</span>
+                        <span
+                            >Do you currently offer {service.name.toLowerCase()} for
+                            both residential homes and commercial properties directly
+                            within {city}?</span
+                        >
                     </h4>
-                    <p class="text-gray-600 mt-2">
-                        The cost varies depending on the exact scope of the
-                        project. We pride ourselves on transparent, honest
-                        pricing. You can <a
+                    <p class="text-gray-700 mt-4 ml-8 leading-relaxed text-lg">
+                        <strong
+                            class="text-blue-900 font-black mr-2 tracking-wide"
+                            >A:</strong
+                        > Yes, absolutely. While we do primarily service local residential
+                        neighborhood homes, our experienced company is fully equipped,
+                        staffed, and comprehensively insured to competently handle
+                        commercial projects as well. Our skilled team has successfully
+                        completed complex {service.name.toLowerCase()} assignments
+                        for business offices, retail storefronts, and various local
+                        enterprises operating throughout {city} and the broader North
+                        Alabama commercial region.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white border border-gray-200 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                >
+                    <h4
+                        class="font-bold text-gray-900 text-xl flex items-start gap-3"
+                    >
+                        <span class="text-orange-500 font-black mt-1">Q:</span>
+                        <span
+                            >How exactly is the final, total cost of {
+                                service.name.toLowerCase()
+                            } calculated and quoted?</span
+                        >
+                    </h4>
+                    <p class="text-gray-700 mt-4 ml-8 leading-relaxed text-lg">
+                        <strong
+                            class="text-blue-900 font-black mr-2 tracking-wide"
+                            >A:</strong
+                        > The final total cost is intrinsically dependent on the exact,
+                        specific scope of your project, the physical size or square
+                        footage of the work area, and the caliber of materials required
+                        for completion. We firmly believe in offering 100% transparent
+                        pricing models. You can easily and freely <a
                             href="sms:2565550123"
-                            class="text-blue-600 underline hover:text-blue-800"
-                            >text us a photo of the project</a
-                        > for a fast, rough estimate generated by our automated system,
-                        or we can come to your location for a definitive, free written
-                        quote.
+                            class="text-orange-600 underline hover:text-orange-700 font-bold transition-colors"
+                            >text us a clear, well-lit photo of the project</a
+                        > to obtain a fast, remarkably accurate rough digital estimate.
+                        Alternatively, we are more than happy to drive directly to
+                        your {city} physical location to issue a definitive, comprehensive,
+                        free, no-obligation written quote that locks in your pricing.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white border border-gray-200 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                >
+                    <h4
+                        class="font-bold text-gray-900 text-xl flex items-start gap-3"
+                    >
+                        <span class="text-orange-500 font-black mt-1">Q:</span>
+                        <span
+                            >How quickly can your crews realistically start my
+                            project once the written estimate is officially
+                            approved?</span
+                        >
+                    </h4>
+                    <p class="text-gray-700 mt-4 ml-8 leading-relaxed text-lg">
+                        <strong
+                            class="text-blue-900 font-black mr-2 tracking-wide"
+                            >A:</strong
+                        > Because we purposely maintain a robust, dedicated local
+                        team that exclusively functions here, we can consistently
+                        and comfortably schedule your {
+                            service.name.toLowerCase()
+                        } project to securely begin within just 3 to 5 business days
+                        from the exact moment you formally approve our provided estimate.
+                        Furthermore, for serious emergencies or highly urgent mitigation
+                        and repair situations, we routinely hold specific daily availability
+                        to execute same-day or next-day expedited service to swiftly
+                        get your critical issue resolved immediately.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white border border-gray-200 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                >
+                    <h4
+                        class="font-bold text-gray-900 text-xl flex items-start gap-3"
+                    >
+                        <span class="text-orange-500 font-black mt-1">Q:</span>
+                        <span
+                            >Do I need to spend time purchasing the necessary
+                            building materials myself, or do your teams supply
+                            and deliver them?</span
+                        >
+                    </h4>
+                    <p class="text-gray-700 mt-4 ml-8 leading-relaxed text-lg">
+                        <strong
+                            class="text-blue-900 font-black mr-2 tracking-wide"
+                            >A:</strong
+                        > We proudly handle everything from start to finish. Our standard
+                        operation offers a completely comprehensive, turnkey service
+                        environment. We professionally source, purchase, transport,
+                        and supply all necessary, contractor-grade materials required
+                        to adequately finish the job. However, if you are a homeowner
+                        who has already enthusiastically purchased specific decorative
+                        items, particular hardware, or custom finishing materials
+                        that you would strongly prefer us to install, we are perfectly
+                        happy to accommodate those exact wishes and will immediately
+                        adjust our formal labor quote accordingly to reflect your
+                        lowered material costs.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-blue-50 border-t border-blue-100">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold text-blue-900 mb-4">
-                Need {service.name} Right Away?
+    <!-- Final Call to Action -->
+    <section class="relative py-24 bg-blue-900 overflow-hidden mt-12">
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-800 rounded-full blur-[100px] opacity-50 mix-blend-screen pointer-events-none -mr-40 -mt-40"
+        >
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange-500/20 rounded-full blur-[100px] mix-blend-screen pointer-events-none -ml-40 -mb-40"
+        >
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
+                Need Reliable {service.name} Near You?
             </h2>
-            <p class="text-gray-700 mb-8 max-w-2xl mx-auto">
-                Our team is actively servicing the {city} area this week. Click below
-                to secure your spot on our schedule.
-            </p>
-            <a
-                href="/contact"
-                class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg"
+            <p
+                class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
             >
-                Book Service Online
-            </a>
+                Our professional response team is actively servicing the {city} community
+                right now this entire week. Reach out to get your pricing finalized
+                quickly!
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a
+                    href="/contact"
+                    class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 text-lg shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:shadow-[0_0_30px_rgba(249,115,22,0.6)] hover:-translate-y-1 inline-flex items-center justify-center gap-2"
+                >
+                    Book Service Online
+                </a>
+                <a
+                    href="tel:2565550123"
+                    class="bg-blue-800/50 hover:bg-blue-800 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 text-lg border border-blue-400/30 backdrop-blur-sm hover:-translate-y-1 inline-flex items-center justify-center gap-2"
+                >
+                    Call (256) 555-0123
+                </a>
+            </div>
         </div>
     </section>
 </Layout>

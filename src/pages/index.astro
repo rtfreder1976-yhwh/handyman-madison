@@ -148,7 +148,7 @@ import Layout from "../layouts/Layout.astro";
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Card 1 -->
         <a
-          href="/services/drywall-repair-madison-al"
+          href="/services/drywall"
           class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2"
         >
           <div class="h-56 overflow-hidden relative">
@@ -191,7 +191,7 @@ import Layout from "../layouts/Layout.astro";
 
         <!-- Card 2 -->
         <a
-          href="/services/interior-painting-madison-al"
+          href="/services/painting"
           class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2"
         >
           <div class="h-56 overflow-hidden relative">
@@ -234,7 +234,7 @@ import Layout from "../layouts/Layout.astro";
 
         <!-- Card 3 -->
         <a
-          href="/services/flooring-installation-madison-al"
+          href="/services/flooring"
           class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2"
         >
           <div class="h-56 overflow-hidden relative">
@@ -277,7 +277,7 @@ import Layout from "../layouts/Layout.astro";
 
         <!-- Card 4 -->
         <a
-          href="/services/finish-carpentry-madison-al"
+          href="/services/finish-carpentry"
           class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2"
         >
           <div class="h-56 overflow-hidden relative">
@@ -495,6 +495,83 @@ import Layout from "../layouts/Layout.astro";
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programmatic SEO Service Areas Directory -->
+  <section class="py-24 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-orange-500 font-bold tracking-wider uppercase text-sm"
+          >Targeted Local Service</span
+        >
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2 mb-4">
+          Areas We Serve
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          Find highly detailed information about our premium handyman services
+          specific to your exact neighborhood in North Alabama.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          ["Madison", "Huntsville", "Athens", "Decatur"].map((city) => {
+            const citySlug = city.toLowerCase().replace(" ", "-") + "-al";
+            const services = [
+              { name: "Drywall Repair", slug: "drywall-repair" },
+              { name: "Interior Painting", slug: "interior-painting" },
+              { name: "Exterior Painting", slug: "exterior-painting" },
+              { name: "Gutter Cleaning", slug: "gutter-cleaning" },
+              { name: "Gutter Installation", slug: "gutter-installation" },
+              { name: "Flooring Setup", slug: "flooring-installation" },
+              { name: "Finish Carpentry", slug: "finish-carpentry" },
+            ];
+
+            return (
+              <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-gray-100 flex items-center gap-3">
+                  <svg
+                    class="w-6 h-6 text-orange-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </>
+                  </svg>
+                  {city}, AL
+                </h3>
+                <ul class="space-y-4">
+                  {services.map((s) => (
+                    <li>
+                      <a
+                        href={`/services/${s.slug}-${citySlug}`}
+                        class="text-gray-600 hover:text-blue-600 font-medium group flex items-center gap-3 transition-colors"
+                      >
+                        <span class="w-1.5 h-1.5 rounded-full bg-orange-400 group-hover:scale-150 transition-transform" />
+                        {s.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })
+        }
       </div>
     </div>
   </section>
