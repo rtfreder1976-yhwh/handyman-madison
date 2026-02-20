@@ -1,0 +1,25 @@
+# Madison Handyman Pro - robots.txt
+# https://madisonhandymanpro.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://madisonhandymanpro.com/sitemap-index.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Block non-content paths
+Disallow: /api/
+Disallow: /_astro/
+
+# Allow all major search engines full access
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /

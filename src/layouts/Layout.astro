@@ -8,6 +8,205 @@ interface Props {
 
 const { title, description = "Professional handyman services in Madison, Alabama. Quality repairs, maintenance, and home improvement." } = Astro.props;
 const currentPath = Astro.url.pathname;
+const canonicalURL = new URL(Astro.url.pathname, 'https://madisonhandymanpro.com');
+
+// LocalBusiness + HomeAndConstructionBusiness Schema
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "HandymanService"],
+      "@id": "https://madisonhandymanpro.com/#business",
+      "name": "Madison Handyman Pro",
+      "description": "Professional handyman services in Madison, Alabama. Drywall, painting, flooring, finish carpentry, gutter cleaning, and gutter guard installation.",
+      "url": "https://madisonhandymanpro.com",
+      "telephone": "(256) 555-0123",
+      "email": "info@madisonhandymanpro.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Madison",
+        "addressRegion": "AL",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "34.6993",
+        "longitude": "-86.7483"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Madison", "addressRegion": "AL" },
+        { "@type": "City", "name": "Huntsville", "addressRegion": "AL" },
+        { "@type": "City", "name": "Decatur", "addressRegion": "AL" },
+        { "@type": "City", "name": "Athens", "addressRegion": "AL" },
+        { "@type": "City", "name": "Harvest", "addressRegion": "AL" },
+        { "@type": "City", "name": "Meridianville", "addressRegion": "AL" }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "15:00"
+        }
+      ],
+      "priceRange": "$$",
+      "paymentAccepted": ["Cash", "Check", "Credit Card"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Handyman Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Drywall Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Drywall Installation",
+                  "description": "Professional drywall installation for new construction and renovations"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Drywall Repair",
+                  "description": "Hole repair, crack repair, and water damage restoration"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Painting Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Interior Painting",
+                  "description": "Professional interior room and wall painting"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Exterior Painting",
+                  "description": "House exterior and trim painting services"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Cabinet Painting",
+                  "description": "Kitchen and bathroom cabinet painting and refinishing"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Flooring Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Flooring Installation",
+                  "description": "Hardwood, laminate, vinyl, and tile flooring installation"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Flooring Repair",
+                  "description": "Floor repair and refinishing services"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Carpentry Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Finish Carpentry",
+                  "description": "Crown molding, baseboards, trim, and custom woodwork"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Built-in Shelving",
+                  "description": "Custom built-in shelving and storage solutions"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Gutter Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Gutter Cleaning",
+                  "description": "Professional gutter cleaning and debris removal"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Gutter Guard Installation",
+                  "description": "Gutter guard and leaf protection system installation"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://madisonhandymanpro.com/#website",
+      "url": "https://madisonhandymanpro.com",
+      "name": "Madison Handyman Pro",
+      "publisher": {
+        "@id": "https://madisonhandymanpro.com/#business"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalURL}#webpage`,
+      "url": canonicalURL.href,
+      "name": `${title} | Madison Handyman Pro`,
+      "isPartOf": {
+        "@id": "https://madisonhandymanpro.com/#website"
+      },
+      "about": {
+        "@id": "https://madisonhandymanpro.com/#business"
+      },
+      "description": description
+    }
+  ]
+};
 ---
 
 <!doctype html>
@@ -16,9 +215,40 @@ const currentPath = Astro.url.pathname;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="description" content={description} />
-    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
     <title>{title} | Madison Handyman Pro</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={`${title} | Madison Handyman Pro`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Madison Handyman Pro" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={`${title} | Madison Handyman Pro`} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="US-AL" />
+    <meta name="geo.placename" content="Madison" />
+    <meta name="geo.position" content="34.6993;-86.7483" />
+    <meta name="ICBM" content="34.6993, -86.7483" />
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
   </head>
   <body class="min-h-screen flex flex-col bg-gray-50">
     <header class="bg-blue-900 text-white shadow-lg">
