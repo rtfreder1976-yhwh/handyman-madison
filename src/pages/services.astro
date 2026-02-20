@@ -5,7 +5,8 @@ const featuredServices = [
   {
     name: "Drywall Installation & Repair",
     description: "From small patches to full room installations. We handle hole repairs, water damage, cracks, and new construction drywall with seamless finishing.",
-    items: ["Hole and crack repair", "Water damage restoration", "New drywall installation", "Texture matching", "Seamless finishing"]
+    items: ["Hole and crack repair", "Water damage restoration", "New drywall installation", "Texture matching", "Seamless finishing"],
+    link: "/services/drywall"
   },
   {
     name: "Painting",
@@ -108,10 +109,10 @@ const additionalServices = [
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {featuredServices.map((service) => (
-          <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-100 hover:border-blue-200 transition-colors">
+          <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-100 hover:border-blue-200 transition-colors flex flex-col">
             <h3 class="text-xl font-bold text-blue-900 mb-3">{service.name}</h3>
             <p class="text-gray-600 mb-4 text-sm">{service.description}</p>
-            <ul class="space-y-2">
+            <ul class="space-y-2 flex-1">
               {service.items.map((item) => (
                 <li class="flex items-start gap-2 text-gray-700 text-sm">
                   <svg class="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -121,6 +122,14 @@ const additionalServices = [
                 </li>
               ))}
             </ul>
+            {service.link && (
+              <a href={service.link} class="mt-4 text-blue-600 hover:text-blue-800 font-medium text-sm inline-flex items-center gap-1">
+                Learn More
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </a>
+            )}
           </div>
         ))}
       </div>
