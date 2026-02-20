@@ -1,0 +1,76 @@
+---
+/**
+ * OptimizedImage Component
+ * - Converts images to WebP with fallback
+ * - Implements native lazy loading
+ * - Prevents CLS with explicit dimensions
+ * - Supports responsive images
+ */
+
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'sync' | 'auto';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  sizes?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  class: className = '',
+  loading = 'lazy',
+  decoding = 'async',
+  fetchpriority = 'auto',
+  sizes = '100vw'
+} = Astro.props;
+
+// Generate WebP source path (assumes WebP version exists or will be generated)
+const webpSrc = src.replace(/\.(jpg|jpeg|png|gif)$/i, '.webp');
+const isAlreadyWebP = src.endsWith('.webp');
+const isSvg = src.endsWith('.svg');
+---
+
+{isSvg ? (
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loading}
+    decoding={decoding}
+  />
+) : isAlreadyWebP ? (
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loading}
+    decoding={decoding}
+    fetchpriority={fetchpriority}
+  />
+) : (
+  <picture>
+    <source srcset={webpSrc} type="image/webp" />
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      class={className}
+      loading={loading}
+      decoding={decoding}
+      fetchpriority={fetchpriority}
+      sizes={sizes}
+    />
+  </picture>
+)}

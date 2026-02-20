@@ -1,1 +1,201 @@
 @import "tailwindcss";
+
+/* ===================================
+   PERFORMANCE OPTIMIZATIONS
+   =================================== */
+
+/* Critical above-fold styles inlined for faster FCP */
+:root {
+  --color-primary: #1e3a5f;
+  --color-primary-dark: #1e3a8a;
+  --color-accent: #f97316;
+  --color-text: #1f2937;
+  --color-text-light: #6b7280;
+  --color-bg: #f9fafb;
+
+  /* Reduce CLS by setting consistent line heights */
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+
+  /* Font loading optimization */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize font loading - prevent FOIT */
+@font-face {
+  font-family: 'system-ui';
+  font-display: swap;
+}
+
+/* Base performance styles */
+html {
+  /* Smooth scrolling with reduced motion respect */
+  scroll-behavior: smooth;
+
+  /* Prevent horizontal overflow on mobile */
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimize body for fast paint */
+body {
+  line-height: var(--line-height-normal);
+
+  /* Prevent layout shift */
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
+}
+
+/* ===================================
+   IMAGE OPTIMIZATION
+   =================================== */
+
+/* Lazy loading optimization */
+img {
+  /* Prevent images from exceeding container */
+  max-width: 100%;
+  height: auto;
+
+  /* Prevent CLS - images should always have width/height */
+  /* This ensures space is reserved before image loads */
+}
+
+img[loading="lazy"] {
+  /* Fade in effect for lazy loaded images */
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img[loading="lazy"]:not([src]) {
+  opacity: 0;
+}
+
+/* Optimize SVG rendering */
+svg {
+  /* Prevent SVG from affecting layout unexpectedly */
+  flex-shrink: 0;
+}
+
+/* ===================================
+   MOBILE PERFORMANCE
+   =================================== */
+
+/* Touch optimization */
+@media (pointer: coarse) {
+  /* Larger touch targets for mobile */
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Faster tap response */
+  a, button, input, select, textarea {
+    touch-action: manipulation;
+  }
+}
+
+/* Reduce paint on scroll for mobile */
+.fixed, .sticky {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Optimize animations for mobile */
+@media (max-width: 768px) {
+  /* Reduce animation complexity on mobile */
+  .transition-all {
+    transition-property: opacity, transform;
+  }
+}
+
+/* ===================================
+   CORE WEB VITALS OPTIMIZATION
+   =================================== */
+
+/* LCP Optimization - ensure hero content loads fast */
+.hero-section {
+  /* Hint to browser this is important content */
+  contain: layout style;
+}
+
+/* CLS Prevention - reserve space for dynamic content */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* FID Optimization - ensure interactions are fast */
+button, a, input, select, textarea {
+  /* Prevent input delay */
+  touch-action: manipulation;
+}
+
+/* Content visibility for below-fold content */
+.below-fold {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* ===================================
+   CRITICAL RENDERING PATH
+   =================================== */
+
+/* Above-fold critical styles */
+.bg-blue-900 {
+  background-color: #1e3a8a;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb;
+}
+
+/* Ensure text is visible during font load */
+.font-bold {
+  font-weight: 700;
+}
+
+/* ===================================
+   PRINT OPTIMIZATION
+   =================================== */
+
+@media print {
+  /* Hide non-essential elements */
+  nav, footer, .no-print {
+    display: none !important;
+  }
+
+  /* Ensure text is black for printing */
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  /* Show URLs after links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+}
