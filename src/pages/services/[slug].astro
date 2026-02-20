@@ -1,0 +1,297 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+    const services = [
+        {
+            id: "drywall-repair",
+            name: "Drywall Repair",
+            shortDesc: "Professional drywall patching and repair",
+        },
+        {
+            id: "interior-painting",
+            name: "Interior Painting",
+            shortDesc: "High-quality interior painting services",
+        },
+        {
+            id: "exterior-painting",
+            name: "Exterior Painting",
+            shortDesc: "Durable exterior house painting",
+        },
+        {
+            id: "gutter-cleaning",
+            name: "Gutter Cleaning",
+            shortDesc: "Thorough gutter cleaning and maintenance",
+        },
+        {
+            id: "gutter-installation",
+            name: "Gutter Installation",
+            shortDesc: "Seamless gutter and downspout installation",
+        },
+        {
+            id: "flooring-installation",
+            name: "Flooring Installation",
+            shortDesc: "Hardwood, laminate, and LVP flooring installation",
+        },
+        {
+            id: "finish-carpentry",
+            name: "Finish Carpentry",
+            shortDesc: "Custom trim, crown molding, and woodwork",
+        },
+    ];
+    const cities = ["madison-al", "huntsville-al", "athens-al", "decatur-al"];
+
+    const paths: any[] = [];
+
+    services.forEach((service) => {
+        cities.forEach((city) => {
+            const cityNameObj: Record<string, string> = {
+                "madison-al": "Madison",
+                "huntsville-al": "Huntsville",
+                "athens-al": "Athens",
+                "decatur-al": "Decatur",
+            };
+            const cityName = cityNameObj[city];
+            paths.push({
+                params: { slug: `${service.id}-${city}` },
+                props: { service, city: cityName, fullCity: city },
+            });
+        });
+    });
+
+    return paths;
+}
+
+const { service, city } = Astro.props;
+const { slug } = Astro.params;
+
+const title = `${service.name} in ${city}, AL | Local Expert Handyman`;
+const description = `Need ${service.name.toLowerCase()} in ${city}, Alabama? Madison Handyman Pro offers fast, affordable, and professional services. Get your free estimate today!`;
+
+// Custom local schema for this specific combination
+const localSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "LocalBusiness",
+            "@id": `https://madisonhandymanpro.com/services/${slug}/#business`,
+            name: `Madison Handyman Pro - ${city}`,
+            description: description,
+            url: `https://madisonhandymanpro.com/services/${slug}`,
+            telephone: "(256) 555-0123",
+            address: {
+                "@type": "PostalAddress",
+                addressLocality: city,
+                addressRegion: "AL",
+            },
+            areaServed: [{ "@type": "City", name: city, addressRegion: "AL" }],
+        },
+        {
+            "@type": "FAQPage",
+            mainEntity: [
+                {
+                    "@type": "Question",
+                    name: `Do you offer ${service.name.toLowerCase()} in ${city}, AL?`,
+                    acceptedAnswer: {
+                        "@type": "Answer",
+                        text: `Yes, we provide professional ${service.name.toLowerCase()} services to residents throughout ${city} and surrounding areas in Alabama.`,
+                    },
+                },
+                {
+                    "@type": "Question",
+                    name: `How much does ${service.name.toLowerCase()} cost in ${city}?`,
+                    acceptedAnswer: {
+                        "@type": "Answer",
+                        text: `The cost of ${service.name.toLowerCase()} varies depending on the scope of the project. We offer free, no-obligation estimates for all jobs in ${city}. Call us or text a photo for a quick quote!`,
+                    },
+                },
+            ],
+        },
+    ],
+};
+---
+
+<Layout title={title} description={description} schema={localSchema}>
+    <section class="bg-blue-900 text-white py-16">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <nav
+                class="text-sm text-blue-200 mb-4 flex justify-center items-center gap-2"
+            >
+                <a href="/locations" class="hover:text-white">Locations</a>
+                <span>/</span>
+                <a
+                    href={`/locations/${city.toLowerCase()}`}
+                    class="hover:text-white">{city}</a
+                >
+                <span>/</span>
+                <span class="text-white">{service.name}</span>
+            </nav>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                {service.name} in {city}, AL
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+                {service.shortDesc} for homes in {city}. Fast, reliable, and
+                professional.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <!-- AI text a photo CTA on landing pages -->
+                <a
+                    href="sms:2565550123"
+                    class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                        ></path>
+                    </svg>
+                    Text a Photo for Price
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 prose prose-lg">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                Your Expert {service.name} Contractor in {city}
+            </h2>
+            <p class="text-gray-600 mb-6">
+                When your {city} home needs <strong
+                    >{service.name.toLowerCase()}</strong
+                >, you don't have time to wait around for contractors who don't
+                show up. At Madison Handyman Pro, we specialize in delivering
+                high-quality <em>{service.shortDesc.toLowerCase()}</em> directly to
+                your neighborhood.
+            </p>
+
+            <div
+                class="bg-gray-50 p-6 rounded-lg border border-gray-100 my-8 shadow-sm"
+            >
+                <h3 class="text-xl font-bold text-blue-900 mb-4">
+                    Why Handled Locally in {city}?
+                </h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                        <svg
+                            class="w-6 h-6 text-green-500 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-700"
+                            ><strong
+                                >We understand local building codes and weather
+                                challenges</strong
+                            > specific to {city}.</span
+                        >
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg
+                            class="w-6 h-6 text-green-500 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-700"
+                            ><strong>Rapid response times</strong> for {city} residents.
+                            (Often same or next-day!)</span
+                        >
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg
+                            class="w-6 h-6 text-green-500 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-gray-700"
+                            ><strong>Fully licensed and insured</strong> to safely
+                            work on your property.</span
+                        >
+                    </li>
+                </ul>
+            </div>
+
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 mt-8">
+                Common {service.name} Questions
+            </h3>
+            <div class="space-y-4">
+                <div class="border-b border-gray-200 pb-4">
+                    <h4 class="font-bold text-gray-900 text-lg">
+                        Do you offer {service.name.toLowerCase()} in {city}, AL?
+                    </h4>
+                    <p class="text-gray-600 mt-2">
+                        Yes, we provide professional {
+                            service.name.toLowerCase()
+                        } services to residents throughout {city} and the surrounding
+                        areas in Alabama. Our fully-equipped vehicles handle jobs
+                        of all sizes.
+                    </p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <h4 class="font-bold text-gray-900 text-lg">
+                        How much does {service.name.toLowerCase()} cost in {
+                            city
+                        }?
+                    </h4>
+                    <p class="text-gray-600 mt-2">
+                        The cost varies depending on the exact scope of the
+                        project. We pride ourselves on transparent, honest
+                        pricing. You can <a
+                            href="sms:2565550123"
+                            class="text-blue-600 underline hover:text-blue-800"
+                            >text us a photo of the project</a
+                        > for a fast, rough estimate generated by our automated system,
+                        or we can come to your location for a definitive, free written
+                        quote.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-blue-50 border-t border-blue-100">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">
+                Need {service.name} Right Away?
+            </h2>
+            <p class="text-gray-700 mb-8 max-w-2xl mx-auto">
+                Our team is actively servicing the {city} area this week. Click below
+                to secure your spot on our schedule.
+            </p>
+            <a
+                href="/contact"
+                class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg"
+            >
+                Book Service Online
+            </a>
+        </div>
+    </section>
+</Layout>

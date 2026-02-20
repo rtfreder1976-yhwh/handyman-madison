@@ -4,9 +4,14 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  schema?: any;
 }
 
-const { title, description = "Professional handyman services in Madison, Alabama. Quality repairs, maintenance, and home improvement." } = Astro.props;
+const { 
+  title, 
+  description = "Professional handyman services in Madison, Alabama. Quality repairs, maintenance, and home improvement.",
+  schema
+} = Astro.props;
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(Astro.url.pathname, 'https://madisonhandymanpro.com');
 
@@ -207,6 +212,8 @@ const schemaData = {
     }
   ]
 };
+
+const finalSchema = schema || schemaData;
 ---
 
 <!doctype html>
@@ -291,7 +298,7 @@ const schemaData = {
     <meta name="generator" content={Astro.generator} />
 
     <!-- JSON-LD Schema Markup -->
-    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    <script type="application/ld+json" set:html={JSON.stringify(finalSchema)} />
 
     <!-- Performance: Defer non-critical JS -->
     <script>
