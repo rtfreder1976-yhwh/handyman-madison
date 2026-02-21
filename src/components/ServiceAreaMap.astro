@@ -1,0 +1,159 @@
+---
+// ServiceAreaMap.astro
+const locations = [
+    {
+        name: "Madison",
+        desc: "Our home base. From historic downtown to newly developed subdivisions.",
+    },
+    {
+        name: "Huntsville",
+        desc: "Comprehensive coverage across the Rocket City, from Research Park to Hampton Cove.",
+    },
+    {
+        name: "Decatur",
+        desc: "Full service availability serving all of Morgan County and surrounding areas.",
+    },
+    {
+        name: "Athens",
+        desc: "Fast response times for Limestone County homeowners and businesses.",
+    },
+];
+---
+
+<section class="py-24 bg-blue-900 text-white relative overflow-hidden">
+    <!-- Abstract background styling -->
+    <div class="absolute inset-0 z-0 opacity-10">
+        <svg
+            fill="none"
+            viewBox="0 0 800 600"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full h-full object-cover"
+        >
+            <path d="M0 0h800v600H0z"></path>
+            <!-- Map-like abstract lines -->
+            <path
+                stroke="currentColor"
+                stroke-width="2"
+                d="M100 200 Q 300 100 500 300 T 900 400"></path>
+            <path
+                stroke="currentColor"
+                stroke-width="2"
+                d="M200 600 Q 400 400 300 200 T 500 -50"></path>
+            <path
+                stroke="currentColor"
+                stroke-width="2"
+                d="M-50 300 Q 200 500 600 200 T 850 100"></path>
+        </svg>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <!-- Left Side: Copy -->
+            <div>
+                <span
+                    class="text-orange-400 font-bold tracking-wider uppercase text-sm"
+                    >Where We Work</span
+                >
+                <h2 class="text-3xl md:text-5xl font-extrabold mt-2 mb-6">
+                    Proudly Serving<br /><span class="text-blue-300"
+                        >North Alabama</span
+                    >
+                </h2>
+                <div
+                    class="w-24 h-1.5 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full mb-8"
+                >
+                </div>
+
+                <p class="text-blue-100 text-lg leading-relaxed mb-8">
+                    We are a truly local business. We deliberately keep our
+                    service area tightly focused on Madison, Huntsville,
+                    Decatur, and Athens so that we can maintain our guaranteed
+                    3-hour response times and provide exceptional scheduling
+                    reliability for every client.
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                    {
+                        locations.map((loc) => (
+                            <div class="bg-blue-800/50 p-6 rounded-2xl border border-blue-700/50 backdrop-blur-sm hover:border-orange-500/50 transition-colors">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <svg
+                                        class="w-6 h-6 text-orange-400"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <>
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                            />
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                            />
+                                        </>
+                                    </svg>
+                                    <h3 class="font-bold text-xl">
+                                        {loc.name}
+                                    </h3>
+                                </div>
+                                <p class="text-blue-200 text-sm">{loc.desc}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- Right side: Visual -->
+            <div class="relative">
+                <div
+                    class="absolute inset-0 bg-blue-500 rounded-full blur-[100px] opacity-20 animate-pulse"
+                >
+                </div>
+                <div
+                    class="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-3xl relative z-10 shadow-2xl"
+                >
+                    <img
+                        src="/hero-handyman.png"
+                        alt="Handyman in Madison"
+                        class="rounded-2xl shadow-lg w-full object-cover aspect-[4/3] grayscale hover:grayscale-0 transition-all duration-700 opacity-80"
+                    />
+
+                    <!-- Floating Stat -->
+                    <div
+                        class="absolute -bottom-6 -left-6 bg-white text-gray-900 p-6 rounded-2xl shadow-xl flex items-center gap-4 border border-gray-100 animate-bounce"
+                    >
+                        <div class="bg-green-100 p-3 rounded-full">
+                            <svg
+                                class="w-8 h-8 text-green-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg
+                            >
+                        </div>
+                        <div>
+                            <p
+                                class="text-xs font-bold text-gray-500 uppercase tracking-wider"
+                            >
+                                Our Promise
+                            </p>
+                            <p class="font-extrabold text-xl">
+                                On-Time Arrival
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

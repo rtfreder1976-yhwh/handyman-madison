@@ -1,0 +1,78 @@
+---
+// ResponseTimeStats.astro
+---
+
+<section
+    class="py-12 bg-white relative overflow-hidden flex flex-col items-center"
+>
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <!-- SVG Pulse Animation Context -->
+        <div
+            class="inline-flex items-center justify-center p-4 bg-orange-100 rounded-full text-orange-600 mb-6 relative"
+        >
+            <svg
+                class="w-12 h-12"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
+            >
+            <div
+                class="absolute inset-0 rounded-full border-4 border-orange-400 opacity-20 animate-ping"
+            >
+            </div>
+        </div>
+
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-4">
+            You Don't Wait Days for a Callback
+        </h2>
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Contractors ghosting you is the #1 complaint in the industry. We
+            guarantee lightning-fast communication from the first inquiry to
+            project completion.
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            <div
+                class="bg-gray-50 border border-gray-100 p-6 rounded-2xl flex flex-col items-center justify-center shadow-sm"
+            >
+                <p class="text-3xl font-black text-blue-900 mb-1">&lt;3hr</p>
+                <p class="text-sm font-bold text-gray-500 uppercase">
+                    Text Replies
+                </p>
+            </div>
+
+            <div
+                class="bg-gray-50 border border-gray-100 p-6 rounded-2xl flex flex-col items-center justify-center shadow-sm"
+            >
+                <p class="text-3xl font-black text-blue-900 mb-1">100%</p>
+                <p class="text-sm font-bold text-gray-500 uppercase">
+                    Call Return Rate
+                </p>
+            </div>
+
+            <div
+                class="bg-gray-50 border border-gray-100 p-6 rounded-2xl flex flex-col items-center justify-center shadow-sm"
+            >
+                <p class="text-3xl font-black text-blue-900 mb-1">24hr</p>
+                <p class="text-sm font-bold text-gray-500 uppercase">
+                    Quote Turnaround
+                </p>
+            </div>
+
+            <div
+                class="bg-gray-50 border border-gray-100 p-6 rounded-2xl flex flex-col items-center justify-center shadow-sm relative overflow-hidden"
+            >
+                <div class="absolute inset-0 bg-blue-600 opacity-10"></div>
+                <p class="text-3xl font-black text-blue-900 mb-1">0</p>
+                <p class="text-sm font-bold text-gray-500 uppercase">
+                    Hidden Fees
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
