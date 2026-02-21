@@ -845,49 +845,6 @@ const finalSchema = schema || schemaData;
       </div>
     </footer>
 
-    <!-- Floating Mobile CTA -->
-    <div
-      class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 p-3 flex gap-2 z-50 lg:hidden transform translate-y-full transition-transform duration-300"
-      id="mobile-cta-bar"
-    >
-      <a
-        href="tel:+12562210373"
-        class="flex-1 flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-xl transition-colors text-sm"
-      >
-        <svg
-          class="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-          ></path></svg
-        >
-        Call Now
-      </a>
-      <a
-        href="/quote"
-        class="flex-1 flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-xl transition-colors text-sm"
-      >
-        <svg
-          class="w-4 h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          ><path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-          ></path></svg
-        >
-        Get Quote
-      </a>
-    </div>
-
     <script>
       const menuBtn = document.getElementById("mobile-menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
@@ -901,7 +858,6 @@ const finalSchema = schema || schemaData;
         });
       }
       const header = document.getElementById("main-header");
-      const mobileCta = document.getElementById("mobile-cta-bar");
       window.addEventListener(
         "scroll",
         () => {
@@ -910,13 +866,6 @@ const finalSchema = schema || schemaData;
             header?.classList.add("shadow-xl");
           } else {
             header?.classList.remove("shadow-xl");
-          }
-          if (scrollY > 300) {
-            mobileCta?.classList.remove("translate-y-full");
-            mobileCta?.classList.add("translate-y-0");
-          } else {
-            mobileCta?.classList.add("translate-y-full");
-            mobileCta?.classList.remove("translate-y-0");
           }
         },
         { passive: true },
