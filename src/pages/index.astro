@@ -136,496 +136,502 @@ import ResponseTimeStats from "../components/ResponseTimeStats.astro";
       </svg>
     </div>
   </section>
-</Layout>
 
-<TrustBadges />
-<ResponseTimeStats />
+  <TrustBadges />
+  <ResponseTimeStats />
 
-<!-- Featured Services (Dynamic Image Cards) -->
-<section class="py-24 bg-gray-50 relative">
-  <div class="max-w-7xl mx-auto px-4 relative z-10">
-    <div class="text-center mb-16">
-      <span class="text-orange-500 font-bold tracking-wider uppercase text-sm"
-        >Our Expertise</span
-      >
-      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-3">
-        Premium Services
-      </h2>
-      <div
-        class="w-24 h-1.5 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mt-6 rounded-full"
-      >
-      </div>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- Card 1 -->
-      <a
-        href="/services/drywall"
-        class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2"
-      >
-        <div class="h-56 overflow-hidden relative">
-          <img
-            src="/images/drywall.jpg"
-            alt="Home Repairs"
-            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-          />
-          <div
-            class="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-300"
-          >
-          </div>
-        </div>
-        <div class="p-8 flex-1 flex flex-col">
-          <h3
-            class="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors"
-          >
-            Drywall & Repairs
-          </h3>
-          <p class="text-gray-600 mb-6 flex-1">
-            Flawless drywall patching, door fixes, and general home repair.
-          </p>
-          <span
-            class="text-orange-500 font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform"
-          >
-            Learn More <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
-            >
-          </span>
-        </div>
-      </a>
-
-      <!-- Card 2 -->
-      <a
-        href="/services/painting"
-        class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2"
-      >
-        <div class="h-56 overflow-hidden relative">
-          <img
-            src="/images/painting.jpg"
-            alt="Painting"
-            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-          />
-          <div
-            class="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-300"
-          >
-          </div>
-        </div>
-        <div class="p-8 flex-1 flex flex-col">
-          <h3
-            class="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors"
-          >
-            Pro Painting
-          </h3>
-          <p class="text-gray-600 mb-6 flex-1">
-            Crisp lines and premium finishes for interior/exterior projects.
-          </p>
-          <span
-            class="text-orange-500 font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform"
-          >
-            Learn More <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
-            >
-          </span>
-        </div>
-      </a>
-
-      <!-- Card 3 -->
-      <a
-        href="/services/flooring"
-        class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2"
-      >
-        <div class="h-56 overflow-hidden relative">
-          <img
-            src="/images/flooring.webp"
-            alt="Flooring"
-            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-          />
-          <div
-            class="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-300"
-          >
-          </div>
-        </div>
-        <div class="p-8 flex-1 flex flex-col">
-          <h3
-            class="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors"
-          >
-            Flooring Setup
-          </h3>
-          <p class="text-gray-600 mb-6 flex-1">
-            LVP, hardwood, and tile installation done with absolute precision.
-          </p>
-          <span
-            class="text-orange-500 font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform"
-          >
-            Learn More <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
-            >
-          </span>
-        </div>
-      </a>
-
-      <!-- Card 4 -->
-      <a
-        href="/services/finish-carpentry"
-        class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2"
-      >
-        <div class="h-56 overflow-hidden relative">
-          <img
-            src="/images/trim.webp"
-            alt="Carpentry"
-            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-          />
-          <div
-            class="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-300"
-          >
-          </div>
-        </div>
-        <div class="p-8 flex-1 flex flex-col">
-          <h3
-            class="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors"
-          >
-            Finish Carpentry
-          </h3>
-          <p class="text-gray-600 mb-6 flex-1">
-            Crown molding, baseboards, and beautiful custom woodwork.
-          </p>
-          <span
-            class="text-orange-500 font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform"
-          >
-            Learn More <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              ><path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
-            >
-          </span>
-        </div>
-      </a>
-    </div>
-
-    <div class="text-center mt-12">
-      <a
-        href="/services"
-        class="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-900 text-blue-900 font-bold rounded-xl hover:bg-blue-900 hover:text-white transition-all duration-300"
-      >
-        View All Services
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- Interactive "Why Choose Us" / Parallax Section -->
-<section class="py-24 relative overflow-hidden bg-white">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <!-- Interactive Image Stack -->
-      <div class="relative h-[600px] hidden lg:block">
-        <div
-          class="absolute top-0 right-0 w-4/5 h-4/5 rounded-3xl overflow-hidden shadow-2xl z-10 transform translate-x-4 -translate-y-4 hover:translate-x-0 hover:translate-y-0 transition-transform duration-500"
-        >
-          <img
-            src="/hero-handyman.png"
-            class="w-full h-full object-cover"
-            alt="Quality work"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end p-8"
-          >
-            <p class="text-white font-bold text-2xl">
-              Meticulous Attention to Detail
-            </p>
-          </div>
-        </div>
-        <div
-          class="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-3xl overflow-hidden shadow-xl z-20 border-8 border-white transform -translate-x-4 translate-y-4 hover:scale-105 transition-transform duration-500"
-        >
-          <img
-            src="/images/owner.webp"
-            class="w-full h-full object-cover"
-            alt="Detail work"
-          />
-        </div>
-
-        <!-- Floating Badge -->
-        <div
-          class="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-2xl p-6 z-30 animate-[bounce_4s_infinite]"
-        >
-          <div class="flex items-center gap-4">
-            <div
-              class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-8 h-8 text-green-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path></svg
-              >
-            </div>
-            <div>
-              <p class="font-bold text-gray-900 text-lg">100% Licensed</p>
-              <p class="text-gray-500 text-sm">Insured & Background Checked</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div>
+  <!-- Featured Services (Dynamic Image Cards) -->
+  <section class="py-24 bg-gray-50 relative">
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <div class="text-center mb-16">
         <span class="text-orange-500 font-bold tracking-wider uppercase text-sm"
-          >The Madison Pro Difference</span
+          >Our Expertise</span
         >
-        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-3 mb-8">
-          Home Services Reimagined.
+        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-3">
+          Premium Services
         </h2>
-
-        <p class="text-lg text-gray-600 mb-10 leading-relaxed">
-          We've completely overhauled what it means to hire a handyman in North
-          Alabama. Forget the contractor stereotypes. We arrive in uniform, on
-          time, and communicate continuously through our automated system.
-        </p>
-
-        <div class="space-y-8">
-          <div class="flex gap-4 group">
-            <div
-              class="w-14 h-14 bg-blue-50 group-hover:bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300"
-            >
-              <svg
-                class="w-7 h-7 text-blue-600 group-hover:text-white transition-colors"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
-              >
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
-                On-Time Arrival Guarantee
-              </h3>
-              <p class="text-gray-600">
-                If we miss our 30-minute arrival window, we deduct $25 from your
-                final bill immediately. Your time is valuable.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex gap-4 group">
-            <div
-              class="w-14 h-14 bg-orange-50 group-hover:bg-orange-500 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300"
-            >
-              <svg
-                class="w-7 h-7 text-orange-500 group-hover:text-white transition-colors"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                ></path></svg
-              >
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Transparent, Up-Front Pricing
-              </h3>
-              <p class="text-gray-600">
-                No hidden fees, no "surprise" material markups. What you agree
-                to on the estimate is exactly what you pay.
-              </p>
-            </div>
-          </div>
-
-          <div class="flex gap-4 group">
-            <div
-              class="w-14 h-14 bg-gray-100 group-hover:bg-gray-800 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300"
-            >
-              <svg
-                class="w-7 h-7 text-gray-600 group-hover:text-white transition-colors"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-                ></path></svg
-              >
-            </div>
-            <div>
-              <h3 class="text-xl font-bold text-gray-900 mb-2">
-                Immaculate Clean-Up
-              </h3>
-              <p class="text-gray-600">
-                We treat your home like a sanctuary. We lay drop cloths, run
-                vacuums, and leave the workspace cleaner than we found it.
-              </p>
-            </div>
-          </div>
+        <div
+          class="w-24 h-1.5 bg-gradient-to-r from-orange-400 to-orange-600 mx-auto mt-6 rounded-full"
+        >
         </div>
       </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <a
+          href="/services/drywall"
+          class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2"
+        >
+          <div class="h-56 overflow-hidden relative">
+            <img
+              src="/images/drywall.jpg"
+              alt="Home Repairs"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-300"
+            >
+            </div>
+          </div>
+          <div class="p-8 flex-1 flex flex-col">
+            <h3
+              class="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors"
+            >
+              Drywall & Repairs
+            </h3>
+            <p class="text-gray-600 mb-6 flex-1">
+              Flawless drywall patching, door fixes, and general home repair.
+            </p>
+            <span
+              class="text-orange-500 font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform"
+            >
+              Learn More <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+              >
+            </span>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a
+          href="/services/painting"
+          class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2"
+        >
+          <div class="h-56 overflow-hidden relative">
+            <img
+              src="/images/painting.jpg"
+              alt="Painting"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-300"
+            >
+            </div>
+          </div>
+          <div class="p-8 flex-1 flex flex-col">
+            <h3
+              class="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors"
+            >
+              Pro Painting
+            </h3>
+            <p class="text-gray-600 mb-6 flex-1">
+              Crisp lines and premium finishes for interior/exterior projects.
+            </p>
+            <span
+              class="text-orange-500 font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform"
+            >
+              Learn More <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+              >
+            </span>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a
+          href="/services/flooring"
+          class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2"
+        >
+          <div class="h-56 overflow-hidden relative">
+            <img
+              src="/images/flooring.webp"
+              alt="Flooring"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-300"
+            >
+            </div>
+          </div>
+          <div class="p-8 flex-1 flex flex-col">
+            <h3
+              class="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors"
+            >
+              Flooring Setup
+            </h3>
+            <p class="text-gray-600 mb-6 flex-1">
+              LVP, hardwood, and tile installation done with absolute precision.
+            </p>
+            <span
+              class="text-orange-500 font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform"
+            >
+              Learn More <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+              >
+            </span>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a
+          href="/services/finish-carpentry"
+          class="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden flex flex-col hover:-translate-y-2"
+        >
+          <div class="h-56 overflow-hidden relative">
+            <img
+              src="/images/trim.webp"
+              alt="Carpentry"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            />
+            <div
+              class="absolute inset-0 bg-blue-900/20 group-hover:bg-transparent transition-colors duration-300"
+            >
+            </div>
+          </div>
+          <div class="p-8 flex-1 flex flex-col">
+            <h3
+              class="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors"
+            >
+              Finish Carpentry
+            </h3>
+            <p class="text-gray-600 mb-6 flex-1">
+              Crown molding, baseboards, and beautiful custom woodwork.
+            </p>
+            <span
+              class="text-orange-500 font-bold inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform"
+            >
+              Learn More <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg
+              >
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <div class="text-center mt-12">
+        <a
+          href="/services"
+          class="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-900 text-blue-900 font-bold rounded-xl hover:bg-blue-900 hover:text-white transition-all duration-300"
+        >
+          View All Services
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<BeforeAfterGallery />
-<Testimonials />
-<ReviewBadges />
-<ServiceAreaMap />
+  <!-- Interactive "Why Choose Us" / Parallax Section -->
+  <section class="py-24 relative overflow-hidden bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Interactive Image Stack -->
+        <div class="relative h-[600px] hidden lg:block">
+          <div
+            class="absolute top-0 right-0 w-4/5 h-4/5 rounded-3xl overflow-hidden shadow-2xl z-10 transform translate-x-4 -translate-y-4 hover:translate-x-0 hover:translate-y-0 transition-transform duration-500"
+          >
+            <img
+              src="/hero-handyman.png"
+              class="w-full h-full object-cover"
+              alt="Quality work"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end p-8"
+            >
+              <p class="text-white font-bold text-2xl">
+                Meticulous Attention to Detail
+              </p>
+            </div>
+          </div>
+          <div
+            class="absolute bottom-0 left-0 w-3/5 h-3/5 rounded-3xl overflow-hidden shadow-xl z-20 border-8 border-white transform -translate-x-4 translate-y-4 hover:scale-105 transition-transform duration-500"
+          >
+            <img
+              src="/images/owner.webp"
+              class="w-full h-full object-cover"
+              alt="Detail work"
+            />
+          </div>
 
-<!-- Programmatic SEO Service Areas Directory -->
-<section class="py-24 bg-gray-50 border-t border-gray-100">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="text-center mb-16">
-      <span class="text-orange-500 font-bold tracking-wider uppercase text-sm"
-        >Targeted Local Service</span
-      >
-      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2 mb-4">
-        Areas We Serve
-      </h2>
-      <p class="text-gray-600 max-w-2xl mx-auto text-lg">
-        Find highly detailed information about our premium handyman services
-        specific to your exact neighborhood in North Alabama.
-      </p>
-    </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {
-        ["Madison", "Huntsville", "Athens", "Decatur"].map((city) => {
-          const citySlug = city.toLowerCase().replace(" ", "-") + "-al";
-          const services = [
-            { name: "Drywall Repair", slug: "drywall-repair" },
-            { name: "Interior Painting", slug: "interior-painting" },
-            { name: "Exterior Painting", slug: "exterior-painting" },
-            { name: "Gutter Cleaning", slug: "gutter-cleaning" },
-            { name: "Gutter Installation", slug: "gutter-installation" },
-            { name: "Flooring Setup", slug: "flooring-installation" },
-            { name: "Finish Carpentry", slug: "finish-carpentry" },
-          ];
-
-          return (
-            <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-              <h3 class="text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-gray-100 flex items-center gap-3">
+          <!-- Floating Badge -->
+          <div
+            class="absolute top-1/2 left-0 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-2xl p-6 z-30 animate-[bounce_4s_infinite]"
+          >
+            <div class="flex items-center gap-4">
+              <div
+                class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center"
+              >
                 <svg
-                  class="w-6 h-6 text-orange-500"
+                  class="w-8 h-8 text-green-600"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path></svg
                 >
-                  <>
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </>
-                </svg>
-                {city}, AL
-              </h3>
-              <ul class="space-y-4">
-                {services.map((s) => (
-                  <li>
-                    <a
-                      href={`/services/${s.slug}-${citySlug}`}
-                      class="text-gray-600 hover:text-blue-600 font-medium group flex items-center gap-3 transition-colors"
-                    >
-                      <span class="w-1.5 h-1.5 rounded-full bg-orange-400 group-hover:scale-150 transition-transform" />
-                      {s.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              </div>
+              <div>
+                <p class="font-bold text-gray-900 text-lg">100% Licensed</p>
+                <p class="text-gray-500 text-sm">
+                  Insured & Background Checked
+                </p>
+              </div>
             </div>
-          );
-        })
-      }
+          </div>
+        </div>
+
+        <div>
+          <span
+            class="text-orange-500 font-bold tracking-wider uppercase text-sm"
+            >The Madison Pro Difference</span
+          >
+          <h2
+            class="text-4xl md:text-5xl font-extrabold text-gray-900 mt-3 mb-8"
+          >
+            Home Services Reimagined.
+          </h2>
+
+          <p class="text-lg text-gray-600 mb-10 leading-relaxed">
+            We've completely overhauled what it means to hire a handyman in
+            North Alabama. Forget the contractor stereotypes. We arrive in
+            uniform, on time, and communicate continuously through our automated
+            system.
+          </p>
+
+          <div class="space-y-8">
+            <div class="flex gap-4 group">
+              <div
+                class="w-14 h-14 bg-blue-50 group-hover:bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300"
+              >
+                <svg
+                  class="w-7 h-7 text-blue-600 group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
+                >
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  On-Time Arrival Guarantee
+                </h3>
+                <p class="text-gray-600">
+                  If we miss our 30-minute arrival window, we deduct $25 from
+                  your final bill immediately. Your time is valuable.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 group">
+              <div
+                class="w-14 h-14 bg-orange-50 group-hover:bg-orange-500 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300"
+              >
+                <svg
+                  class="w-7 h-7 text-orange-500 group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  ></path></svg
+                >
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  Transparent, Up-Front Pricing
+                </h3>
+                <p class="text-gray-600">
+                  No hidden fees, no "surprise" material markups. What you agree
+                  to on the estimate is exactly what you pay.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 group">
+              <div
+                class="w-14 h-14 bg-gray-100 group-hover:bg-gray-800 rounded-2xl flex items-center justify-center flex-shrink-0 transition-colors duration-300"
+              >
+                <svg
+                  class="w-7 h-7 text-gray-600 group-hover:text-white transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
+                  ></path></svg
+                >
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">
+                  Immaculate Clean-Up
+                </h3>
+                <p class="text-gray-600">
+                  We treat your home like a sanctuary. We lay drop cloths, run
+                  vacuums, and leave the workspace cleaner than we found it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<InlineQuoteForm />
+  <BeforeAfterGallery />
+  <Testimonials />
+  <ReviewBadges />
+  <ServiceAreaMap />
 
-<TrustCredentials />
+  <!-- Programmatic SEO Service Areas Directory -->
+  <section class="py-24 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-orange-500 font-bold tracking-wider uppercase text-sm"
+          >Targeted Local Service</span
+        >
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2 mb-4">
+          Areas We Serve
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          Find highly detailed information about our premium handyman services
+          specific to your exact neighborhood in North Alabama.
+        </p>
+      </div>
 
-<!-- CTA Section that Pops -->
-<section class="py-24 relative bg-blue-900 overflow-hidden">
-  <!-- Abstract wavy background elements -->
-  <div
-    class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-800 rounded-full blur-[100px] opacity-50 mix-blend-screen -mr-40 -mt-40"
-  >
-  </div>
-  <div
-    class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-600/30 rounded-full blur-[120px] opacity-50 mix-blend-screen -ml-40 -mb-40"
-  >
-  </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {
+          ["Madison", "Huntsville", "Athens", "Decatur"].map((city) => {
+            const citySlug = city.toLowerCase().replace(" ", "-") + "-al";
+            const services = [
+              { name: "Drywall Repair", slug: "drywall-repair" },
+              { name: "Interior Painting", slug: "interior-painting" },
+              { name: "Exterior Painting", slug: "exterior-painting" },
+              { name: "Gutter Cleaning", slug: "gutter-cleaning" },
+              { name: "Gutter Installation", slug: "gutter-installation" },
+              { name: "Flooring Setup", slug: "flooring-installation" },
+              { name: "Finish Carpentry", slug: "finish-carpentry" },
+            ];
 
-  <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-    <h2
-      class="text-4xl md:text-5xl font-extrabold mb-6 text-white leading-tight"
+            return (
+              <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-gray-100 flex items-center gap-3">
+                  <svg
+                    class="w-6 h-6 text-orange-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <>
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </>
+                  </svg>
+                  {city}, AL
+                </h3>
+                <ul class="space-y-4">
+                  {services.map((s) => (
+                    <li>
+                      <a
+                        href={`/services/${s.slug}-${citySlug}`}
+                        class="text-gray-600 hover:text-blue-600 font-medium group flex items-center gap-3 transition-colors"
+                      >
+                        <span class="w-1.5 h-1.5 rounded-full bg-orange-400 group-hover:scale-150 transition-transform" />
+                        {s.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <InlineQuoteForm />
+
+  <TrustCredentials />
+
+  <!-- CTA Section that Pops -->
+  <section class="py-24 relative bg-blue-900 overflow-hidden">
+    <!-- Abstract wavy background elements -->
+    <div
+      class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-800 rounded-full blur-[100px] opacity-50 mix-blend-screen -mr-40 -mt-40"
     >
-      Skip the Hassle. Secure Your Spot.
-    </h2>
-    <p class="text-xl md:text-2xl mb-12 text-blue-100 font-light">
-      Our schedule books up fast. Secure a free, no-obligation estimate today or
-      text us a photo for an immediate quote.
-    </p>
-    <div class="flex flex-col sm:flex-row justify-center gap-6">
-      <a
-        href="/contact"
-        class="bg-white hover:bg-gray-50 text-blue-900 font-bold py-4 px-10 rounded-xl transition-all duration-300 text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1"
-      >
-        Book Online Now
-      </a>
-      <a
-        href="sms:2562210373"
-        class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 text-lg flex items-center justify-center gap-2 shadow-xl shadow-orange-500/20 hover:shadow-orange-500/40 hover:-translate-y-1 border border-orange-400/30"
-      >
-        Text Us A Photo
-      </a>
     </div>
-  </div>
-</section>
+    <div
+      class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-600/30 rounded-full blur-[120px] opacity-50 mix-blend-screen -ml-40 -mb-40"
+    >
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+      <h2
+        class="text-4xl md:text-5xl font-extrabold mb-6 text-white leading-tight"
+      >
+        Skip the Hassle. Secure Your Spot.
+      </h2>
+      <p class="text-xl md:text-2xl mb-12 text-blue-100 font-light">
+        Our schedule books up fast. Secure a free, no-obligation estimate today
+        or text us a photo for an immediate quote.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a
+          href="/contact"
+          class="bg-white hover:bg-gray-50 text-blue-900 font-bold py-4 px-10 rounded-xl transition-all duration-300 text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1"
+        >
+          Book Online Now
+        </a>
+        <a
+          href="sms:2562210373"
+          class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 text-lg flex items-center justify-center gap-2 shadow-xl shadow-orange-500/20 hover:shadow-orange-500/40 hover:-translate-y-1 border border-orange-400/30"
+        >
+          Text Us A Photo
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
