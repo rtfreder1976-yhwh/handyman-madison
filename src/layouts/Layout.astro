@@ -9,7 +9,7 @@ interface Props {
 
 const {
   title,
-  description = "Professional handyman services in Madison, Alabama. Quality repairs, maintenance, and home improvement.",
+  description = "Professional Rittenworx Handyman Service in Madison, Alabama. Quality repairs, maintenance, and home improvement.",
   schema,
 } = Astro.props;
 const currentPath = Astro.url.pathname;
@@ -31,7 +31,7 @@ const schemaData = {
       "@id": "https://madisonhandymanpro.com/#business",
       name: "Rittenworx",
       description:
-        "Professional handyman services in Madison, Alabama. Drywall, painting, flooring, finish carpentry, gutter cleaning, and gutter installation.",
+        "Professional Rittenworx Handyman Service in Madison, Alabama. Drywall, painting, flooring, finish carpentry, gutter cleaning, and gutter installation.",
       url: "https://madisonhandymanpro.com",
       telephone: "(256) 221-0373",
       email: "rjberry888@gmail.com",
@@ -72,7 +72,7 @@ const schemaData = {
       paymentAccepted: ["Cash", "Check", "Credit Card"],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Handyman Services",
+        name: "Rittenworx Handyman Service",
         itemListElement: [
           {
             "@type": "OfferCatalog",
@@ -512,6 +512,15 @@ const finalSchema = schema || schemaData;
                   : "hover:bg-blue-800",
               ]}>Contact</a
             >
+            <a
+              href="/blog"
+              class:list={[
+                "px-3 py-2 rounded-lg transition-colors text-sm font-medium",
+                currentPath.startsWith("/blog")
+                  ? "bg-blue-700 text-white"
+                  : "hover:bg-blue-800",
+              ]}>Blog</a
+            >
           </div>
           <!-- Desktop CTA -->
           <div class="hidden lg:flex items-center gap-3">
@@ -641,6 +650,15 @@ const finalSchema = schema || schemaData;
                   ? "bg-blue-700 text-white"
                   : "hover:bg-blue-800",
               ]}>Contact</a
+            >
+            <a
+              href="/blog"
+              class:list={[
+                "px-4 py-3 rounded-lg transition-colors font-medium",
+                currentPath.startsWith("/blog")
+                  ? "bg-blue-700 text-white"
+                  : "hover:bg-blue-800",
+              ]}>Blog</a
             >
             <div class="border-t border-blue-800 mt-2 pt-4 flex flex-col gap-3">
               <a

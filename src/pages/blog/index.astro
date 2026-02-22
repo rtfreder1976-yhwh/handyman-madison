@@ -1,0 +1,105 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+const sortedPosts = posts.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout
+    title="Home Maintenance & Repair Blog"
+    description="Expert tips, guides, and advice on home maintenance, drywall, painting, and carpentry for homeowners in Madison, Huntsville, and Athens."
+>
+    <div class="bg-blue-900 py-20 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-black text-white mb-6">
+                Home Maintenance Blog
+            </h1>
+            <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                Expert insights and proactive care tips for maintaining your
+                luxury home in North Alabama.
+            </p>
+        </div>
+    </div>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {
+                    sortedPosts.map((post) => (
+                        <article
+                            class="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow flex flex-col group cursor-pointer"
+                            onclick={`window.location.href='/blog/${post.slug}'`}
+                        >
+                            <div class="p-8 flex flex-col flex-1">
+                                <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-bold">
+                                        {post.data.tags?.[0] || "Guide"}
+                                    </span>
+                                    <time
+                                        datetime={post.data.pubDate.toISOString()}
+                                    >
+                                        {post.data.pubDate.toLocaleDateString(
+                                            "en-US",
+                                            {
+                                                year: "numeric",
+                                                month: "short",
+                                                day: "numeric",
+                                            },
+                                        )}
+                                    </time>
+                                </div>
+                                <h2 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                    <a href={`/blog/${post.slug}`}>
+                                        {post.data.title}
+                                    </a>
+                                </h2>
+                                <p class="text-gray-600 mb-6 flex-1 line-clamp-3">
+                                    {post.data.description}
+                                </p>
+                                <div class="flex items-center justify-between mt-auto">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center text-white font-bold text-xs">
+                                            RR
+                                        </div>
+                                        <span class="text-sm font-bold text-gray-900">
+                                            {post.data.author}
+                                        </span>
+                                    </div>
+                                    <span class="text-orange-500 font-bold group-hover:-translate-y-0.5 transition-transform flex items-center gap-1">
+                                        Read Post{" "}
+                                        <svg
+                                            class="w-4 h-4"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                            />
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    ))
+                }
+                {
+                    posts.length === 0 && (
+                        <div class="col-span-full py-12 text-center text-gray-500">
+                            <p class="text-lg">
+                                New expert guides are coming soon. Check back
+                                later!
+                            </p>
+                        </div>
+                    )
+                }
+            </div>
+        </div>
+    </section>
+</Layout>

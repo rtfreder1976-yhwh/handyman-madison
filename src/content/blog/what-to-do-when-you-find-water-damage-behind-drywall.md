@@ -2,7 +2,7 @@
 title: "What to Do When You Find Water Damage Behind Drywall"
 description: "Discovering water damage behind your drywall is a home owner's nightmare. Learn the step-by-step process of identifying, mitigating, and fixing water damage to protect your luxury home."
 pubDate: 2026-02-21
-author: "Roy Rittenworx"
+author: "Roy"
 tags: ["Drywall", "Water Damage", "Home Maintenance"]
 ---
 
