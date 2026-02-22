@@ -1,0 +1,706 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import analyticsData from "../../data/analytics.json";
+
+// Protective measure: In a real app, you'd check for auth here.
+// For now, this is a dedicated tracking page as requested.
+---
+
+<Layout
+    title="Analytics Dashboard | Rittenworx Tracking"
+    description="Internal performance tracking dashboard for Rittenworx Handyman Service."
+>
+    <div
+        class="min-h-screen bg-slate-900 text-slate-100 flex flex-col md:flex-row"
+    >
+        <!-- Sidebar -->
+        <aside
+            class="w-full md:w-64 bg-slate-950 border-r border-slate-800 flex flex-col"
+        >
+            <div class="p-6 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center font-bold text-white"
+                    >
+                        R
+                    </div>
+                    <span class="font-bold text-xl tracking-tight"
+                        >Rittenworx</span
+                    >
+                </div>
+            </div>
+
+            <nav class="flex-1 p-4 space-y-1">
+                <a
+                    href="#"
+                    class="flex items-center gap-3 px-4 py-3 bg-blue-600/10 text-blue-400 rounded-xl font-medium border border-blue-600/20"
+                >
+                    <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                        ></path></svg
+                    >
+                    Dashboard
+                </a>
+                <a
+                    href="#"
+                    class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/50 rounded-xl font-medium transition-all group"
+                >
+                    <svg
+                        class="w-5 h-5 group-hover:text-orange-500"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                        ></path></svg
+                    >
+                    SEO Metrics
+                </a>
+                <a
+                    href="#"
+                    class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/50 rounded-xl font-medium transition-all group"
+                >
+                    <svg
+                        class="w-5 h-5 group-hover:text-green-500"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                        ></path></svg
+                    >
+                    Leads
+                </a>
+                <a
+                    href="#"
+                    class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/50 rounded-xl font-medium transition-all group"
+                >
+                    <svg
+                        class="w-5 h-5 group-hover:text-red-500"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        ><path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg
+                    >
+                    Competitors
+                </a>
+            </nav>
+
+            <div class="p-4 border-t border-slate-800">
+                <div
+                    class="bg-indigo-600/10 border border-indigo-500/20 rounded-2xl p-4"
+                >
+                    <p
+                        class="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-1"
+                    >
+                        Growth Tip
+                    </p>
+                    <p class="text-sm text-slate-300">
+                        Focus on "Handyman Athens" keywords this month to
+                        capture 15% more lead volume.
+                    </p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-8">
+            <!-- Header -->
+            <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-4"
+            >
+                <div>
+                    <h1 class="text-3xl font-extrabold flex items-center gap-3">
+                        Business Overview
+                        <span
+                            class="text-xs font-medium bg-green-500/10 text-green-400 px-2 py-1 rounded border border-green-500/20"
+                            >LIVE</span
+                        >
+                    </h1>
+                    <p class="text-slate-400">
+                        Tracking performance for Madison, Huntsville, and North
+                        Alabama.
+                    </p>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <div
+                        class="bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 flex items-center gap-2"
+                    >
+                        <svg
+                            class="w-4 h-4 text-slate-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                            ></path></svg
+                        >
+                        <span class="text-sm font-medium">Last 30 Days</span>
+                    </div>
+                    <button
+                        class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded-xl shadow-lg shadow-orange-500/20 transition-all"
+                    >
+                        Export Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Rankings -->
+                <div
+                    class="bg-slate-800/50 border border-slate-700/50 p-6 rounded-3xl hover:border-blue-500/30 transition-all group"
+                >
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="p-2 bg-blue-500/10 rounded-xl text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+                                ></path><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
+                                ></path></svg
+                            >
+                        </div>
+                        <span
+                            class="text-green-400 text-sm font-bold bg-green-400/10 px-2 py-1 rounded"
+                            >+{analyticsData.kpis.ranking.change}</span
+                        >
+                    </div>
+                    <p class="text-slate-400 text-sm font-medium">
+                        Avg. Position
+                    </p>
+                    <div class="flex items-baseline gap-2">
+                        <h3 class="text-3xl font-black text-white">
+                            {analyticsData.kpis.ranking.average}
+                        </h3>
+                        <span class="text-slate-500 text-sm italic"
+                            >Top 5 average</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Traffic -->
+                <div
+                    class="bg-slate-800/50 border border-slate-700/50 p-6 rounded-3xl hover:border-orange-500/30 transition-all group"
+                >
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="p-2 bg-orange-500/10 rounded-xl text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-colors"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg
+                            >
+                        </div>
+                        <span
+                            class="text-green-400 text-sm font-bold bg-green-400/10 px-2 py-1 rounded"
+                            >+{analyticsData.kpis.traffic.change}%</span
+                        >
+                    </div>
+                    <p class="text-slate-400 text-sm font-medium">
+                        Monthly Visitors
+                    </p>
+                    <div class="flex items-baseline gap-2">
+                        <h3 class="text-3xl font-black text-white">
+                            {analyticsData.kpis.traffic.total.toLocaleString()}
+                        </h3>
+                        <span class="text-slate-500 text-sm italic"
+                            >unique visits</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Leads -->
+                <div
+                    class="bg-slate-800/50 border border-slate-700/50 p-6 rounded-3xl hover:border-green-500/30 transition-all group"
+                >
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="p-2 bg-green-500/10 rounded-xl text-green-400 group-hover:bg-green-500 group-hover:text-white transition-colors"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                                ></path></svg
+                            >
+                        </div>
+                        <span
+                            class="text-green-400 text-sm font-bold bg-green-400/10 px-2 py-1 rounded"
+                            >+{analyticsData.kpis.leads.change}%</span
+                        >
+                    </div>
+                    <p class="text-slate-400 text-sm font-medium">New Leads</p>
+                    <div class="flex items-baseline gap-2">
+                        <h3 class="text-3xl font-black text-white">
+                            {analyticsData.kpis.leads.total}
+                        </h3>
+                        <span class="text-slate-500 text-sm italic"
+                            >this month</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Conversion -->
+                <div
+                    class="bg-slate-800/50 border border-slate-700/50 p-6 rounded-3xl hover:border-purple-500/30 transition-all group"
+                >
+                    <div class="flex justify-between items-start mb-4">
+                        <div
+                            class="p-2 bg-purple-500/10 rounded-xl text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-colors"
+                        >
+                            <svg
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                ><path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                ></path></svg
+                            >
+                        </div>
+                        <span
+                            class="text-green-400 text-sm font-bold bg-green-400/10 px-2 py-1 rounded"
+                            >+{analyticsData.kpis.conversion.change}%</span
+                        >
+                    </div>
+                    <p class="text-slate-400 text-sm font-medium">
+                        Conversion Rate
+                    </p>
+                    <div class="flex items-baseline gap-2">
+                        <h3 class="text-3xl font-black text-white">
+                            {analyticsData.kpis.conversion.rate}%
+                        </h3>
+                        <span class="text-slate-500 text-sm italic"
+                            >visit-to-lead</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neighborhood Breakdown -->
+            <div
+                class="bg-slate-800/40 border border-slate-700/50 rounded-3xl p-8"
+            >
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <h4 class="text-xl font-bold">
+                            Neighborhood Penetration
+                        </h4>
+                        <p class="text-slate-400 text-sm">
+                            Lead volume and growth by service area.
+                        </p>
+                    </div>
+                    <button
+                        class="text-xs font-bold text-blue-400 hover:text-blue-300"
+                        >View Map &rarr;</button
+                    >
+                </div>
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6"
+                >
+                    {
+                        analyticsData.leadsByNeighborhood.map((n) => (
+                            <div class="bg-slate-900/40 p-5 rounded-2xl border border-slate-700/30">
+                                <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-2">
+                                    {n.name.split(" (")[0]}
+                                </p>
+                                <h5
+                                    class="text-sm font-bold text-slate-200 mb-3 truncate"
+                                    title={n.name}
+                                >
+                                    {n.name.includes("(")
+                                        ? n.name.split("(")[1].replace(")", "")
+                                        : n.name}
+                                </h5>
+                                <div class="flex items-end justify-between mb-2">
+                                    <span class="text-2xl font-black">
+                                        {n.value}
+                                    </span>
+                                    <span
+                                        class={`text-xs font-bold ${n.growth > 0 ? "text-green-400" : "text-red-400"}`}
+                                    >
+                                        {n.growth > 0 ? "+" : ""}
+                                        {n.growth}%
+                                    </span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                    <div
+                                        class="bg-blue-500 h-full rounded-full"
+                                        style={`width: ${(n.value / 30) * 100}%`}
+                                    />
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Main Growth Chart -->
+                <div
+                    class="lg:col-span-2 bg-slate-800/40 border border-slate-700/50 rounded-3xl p-8"
+                >
+                    <div class="flex items-center justify-between mb-8">
+                        <h4 class="text-xl font-bold">Traffic & Lead Growth</h4>
+                        <div class="flex gap-2">
+                            <span
+                                class="flex items-center gap-1.5 text-xs text-slate-400"
+                                ><div class="w-3 h-3 bg-blue-500 rounded-full">
+                                </div> Traffic</span
+                            >
+                            <span
+                                class="flex items-center gap-1.5 text-xs text-slate-400"
+                                ><div class="w-3 h-3 bg-green-500 rounded-full">
+                                </div> Leads</span
+                            >
+                        </div>
+                    </div>
+                    <canvas id="growthChart" height="300"></canvas>
+                </div>
+
+                <!-- Lead Sources -->
+                <div
+                    class="bg-slate-800/40 border border-slate-700/50 rounded-3xl p-8"
+                >
+                    <h4 class="text-xl font-bold mb-8">Lead Distribution</h4>
+                    <canvas id="sourceChart" height="250"></canvas>
+                    <div class="mt-8 space-y-3">
+                        {
+                            analyticsData.leadsBySource.map((source, i) => (
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-slate-400 flex items-center gap-2">
+                                        <div
+                                            class={`w-2 h-2 rounded-full ${["bg-blue-500", "bg-orange-500", "bg-green-500", "bg-slate-500"][i]}`}
+                                        />
+                                        {source.source}
+                                    </span>
+                                    <span class="font-bold">
+                                        {source.value}%
+                                    </span>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tables Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- SEO Rankings Table -->
+                <div
+                    class="bg-slate-800/40 border border-slate-700/50 rounded-3xl p-8 overflow-hidden"
+                >
+                    <div class="flex items-center justify-between mb-8">
+                        <h4 class="text-xl font-bold">Ranking Positions</h4>
+                        <button
+                            class="text-blue-400 text-sm font-bold hover:underline"
+                            >Full Report &rarr;</button
+                        >
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr
+                                    class="text-left text-xs text-slate-500 uppercase tracking-widest border-b border-slate-700 pb-4"
+                                >
+                                    <th class="pb-4">Keyword</th>
+                                    <th class="pb-4">Position</th>
+                                    <th class="pb-4">Move</th>
+                                    <th class="pb-4">Volume</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-700/50">
+                                {
+                                    analyticsData.rankings.map((rank) => (
+                                        <tr class="group hover:bg-white/5 transition-colors">
+                                            <td class="py-4 font-medium text-slate-200">
+                                                {rank.keyword}
+                                            </td>
+                                            <td class="py-4">
+                                                <span
+                                                    class={`font-bold px-2 py-1 rounded text-sm ${rank.pos <= 3 ? "bg-green-500/20 text-green-400" : "bg-slate-700 text-slate-300"}`}
+                                                >
+                                                    #{rank.pos}
+                                                </span>
+                                            </td>
+                                            <td class="py-4">
+                                                {rank.pos < rank.prev ? (
+                                                    <span class="text-green-400 flex items-center gap-1 text-sm font-bold">
+                                                        <svg
+                                                            class="w-3 h-3"
+                                                            fill="currentColor"
+                                                            viewBox="0 0 20 20"
+                                                        >
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                d="M5.293 7.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L6.707 7.707a1 1 0 01-1.414 0z"
+                                                                clip-rule="evenodd"
+                                                            />
+                                                        </svg>
+                                                        {rank.prev - rank.pos}
+                                                    </span>
+                                                ) : rank.pos > rank.prev ? (
+                                                    <span class="text-red-400 flex items-center gap-1 text-sm font-bold">
+                                                        <svg
+                                                            class="w-3 h-3"
+                                                            fill="currentColor"
+                                                            viewBox="0 0 20 20"
+                                                        >
+                                                            <path
+                                                                fill-rule="evenodd"
+                                                                d="M14.707 12.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l2.293-2.293a1 1 0 011.414 0z"
+                                                                clip-rule="evenodd"
+                                                            />
+                                                        </svg>
+                                                        {rank.pos - rank.prev}
+                                                    </span>
+                                                ) : (
+                                                    <span class="text-slate-500 text-sm">
+                                                        -
+                                                    </span>
+                                                )}
+                                            </td>
+                                            <td class="py-4 text-slate-400 text-sm font-medium">
+                                                {rank.vol}/mo
+                                            </td>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Competitors Tracking -->
+                <div
+                    class="bg-slate-800/40 border border-slate-700/50 rounded-3xl p-8"
+                >
+                    <div class="flex items-center justify-between mb-8">
+                        <h4 class="text-xl font-bold">Competitor Movements</h4>
+                        <span
+                            class="text-xs font-medium bg-slate-700 text-slate-400 px-2 py-1 rounded"
+                            >Daily Updates</span
+                        >
+                    </div>
+                    <div class="space-y-6">
+                        {
+                            analyticsData.competitors.map((comp) => (
+                                <div class="bg-slate-900/50 p-5 rounded-2xl border border-slate-700/50 hover:border-slate-600 transition-all">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <h5 class="font-bold text-lg">
+                                            {comp.name}
+                                        </h5>
+                                        <span
+                                            class={`text-[10px] font-black uppercase tracking-tighter px-1.5 py-0.5 rounded border ${comp.traffic === "High" ? "border-red-500/40 text-red-400" : comp.traffic === "Medium" ? "border-yellow-500/40 text-yellow-400" : "border-slate-500/40 text-slate-400"}`}
+                                        >
+                                            {comp.traffic} Threat
+                                        </span>
+                                    </div>
+                                    <div class="grid grid-cols-3 gap-4 text-center">
+                                        <div class="p-2 bg-slate-800 rounded-xl">
+                                            <p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest mb-1">
+                                                Rank
+                                            </p>
+                                            <p class="font-black text-xl">
+                                                #{comp.rank}
+                                            </p>
+                                        </div>
+                                        <div class="p-2 bg-slate-800 rounded-xl">
+                                            <p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest mb-1">
+                                                DA
+                                            </p>
+                                            <p class="font-black text-xl">
+                                                {comp.authority}
+                                            </p>
+                                        </div>
+                                        <div class="p-2 bg-slate-800 rounded-xl">
+                                            <p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest mb-1">
+                                                VS You
+                                            </p>
+                                            <p class="font-black text-xl text-green-400">
+                                                -
+                                                {comp.rank -
+                                                    analyticsData.kpis.ranking
+                                                        .average >
+                                                0
+                                                    ? (
+                                                          comp.rank -
+                                                          analyticsData.kpis
+                                                              .ranking.average
+                                                      ).toFixed(1)
+                                                    : (
+                                                          analyticsData.kpis
+                                                              .ranking.average -
+                                                          comp.rank
+                                                      ).toFixed(1)}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script define:vars={{ analyticsData }}>
+        // Growth Chart
+        const ctxGrowth = document
+            .getElementById("growthChart")
+            .getContext("2d");
+        new Chart(ctxGrowth, {
+            type: "line",
+            data: {
+                labels: analyticsData.kpis.traffic.labels,
+                datasets: [
+                    {
+                        label: "Traffic",
+                        data: analyticsData.kpis.traffic.data,
+                        borderColor: "#3b82f6",
+                        backgroundColor: "rgba(59, 130, 246, 0.1)",
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 4,
+                        pointRadius: 0,
+                        pointHoverRadius: 6,
+                    },
+                    {
+                        label: "Leads",
+                        data: analyticsData.kpis.leads.data.map((d) => d * 10), // Scaled for visibility
+                        borderColor: "#10b981",
+                        backgroundColor: "transparent",
+                        borderWidth: 4,
+                        borderDash: [5, 5],
+                        tension: 0.4,
+                        pointRadius: 0,
+                        pointHoverRadius: 6,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                },
+                scales: {
+                    x: {
+                        grid: { display: false, drawBorder: false },
+                        ticks: { color: "#64748b" },
+                    },
+                    y: {
+                        grid: {
+                            color: "rgba(51, 65, 85, 0.5)",
+                            drawBorder: false,
+                        },
+                        ticks: { color: "#64748b" },
+                    },
+                },
+            },
+        });
+
+        // Source Chart
+        const ctxSource = document
+            .getElementById("sourceChart")
+            .getContext("2d");
+        new Chart(ctxSource, {
+            type: "doughnut",
+            data: {
+                labels: analyticsData.leadsBySource.map((s) => s.source),
+                datasets: [
+                    {
+                        data: analyticsData.leadsBySource.map((s) => s.value),
+                        backgroundColor: [
+                            "#3b82f6",
+                            "#f97316",
+                            "#10b981",
+                            "#64748b",
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 15,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: "75%",
+                plugins: {
+                    legend: { display: false },
+                },
+            },
+        });
+    </script>
+</Layout>
+
+<style>
+    /* Custom scrollbar for main content */
+    main::-webkit-scrollbar {
+        width: 6px;
+    }
+    main::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    main::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 10px;
+    }
+    main::-webkit-scrollbar-thumb:hover {
+        background: #475569;
+    }
+</style>

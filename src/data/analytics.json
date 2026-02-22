@@ -1,0 +1,194 @@
+{
+    "lastUpdated": "2026-02-21",
+    "kpis": {
+        "ranking": {
+            "average": 4.2,
+            "change": -0.8,
+            "labels": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+            ],
+            "data": [
+                12.5,
+                10.2,
+                8.4,
+                6.1,
+                5.2,
+                4.2
+            ]
+        },
+        "traffic": {
+            "total": 2450,
+            "change": 15.4,
+            "labels": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+            ],
+            "data": [
+                1200,
+                1450,
+                1800,
+                2100,
+                2300,
+                2450
+            ]
+        },
+        "leads": {
+            "total": 85,
+            "change": 22.1,
+            "labels": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+            ],
+            "data": [
+                30,
+                42,
+                55,
+                68,
+                75,
+                85
+            ]
+        },
+        "conversion": {
+            "rate": 3.47,
+            "change": 0.5,
+            "labels": [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun"
+            ],
+            "data": [
+                2.1,
+                2.5,
+                2.8,
+                3.1,
+                3.3,
+                3.47
+            ]
+        }
+    },
+    "rankings": [
+        {
+            "keyword": "drywall repair madison al",
+            "pos": 1,
+            "prev": 2,
+            "vol": 320
+        },
+        {
+            "keyword": "handyman huntsville al",
+            "pos": 3,
+            "prev": 5,
+            "vol": 880
+        },
+        {
+            "keyword": "gutter cleaning madison",
+            "pos": 2,
+            "prev": 2,
+            "vol": 210
+        },
+        {
+            "keyword": "finish carpentry athens al",
+            "pos": 4,
+            "prev": 8,
+            "vol": 150
+        },
+        {
+            "keyword": "emergency handyman madison",
+            "pos": 1,
+            "prev": 1,
+            "vol": 110
+        },
+        {
+            "keyword": "kitchen cabinet painting athens",
+            "pos": 5,
+            "prev": 12,
+            "vol": 140
+        }
+    ],
+    "leadsBySource": [
+        {
+            "source": "Google Search",
+            "value": 68
+        },
+        {
+            "source": "SMS / Text",
+            "value": 18
+        },
+        {
+            "source": "Facebook",
+            "value": 9
+        },
+        {
+            "source": "Referrals",
+            "value": 5
+        }
+    ],
+    "competitors": [
+        {
+            "name": "Chamblee Home Services",
+            "rank": 2,
+            "traffic": "High",
+            "authority": 48
+        },
+        {
+            "name": "Mr. Handyman of Huntsville",
+            "rank": 4,
+            "traffic": "High",
+            "authority": 52
+        },
+        {
+            "name": "Hunkler Handyman",
+            "rank": 6,
+            "traffic": "Medium",
+            "authority": 35
+        },
+        {
+            "name": "Sir Fix Alot",
+            "rank": 8,
+            "traffic": "Medium",
+            "authority": 41
+        }
+    ],
+    "leadsByNeighborhood": [
+        {
+            "name": "Madison (Clift's Cove)",
+            "value": 24,
+            "growth": 12
+        },
+        {
+            "name": "Huntsville (Jones Valley)",
+            "value": 18,
+            "growth": 8
+        },
+        {
+            "name": "Athens (Canebrake)",
+            "value": 12,
+            "growth": 15
+        },
+        {
+            "name": "Decatur (Burningtree)",
+            "value": 9,
+            "growth": -2
+        },
+        {
+            "name": "Hampton Cove",
+            "value": 15,
+            "growth": 22
+        }
+    ]
+}
