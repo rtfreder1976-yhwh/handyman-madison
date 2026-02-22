@@ -1,0 +1,461 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import TrustCredentials from "../../../components/TrustCredentials.astro";
+import InlineQuoteForm from "../../../components/InlineQuoteForm.astro";
+
+const neighborhoods = [
+    {
+        name: "Clift's Cove Proper",
+        description:
+            "The prestigious, original developments lining the grand tree-lined boulevard. These massive brick estates require highly meticulous craftsmen who understand how to precisely execute intricate crown molding, wainscoting, and pristine cabinet painting.",
+        responseTime: "Same day available",
+        commonServices: [
+            "Custom trim work",
+            "Cabinet painting",
+            "Hardwood flooring",
+            "Exterior repairs",
+        ],
+    },
+    {
+        name: "Clift Heights",
+        description:
+            "Situated near the crest of Rainbow Mountain, these homes face extreme weather exposure. High winds and torrential mountain runoff mean heavy wear on roofs, fascia boards, gutters, and massive retaining walls.",
+        responseTime: "Same day available",
+        commonServices: [
+            "Fascia repair",
+            "Gutter installation",
+            "Deck restoration",
+            "Storm damage",
+        ],
+    },
+    {
+        name: "The Lakes Section",
+        description:
+            "Homes bordering the four magnificent multi-acreage lakes experience significantly higher ambient moisture. This heavily accelerates exterior paint failure, wood rot on window sills, and deck joint decay.",
+        responseTime: "Same day available",
+        commonServices: [
+            "Wood rot repair",
+            "Exterior painting",
+            "Deck sealing",
+            "Window casing repair",
+        ],
+    },
+    {
+        name: "Rainbow Elementary Area",
+        description:
+            "The highly active, family-dense streets closer to the Hughes Road entrance. Extremely busy households rely completely on us for rapid drywall fixes, door alignments, and rapid-response plumbing fixture replacements.",
+        responseTime: "Same day available",
+        commonServices: [
+            "Drywall patching",
+            "Door adjustment",
+            "Fixture installation",
+            "General maintenance",
+        ],
+    },
+];
+
+const majorEmployers = [
+    {
+        name: "Cummings Research Park Executives",
+        employees: "15,000+",
+        description:
+            "Clift's Cove is heavily populated by leading aerospace and defense executives who commute down Highway 72. They heavily demand extreme perfection, absolute punctuality, and zero-headache project management.",
+    },
+    {
+        name: "Madison Hospital Physicians",
+        employees: "1,500+",
+        description:
+            "Located just minutes away, many medical professionals call Clift's Cove home. We completely understand their intense, wildly shifting schedules and provide utterly seamless, keyless-entry service execution.",
+    },
+    {
+        name: "Redstone Arsenal Contractors",
+        employees: "40,000+",
+        description:
+            "High-level government contractors require heavily vetted, totally trustworthy craftsmen inside their homes. Our absolutely rigorous screening perfectly aligns with top-tier security expectations.",
+    },
+];
+
+const weatherChallenges = [
+    {
+        season: "Spring (March-May)",
+        challenge: "Mountain Runoff & Severe Storms",
+        impact: "Because Clift's Cove sits directly against Rainbow Mountain, massive spring storms send thousands of gallons of water rushing through the area. Failure to maintain massive 6-inch seamless gutters results in immediate foundation flooding.",
+        services:
+            "6-inch gutter installation, downspout routing, emergency roof leak repair",
+    },
+    {
+        season: "Summer (June-August)",
+        challenge: "Extreme Humidity & Sun Exposure",
+        impact: "The massive, multi-tiered decks overlooking the Tennessee River Valley absolutely bake in the Alabama sun. The intense UV rays violently destroy standard deck stains, leading to massive splintering and structural failure.",
+        services:
+            "Heavy-duty deck sanding, premium stain application, wood rot eradication",
+    },
+    {
+        season: "Fall (September-November)",
+        challenge: "Massive Leaf Drop",
+        impact: "The beautifully preserved forested environment becomes a massive liability in the fall. Millions of leaves completely clog complex roof valleys and incredibly long gutter runs, requiring aggressive cleaning.",
+        services:
+            "Gutter cleanouts, leaf guard installation, roof valley clearing",
+    },
+    {
+        season: "Winter (December-February)",
+        challenge: "Freeze-Thaw Cycles",
+        impact: "The incredibly sharp temperature drops uniquely impact homes at higher elevations on Rainbow Mountain, heavily straining exterior caulking, separating window trim, and splitting wooden fascia boards.",
+        services:
+            "Exterior sealing, trim replacement, weatherstripping, freeze damage repair",
+    },
+];
+
+const landmarks = [
+    {
+        name: "The Clift House",
+        type: "Community Hub",
+        directions:
+            "The absolutely majestic community clubhouse sitting atop the hill. We use this central architectural marvel to perfectly orient our incredibly fast dispatch routes throughout the sprawling neighborhood.",
+    },
+    {
+        name: "Rainbow Mountain Trails",
+        type: "Recreation",
+        directions:
+            "The beautifully rugged hiking trails that physically border the back of the executive estates. Homes touching this literal forest line require vastly more exterior maintenance due to heavy shade and intense biological growth.",
+    },
+    {
+        name: "Rainbow Elementary School",
+        type: "Education",
+        directions:
+            "The highly coveted, A-rated Madison City school right outside the neighborhood limits. A massive draw for young, highly successful families moving to the area.",
+    },
+];
+
+const competitors = [
+    {
+        feature: "Craftsmanship Level",
+        us: "Flawless, master-carpenter precision",
+        others: 'Standard "handyman" quality',
+    },
+    {
+        feature: "Project Management",
+        us: "Completely hands-off, highly communicative",
+        others: "Requires aggressive homeowner supervision",
+    },
+    {
+        feature: "Job Site Cleanliness",
+        us: "Surgical. Heavy plastic, HEPA vacuums",
+        others: "Dusty, messy boot prints left behind",
+    },
+    {
+        feature: "Material Quality",
+        us: "Exclusively premium (Sherwin Williams, Azek PVC)",
+        others: "Basic, cheap big-box store materials",
+    },
+    {
+        feature: "Neighborhood Knowledge",
+        us: "Intimate understanding of Clift's Cove architecture",
+        others: "Generic, one-size-fits-all approach",
+    },
+];
+
+const responseTimes = [
+    { area: "Clift's Cove Proper", time: "Same day", distance: "10 min" },
+    { area: "Clift Heights", time: "Same day", distance: "12 min" },
+    { area: "The Lakes", time: "Same day", distance: "10 min" },
+    { area: "Ashton Springs", time: "Same day", distance: "15 min" },
+    { area: "Edgewater", time: "Same day", distance: "18 min" },
+    { area: "Downtown Madison", time: "Same day", distance: "15 min" },
+];
+
+const neighborhoodFacts = [
+    "Madison's premier executive-planned community",
+    "Features massive, custom-built estates ranging from 3,500 to 8,000+ sq ft",
+    "Integrated directly into the stunning Rainbow Mountain Greenways",
+    "Strict Homeowners Association enforcing pristine architectural standards",
+    "Zoned strictly for the incredibly highly-rated Madison City School District",
+];
+---
+
+<Layout
+    title="Clift's Cove Handyman & Finish Carpentry | Madison AL"
+    description="Premium Rittenworx Handyman Service exclusively tailored for Clift's Cove in Madison, AL. Master finish carpentry, flawless cabinet painting, and elite home maintenance."
+>
+    <!-- Hero Section -->
+    <section class="bg-blue-900 text-white py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="max-w-3xl">
+                <nav class="text-sm text-blue-200 mb-4">
+                    <a href="/locations" class="hover:text-white"
+                        >Service Areas</a
+                    >
+                    <span class="mx-2">/</span>
+                    <a href="/locations/madison" class="hover:text-white"
+                        >Madison</a
+                    >
+                    <span class="mx-2">/</span>
+                    <span class="text-white">Clift's Cove</span>
+                </nav>
+                <span
+                    class="text-orange-400 font-semibold text-sm uppercase tracking-wide"
+                    >Madison's Premier Community</span
+                >
+                <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
+                    Elite Home Maintenance for Clift's Cove
+                </h1>
+                <p class="text-xl text-blue-100 mb-6">
+                    When you reside in Madison's most prestigious executive
+                    neighborhood, you absolutely cannot entrust your massive,
+                    custom-built estate to a standard discount contractor.
+                    Rittenworx delivers the absolutely surgical precision,
+                    flawless master carpentry, and highly discreet service
+                    execution that Clift's Cove homeowners exclusively demand.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a
+                        href="/contact"
+                        class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                    >
+                        Get Free Estimate
+                    </a>
+                    <a
+                        href="tel:2562210373"
+                        class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                    >
+                        (256) 221-0373
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="bg-white py-8 border-b">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                    <p class="text-3xl font-bold text-blue-900">Same Day</p>
+                    <p class="text-gray-600 text-sm">Response Time</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-blue-900">Premium</p>
+                    <p class="text-gray-600 text-sm">Materials Exclusively</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-blue-900">Flawless</p>
+                    <p class="text-gray-600 text-sm">Job Site Cleanliness</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-bold text-blue-900">Discreet</p>
+                    <p class="text-gray-600 text-sm">Professional Execution</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Neighborhood Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span
+                        class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+                        >Executive Standards</span
+                    >
+                    <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">
+                        We Understand Clift's Cove Architecture
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        Clift's Cove is not a standard subdivision; it is an
+                        incredible collection of sprawling, highly custom,
+                        incredibly expensive estates. The interior trim
+                        packages—massive stacked crown molding, heavily fluted
+                        door casings, and towering wainscoting—require an
+                        entirely different echelon of carpentry skill than
+                        standard builder-grade homes.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        When we execute a flawless urethane-enamel cabinet
+                        painting project in your massive chef's kitchen, or when
+                        we are repairing a severely rotted 40-foot upper-story
+                        fascia board, we understand that absolutely total
+                        perfection is heavily expected. The incredibly strict
+                        HOA intimately monitors exterior aesthetic standards,
+                        meaning our color-matching and seamlessly invisible
+                        wood-rot repairs literally have to be flawless to pass
+                        aggressive inspections.
+                    </p>
+                    <p class="text-gray-600">
+                        From the sprawling mansions in Clift Heights bordering
+                        the rugged Rainbow Mountain to the utterly stunning
+                        homes encompassing the central lakes, Rittenworx is
+                        Madison's profoundly trusted partner for elite,
+                        high-touch residential maintenance.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">
+                        Clift's Cove Details
+                    </h3>
+                    <ul class="space-y-3">
+                        {
+                            neighborhoodFacts.map((fact) => (
+                                <li class="flex items-start gap-3">
+                                    <svg
+                                        class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 13l4 4L19 7"
+                                        />
+                                    </svg>
+                                    <span class="text-gray-700">{fact}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neighborhoods Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span
+                    class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+                    >Micro-Location Expertise</span
+                >
+                <h2 class="text-3xl font-bold text-gray-800 mt-2">
+                    Distinct Zones Within Clift's Cove
+                </h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    We intimately know how the extreme topography of the
+                    mountain directly impacts your specific street.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {
+                    neighborhoods.map((neighborhood) => (
+                        <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-100 hover:border-blue-200 transition-colors">
+                            <h3 class="text-lg font-bold text-blue-900 mb-2">
+                                {neighborhood.name}
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                {neighborhood.description}
+                            </p>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-500 uppercase mb-2">
+                                    Specialized Focus
+                                </p>
+                                <div class="flex flex-wrap gap-1">
+                                    {neighborhood.commonServices.map(
+                                        (service) => (
+                                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                                                {service}
+                                            </span>
+                                        ),
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Challenges -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span
+                    class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+                    >Mountain Topography</span
+                >
+                <h2 class="text-3xl font-bold text-gray-800 mt-2">
+                    Combating The Elements
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                {
+                    weatherChallenges.map((challenge) => (
+                        <div class="bg-white rounded-lg p-6 shadow-sm border-l-4 border-blue-500">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">
+                                        {challenge.season}
+                                    </h3>
+                                    <p class="text-sm text-orange-600 font-medium">
+                                        {challenge.challenge}
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">
+                                {challenge.impact}
+                            </p>
+                            <p class="text-xs text-blue-800">
+                                <strong>Our Solutions:</strong>{" "}
+                                {challenge.services}
+                            </p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mt-2">
+                    Why We Outperform Standard Contractors
+                </h2>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full bg-gray-50 rounded-lg overflow-hidden">
+                    <thead class="bg-blue-900 text-white">
+                        <tr>
+                            <th class="px-6 py-4 text-left">The Standard</th>
+                            <th class="px-6 py-4 text-left"
+                                >Rittenworx Execution</th
+                            >
+                            <th class="px-6 py-4 text-left"
+                                >Average Companies</th
+                            >
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            competitors.map((row, index) => (
+                                <tr
+                                    class={
+                                        index % 2 === 0
+                                            ? "bg-white"
+                                            : "bg-gray-50"
+                                    }
+                                >
+                                    <td class="px-6 py-4 font-medium text-gray-800">
+                                        {row.feature}
+                                    </td>
+                                    <td class="px-6 py-4 text-green-600 font-medium">
+                                        {row.us}
+                                    </td>
+                                    <td class="px-6 py-4 text-gray-500">
+                                        {row.others}
+                                    </td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <InlineQuoteForm />
+    <TrustCredentials />
+</Layout>

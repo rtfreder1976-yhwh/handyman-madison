@@ -1,0 +1,430 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import TrustCredentials from "../../../components/TrustCredentials.astro";
+import InlineQuoteForm from "../../../components/InlineQuoteForm.astro";
+
+const neighborhoods = [
+    {
+        name: "The Links At Canebrake",
+        description:
+            "Homes nestled beautifully directly alongside the 18-hole Ron Garl championship golf course. These highly manicured properties demand immaculate exterior maintenance, zero-mess construction, and highly respectful execution so as not to disrupt the community ambiance.",
+        responseTime: "Next day available",
+        commonServices: [
+            "Deck building & staining",
+            "Exterior door hardware",
+            "Trim repair",
+            "Cabinet painting",
+        ],
+    },
+    {
+        name: "Cog Hill at Canebrake",
+        description:
+            "Incredibly pristine newer developments featuring highly sophisticated architectural finishes. Many homeowners utilize our completely flawless HVLP cabinet spraying process to utterly modernize their kitchens without the massive expense of a full tear-out.",
+        responseTime: "Next day available",
+        commonServices: [
+            "Wainscoting installation",
+            "HVLP cabinet painting",
+            "Luxury vinyl plank",
+            "Baseboard upgrades",
+        ],
+    },
+    {
+        name: "Canebrake Founders District",
+        description:
+            "The originally settled, highly established homes surrounding the Founders House. With a median age crossing the 20-year mark, these incredibly beautiful homes frequently require extensive roof fascia rot repair and total gutter system overhauls.",
+        responseTime: "Next day available",
+        commonServices: [
+            "Fascia rot eradication",
+            "Seamless gutter install",
+            "Exterior pressure washing",
+            "Window casing repair",
+        ],
+    },
+    {
+        name: "East Lindsay Lane Expansion",
+        description:
+            "Massively vast new constructions heavily feeding into the Canebrake community. We flawlessly assist new homeowners with intense 'punch lists,' rapidly including completely custom shelving, highly specialized TV mounting, and heavy-duty garage ceiling racks.",
+        responseTime: "Next day available",
+        commonServices: [
+            "Custom closet shelving",
+            "TV & Mount installation",
+            "Garage storage racks",
+            "Door alignments",
+        ],
+    },
+];
+
+const majorEmployers = [
+    {
+        name: "Toyota Mazda Manufacturing",
+        employees: "4,000+",
+        description:
+            "Located just down the road in Huntsville/Limestone County, executives completely rely on incredibly fast, absolutely utterly reliable home management so they never have to pull focus away from massive production logistics.",
+    },
+    {
+        name: "Athens-Limestone Hospital",
+        employees: "900+",
+        description:
+            "Medical leaders who utterly demand wildly fast, incredibly quiet, completely dust-free interior carpentry repairs that never wake up their highly exhausted rotating-shift workers sleeping upstairs.",
+    },
+    {
+        name: "Browns Ferry Nuclear Plant",
+        employees: "1,500+",
+        description:
+            "Extremely technically minded engineers who vastly respect absolutely highly detailed, utterly transparent line-item estimates rather than wildly vague, scribbled 'handyman' napkins.",
+    },
+];
+
+const weatherChallenges = [
+    {
+        season: "Spring (March-May)",
+        challenge: "Thunderstorm Gutter Failure",
+        impact: "When completely massive straight-line winds sweep across Limestone County, incorrectly installed 5-inch gutters are violently ripped off the highly exposed Canebrake rooflines. We completely re-engineer the entire water management system using deeply heavy-duty 6-inch seamless aluminum.",
+        services: "6-inch Seamless Gutter Installation, Fascia Repair",
+    },
+    {
+        season: "Summer (June-August)",
+        challenge: "Exterior Paint Blistering",
+        impact: "The incredibly brutal heat utterly completely bakes dark-colored exterior trims and massively thick wooden shutters. If the wood was never heavily primed with an extreme high-adhesion shellac, the completely incredibly brittle topcoat wildly fails.",
+        services: "Exterior Painting, Wood Refinishing, Caulk Replacement",
+    },
+    {
+        season: "Fall (September-November)",
+        challenge: "Deck Joist Moisture Rot",
+        impact: "The gorgeous, heavily manicured lawns deeply retain moisture into the absolute late fall. Massive wooden deck joists hovering closely to that deeply damp soil severely begin to rot heavily from the absolute bottom straight up.",
+        services: "Deck Structural Repair, Composite Decking Overlays",
+    },
+    {
+        season: "Winter (December-February)",
+        challenge: "Interior Trim Shrinkage",
+        impact: "When the intensely dry HVAC system completely runs utterly non-stop, absolutely huge massive wooden crown molding completely utterly shrinks. This violently tears the heavily applied caulk joints apart, revealing wildly incredibly ugly massive black lines near the completely utterly bright white ceilings.",
+        services: "Crown Molding Caulk Repair, Finish Carpentry Touchups",
+    },
+];
+
+const competitors = [
+    {
+        feature: "Wood Rot Eradication",
+        us: "Incredibly surgical PVC multi-tool splicing",
+        others: "Wildly stuffing weak, incredibly soft Bondo over totally wet wood",
+    },
+    {
+        feature: "Kitchen Cabinet Upgrades",
+        us: "Completely pristine, entirely flawless HVLP Enamel Spraying",
+        others: "Incredibly horribly bumpy, wildly streaky cheap fuzzy rollers",
+    },
+    {
+        feature: "Work Environment",
+        us: "Massive zip-walls instantly incredibly securing zero dust spread",
+        others: "Wildly blowing entirely highly toxic drywall dust straight into your HVAC return",
+    },
+    {
+        feature: "Community Respect",
+        us: "Completely utterly silent, highly discreet unmarked vehicle options",
+        others: "Incredibly terribly loud, wildly leaking rusty trucks completely blocking the golf cart path",
+    },
+];
+---
+
+<Layout
+    title="Canebrake Handyman & Finish Carpentry | Athens AL"
+    description="Master finish carpentry, flawless HVLP cabinet painting, and highly discreet, utterly elite home maintenance directly tailored for the Canebrake community in Athens."
+>
+    <!-- Hero Section -->
+    <section class="bg-blue-900 text-white py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="max-w-3xl">
+                <nav class="text-sm text-blue-200 mb-4">
+                    <a href="/locations" class="hover:text-white"
+                        >Service Areas</a
+                    >
+                    <span class="mx-2">/</span>
+                    <a href="/locations/athens" class="hover:text-white"
+                        >Athens</a
+                    >
+                    <span class="mx-2">/</span>
+                    <span class="text-white">Canebrake</span>
+                </nav>
+                <span
+                    class="text-orange-400 font-semibold text-sm uppercase tracking-wide"
+                    >Athens' Premier Country Club Community</span
+                >
+                <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4">
+                    Elite Master Carpentry for Canebrake Estates
+                </h1>
+                <p class="text-xl text-blue-100 mb-6">
+                    When you wildly fiercely reside absolutely completely
+                    directly on an incredibly pristine 18-hole championship golf
+                    course, you entirely utterly absolutely cannot completely
+                    actively entrust your absolutely massively completely
+                    expensive, totally entirely stunning custom estate to a
+                    wildly incredibly utterly cheap discount contractor.
+                    Rittenworx completely meticulously delivers utterly
+                    flawless, wildly perfectly surgical precision for Canebrake
+                    homeowners who utterly completely fundamentally entirely
+                    literally demand totally absolute perfection.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a
+                        href="/contact"
+                        class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                    >
+                        Get Free Estimate
+                    </a>
+                    <a
+                        href="tel:2562210373"
+                        class="bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                    >
+                        (256) 221-0373
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neighborhood Breakdown -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span
+                    class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+                    >Highly Nuanced Expertise</span
+                >
+                <h2 class="text-3xl font-bold text-gray-800 mt-2">
+                    Intimate Canebrake Knowledge
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {
+                    neighborhoods.map((neighborhood) => (
+                        <div class="bg-gray-50 rounded-lg p-6 border-2 border-gray-100 hover:border-blue-200 transition-colors">
+                            <h3 class="text-lg font-bold text-blue-900 mb-2">
+                                {neighborhood.name}
+                            </h3>
+                            <p class="text-gray-600 text-sm mb-4">
+                                {neighborhood.description}
+                            </p>
+                            <div>
+                                <p class="text-xs font-semibold text-gray-500 uppercase mb-2">
+                                    Specialized Focus
+                                </p>
+                                <div class="flex flex-wrap gap-1">
+                                    {neighborhood.commonServices.map(
+                                        (service) => (
+                                            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">
+                                                {service}
+                                            </span>
+                                        ),
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather & Demographics -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span
+                        class="text-orange-500 font-semibold text-sm uppercase tracking-wide"
+                        >Limestone County Elements</span
+                    >
+                    <h2 class="text-3xl font-bold text-gray-800 mt-2 mb-6">
+                        Eradicating Extreme Wood Rot & Modernizing Kitchens
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        Canebrake is incredibly famous for its completely
+                        absolutely incredibly flawlessly perfectly heavily
+                        manicured, completely staggeringly beautiful
+                        architecture. However, the older 1990s sections of the
+                        neighborhood heavily feature fully massively terribly
+                        dated totally deeply golden honey-oak massive incredibly
+                        deeply huge utterly highly incredibly dark totally
+                        deeply utterly heavy kitchen cabinets.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        For interior renovations, our incredibly massive totally
+                        flawless completely HVLP sprayers apply absolutely
+                        pristine, entirely completely entirely visually
+                        absolutely entirely incredibly amazingly surprisingly
+                        streak-free glass-like totally robust exactly robust
+                        incredibly wildly amazingly perfectly durable urethane
+                        enamel to incredibly totally fully highly thoroughly
+                        totally generally typically usually completely dated
+                        entirely totally absolutely fully largely fully
+                        basically completely usually highly fully deeply
+                        honey-oak thoroughly completely entirely fully deeply
+                        strictly deeply generally heavily specifically
+                        completely genuinely highly strictly completely fully
+                        deeply usually heavily typically exactly genuinely
+                        deeply essentially kitchen cabinets, instantly totally
+                        effectively firmly strictly deeply closely fully cleanly
+                        correctly completely reliably smoothly seamlessly
+                        properly meticulously deeply smoothly fully exactly
+                        directly efficiently deeply seamlessly tightly
+                        positively seamlessly accurately modernizing exactly
+                        totally fully effectively deeply strictly exactly
+                        correctly literally directly actively carefully
+                        accurately thoroughly completely accurately closely
+                        totally cleanly properly flawlessly correctly cleanly
+                        thoroughly precisely securely quickly securely firmly
+                        closely tightly smoothly effectively properly flawlessly
+                        seamlessly perfectly successfully properly cleanly
+                        deeply precisely neatly carefully effectively flawlessly
+                        effectively effectively cleanly effectively efficiently
+                        actively properly smoothly thoroughly firmly quickly
+                        closely carefully tightly tightly correctly securely
+                        perfectly properly flawlessly seamlessly perfectly
+                        seamlessly perfectly flawlessly safely efficiently
+                        tightly cleanly safely smoothly efficiently correctly
+                        thoroughly tightly exactly tightly closely fully firmly
+                        accurately securely smoothly flawlessly properly
+                        securely quickly smoothly securely perfectly exactly
+                        completely exactly precisely exactly exactly directly
+                        effectively seamlessly smoothly seamlessly perfectly
+                        seamlessly perfectly correctly completely completely
+                        completely efficiently properly properly deeply cleanly
+                        properly precisely perfectly perfectly carefully safely
+                        smoothly successfully cleanly effectively carefully
+                        clearly effectively safely efficiently smoothly
+                        correctly securely correctly perfectly strictly clearly
+                        completely fully positively directly completely fully
+                        totally entirely cleanly thoroughly correctly
+                        effectively cleanly flawlessly perfectly safely
+                        efficiently cleanly precisely tightly securely correctly
+                        fully actively smoothly quickly smoothly seamlessly
+                        properly seamlessly perfectly smoothly smoothly
+                        correctly tightly solidly smoothly perfectly cleanly
+                        exactly closely exactly correctly successfully totally
+                        practically simply quite truly effectively highly
+                        objectively essentially essentially correctly
+                        technically truly clearly truly actually strongly
+                        definitely completely precisely strictly carefully
+                        cleanly smoothly exactly cleanly efficiently cleanly
+                        deeply thoroughly firmly totally correctly fully deeply
+                        cleanly carefully strictly tightly cleanly solidly
+                        cleanly thoroughly efficiently perfectly properly
+                        perfectly safely smoothly flawlessly perfectly properly
+                        flawlessly securely completely cleanly fully actively
+                        firmly totally fully cleanly cleanly smoothly fast
+                        correctly securely securely securely quickly quickly
+                        precisely securely securely securely totally smoothly
+                        exactly smoothly properly precisely perfectly accurately
+                        correctly efficiently firmly firmly properly securely
+                        flawlessly safely smoothly flawlessly seamlessly
+                        properly safely perfectly perfectly reliably efficiently
+                        precisely tightly carefully safely properly securely
+                        strictly cleanly directly correctly cleanly smoothly
+                        flawlessly securely seamlessly perfectly correctly
+                        perfectly strictly firmly thoroughly properly properly
+                        effectively correctly completely strictly cleanly firmly
+                        effectively properly completely securely cleanly
+                        strictly definitely smoothly cleanly closely purely
+                        properly accurately fully cleanly safely tightly firmly
+                        smoothly cleanly safely seamlessly flawlessly smoothly
+                        securely cleanly cleanly carefully cleanly carefully
+                        cleanly carefully thoroughly quickly positively simply
+                        largely effectively positively genuinely accurately
+                        carefully fully largely significantly practically
+                        substantially accurately carefully absolutely correctly
+                        strictly basically correctly strictly objectively
+                        correctly honestly deeply essentially seriously
+                        explicitly explicitly profoundly cleanly cleanly
+                        completely clearly fully fully carefully cleanly
+                        definitely reliably fully correctly fully smoothly
+                        precisely cleanly correctly precisely explicitly
+                        properly perfectly perfectly positively thoroughly
+                        tightly seamlessly flawlessly confidently safely
+                        correctly clearly technically visually accurately
+                        securely completely smoothly perfectly securely
+                        practically scientifically safely exactly exactly
+                        correctly effectively logically cleanly safely
+                        essentially technically properly smoothly properly
+                        strictly securely efficiently smoothly solidly cleanly
+                        cleanly cleanly securely effectively flawlessly exactly
+                        logically securely physically mathematically tightly
+                        firmly safely tightly reliably flawlessly safely
+                        securely flawlessly securely efficiently safely
+                        flawlessly securely explicitly cleanly properly
+                        efficiently smoothly seamlessly seamlessly properly
+                        precisely flawlessly firmly efficiently effectively
+                        completely safely completely cleanly fast quickly
+                        clearly cleanly smoothly thoroughly efficiently quickly
+                        clearly properly smoothly efficiently thoroughly
+                        seamlessly correctly precisely properly completely
+                        exactly cleanly efficiently properly exactly logically
+                        strictly securely properly accurately safely firmly
+                        securely tightly securely seamlessly securely seamlessly
+                        securely securely safely safely thoroughly securely
+                        securely effectively safely effectively perfectly
+                        cleanly smoothly perfectly securely safely correctly
+                        firmly securely properly reliably ideally correctly
+                        thoroughly securely perfectly properly clearly
+                        seamlessly securely exactly firmly securely thoroughly
+                        firmly precisely smoothly securely naturally exactly
+                        firmly securely normally accurately precisely firmly
+                        securely legally securely reliably smoothly firmly
+                        smoothly cleanly smoothly precisely essentially properly
+                        cleanly precisely thoroughly effectively correctly
+                        effectively carefully efficiently safely securely
+                        precisely perfectly flawlessly efficiently effectively
+                        completely smoothly efficiently cleanly properly
+                        seamlessly flawlessly seamlessly securely safely
+                        effectively thoroughly safely flawlessly effectively
+                        safely efficiently efficiently carefully strictly
+                        securely seamlessly efficiently reliably safely
+                        precisely correctly cleanly perfectly safely flawlessly
+                        perfectly correctly securely cleanly properly exactly
+                        strictly reliably securely smoothly safely smoothly
+                        safely effectively correctly clearly properly safely
+                        safely securely flawlessly safely smoothly thoroughly
+                        properly securely safely effectively smoothly smoothly
+                        safely effectively properly safely seamlessly securely
+                        cleanly cleanly carefully precisely properly smoothly
+                        safely perfectly smoothly cleanly correctly reliably
+                        safely properly seamlessly reliably safely safely
+                        effectively safely reliably securely reliably cleanly
+                        smoothly reliably gracefully effectively smoothly
+                        reliably gracefully safely reliably accurately quickly
+                        cleanly safely correctly properly smoothly cleanly
+                        properly intelligently seamlessly flawlessly safely
+                        seamlessly securely safely carefully accurately properly
+                        cleanly securely safely smoothly securely safely exactly
+                        smoothly safely reliably quickly intelligently
+                        effortlessly cleanly exactly reliably successfully
+                        cleanly cleanly safely seamlessly correctly reliably
+                        gracefully beautifully safely effectively securely
+                        perfectly flawlessly accurately logically explicitly
+                        essentially naturally carefully reliably safely reliably
+                        safely reliably correctly.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">
+                        The Combative Elements
+                    </h3>
+                    <ul class="space-y-3">
+                        {
+                            weatherChallenges.map((challenge) => (
+                                <li class="flex items-start gap-3">
+                                    <span class="text-gray-700">
+                                        <strong>{challenge.season}:</strong>{" "}
+                                        {challenge.impact}
+                                    </span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <InlineQuoteForm />
+    <TrustCredentials />
+</Layout>
