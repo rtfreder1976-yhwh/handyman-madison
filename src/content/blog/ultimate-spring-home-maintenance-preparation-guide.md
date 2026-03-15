@@ -44,7 +44,7 @@ Your roof and gutter system is your home's first line of defense against the rel
 The protective skin of your luxury home must be completely watertight before the heavy rains begin.
 
 *   **Soft Wash the Exterior:** Do not use high-pressure power washing on siding or brick, as it can strip paint and force water behind the protective layer. Instead, hire a professional for a "soft wash" using low pressure and specialized detergents to gently kill algae and remove winter grime without damaging the surface.
-*   **Inspect and Repair Wood Rot:** Walk the perimeter of your home and meticulously inspect all exterior wood trim, particularly around windows, doors, and the base of columns. The humid Alabama climate accelerates wood rot aggressively. Any soft or spongy wood must be cut out entirely and replaced by a professional carpenter; applying over-the-counter wood harder or putty is a temporary, amateur bandage that traps moisture inside.
+*   **Inspect and Repair Wood Rot:** Walk the perimeter of your home and meticulously inspect all exterior wood trim, particularly around windows, doors, and the base of columns. The humid Alabama climate accelerates wood rot . Any soft or spongy wood must be cut out entirely and replaced by a professional carpenter; applying over-the-counter wood harder or putty is a temporary, amateur bandage that traps moisture inside.
 *   **Renew Exterior Caulking:** The caulk around your windows, doors, and siding joints is flexible to accommodate the house shifting. Over time, UV rays and temperature changes cause it to shrink, harden, and pull away, creating entry points for water. Scrape out any cracked or failing caulk and apply a fresh bead of premium, high-stretch polyurethane or silicone sealant.
 
 ### Step 3: Deck and Patio Preparation
@@ -75,7 +75,7 @@ Spring maintenance is not a weekend DIY project for a luxury homeowner juggling 
 
 At Rittenworx, we specialize in high-end, proactive home care across Madison, Huntsville, and Athens. We don't just fix what’s broken; we anticipate problems before they occur, protecting the structural integrity and premium aesthetic of your home. 
 
-Our certified technicians will meticulously inspect your exterior, execute flawless carpentry repairs on rotted trim, fully clear your gutter systems, and ensure your home's envelope is completely sealed against the approaching Alabama storms.
+Our certified technicians will meticulously inspect your exterior, execute Quality carpentry repairs on rotted trim, fully clear your gutter systems, and ensure your home's envelope is completely sealed against the approaching Alabama storms.
 
 We carry a $1,000,000 liability policy, guarantee exceptional craftsmanship, and provide a frictionless, zero-stress client experience from the moment you call. 
 

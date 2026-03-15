@@ -26,7 +26,7 @@ Engineered hardwood features a real layer of hardwood veneer glued onto a stable
 ## Step 2: The Acclimation Process
 This is the single most critical step that amateur installers skip. 
 
-Before a single nail goes into the floor, your delivery of hardwood boxes must sit inside your climate-controlled home for **at least 3 to 7 days**. The moisture content of the wood must equalize with the normal living conditions of your house. If you skip this step, the wood will aggressively expand or shrink *after* you’ve secured it to the floor, leading to massive gaps, tenting, or cupping.
+Before a single nail goes into the floor, your delivery of hardwood boxes must sit inside your climate-controlled home for **at least 3 to 7 days**. The moisture content of the wood must equalize with the normal living conditions of your house. If you skip this step, the wood will expand or shrink *after* you’ve secured it to the floor, leading to massive gaps, tenting, or cupping.
 
 ## Step 3: Preparing the Subfloor
 A beautiful hardwood floor requires a perfectly level subfloor. A professional installation includes:
@@ -49,6 +49,6 @@ A professional hardwood job is defined by the quality of the finish work. You ne
 ## When to Hire a Pro
 Laying hardwood flooring is back-breaking, tedious work that requires highly specialized tools (like a $400 floor stapler, a jamb saw for undercutting door frames, and a compound miter saw). Unless you have a week of free time and a strong grasp of geometry, you are generally better off trusting a professional.
 
-If you’re ready to rip up the carpets and reveal the beautiful potential underneath, **Rittenworx Handyman Service** provides flawless hardwood and engineered flooring installation across Decatur, Alabama. 
+If you’re ready to rip up the carpets and reveal the beautiful potential underneath, **Rittenworx Handyman Service** provides Quality hardwood and engineered flooring installation across Decatur, Alabama. 
 
 **Text us a photo of your current room right now, and let's get you a free flooring quote!**

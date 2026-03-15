@@ -78,7 +78,7 @@ This is where the difference between a DIY project and a premium, invisible repa
 1.  **Apply Tape:** Apply fiberglass mesh tape or paper drywall tape across all the seams. 
 2.  **The First Coat (Bedding Coat):** Apply a layer of joint compound (mud) over the tape using a 4-inch or 6-inch taping knife. Smooth it out and let it dry completely.
 3.  **The Second and Third Coats:** Once dry, sand the area lightly. Apply a second coat using a wider knife (8-inch or 10-inch) to feather the edges out further. Let it dry, sand again, and apply a final topcoat with a 12-inch knife, feathering the edges until the transition between the patch and the old wall is imperceptible.
-4.  **Texture and Paint:** If your walls have a specific texture (like orange peel or knockdown), use a texture sponge or spray can to match it. Finally, prime the entire patch and paint the wall. For a truly flawless finish, you will likely need to paint the entire wall corner-to-corner rather than just "touching up" the patched area.
+4.  **Texture and Paint:** If your walls have a specific texture (like orange peel or knockdown), use a texture sponge or spray can to match it. Finally, prime the entire patch and paint the wall. For a truly clean finish, you will likely need to paint the entire wall corner-to-corner rather than just "touching up" the patched area.
 
 ## The Cost of Waiting vs. Acting Proactively
 

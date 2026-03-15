@@ -14,7 +14,7 @@ If you ignore it, the fragile locking mechanisms will permanently snap. Here is 
 
 ## Why is my Laminate Floor Buckling?
 
-Laminate flooring is not glued or nailed to the subfloor. It literally "floats" on top of a thin acoustic pad. The planks are made of a dense fiberboard core covered in a photographic image of wood. Because the core is essentially highly compressed wood dust, it behaves exactly like real wood: it aggressively expands when it is hot or humid, and shrinks when it is cold or dry.
+Laminate flooring is not glued or nailed to the subfloor. It literally "floats" on top of a thin acoustic pad. The planks are made of a dense fiberboard core covered in a photographic image of wood. Because the core is essentially highly compressed wood dust, it behaves exactly like real wood: it expands when it is hot or humid, and shrinks when it is cold or dry.
 
 When your floor buckles, it means the planks have expanded as much as they possibly can, they have violently hit a solid object (like a wall), and the immense gravitational pressure forces the planks to push upwards in the center of the room. 
 
@@ -54,6 +54,6 @@ However, if the floor is simply buckling due to humidity expansion and a lack of
 ## Trust the Flooring Experts
 Diagnosing exactly why a floor is failing requires understanding the hydrology of the home, the subfloor parameters, and the expansion coefficients of massive floor spans. 
 
-If your floor looks like a rollercoaster and the seams are starting to chip away, don't wait for the locking mechanisms to permanently shatter. The master installers at **Rittenworx Handyman Service** can diagnose your buckling floor, cut the proper expansion relief joints, or seamlessly patch in damaged planks. 
+If your floor looks uneven and the seams are starting to chip, do not wait for it to get worse. The experienced installers at **Rittenworx Handyman Service** can diagnose your buckling floor, cut the proper expansion relief joints, or seamlessly patch in damaged planks. 
 
 **Text us a photo of the worst speedbump in your floor right now, and let's get it laying perfectly flat again!**

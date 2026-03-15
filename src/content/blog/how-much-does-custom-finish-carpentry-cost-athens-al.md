@@ -19,7 +19,7 @@ A true custom build is completely unique to your home's exact dimensions, your c
 ### 1. Material Selection
 There is an astonishing spectrum of materials available for custom cabinetry. 
 
-*   **MDF (Medium-Density Fiberboard) ($):** The standard for painted built-ins. It is smooth, relatively affordable, does not have a wood grain (meaning it paints flawlessly), and is highly stable. The majority of modern painted bookcases are MDF.
+*   **MDF (Medium-Density Fiberboard) ($):** The standard for painted built-ins. It is smooth, relatively affordable, does not have a wood grain (meaning it paints efficiently), and is highly stable. The majority of modern painted bookcases are MDF.
 *   **Cabinet-Grade Plywood ($$):** Excellent for structural integrity, holding heavy book collections, and building the structural "boxes" of a unit. Birch and maple plywoods are the standard upgrades from MDF.
 *   **Solid Hardwoods ($$$):** If you desire a clear-coat stain finish showing raw wood grain (like a classic walnut library or red oak mantle), solid hardwood is required. The cost of raw lumber fluctuates wildly, but it typically costs 3x to 5x more than MDF.
 
@@ -55,6 +55,6 @@ You can certainly buy prefabricated bookshelves from a massive retail chain for 
 ## Get Your Custom Price
 Because custom work is exactly that—custom—we need to see your space to give you an accurate estimate. 
 
-The master carpenters at **Rittenworx Handyman Service** proudly serve the Athens and greater Madison area with precision finish carpentry. 
+The experienced carpenters at **Rittenworx Handyman Service** proudly serve the Athens and greater Madison area with precision finish carpentry. 
 
 **Text us a photo of the blank wall you want to transform right now, along with an inspiration picture, and we will get you an immediate cost breakdown!**

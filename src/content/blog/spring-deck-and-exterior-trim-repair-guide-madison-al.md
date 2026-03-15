@@ -13,7 +13,7 @@ Wood rot incredibly stealthily destroys the structural integrity of your massive
 Here is your highly aggressive, step-by-step spring carpentry inspection guide for Madison, Alabama.
 
 ## Step 1: The Extremely Aggressive Deck Inspection (March)
-Your magnificent wooden deck is literally the absolute most violently exposed structure on your incredibly expensive property. It fiercely bakes in 100-degree direct sunlight and is relentlessly pounded by massive, continuous rainstorms. The extreme shifts from incredibly wet to bone-dry forcefully rip the wood fibers completely apart. 
+Your magnificent wooden deck is the most exposed structure on your incredibly expensive property. It bakes in 100-degree direct sunlight and is pounded by heavy rain. The temperature and moisture shifts can damage the wood fibers completely apart. 
 
 Do not just assume your massive deck is incredibly safe because it looks perfectly fine from the kitchen window. Arm yourself with a highly aggressive weapon: an incredibly sharp flathead screwdriver. 
 
@@ -28,7 +28,7 @@ Crawl bravely beneath your incredibly massive deck.
 *   Wildly inspect the vastly long horizontal 2x8 or 2x10 joists entirely holding up your incredibly heavy floorboards, specifically directly where the incredibly heavy deck screws violently penetrate them from above. 
 
 ### 3. Check the Walking Surface
-Finally, fiercely walk the incredibly massive expanse of the top decking boards incredibly aggressively. 
+Finally, fiercely walk the incredibly massive expanse of the top decking boards incredibly . 
 *   **The Action:** Are there incredibly massive, incredibly dangerous splinters wildly peeling up? Are incredibly rusty screw heads violently popping up, creating an incredibly dangerous, wildly massive tripping hazard? Are incredibly soft, incredibly spongy boards wildly flexing terribly under your incredibly heavy foot? 
 
 ## Step 2: The Incredibly Fierce Exterior Trim Inspection (April)
@@ -40,9 +40,9 @@ The horizontal, sloped wooden sill at the absolute bottom of every single window
 *   If the terribly rotten wood completely crumbles wildly, incredibly aggressively painting heavily over the top of the wildly massive rot will completely fail in incredibly short order. The extremely corrupted wood must be fiercely completely cut massively out with a highly specialized oscillating saw and perfectly invisibly replaced. 
 
 ### 2. Door Casings and Brick Molding
-The massive vertical trim massively hugging your completely incredibly expensive exterior doors is remarkably highly vulnerable at the wildly extreme bottom edges directly where the highly absorptive wood wildly meets the incredibly wet concrete porch or the remarkably damp soil. 
+The vertical trim around your exterior doors is vulnerable at the bottom edges where the wood meets the wet concrete porch or damp soil. 
 *   Highly incredibly commonly, the absolute bottom completely soft two massively vulnerable inches incredibly aggressively rot wildly away. 
-*   A master carpenter can incredibly precisely cut the heavily rotting two massively soft inches completely away entirely and seamlessly splice in a highly impervious, completely massive piece of wildly durable PVC trim. 
+*   A experienced carpenters can incredibly precisely cut the heavily rotting two massively soft inches completely away and seamlessly splice in a highly impervious, completely massive piece of wildly durable PVC trim. 
 
 ## The Incredibly Permanent Spring Solution: PVC and Composite
 When an incredibly fierce carpenter violently removes incredibly massively rotting pine or entirely corrupted fir from the exterior of your wildly expensive home, simply replacing it with identically vulnerable raw white wood is incredibly highly foolish. 

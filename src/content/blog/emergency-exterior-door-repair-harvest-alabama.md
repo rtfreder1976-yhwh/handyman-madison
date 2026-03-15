@@ -8,7 +8,7 @@ tags: ["Home Repairs", "Harvest"]
 
 Your home’s exterior doors are the absolute first line of defense against the unpredictable North Alabama weather and uninvited intruders. When an exterior door suddenly breaks, won’t shut properly, or the locking mechanism completely fails, it instantly escalates from a minor annoyance into a massive, stressful home security emergency. 
 
-Whether it was violently swung open by a massive gust of wind destroying the hinges, or extreme humidity has suddenly swelled the wooden frame so tightly you can't engage the deadbolt, homeowners in Harvest need to know how to diagnose the issue, temporarily secure the house, and exactly when to call a professional. 
+Whether it was blown open by a strong gust of wind damaging the hinges, or high humidity has suddenly swelled the wooden frame so tightly you can't engage the deadbolt, homeowners in Harvest need to know how to diagnose the issue, temporarily secure the house, and exactly when to call a professional. 
 
 ## The Most Common Exterior Door Emergencies 
 
@@ -32,10 +32,10 @@ Whether from a stray baseball, a brutal hailstorm, or an attempted break-in, sha
 A door emergency is one of the few repairs that genuinely cannot wait until next week. An un-lockable home is unacceptable. When a professional arrives to make a permanent repair, here is how they tackle the core issues. 
 
 ### Fixing Sinking Hinges & Stripped Wood
-A master handyman will remove the tiny, stripped screws from the door frame completely. They will permanently plug the stripped holes using wood glue and solid dowels (or golf tees in a pinch!). Once the glue is cured, they will re-hang the door utilizing massive **3-inch to 4-inch heavy-duty screws**. These massive screws reach straight through the weak decorative door jamb wood and bury themselves deep into the structural 2x4 framing studs of your house, ensuring that the door will literally never sag again. 
+A Local Handyman will remove the tiny, stripped screws from the door frame completely. They will permanently plug the stripped holes using wood glue and solid dowels (or golf tees in a pinch!). Once the glue is cured, they will re-hang the door utilizing massive **3-inch to 4-inch heavy-duty screws**. These massive screws reach straight through the weak decorative door jamb wood and bury themselves deep into the structural 2x4 framing studs of your house, ensuring that the door will literally never sag again. 
 
 ### Re-Aligning the Strike Plates
-If the door has shifted from home settling and the lock no longer aligns, a professional will utilize a Dremel tool, a sharp wood chisel, or a specialized metal file. They will literally carve out and expand the hole in the metal strike plate or the wooden frame by mere fractions of a millimeter—just enough so the deadbolt smoothly and flawlessly glides into place with a single finger turn. 
+If the door has shifted from home settling and the lock no longer aligns, a professional will utilize a Dremel tool, a sharp wood chisel, or a specialized metal file. They will literally carve out and expand the hole in the metal strike plate or the wooden frame by mere fractions of a millimeter—just enough so the deadbolt smoothly and efficiently glides into place with a single finger turn. 
 
 ### Permanent Weatherproofing
 During a repair, a professional assesses the weatherstripping. By installing heavy-duty door sweeps beneath the door and aggressive foam weatherstripping along the sides, they completely seal the perimeter, stopping drafts, saving you hundreds on electricity, and preventing rainwater from destroying your subfloor. 

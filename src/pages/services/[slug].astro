@@ -41,22 +41,35 @@ export function getStaticPaths() {
             shortDesc: "Custom trim, crown molding, and woodwork",
         },
     ];
-    const cities = ["madison-al", "huntsville-al", "athens-al", "decatur-al"];
+    const cities = [
+        "madison-al",
+        "huntsville-al",
+        "athens-al",
+        "decatur-al",
+        "harvest-al",
+        "owens-cross-roads-al",
+        "hampton-cove-al",
+        "redstone-arsenal-al"
+    ];
 
     const paths: any[] = [];
 
     services.forEach((service) => {
         cities.forEach((city) => {
-            const cityNameObj: Record<string, string> = {
-                "madison-al": "Madison",
-                "huntsville-al": "Huntsville",
-                "athens-al": "Athens",
-                "decatur-al": "Decatur",
+            const cityNameObj: Record<string, {name: string, path: string}> = {
+                "madison-al": { name: "Madison", path: "madison" },
+                "huntsville-al": { name: "Huntsville", path: "huntsville" },
+                "athens-al": { name: "Athens", path: "athens" },
+                "decatur-al": { name: "Decatur", path: "decatur" },
+                "harvest-al": { name: "Harvest", path: "madison/harvest" },
+                "owens-cross-roads-al": { name: "Owens Cross Roads", path: "owens-cross-roads" },
+                "hampton-cove-al": { name: "Hampton Cove", path: "huntsville/hampton-cove" },
+                "redstone-arsenal-al": { name: "Redstone Arsenal", path: "redstone-arsenal" }
             };
-            const cityName = cityNameObj[city];
+            const cityData = cityNameObj[city];
             paths.push({
                 params: { slug: `${service.id}-${city}` },
-                props: { service, city: cityName, fullCity: city },
+                props: { service, city: cityData.name, cityPath: cityData.path, fullCity: city },
             });
         });
     });
@@ -64,7 +77,7 @@ export function getStaticPaths() {
     return paths;
 }
 
-const { service, city } = Astro.props;
+const { service, city, cityPath } = Astro.props;
 const { slug } = Astro.params;
 
 const title = `${service.name} in ${city}, AL | Local Expert Handyman`;
@@ -141,7 +154,7 @@ const localSchema = {
                     >
                     <span class="opacity-50">/</span>
                     <a
-                        href={`/locations/${city.toLowerCase()}`}
+                        href={`/locations/${cityPath}`}
                         class="hover:text-white transition-colors">{city}</a
                     >
                     <span class="opacity-50">/</span>
@@ -434,7 +447,7 @@ const localSchema = {
                 actively working in the industry, we have rigorously refined our
                 daily operational processes. This continual optimization ensures
                 that absolutely every {service.name.toLowerCase()} project we undertake
-                in {city} is executed flawlessly from the very first introductory
+                in {city} is executed efficiently from the very first introductory
                 phone call all the way to the final, celebratory handshake. Here is
                 exactly what you can expect when you make the smart decision to hire
                 our professional team:

@@ -60,7 +60,7 @@ A premium emergency professional provides absolute peace of mind during a chaoti
 
 ## The Rittenworx Emergency Response Standard
 
-At Rittenworx, we specialize in high-end, rapid-response home care for luxury properties across Madison, Huntsville, and Athens. When your home is in crisis, you don't need a handyman who might show up next Tuesday. You need a trusted, heavily insured professional who responds immediately, stabilizes the chaos, and executes a flawless repair.
+At Rittenworx, we specialize in high-end, rapid-response home care for luxury properties across Madison, Huntsville, and Athens. When your home is in crisis, you don't need a handyman who might show up next Tuesday. You need a trusted, heavily insured professional who responds immediately, stabilizes the chaos, and executes a Quality repair.
 
 We view our relationships with our clients as long-term partnerships in protecting their largest asset. When you face an emergency, we deliver a zero-friction, elite experience:
 
@@ -77,4 +77,4 @@ The smartest homeowners build a relationship with a premium maintenance service 
 
 However, if an emergency has already struck, don't leave the structural integrity of your luxury Madison home to chance. 
 
-[**Contact Rittenworx today**](/quote) or call us immediately at **(256) 221-0373**. We will secure your property, execute flawless repairs, and deliver absolute peace of mind.
+[**Contact Rittenworx today**](/quote) or call us immediately at **(256) 221-0373**. We will secure your property, execute Quality repairs, and deliver absolute peace of mind.

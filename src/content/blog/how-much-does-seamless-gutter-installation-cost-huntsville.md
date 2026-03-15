@@ -12,7 +12,7 @@ Without gutters, the torrential Huntsville spring rainstorms will aggressively d
 
 However, before the massive aluminum extrusion truck backs into your driveway, you likely have one primary concern: How much does professional seamless gutter installation actually cost? 
 
-Here is a radically transparent guide to precisely how gutter companies price their installations in North Alabama.
+Here is a transparent guide to precisely how gutter companies price their installations in North Alabama.
 
 ## The Standard Pricing Model (Cost Per Linear Foot)
 Seamless gutter installation is almost universally priced by the "linear foot." This means the installer measures the exact length of the fascia boards around your roofline where the gutters will hang, plus the total vertical height of every single downspout required to drop the water safely to the ground.

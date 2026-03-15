@@ -76,7 +76,7 @@ A high-end repair involves using a hopper gun or specialized sea sponges and dry
 
 It is incredibly tempting to watch a five-minute YouTube tutorial, buy $40 worth of supplies from the local big-box store, and attempt to patch a hole yourself. 
 
-However, drywall finishing is a highly specific trade skill that takes years of repetition to master. In the vast majority of cases we see in Madison, the DIY repair looks significantly worse than the hole itself. The homeowner ends up with a wavy, lumpy, mismatched section of the wall. 
+However, drywall finishing is a highly specific trade skill that takes years of repetition to learn. In the vast majority of cases we see in Madison, the DIY repair looks significantly worse than the hole itself. The homeowner ends up with a wavy, lumpy, mismatched section of the wall. 
 
 At this point, you have two choices: live with an ugly wall that diminishes the premium feel of your luxury home and lowers its resale value, or hire a professional to fix it. 
 

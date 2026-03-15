@@ -52,7 +52,7 @@ Never, ever apply topcoat paint directly to bare wood or epoxy patches. Bare woo
 *   Spot-prime every single area of bare wood, patch, or heavily weathered siding with a high-quality, slow-drying oil-based primer or an advanced acrylic bonding primer. 
 
 ## 6. The Final Application
-Only after the scraping, patching, caulking, masking, and priming are flawlessly complete do you finally open the paint can. 
+Only after the scraping, patching, caulking, masking, and priming are efficiently complete do you finally open the paint can. 
 *   Use a high-quality, 100% acrylic exterior paint (like Sherwin-Williams Duration or Emerald). 
 *   Apply the paint only when the weather is between 50°F and 85°F, and avoid painting in direct, blasting sunlight. 
 *   Two coats are always better than one thick coat, providing maximum protection against UV rays and southern rainstorms.

@@ -18,9 +18,9 @@ Here is the complete guide to custom baseboards and crown molding for homeowners
 The first important step when dramatically replacing trim is picking exactly the right material.
 
 ### MDF (Medium-Density Fiberboard) [The Modern Standard]
-If you intend on having flawlessly painted, pristine white trim, MDF is the ultimate modern architectural weapon.
+If you intend on having efficiently painted, pristine white trim, MDF is the ultimate modern architectural weapon.
 *   **The Advantage:** It is perfectly straight, it will never warp in the summer humidity, it lacks any heavy natural wood grain (meaning its incredibly dense surface paints like absolute high-gloss glass), and it is significantly cheaper than solid raw wood.
-*   **The Disadvantage:** If extreme amounts of water hit it (like a massive bathroom flood), the MDF will absorb the water like a sponge, permanently swelling and destroying the trim. 
+*   **The Disadvantage:** If large amounts of water hit it (like a massive bathroom flood), the MDF will absorb the water like a sponge, permanently swelling and destroying the trim. 
 
 ### Finger-Jointed Pine
 This is real wood composed of smaller pieces of pine glued together end-to-end to create a long, straight board.
@@ -33,11 +33,11 @@ If you specifically desire a clear-coat stain finish displaying raw, natural woo
 *   **The Disadvantage:** Extraordinarily expensive and highly demanding to install correctly without splitting the dense wood. 
 
 ## Step 2: Coping vs. Mitering the Inside Corners
-This is the number one differentiator between a flawless professional carpenter and an amateur DIY handyman. 
+This is the number one differentiator between a Quality professional carpenter and an amateur DIY handyman. 
 
 When heavy, rigid crown molding meets the hidden inside corner of your ceiling, cutting the two pieces of wood at exactly 45 degrees so they perfectly intersect (mitering) almost never works. Why? Because houses are rarely built perfectly square. If the drywall corner is actually 88 degrees instead of 90 degrees, your 45-degree cuts will completely gap open.
 
-*   **The Solution is Coping:** A master finish carpenter will "cope" the inside corner. They install the first piece of molding completely flush and flat against the wall into the corner. Then, they use a highly specialized hand saw (a coping saw) to meticulously carve the exact architectural profile of the molding out of the *back* of the intersecting piece of wood. 
+*   **The Solution is Coping:** An experienced finish carpenter will "cope" the inside corner. They install the first piece of molding completely flush and flat against the wall into the corner. Then, they use a highly specialized hand saw (a coping saw) to meticulously carve the exact architectural profile of the molding out of the *back* of the intersecting piece of wood. 
 *   This allows the second piece of molding to seamlessly slide completely *over* the face of the first piece. 
 *   **The Result:** Even when the house aggressively settles and the wood shrinks during the Alabama winter, the coped joint will completely hide the movement safely behind itself, whereas a mitered joint will violently crack open and expose the gap to the entire room.
 
@@ -52,6 +52,6 @@ If you upgrade the baseboards, you must simultaneously rip down and upgrade the 
 ## Never Settle For Tiny Trim
 Massive, gorgeous trim instantly defines the aesthetic architecture of your entirely expensive home. 
 
-The master carpenters at **Rittenworx Handyman Service** specialize in seamless, heavily coped crown molding, massive baseboard upgrades, and pristine wainscoting installations across the highly demanding Hampton Cove area. 
+The experienced carpenters at **Rittenworx Handyman Service** specialize in seamless, heavily coped crown molding, massive baseboard upgrades, and pristine wainscoting installations across the highly demanding Hampton Cove area. 
 
 **Text us a photo of your blank, boring walls right now, and let's thoroughly elevate your home's architecture today!**

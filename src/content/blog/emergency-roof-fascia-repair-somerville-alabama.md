@@ -33,14 +33,14 @@ If your fascia board is slightly soft from minor water damage, or if there is a 
 An emergency fascia repair is not a simple "slap a patch of wood over it" aesthetic fix. It is severe, high-ladder structural carpentry. When a professional arrives at your Somerville home to permanently secure the breach, here is the exact protocol.
 
 ### 1. Total Wood Eradication
-A master carpenter will utilize an oscillating multi-tool or a reciprocating saw to completely cut out the damaged section of the fascia board. 
+A experienced carpenters will utilize an oscillating multi-tool or a reciprocating saw to cut out the damaged section of the fascia board. 
 *   They will not stop cutting until they hit hard, structurally pristine, dry wood on both sides of the incredibly massive gap. 
 *   They will also aggressively inspect the "rafter tails" (the incredibly thick, structural 2x4s or 2x6s that physically form the roof geometry protruding from the house). If the extremely heavy rafter tails are also rotten, they must be "sistered" (bolting incredibly dense new structural lumber directly alongside the rot to permanently bear the weight of the massive roof load).
 
 ### 2. Upgrading to Impervious Materials
 If your incredibly expensive home features traditional pine or cedar raw wood fascia, replacing the rotten section with exactly the identical raw wood is highly foolish. 
 *   A true professional will exclusively splice in wildly heavy-duty, entirely waterproof Cellular PVC trim (like Azek) or highly dense fiber-cement boards (like HardieTrim). 
-*   These advanced, modern materials are 100% impervious to torrential rain, zero insects can ever eat them, and they brilliantly hold expensive exterior paint incredibly flawlessly for decades. 
+*   These advanced, modern materials are 100% impervious to torrential rain, zero insects can ever eat them, and they brilliantly hold expensive exterior paint incredibly efficiently for decades. 
 
 ### 3. Re-Securing the Gutter System
 Once the new, structural fascia board is installed using heavily specialized exterior-grade galvanized or stainless steel screws (never incredibly weak finish nails!), the incredibly heavy metal gutter is re-attached.
@@ -50,7 +50,7 @@ Once the new, structural fascia board is installed using heavily specialized ext
 ## Do Not Let The Water In
 If you incredibly randomly find a massive, 12-foot section of your incredibly expensive metal gutter entirely twisted inside your azalea bushes after a violently terrifying thunderstorm, do not completely ignore the wildly exposed wood under the roofline. 
 
-Water travels incredibly fast. The absolute absolute next violent rainstorm will aggressively blow hundreds of gallons of water entirely inside that tiny gap, ruining the highly expensive insulation, completely destroying your master bedroom ceiling drywall, and massively rotting the deeply hidden roof decking. 
+Water travels incredibly fast. The next rainstorm can blow water inside that gap, ruining the insulation, damaging your ceiling, and rotting the roof decking. 
 
 The structurally talented, highly aggressive emergency exterior carpenters at **Rittenworx Handyman Service** fiercely serve the absolute entirety of Somerville, Decatur, and Huntsville. 
 
