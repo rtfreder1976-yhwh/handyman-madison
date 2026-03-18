@@ -5,94 +5,94 @@ import InlineQuoteForm from "../../components/InlineQuoteForm.astro";
 
 const includedServices = [
   {
-    title: "Hardwood Flooring",
+    title: "Epoxy Flooring Systems",
     items: [
-      "Solid hardwood installation",
-      "Engineered hardwood installation",
-      "Hardwood floor refinishing",
-      "Board replacement and repair",
-      "Staining and color matching",
-      "Polyurethane finishing",
-      "Hardwood floor buffing",
-      "Transition strip installation",
+      "Solid color epoxy coatings",
+      "Metallic epoxy finishes",
+      "Vinyl flake epoxy floors",
+      "Quartz epoxy flooring",
+      "Commercial shop coatings",
+      "Industrial warehouse floors",
+      "Basement epoxy finishing",
+      "Showroom quality results",
     ],
   },
   {
-    title: "Laminate Flooring",
+    title: "Polyaspartic Coatings",
     items: [
-      "Floating laminate installation",
-      "Click-lock system flooring",
-      "Laminate plank replacement",
-      "Underlayment installation",
-      "Moisture barrier installation",
-      "Quarter round and trim",
-      "Threshold transitions",
-      "Subfloor preparation",
+      "One-day floor installation",
+      "UV-stable topcoats",
+      "Superior abrasion resistance",
+      "Rapid-cure technology",
+      "Cold-weather applicable",
+      "Chemical & slip resistance",
+      "Extreme durability",
+      "Clear & pigmented options",
     ],
   },
   {
-    title: "Vinyl & LVP Flooring",
+    title: "Concrete Preparation",
     items: [
-      "Luxury vinyl plank (LVP) installation",
-      "Luxury vinyl tile (LVT) installation",
-      "Sheet vinyl installation",
-      "Waterproof flooring for bathrooms",
-      "Kitchen vinyl flooring",
-      "Vinyl plank repair",
-      "Glue-down vinyl installation",
-      "Commercial-grade vinyl",
+      "Diamond grinding surfaces",
+      "Crack & pit repair",
+      "Moisture vapor testing",
+      "Industrial vacuums (HEPA)",
+      "Surface degreasing",
+      "Expansion joint filling",
+      "Old coating removal",
+      "Slab leveling",
     ],
   },
   {
-    title: "Specialty Flooring",
+    title: "Specialty Applications",
     items: [
-      "Waterproof flooring solutions",
-      "Pet-friendly flooring options",
-      "High-traffic area flooring",
-      "Basement flooring installation",
-      "Sunroom and enclosed porch flooring",
-      "Commercial-grade residential flooring",
-      "Eco-friendly flooring options",
-      "Stair treads and risers",
+      "Moisture vapor barriers",
+      "Decorative broadcast systems",
+      "High-traffic protection",
+      "Retail & studio flooring",
+      "Anti-skid safety textures",
+      "Border & logo integration",
+      "UV-resistant polyaspartic",
+      "Food-grade floor coatings",
     ],
   },
 ];
 
 const flooringTypes = [
   {
-    name: "Hardwood",
-    durability: "25+ years",
-    best: "Living rooms, bedrooms",
-    waterproof: "No",
-    maintenance: "Refinish every 7-10 years",
-  },
-  {
-    name: "Engineered",
-    durability: "20-30 years",
-    best: "Any room, basements OK",
-    waterproof: "Some",
-    maintenance: "Low - sweep and mop",
-  },
-  {
-    name: "Laminate",
-    durability: "15-25 years",
-    best: "Bedrooms, offices",
-    waterproof: "No",
-    maintenance: "Very low - sweep and damp mop",
-  },
-  {
-    name: "LVP/LVT",
-    durability: "15-20 years",
-    best: "Kitchens, baths, anywhere",
-    waterproof: "Yes",
-    maintenance: "Very low - sweep and mop",
-  },
-  {
-    name: "Sheet Vinyl",
+    name: "Standard Epoxy",
     durability: "10-20 years",
-    best: "Bathrooms, laundry, kitchens",
+    best: "Garages, basements",
     waterproof: "Yes",
-    maintenance: "Very low - sweep and mop",
+    maintenance: "Low - mop and sweep",
+  },
+  {
+    name: "Metallic Epoxy",
+    durability: "15-20 years",
+    best: "Showrooms, living areas",
+    waterproof: "Yes",
+    maintenance: "Low - high gloss finish",
+  },
+  {
+    name: "Vinyl Flake",
+    durability: "20+ years",
+    best: "Garages, shops, patios",
+    waterproof: "Yes",
+    maintenance: "Very low - textured",
+  },
+  {
+    name: "Polyaspartic",
+    durability: "20+ years",
+    best: "Commercial, high traffic",
+    waterproof: "Yes",
+    maintenance: "Minimal maintenance",
+  },
+  {
+    name: "Quartz Epoxy",
+    durability: "25+ years",
+    best: "Kitchens, heavy utility",
+    waterproof: "Yes",
+    maintenance: "Extremely durable",
   },
 ];
 
@@ -282,8 +282,8 @@ const serviceAreas = [
 ---
 
 <Layout
-  title="Flooring Installation & Repair"
-  description="Professional flooring installation in Madison, Huntsville & North Alabama. Hardwood, laminate, LVP, vinyl plank. Free estimates, emergency water damage service."
+  title="Garage Floor Coating & Epoxy"
+  description="Professional garage floor coating and epoxy in Madison, Huntsville & North Alabama. Durable, high-gloss finishes. Free estimates."
 >
   <!-- Premium Hero Section -->
   <section
@@ -291,7 +291,7 @@ const serviceAreas = [
   >
     <div class="absolute inset-0 z-0">
       <img
-        src="/images/flooring.webp"
+        src="/images/epoxy-floor.webp"
         alt="Flooring Services"
         class="w-full h-full object-cover opacity-20 scale-105 animate-[pulse_10s_ease-in-out_infinite_alternate]"
       />
@@ -312,7 +312,7 @@ const serviceAreas = [
             >Services</a
           >
           <span class="opacity-50">/</span>
-          <span class="text-orange-400">Flooring</span>
+          <span class="text-orange-400">Garage Floor Coating</span>
         </nav>
 
         <div
@@ -321,24 +321,24 @@ const serviceAreas = [
           <span
             class="w-2 h-2 inline-block rounded-full bg-orange-400 mr-2 animate-pulse"
           ></span>
-          Expert Flooring Services
+          Expert Garage Floor Coatings
         </div>
 
         <h1
           class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight"
         >
-          Flooring <span
+          Garage Floor <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600"
-            >Installation & Repair</span
+            >Epoxy Coating</span
           >
         </h1>
 
         <p
           class="text-xl md:text-2xl text-blue-100 mb-10 font-light leading-relaxed"
         >
-          Transform your home with beautiful new floors. Hardwood, laminate, and
-          luxury vinyl plank installed by experts with attention to every
-          detail.
+          Transform your garage with a premium showroom-quality finish. Durable, 
+          stain-resistant epoxy coatings installed by experts with meticulous 
+          attention to every detail.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4">
