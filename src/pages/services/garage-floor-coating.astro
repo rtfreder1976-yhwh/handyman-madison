@@ -5,259 +5,242 @@ import InlineQuoteForm from "../../components/InlineQuoteForm.astro";
 
 const includedServices = [
   {
-    title: "Epoxy Flooring Systems",
+    title: "Epoxy Floor Coating",
     items: [
-      "Solid color epoxy coatings",
-      "Metallic epoxy finishes",
-      "Vinyl flake epoxy floors",
-      "Quartz epoxy flooring",
-      "Commercial shop coatings",
-      "Industrial warehouse floors",
-      "Basement epoxy finishing",
-      "Showroom quality results",
+      "Single-coat solid epoxy application",
+      "Multi-layer high-build epoxy systems",
+      "Metallic epoxy designer floors",
+      "Water-based and solvent-based epoxy options",
+      "Anti-slip additive integration",
+      "UV-resistant topcoat finishing",
+      "Color-matched custom blends",
+      "Industrial-strength commercial epoxy",
     ],
   },
   {
-    title: "Polyaspartic Coatings",
+    title: "Flake (Chip) Floor Systems",
     items: [
-      "One-day floor installation",
-      "UV-stable topcoats",
-      "Superior abrasion resistance",
-      "Rapid-cure technology",
-      "Cold-weather applicable",
-      "Chemical & slip resistance",
-      "Extreme durability",
-      "Clear & pigmented options",
+      "Full-broadcast decorative flake floors",
+      "Partial-broadcast accent flake designs",
+      "Custom color flake blending",
+      "Multi-color chip combinations",
+      "Clear polyaspartic topcoat sealing",
+      "Textured non-slip flake finishes",
+      "Seamless one-day flake installations",
+      "High-durability broadcast systems",
     ],
   },
   {
-    title: "Concrete Preparation",
+    title: "Surface Preparation",
     items: [
-      "Diamond grinding surfaces",
-      "Crack & pit repair",
-      "Moisture vapor testing",
-      "Industrial vacuums (HEPA)",
-      "Surface degreasing",
-      "Expansion joint filling",
-      "Old coating removal",
-      "Slab leveling",
+      "Diamond grinding and profiling",
+      "Concrete crack and spall repair",
+      "Moisture testing and vapor mitigation",
+      "Oil stain and contaminant removal",
+      "Expansion joint treatment",
+      "Concrete leveling and patching",
+      "Previous coating removal",
+      "Acid etching when required",
     ],
   },
   {
-    title: "Specialty Applications",
+    title: "Specialty Coatings",
     items: [
-      "Moisture vapor barriers",
-      "Decorative broadcast systems",
-      "High-traffic protection",
-      "Retail & studio flooring",
-      "Anti-skid safety textures",
-      "Border & logo integration",
-      "UV-resistant polyaspartic",
-      "Food-grade floor coatings",
+      "Polyaspartic fast-cure systems",
+      "Polyurea high-performance coatings",
+      "Chemical-resistant workshop floors",
+      "Hot-tire pickup resistant finishes",
+      "Garage workshop anti-fatigue coatings",
+      "Showroom-grade mirror finishes",
+      "Outdoor-rated patio and carport coatings",
+      "Commercial warehouse floor systems",
     ],
   },
 ];
 
-const flooringTypes = [
+const coatingTypes = [
   {
-    name: "Standard Epoxy",
+    name: "Solid Epoxy",
     durability: "10-20 years",
-    best: "Garages, basements",
-    waterproof: "Yes",
-    maintenance: "Low - mop and sweep",
+    best: "Standard garages, workshops",
+    cureTime: "3-5 days",
+    maintenance: "Very low - sweep and mop",
+  },
+  {
+    name: "Flake/Chip",
+    durability: "15-20 years",
+    best: "Residential garages, showrooms",
+    cureTime: "1-2 days (polyaspartic)",
+    maintenance: "Very low - sweep and mop",
   },
   {
     name: "Metallic Epoxy",
     durability: "15-20 years",
-    best: "Showrooms, living areas",
-    waterproof: "Yes",
-    maintenance: "Low - high gloss finish",
-  },
-  {
-    name: "Vinyl Flake",
-    durability: "20+ years",
-    best: "Garages, shops, patios",
-    waterproof: "Yes",
-    maintenance: "Very low - textured",
+    best: "Showrooms, man caves, upscale garages",
+    cureTime: "3-5 days",
+    maintenance: "Low - sweep and damp mop",
   },
   {
     name: "Polyaspartic",
-    durability: "20+ years",
-    best: "Commercial, high traffic",
-    waterproof: "Yes",
-    maintenance: "Minimal maintenance",
+    durability: "15-25 years",
+    best: "High-traffic, fast turnaround",
+    cureTime: "1 day",
+    maintenance: "Very low - sweep and mop",
   },
   {
-    name: "Quartz Epoxy",
-    durability: "25+ years",
-    best: "Kitchens, heavy utility",
-    waterproof: "Yes",
-    maintenance: "Extremely durable",
+    name: "Polyurea",
+    durability: "20+ years",
+    best: "Extreme environments, chemical exposure",
+    cureTime: "1 day",
+    maintenance: "Very low - virtually maintenance-free",
   },
 ];
 
 const commonProblems = [
   {
-    problem: "Scratched or worn hardwood floors",
+    problem: "Cracked, pitting, or spalling concrete garage floor",
     solution:
-      "We sand, refinish, and restore hardwood floors to like-new condition. For minor scratches, we can spot-repair without full refinishing.",
+      "We grind, fill, and seal every imperfection before applying your coating system. The result is a flawless, factory-smooth surface that stops further deterioration permanently.",
   },
   {
-    problem: "Water-damaged flooring from leaks or floods",
+    problem: "Oil stains and chemical damage that won't clean up",
     solution:
-      "We remove damaged sections, address moisture issues, and install matching replacement flooring. Emergency service available for active water damage.",
+      "Our diamond grinding process removes embedded oil and chemical damage down to clean concrete. Your new epoxy or flake coating creates an impenetrable barrier against future stains.",
   },
   {
-    problem: "Squeaky or creaky floors",
+    problem: "Dusty concrete that tracks grime into your home",
     solution:
-      "We secure loose subfloor, add shims, or reinforce joists to eliminate squeaks permanently without visible repairs.",
+      "Bare concrete constantly sheds microscopic dust. Our coating system seals the surface completely, eliminating concrete dust and making your garage as clean as any room in your house.",
   },
   {
-    problem: "Vinyl flooring peeling or lifting at edges",
+    problem: "Slippery garage floor that's dangerous when wet",
     solution:
-      "We re-adhere or replace damaged vinyl sections with proper adhesive and seam sealing for a lasting repair.",
+      "We integrate professional-grade anti-slip additives directly into your topcoat. Walk confidently on your garage floor in any weather condition, even with wet shoes or snow melt.",
   },
   {
-    problem: "Laminate planks lifting, buckling, or separating",
+    problem: "Previous DIY coating peeling and flaking off",
     solution:
-      "We identify the cause (usually moisture), remove damaged sections, fix underlayment issues, and install new matching planks.",
+      "We completely remove the failed coating, properly profile the concrete with diamond grinders, and apply a professional-grade system that bonds permanently. No peeling. No flaking. Guaranteed.",
   },
   {
-    problem: "Outdated flooring making home feel dated",
+    problem: "Hot tire pickup leaving marks on the floor",
     solution:
-      "We remove old flooring and install modern options like LVP or engineered hardwood that transform your space and increase home value.",
+      "Our polyaspartic and polyurea topcoats are specifically engineered to resist hot-tire pickup. Your coated floor stays pristine no matter how hot your tires get after highway driving.",
   },
   {
-    problem: "Uneven or sloping floors",
+    problem: "Damp, musty garage with moisture seeping through concrete",
     solution:
-      "We level subfloors with self-leveling compound or plywood before installation, ensuring flat, professional results.",
+      "We perform professional moisture testing and apply vapor-mitigating primers before your coating. This stops moisture migration and transforms your damp garage into a dry, usable space.",
   },
   {
-    problem: "Gaps appearing between floorboards",
+    problem: "Outdated, ugly garage floor dragging down home value",
     solution:
-      "We fill gaps with matching wood filler or, for severe cases, remove and re-install boards for a tight, seamless floor.",
+      "A professionally coated garage floor delivers one of the highest ROI upgrades for your home. Buyers notice immediately. Your garage transforms from eyesore to showpiece in a single day.",
   },
 ];
 
 const processSteps = [
   {
     step: 1,
-    title: "Contact & Consultation",
+    title: "Free Consultation & Estimate",
     description:
-      "Call or message us about your flooring project. We discuss your needs, preferences, and can recommend flooring types based on your lifestyle, budget, and room usage.",
+      "Text us a photo of your garage floor or call for a free on-site assessment. We evaluate your concrete condition, discuss coating options, and lock in transparent pricing with zero hidden fees.",
     time: "Same day response",
   },
   {
     step: 2,
-    title: "Free On-Site Estimate",
+    title: "Concrete Assessment & Prep Plan",
     description:
-      "We measure your space precisely, assess subfloor condition, check for moisture issues, and identify any prep work needed. You receive a detailed written quote.",
-    time: "Within 48 hours",
+      "We inspect for moisture issues, cracks, previous coatings, and contaminants. You receive a detailed prep-and-install plan tailored to your garage's exact condition and your performance requirements.",
+    time: "Included in estimate visit",
   },
   {
     step: 3,
-    title: "Material Selection",
+    title: "Diamond Grinding & Surface Prep",
     description:
-      "We help you choose the right flooring — considering durability, water resistance, style, and budget. We can bring samples to your home to see how they look in your lighting.",
-    time: "Flexible",
+      "Our industrial diamond grinders open the concrete pores for maximum coating adhesion. We fill cracks, repair spalls, and create the ideal surface profile. This step determines coating longevity.",
+    time: "Day 1 morning",
   },
   {
     step: 4,
-    title: "Schedule Installation",
+    title: "Primer & Base Coat Application",
     description:
-      "Pick dates that work for you. We confirm appointments 24 hours and 2 hours before arrival. Most installations scheduled within 5-7 days of material availability.",
-    time: "5-7 days typically",
+      "We apply a penetrating primer that bonds deep into the concrete, followed by your chosen base coat color. Each layer is rolled at precise mil thickness for uniform coverage and maximum durability.",
+    time: "Day 1 afternoon",
   },
   {
     step: 5,
-    title: "Prepare the Space",
+    title: "Flake Broadcast or Design Layer",
     description:
-      "We move furniture, remove old flooring (if needed), and prepare the subfloor. This includes leveling, moisture barriers, and underlayment as required.",
-    time: "Day 1",
+      "For flake systems, we broadcast your chosen color blend at full coverage for a seamless look. For metallic or solid systems, we apply the design layer with professional technique for stunning results.",
+    time: "Immediately after base coat",
   },
   {
     step: 6,
-    title: "Professional Installation",
+    title: "Topcoat & Protective Seal",
     description:
-      "Our skilled installers lay your new flooring with precision. Proper acclimation, staggered patterns, tight seams, and careful cuts around obstacles.",
-    time: "1-3 days typical",
+      "A high-performance clear topcoat locks everything in and provides UV protection, chemical resistance, and hot-tire pickup resistance. This layer is what makes your floor virtually indestructible.",
+    time: "Day 2 (or same day for polyaspartic)",
   },
   {
     step: 7,
-    title: "Finishing Touches",
+    title: "Quality Inspection & Walkthrough",
     description:
-      "We install transitions, quarter round, thresholds, and trim. Every edge is finished professionally. Furniture moved back into place.",
-    time: "Final day",
-  },
-  {
-    step: 8,
-    title: "Final Walkthrough",
-    description:
-      "Walk through with you to ensure complete satisfaction. We explain care instructions and leave your space clean and ready to enjoy.",
-    time: "30 minutes",
+      "We conduct a thorough inspection of every square foot. You walk the finished floor with us to confirm complete satisfaction before we consider the job done. We leave your garage spotless.",
+    time: "Final step",
   },
 ];
 
 const faqs = [
   {
-    question: "How much does flooring installation cost?",
+    question: "How much does garage floor coating cost?",
     answer:
-      "Flooring costs vary by material and room size. Laminate runs $3-8/sq ft installed, LVP $4-10/sq ft, and hardwood $8-15/sq ft. A typical 300 sq ft room ranges from $900-4,500 depending on material. We provide free detailed estimates.",
+      "Professional garage floor coating typically ranges from $3-$12 per square foot installed, depending on the system. A standard 2-car garage (400-500 sq ft) runs $1,500-$5,000. Solid epoxy is most affordable, flake systems are mid-range, and metallic or polyaspartic systems are premium. We provide free detailed estimates with no hidden costs.",
   },
   {
-    question: "How long does flooring installation take?",
+    question: "How long does garage floor coating take to install?",
     answer:
-      "A single room (up to 300 sq ft) typically takes 1 day. Larger areas or whole-house installations take 2-5 days. Hardwood refinishing requires 3-5 days including drying time. We'll give you a specific timeline with your estimate.",
+      "Polyaspartic and polyurea systems can be completed in a single day with vehicle parking in 24 hours. Traditional epoxy systems require 2-3 days of application time plus 3-5 days of cure time before heavy use. We schedule around your needs and clearly communicate the timeline upfront.",
   },
   {
-    question: "Do I need to move my furniture?",
+    question: "How long do I need to keep my car off the new floor?",
     answer:
-      "We handle furniture moving as part of our service. We'll move items out, install flooring, and move them back. For large or delicate items, we may ask you to empty the room beforehand. We use furniture pads to protect everything.",
+      "For polyaspartic systems, you can typically park on the floor within 24 hours. For epoxy systems, we recommend waiting 72 hours for light foot traffic and 5-7 days before parking vehicles. We provide exact timing based on your specific coating system and current temperature conditions.",
   },
   {
-    question: "What flooring is best for kitchens and bathrooms?",
+    question: "Will epoxy coating fix cracks in my garage floor?",
     answer:
-      "Waterproof options are essential: LVP (luxury vinyl plank) or sheet vinyl. We don't recommend hardwood or laminate in wet areas. LVP is our top recommendation — it's waterproof, durable, and looks like real wood.",
+      "We repair all cracks, spalls, and imperfections as part of our surface preparation process before applying any coating. Small cracks are filled with epoxy filler, and larger structural cracks are addressed with proper crack repair systems. The coating then seals and protects the repaired surface.",
   },
   {
-    question: "Can you install flooring over existing flooring?",
+    question: "What's the difference between epoxy and polyaspartic coatings?",
     answer:
-      "Sometimes. Floating floors (laminate, LVP) can often go over existing hard surfaces if they're flat and in good condition. However, installing over old flooring can raise floor height and affect doors/transitions. We'll advise on the best approach.",
+      "Epoxy is more affordable and provides excellent chemical resistance but requires 3-5 days to fully cure. Polyaspartic costs more but cures in hours, offers superior UV stability (won't yellow), and resists hot-tire pickup better. We often recommend polyaspartic topcoats over epoxy base coats for the best of both worlds.",
   },
   {
-    question: "How do I care for new hardwood floors?",
+    question: "Can you coat a floor with existing epoxy or paint on it?",
     answer:
-      "Sweep or vacuum regularly (use soft settings). Damp mop occasionally with hardwood cleaner — never wet mop. Use furniture pads under legs. Maintain consistent humidity (35-55%). Avoid high heels and pet nail scratches. Refinish every 7-10 years.",
+      "Yes, but the old coating must be removed or properly abraded first. We use diamond grinders to remove or profile existing coatings down to clean, bondable concrete. Applying new coating over a failing old one guarantees failure. We do it right the first time.",
   },
   {
-    question: "What's the difference between LVP and laminate?",
+    question: "Are garage floor coatings slippery?",
     answer:
-      "LVP (luxury vinyl plank) is 100% waterproof and more durable — great for any room including bathrooms. Laminate has a wood-fiber core that swells when wet — avoid in kitchens/baths. LVP is slightly more expensive but worth it for versatility.",
+      "Not when installed properly. We incorporate professional anti-slip additives into the topcoat, and flake broadcast systems naturally create texture. Your coated floor will be safer than bare concrete, even when wet from rain, snow melt, or car wash runoff.",
   },
   {
-    question: "Do you remove and dispose of old flooring?",
+    question: "Do you offer any warranty on garage floor coatings?",
     answer:
-      "Yes, old flooring removal and disposal is included in our service. We remove laminate, vinyl, and old flooring materials and haul them away. Hardwood removal is more involved and priced separately if needed.",
+      "Yes. Our professional coating systems come with manufacturer warranties on materials, and we stand behind our workmanship. Specific warranty terms depend on the coating system selected. We discuss all warranty details during your free consultation so you know exactly what's covered.",
   },
   {
-    question: "How long should flooring acclimate before installation?",
+    question: "Can garage floor coating be applied in winter or cold weather?",
     answer:
-      "Most flooring should acclimate 48-72 hours in the room where it will be installed. This allows the material to adjust to your home's temperature and humidity, preventing expansion issues after installation.",
+      "Temperature matters. Most coatings require concrete and ambient temperatures above 50°F during application and cure. In North Alabama, we can install year-round in most conditions. If temperatures are too low, we'll schedule for the next appropriate window rather than risk a compromised installation.",
   },
   {
-    question: "Can you match existing flooring for repairs?",
+    question: "What makes your garage floor coating service different from DIY kits?",
     answer:
-      "We do our best to match existing flooring. For common products, we can often find exact matches. For discontinued or older flooring, we'll find the closest match available. Sometimes creative transitions between old and new look best.",
-  },
-  {
-    question: "Do you offer emergency flooring service?",
-    answer:
-      "Yes! For water damage situations where flooring needs immediate removal to prevent mold, we offer same-day and next-day emergency service. Call us directly for urgent flooring issues.",
-  },
-  {
-    question: "What subfloor preparation is needed?",
-    answer:
-      "We inspect and prep subfloors as part of every installation. This may include leveling with compound, replacing damaged sections, adding moisture barriers, or installing underlayment. Proper prep is key to flooring that lasts.",
+      "Professional diamond grinding creates 10x the adhesion profile of DIY acid etching. Our commercial-grade coatings are 3-5x thicker than retail kits. We use industrial equipment, proper moisture testing, and professional-grade materials that aren't available at home improvement stores. The result lasts 15-20 years instead of 2-3.",
   },
 ];
 
@@ -282,19 +265,18 @@ const serviceAreas = [
 ---
 
 <Layout
-  title="Garage Floor Coating & Epoxy"
-  description="Professional garage floor coating and epoxy in Madison, Huntsville & North Alabama. Durable, high-gloss finishes. Free estimates."
+  title="Garage Floor Coating (Epoxy & Flake) | Madison AL"
+  description="Professional garage floor coating in Madison, Huntsville & North Alabama. Epoxy, flake, polyaspartic & metallic systems. Transform your garage in one day. Free estimates."
 >
   <!-- Premium Hero Section -->
   <section
     class="relative bg-blue-900 text-white pt-32 pb-24 flex items-center overflow-hidden"
   >
     <div class="absolute inset-0 z-0">
-      <img
-        src="/images/epoxy-floor.webp"
-        alt="Flooring Services"
-        class="w-full h-full object-cover opacity-20 scale-105 animate-[pulse_10s_ease-in-out_infinite_alternate]"
-      />
+      <div
+        class="w-full h-full bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800"
+      >
+      </div>
       <div
         class="absolute inset-0 bg-gradient-to-t from-blue-950 via-blue-900/90 to-blue-900/60"
       >
@@ -321,7 +303,7 @@ const serviceAreas = [
           <span
             class="w-2 h-2 inline-block rounded-full bg-orange-400 mr-2 animate-pulse"
           ></span>
-          Expert Garage Floor Coatings
+          Premium Garage Transformations
         </div>
 
         <h1
@@ -329,16 +311,14 @@ const serviceAreas = [
         >
           Garage Floor <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600"
-            >Epoxy Coating</span
+            >Coating</span
           >
         </h1>
 
         <p
           class="text-xl md:text-2xl text-blue-100 mb-10 font-light leading-relaxed"
         >
-          Transform your garage with a premium showroom-quality finish. Durable,
-          stain-resistant epoxy coatings installed by experts with meticulous
-          attention to every detail.
+          Stop tolerating a cracked, stained concrete floor. Our professional epoxy and flake coating systems transform your garage into a showroom-quality space that resists everything you throw at it.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4">
@@ -383,7 +363,7 @@ const serviceAreas = [
     </div>
   </section>
 
-  <!-- Emergency Banner -->
+  <!-- Urgency Banner -->
   <section class="bg-orange-500 text-white py-4">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -398,13 +378,12 @@ const serviceAreas = [
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              d="M13 10V3L4 14h7v7l9-11h-7z"></path>
           </svg>
           <div>
-            <p class="font-bold">Emergency Water Damage Service</p>
+            <p class="font-bold">Limited Spring Scheduling Available</p>
             <p class="text-sm text-orange-100">
-              Flooded floors? We offer same-day removal to prevent mold and
-              further damage.
+              Garage coating season books fast. Lock in your date now before our schedule fills.
             </p>
           </div>
         </div>
@@ -412,7 +391,7 @@ const serviceAreas = [
           href="tel:+12562210373"
           class="bg-white text-orange-500 font-bold py-2 px-6 rounded-lg hover:bg-orange-50 transition-colors whitespace-nowrap"
         >
-          Emergency Line
+          Reserve Your Spot
         </a>
       </div>
     </div>
@@ -424,60 +403,23 @@ const serviceAreas = [
       <h2
         class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 font-display tracking-tight"
       >
-        Expert Flooring Installation and Repair Services
+        Professional Garage Floor Coating That Outlasts Everything Else
       </h2>
       <p class="text-gray-700 text-lg leading-relaxed mb-6">
-        Your flooring is quite literally the foundation of your home's interior
-        design and daily functionality. It sets the overarching aesthetic tone
-        for every room while silently enduring the relentless daily traffic of
-        family members, playful children, and active pets. Attempting to install
-        or repair hardwood, laminate, or luxury vinyl plank (LVP) without a high
-        degree of professional experience often leads to disastrous
-        results—including unsightly gaps, irritating squeaks, uneven surfaces,
-        and a drastically reduced material lifespan. At Rittenworx, we deliver
-        precision-driven flooring services that elevate the structural quality
-        and visual appeal of homes throughout Madison and the surrounding North
-        Alabama region.
+        Your garage floor absorbs more punishment than any other surface in your home. Hot tires, road salt, chemical spills, heavy tool drops, and years of accumulated oil stains have left your concrete cracked, pitted, and impossible to clean. Every time you walk from garage to kitchen, you're tracking concrete dust and embedded grime into your living space. That bare concrete slab is actively working against you, and no amount of sweeping will fix the underlying problem. At Rittenworx, we permanently solve this with industrial-strength epoxy and flake coating systems that transform your deteriorating garage floor into a seamless, chemical-resistant surface that looks absolutely stunning and performs flawlessly for decades.
       </p>
       <p class="text-gray-700 text-lg leading-relaxed mb-6">
-        Modern flooring systems, especially waterproof click-lock LVP and
-        engineered hardwoods, require incredibly meticulous subfloor preparation
-        before a single plank is ever laid. An uneven concrete slab or a
-        significantly damaged plywood subfloor will quickly telegraph
-        imperfections upward, compromising the integrity of your costly new
-        investment. Our dedicated team of specialized flooring technicians
-        meticulously assesses, completely levels, and thoroughly prepares your
-        underlying foundation, ensuring a permanently Quality end result that
-        feels remarkably solid underfoot. We refuse to cut corners, guaranteeing
-        that your new floors are installed strictly according to the original
-        manufacturer's stringent specifications.
+        The difference between a professional garage floor coating and a hardware store DIY kit is the difference between a renovation that lasts 15+ years and one that peels off in 18 months. Our process starts where DIY kits can't: industrial diamond grinding that mechanically profiles your concrete to create thousands of microscopic anchor points for permanent coating adhesion. We then apply commercial-grade materials at 3-5 times the thickness of retail products, building a multi-layer armor system that handles hot tires, chemical spills, and heavy impacts without flinching. When our crew leaves your property, you won't just have a coated floor. You'll have a garage that rivals a professional showroom.
       </p>
 
       <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 mt-14">
-        Comprehensive Subfloor Repair and Water Remediation
+        Why North Alabama Homeowners Are Coating Their Garage Floors Now
       </h3>
       <p class="text-gray-700 text-lg leading-relaxed mb-6">
-        Beyond simple aesthetic upgrades, our reliable crews frequently handle
-        complex restorative flooring work stemming directly from undetected
-        plumbing leaks, severe appliance overflow accidents, and seasonal
-        foundation moisture. When standing water stealthily infiltrates beneath
-        your visible floorboards, it inevitably leads to the rapid buckling of
-        delicate hardwoods, the destructive delamination of under-layers, and
-        the hidden, dangerous proliferation of toxic subfloor mold. In these
-        highly stressful situations, immediate professional intervention is
-        absolutely critical to remove the saturated materials before structural
-        rot occurs.
+        The North Alabama climate puts unique stress on garage concrete. Summer heat drives tire temperatures above 200°F, and those scorching tires bond to bare concrete and cheap coatings, ripping them apart when you drive away. Winter brings moisture cycling that expands existing cracks and creates new ones. Every freeze-thaw cycle pushes your unprotected concrete closer to expensive structural repair territory. A professionally installed coating system stops this destructive cycle immediately and creates an impenetrable barrier between your concrete and everything that damages it.
       </p>
       <p class="text-gray-700 text-lg leading-relaxed mb-10">
-        We approach every single subfloor repair scenario with strict,
-        unwavering adherence to modern industry best practices. From expertly
-        replacing rotting joists and installing robust new plywood decking, to
-        strategically applying moisture barriers specifically rated for the
-        Alabama climate, we comprehensively reconstruct your floor from the
-        ground up. By exclusively utilizing premium installation materials, we
-        ensure that your restored flooring system will beautifully withstand
-        natural structural shifting, heavy daily wear, and environmental
-        challenges for decades to come, bringing you lasting peace of mind.
+        Beyond protection, a coated garage floor dramatically increases your usable living space and your home's resale value. Real estate agents consistently report that a professionally coated garage floor is one of the first things buyers notice during showings. It signals that the homeowner invested in quality throughout the property. Our clients regularly tell us their coated garage has become their favorite room in the house. Workshop projects, gym equipment, game nights, or simply parking on a surface you're proud of. Your garage deserves better than bare concrete, and you deserve a home that works harder for you.
       </p>
     </div>
   </section>
@@ -486,9 +428,9 @@ const serviceAreas = [
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">What's Included</h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Coating Systems We Install</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Complete flooring services for every room in your home.
+          Complete garage floor transformation from surface prep to final topcoat.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
@@ -538,73 +480,35 @@ const serviceAreas = [
     </div>
   </section>
 
-  <!-- Flooring Comparison Guide -->
+  <!-- Coating Comparison Guide -->
   <section class="py-12 bg-blue-50">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">
-        Flooring Comparison Guide
+        Garage Floor Coating Comparison Guide
       </h2>
       <div class="overflow-x-auto">
         <table class="w-full bg-white rounded-lg shadow-sm">
           <thead>
             <tr class="bg-blue-900 text-white">
-              <th class="px-4 py-3 text-left font-semibold">Type</th>
+              <th class="px-4 py-3 text-left font-semibold">System</th>
               <th class="px-4 py-3 text-left font-semibold">Lifespan</th>
               <th class="px-4 py-3 text-left font-semibold">Best For</th>
-              <th class="px-4 py-3 text-left font-semibold">Waterproof</th>
+              <th class="px-4 py-3 text-left font-semibold">Cure Time</th>
               <th class="px-4 py-3 text-left font-semibold">Maintenance</th>
             </tr>
           </thead>
           <tbody>
             {
-              flooringTypes.map((floor, index) => (
+              coatingTypes.map((coating, index) => (
                 <tr class={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
                   <td class="px-4 py-3 font-semibold text-blue-900">
-                    {floor.name}
+                    {coating.name}
                   </td>
-                  <td class="px-4 py-3 text-gray-700">{floor.durability}</td>
-                  <td class="px-4 py-3 text-gray-700">{floor.best}</td>
-                  <td class="px-4 py-3">
-                    {floor.waterproof === "Yes" ? (
-                      <span class="inline-flex items-center gap-1 text-green-600">
-                        <svg
-                          class="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        Yes
-                      </span>
-                    ) : floor.waterproof === "Some" ? (
-                      <span class="text-yellow-600">Some options</span>
-                    ) : (
-                      <span class="inline-flex items-center gap-1 text-red-500">
-                        <svg
-                          class="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                        No
-                      </span>
-                    )}
-                  </td>
+                  <td class="px-4 py-3 text-gray-700">{coating.durability}</td>
+                  <td class="px-4 py-3 text-gray-700">{coating.best}</td>
+                  <td class="px-4 py-3 text-gray-700">{coating.cureTime}</td>
                   <td class="px-4 py-3 text-gray-600 text-sm">
-                    {floor.maintenance}
+                    {coating.maintenance}
                   </td>
                 </tr>
               ))
@@ -613,8 +517,7 @@ const serviceAreas = [
         </table>
       </div>
       <p class="text-center text-gray-500 text-sm mt-4">
-        Not sure which flooring is right for you? We'll help you choose based on
-        your lifestyle, budget, and needs.
+        Not sure which system is right for your garage? Text us a photo and we'll recommend the best option for your budget and goals.
       </p>
     </div>
   </section>
@@ -624,11 +527,10 @@ const serviceAreas = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">
-          Common Problems We Solve
+          Garage Floor Problems We Eliminate Permanently
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Whatever flooring issue you're facing, we have the expertise to fix it
-          right.
+          Stop living with a garage floor that embarrasses you. Here's how we fix it.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
@@ -685,10 +587,10 @@ const serviceAreas = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">
-          Our Installation Process
+          Our Proven Installation Process
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          A proven process that delivers beautiful, lasting floors every time.
+          A systematic approach that delivers flawless, long-lasting garage floors every single time.
         </p>
       </div>
       <div class="relative">
@@ -740,9 +642,9 @@ const serviceAreas = [
   <section class="py-16 bg-blue-900 text-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Why Choose Rittenworx</h2>
+        <h2 class="text-3xl font-bold mb-4">Why Rittenworx for Your Garage Floor</h2>
         <p class="text-lg text-blue-100 max-w-2xl mx-auto">
-          What sets our flooring services apart from other contractors.
+          The difference between a coating that lasts 2 years and one that lasts 20 is who installs it.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -763,10 +665,9 @@ const serviceAreas = [
                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">Proper Subfloor Prep</h3>
+          <h3 class="text-lg font-bold mb-2">Industrial Diamond Grinding</h3>
           <p class="text-blue-100 text-sm">
-            We don't skip steps. Subfloor leveling, moisture barriers, and
-            underlayment done right mean flooring that lasts decades.
+            We don't acid etch. Our industrial diamond grinders create the mechanical profile that makes coatings bond permanently. This single step is why our floors outlast DIY jobs by a decade.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -787,10 +688,9 @@ const serviceAreas = [
               ></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">Quality Materials</h3>
+          <h3 class="text-lg font-bold mb-2">Commercial-Grade Materials</h3>
           <p class="text-blue-100 text-sm">
-            We source flooring from trusted suppliers and can get contractor
-            pricing on premium products. No cheap materials that fail early.
+            We use professional coating systems that aren't sold in retail stores. 100% solids epoxy, professional polyaspartic topcoats, and industrial flake blends that deliver true commercial performance.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -810,10 +710,9 @@ const serviceAreas = [
                 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">We Show Up On Time</h3>
+          <h3 class="text-lg font-bold mb-2">One-Day Turnaround Available</h3>
           <p class="text-blue-100 text-sm">
-            Appointment confirmed 24 hours AND 2 hours before arrival. No
-            waiting around wondering when we'll show. Your time matters.
+            Our polyaspartic systems can be prepped, applied, and ready for foot traffic the same day. Park your vehicle within 24 hours. No week-long garage shutdowns.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -830,13 +729,12 @@ const serviceAreas = [
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">Emergency Service</h3>
+          <h3 class="text-lg font-bold mb-2">Moisture Testing Included</h3>
           <p class="text-blue-100 text-sm">
-            Water damage can't wait. We offer same-day emergency flooring
-            removal to prevent mold — something most contractors don't do.
+            Moisture is the #1 killer of garage floor coatings. We test every slab before application and apply vapor-mitigating primers when needed. This prevents the delamination that ruins DIY installations.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -857,10 +755,9 @@ const serviceAreas = [
               ></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">Transparent Pricing</h3>
+          <h3 class="text-lg font-bold mb-2">Transparent, Locked-In Pricing</h3>
           <p class="text-blue-100 text-sm">
-            Detailed written quotes include everything — materials, labor,
-            removal, disposal. No surprise fees. Your estimate is your price.
+            Your written estimate includes everything: grinding, repair, materials, labor, and cleanup. No surprise upcharges. No "we found something extra" fees. Your quote is your final price.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -880,10 +777,9 @@ const serviceAreas = [
                 d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">Clean Installation</h3>
+          <h3 class="text-lg font-bold mb-2">Spotless Jobsite Guarantee</h3>
           <p class="text-blue-100 text-sm">
-            We protect your home, minimize dust, and clean up completely.
-            Furniture moved carefully and returned. You'll love your new floors.
+            We contain dust with industrial vacuums, protect your walls and belongings, and leave your garage cleaner than we found it. Your new floor deserves a clean reveal.
           </p>
         </div>
       </div>
@@ -898,7 +794,7 @@ const serviceAreas = [
           Frequently Asked Questions
         </h2>
         <p class="text-lg text-gray-600">
-          Common questions about our flooring services.
+          Everything you need to know about professional garage floor coating.
         </p>
       </div>
       <div class="space-y-4">
@@ -936,18 +832,17 @@ const serviceAreas = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">
-          Flooring Service Areas
+          Garage Floor Coating Service Areas
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          We install and repair flooring throughout Madison County and North
-          Alabama.
+          We coat garage floors throughout Madison County and North Alabama.
         </p>
       </div>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {
           serviceAreas.map((area) => {
             const citySlug = area.city.toLowerCase().replace(/ /g, "-");
-            const finalSlug = `flooring-installation-${citySlug}-al`;
+            const finalSlug = `garage-floor-coating-${citySlug}-al`;
 
             return (
               <a
@@ -1027,10 +922,9 @@ const serviceAreas = [
   <!-- CTA Section -->
   <section class="py-16 bg-orange-500 text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4">Ready for Beautiful New Floors?</h2>
+      <h2 class="text-3xl font-bold mb-4">Your Garage Deserves Better Than Bare Concrete</h2>
       <p class="text-xl mb-8 text-orange-100">
-        Get a free flooring estimate today. We'll help you choose the perfect
-        floor for your lifestyle and budget.
+        Get a free garage floor coating estimate today. One conversation is all it takes to start your transformation.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
