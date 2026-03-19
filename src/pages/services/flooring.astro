@@ -5,221 +5,225 @@ import InlineQuoteForm from "../../components/InlineQuoteForm.astro";
 
 const includedServices = [
   {
-    title: "Epoxy Flooring Systems",
+    title: "Hardwood Flooring",
     items: [
-      "Solid color epoxy coatings",
-      "Metallic epoxy finishes",
-      "Vinyl flake epoxy floors",
-      "Quartz epoxy flooring",
-      "Commercial shop coatings",
-      "Industrial warehouse floors",
-      "Basement epoxy finishing",
-      "Showroom quality results",
+      "Solid hardwood installation",
+      "Engineered hardwood installation",
+      "Hardwood floor refinishing",
+      "Sand and stain services",
+      "Plank replacement & matching",
+      "Nail-down & glue-down methods",
+      "Pre-finished hardwood",
+      "Custom stain color matching",
     ],
   },
   {
-    title: "Polyaspartic Coatings",
+    title: "Laminate & LVP",
     items: [
-      "One-day floor installation",
-      "UV-stable topcoats",
-      "Superior abrasion resistance",
-      "Rapid-cure technology",
-      "Cold-weather applicable",
-      "Chemical & slip resistance",
-      "Extreme durability",
-      "Clear & pigmented options",
+      "Luxury vinyl plank (LVP) installation",
+      "Laminate flooring installation",
+      "Waterproof LVP for kitchens & baths",
+      "Floating floor systems",
+      "Click-lock plank installation",
+      "Transition strip installation",
+      "Stair nose & threshold installation",
+      "Pattern & diagonal layouts",
     ],
   },
   {
-    title: "Concrete Preparation",
+    title: "Subfloor & Prep Work",
     items: [
-      "Diamond grinding surfaces",
-      "Crack & pit repair",
-      "Moisture vapor testing",
-      "Industrial vacuums (HEPA)",
-      "Surface degreasing",
-      "Expansion joint filling",
-      "Old coating removal",
-      "Slab leveling",
+      "Subfloor inspection & repair",
+      "Leveling with self-leveling compound",
+      "Moisture barrier installation",
+      "Underlayment installation",
+      "Squeaky subfloor repair",
+      "Damaged subfloor replacement",
+      "Concrete subfloor prep",
+      "Removal of old flooring",
     ],
   },
   {
-    title: "Specialty Applications",
+    title: "Repairs & Touch-Ups",
     items: [
-      "Moisture vapor barriers",
-      "Decorative broadcast systems",
-      "High-traffic protection",
-      "Retail & studio flooring",
-      "Anti-skid safety textures",
-      "Border & logo integration",
-      "UV-resistant polyaspartic",
-      "Food-grade floor coatings",
+      "Hardwood plank replacement",
+      "Water damage flooring repair",
+      "Gap filling & board stabilization",
+      "Scratch & gouge repair",
+      "Cupping & buckling correction",
+      "Squeaky floor elimination",
+      "Threshold & transition repairs",
+      "New flooring blending & matching",
     ],
   },
 ];
 
 const flooringTypes = [
   {
-    name: "Standard Epoxy",
-    durability: "10-20 years",
-    best: "Garages, basements",
-    waterproof: "Yes",
-    maintenance: "Low - mop and sweep",
+    name: "Solid Hardwood",
+    durability: "25-100+ years",
+    best: "Living rooms, bedrooms, hallways",
+    waterproof: "No",
+    maintenance: "Refinish every 7-10 years",
   },
   {
-    name: "Metallic Epoxy",
-    durability: "15-20 years",
-    best: "Showrooms, living areas",
-    waterproof: "Yes",
-    maintenance: "Low - high gloss finish",
+    name: "Engineered Hardwood",
+    durability: "20-40 years",
+    best: "Basements, over concrete, kitchens",
+    waterproof: "Moisture resistant",
+    maintenance: "Low - sweep and damp mop",
   },
   {
-    name: "Vinyl Flake",
-    durability: "20+ years",
-    best: "Garages, shops, patios",
-    waterproof: "Yes",
-    maintenance: "Very low - textured",
+    name: "Luxury Vinyl Plank (LVP)",
+    durability: "15-25 years",
+    best: "Kitchens, baths, high-traffic areas",
+    waterproof: "100% waterproof",
+    maintenance: "Very low - sweep and mop",
   },
   {
-    name: "Polyaspartic",
-    durability: "20+ years",
-    best: "Commercial, high traffic",
-    waterproof: "Yes",
-    maintenance: "Minimal maintenance",
+    name: "Laminate",
+    durability: "15-25 years",
+    best: "Bedrooms, living rooms, offices",
+    waterproof: "Water resistant",
+    maintenance: "Low - sweep and damp mop",
   },
   {
-    name: "Quartz Epoxy",
-    durability: "25+ years",
-    best: "Kitchens, heavy utility",
-    waterproof: "Yes",
-    maintenance: "Extremely durable",
+    name: "Engineered Hardwood",
+    durability: "20-30 years",
+    best: "Whole-home installs, over radiant heat",
+    waterproof: "Moisture resistant",
+    maintenance: "Low - vacuum and mop",
   },
 ];
 
 const commonProblems = [
   {
-    problem: "Peeling or flaking DIY floor kits",
+    problem: "Squeaky, bouncy, or bouncy subfloor under existing flooring",
     solution:
-      "We grind off the failed DIY coating and apply a professional industrial-grade system that bonds permanently.",
+      "We locate the problem joists, secure them with screws or blocking, and level the subfloor before installing new material. The result is a solid, silent floor.",
   },
   {
-    problem: "Concrete cracks and pitting from salt/wear",
+    problem: "Water-damaged hardwood that is cupped, buckled, or warped",
     solution:
-      "We patch high-stress cracks and fill pits with polyurea concrete mender before applying the final coating.",
+      "We assess the extent of damage, dry the subfloor thoroughly, replace affected planks, and refinish to blend seamlessly with the existing floor.",
   },
   {
-    problem: "Oil and chemical stains on bare concrete",
+    problem: "Uneven or damaged subfloor left behind from previous flooring",
     solution:
-      "We deep-clean using degreasers and diamond grind the slab to remove all contaminants, ensuring a perfect bond.",
+      "We repair, fill, and level the subfloor surface with self-leveling compound so your new hardwood or LVP lays perfectly flat with no humps or dips.",
   },
   {
-    problem: "Moisture vapor or hydrostatic pressure issues",
+    problem: "Gaps between hardwood planks from seasonal movement",
     solution:
-      "We apply specialized moisture vapor barriers to prevent the coating from bubbling or lifting.",
+      "We fill, stabilize, or replace affected boards and advise on humidity control to prevent recurrence. Minor gaps can often be filled; larger separations require board replacement.",
   },
   {
-    problem: "Hot tire pick-up peeling standard paint",
+    problem: "Scratched, dull, or worn hardwood floor surface",
     solution:
-      "Our high-performance coatings are formulated to withstand the heat from tires without softening or peeling.",
+      "We sand down to raw wood, apply your chosen stain, and apply fresh polyurethane topcoats. Your floor looks brand new without the cost of full replacement.",
   },
   {
-    problem: "Uneven or dusty old concrete slabs",
+    problem: "LVP or laminate planks that are clicking, lifting, or separating",
     solution:
-      "Diamond grinding removes the top 'laitance' layer of concrete, eliminating dust and creating a smooth finish.",
+      "We identify the cause — moisture, subfloor imperfection, or inadequate expansion gap — and make the correct repair so the floor lies flat and stable.",
   },
 ];
 
 const processSteps = [
   {
     step: 1,
-    title: "Surface Preparation",
+    title: "Free Assessment & Material Selection",
     description:
-      "We perform industrial-grade diamond grinding to open the pores of the concrete. This creates a profile (CSP 2-3) that allows the coating to sink deep into the slab for a lifetime bond.",
-    time: "2-4 hours",
+      "We visit your home, assess the subfloor condition, measure the space, and walk you through flooring options that fit your style and budget. You'll leave with a clear, itemized quote.",
+    time: "Same-day response",
   },
   {
     step: 2,
-    title: "Crack Repair & Priming",
+    title: "Subfloor Preparation",
     description:
-      "We fill all cracks, joints, and pits with high-strength menders. A primary moisture-mitigating primer is then applied to ensure the base coat has zero chance of lifting.",
-    time: "1-2 hours",
+      "We remove existing flooring, inspect the subfloor for damage, squeaks, and levelness. Any issues are corrected with screws, blocking, patching, or self-leveling compound before a single plank is laid.",
+    time: "Day 1 morning",
   },
   {
     step: 3,
-    title: "Base Coat & Broadcast",
+    title: "Moisture Barrier & Underlayment",
     description:
-      "The industrial base coat is applied, followed immediately by a full broadcast of your chosen color flakes or metallic pigments for a seamless, beautiful finish.",
-    time: "2-4 hours",
+      "Depending on your flooring type and subfloor material, we install the appropriate moisture barrier and/or underlayment to prevent moisture migration and provide sound dampening.",
+    time: "Day 1 afternoon",
   },
   {
     step: 4,
-    title: "Topcoat Protection",
+    title: "Flooring Installation",
     description:
-      "After the base coat cures, we scrape off excess flake and apply a high-performance polyaspartic clear topcoat that provides UV protection and extreme durability.",
-    time: "2-3 hours",
+      "We install your chosen flooring using the correct method — nail-down for solid hardwood, glue-down for engineered, or floating for LVP and laminate. Every plank is checked for fit, level, and finish.",
+    time: "Day 1-2 depending on size",
+  },
+  {
+    step: 5,
+    title: "Trim, Transitions & Finishing",
+    description:
+      "We install all baseboards, quarter-round, threshold transitions, and stair noses. Every edge is caulked and touched up for a clean, professional finish throughout the space.",
+    time: "Final day",
+  },
+  {
+    step: 6,
+    title: "Cleanup & Final Walkthrough",
+    description:
+      "We clean up all debris and dust, vacuum the new floor, and walk the finished space with you to confirm you're 100% satisfied. We don't leave until the job meets our standard.",
+    time: "Final step",
   },
 ];
 
 const faqs = [
   {
-    question: "What is the best coating for a garage floor?",
+    question: "How much does hardwood flooring installation cost?",
     answer:
-      "A polyaspartic-over-epoxy hybrid system is generally best. It combines the incredible adhesion of epoxy with the UV-stability and rapid-cure times of polyaspartic topcoats.",
+      "Hardwood flooring installation in North Alabama typically runs $6-$12 per square foot installed, depending on the species, grade, and room complexity. Engineered hardwood is $5-$10/sq ft and LVP is $3-$7/sq ft installed. We provide free, detailed estimates so you know exactly what to expect.",
   },
   {
-    question: "Do I need to move my items out of the garage?",
+    question: "What flooring is best for kitchens and bathrooms?",
     answer:
-      "Yes, the garage needs to be completely empty. We can help move heavy items to your driveway or a portable storage unit if needed—just let us know during the quote.",
+      "Luxury Vinyl Plank (LVP) is our top recommendation for kitchens and bathrooms. It's 100% waterproof, extremely durable underfoot, comes in hundreds of realistic wood looks, and is one of the most affordable options available. Engineered hardwood is also usable in kitchens but we don't recommend it for bathrooms.",
   },
   {
-    question: "Can you coat old, damaged concrete?",
+    question: "How long does flooring installation take?",
     answer:
-      "Absolutely. Our diamond grinding process removes aging concrete laitance, and our menders fix cracks and pitting before the coating is ever applied.",
+      "A standard 400-800 sq ft room typically takes 1-2 days including subfloor prep. Larger whole-home installs may take 3-5 days. We give you a clear timeline during your estimate so you can plan accordingly.",
   },
   {
-    question: "How much does a garage floor coating cost?",
+    question: "Do you move furniture during installation?",
     answer:
-      "Pricing typically depends on the square footage, floor condition, and chosen system. A standard 2-car garage ranges between $2,500 and $4,500 for a multi-layered industrial system.",
-  },
-  {
-    question: "How long does the installation take?",
-    answer:
-      "Most residential garages take 1-2 days. Day 1 is preparation, patching, and base coat. Day 2 is the clear topcoat application. You can walk on it just 24 hours later.",
-  },
-  {
-    question: "How do I care for my new epoxy floor?",
-    answer:
-      "Wait at least 24 hours for foot traffic and 72 hours before driving on it. For cleaning, simply use a soft broom or microfiber mop with a mixture of ammonia and water (1/2 cup ammonia to 1 gallon water). Avoid acids like vinegar or citrus cleaners which can dull the gloss over time.",
-  },
-  {
-    question: "What's the difference between Epoxy and Polyaspartic?",
-    answer:
-      "Epoxy is incredibly durable and bonds strongly to concrete, taking 24-48 hours to cure. Polyaspartic is faster (cures in hours) and is UV-resistant, meaning it won't yellow over time if exposed to sunlight near garage doors. We often use a hybrid system for the best of both worlds.",
-  },
-  {
-    question: "Do you remove existing coatings or tiles?",
-    answer:
-      "Yes, we use industrial diamond grinding to remove old paint, epoxy, or thin-set from previous tile. This is a critical step to ensure the new coating bonds permanently to the concrete slab.",
+      "We ask that you clear the installation area of furniture before we arrive for large items. We can help move medium furniture as needed. We are not able to move electronics, large appliances, or antiques without liability coverage.",
   },
   {
     question: "How long should flooring acclimate before installation?",
     answer:
-      "Most flooring should acclimate 48-72 hours in the room where it will be installed. This allows the material to adjust to your home's temperature and humidity, preventing expansion issues after installation.",
+      "Solid hardwood should acclimate in the installation room for 3-5 days. Engineered hardwood needs 48-72 hours. LVP and laminate typically require 24-48 hours. We coordinate delivery timing to ensure your material is ready when our crew arrives.",
   },
   {
-    question: "Can you match existing flooring for repairs?",
+    question: "Can you match my existing hardwood flooring for repairs?",
     answer:
-      "We do our best to match existing flooring. For common products, we can often find exact matches. For discontinued or older flooring, we'll find the closest match available. Sometimes creative transitions between old and new look best.",
+      "In many cases, yes. For common species like oak or maple, matching is straightforward. For exotic or discontinued species, we source the closest available match. For larger repairs, refinishing the entire room ensures a seamless, uniform appearance.",
   },
   {
-    question: "Do you offer emergency flooring service?",
+    question: "Do you refinish existing hardwood floors?",
     answer:
-      "Yes! For water damage situations where flooring needs immediate removal to prevent mold, we offer same-day and next-day emergency service. Call us directly for urgent flooring issues.",
+      "Yes. We sand down to raw wood, apply your chosen stain, and finish with two to three coats of polyurethane. A refinish typically brings floors back to like-new condition for a fraction of replacement cost — as long as the floor has enough thickness remaining for sanding.",
   },
   {
-    question: "What subfloor preparation is needed?",
+    question: "What's the difference between solid and engineered hardwood?",
     answer:
-      "We inspect and prep subfloors as part of every installation. This may include leveling with compound, replacing damaged sections, adding moisture barriers, or installing underlayment. Proper prep is key to flooring that lasts.",
+      "Solid hardwood is milled from a single piece of wood and can be sanded and refinished many times over its lifetime. Engineered hardwood has a real wood veneer over a plywood core, making it more dimensionally stable and suitable for installation over concrete or in below-grade spaces like basements.",
+  },
+  {
+    question: "Do you offer emergency flooring service for water damage?",
+    answer:
+      "Yes. For water damage situations where flooring needs immediate removal to prevent mold, we offer priority scheduling and can often respond same-day or next-day. Call us directly for urgent situations rather than submitting a standard quote request.",
+  },
+  {
+    question: "What type of underlayment is best?",
+    answer:
+      "The best underlayment depends on your flooring type and subfloor. LVP often uses a thin foam pad. Laminate uses a thicker foam for sound dampening. Engineered hardwood may require a moisture barrier on concrete. We specify the correct underlayment in every estimate.",
   },
 ];
 
@@ -244,8 +248,8 @@ const serviceAreas = [
 ---
 
 <Layout
-  title="Garage Floor Coating & Epoxy"
-  description="Professional garage floor coating and epoxy in Madison, Huntsville & North Alabama. Durable, high-gloss finishes. Free estimates."
+  title="Flooring Installation & Repair | Madison AL | Rittenworx"
+  description="Professional hardwood, LVP, and laminate flooring installation and repair in Madison, Huntsville & North Alabama. Subfloor prep, refinishing & replacements. Free estimates."
 >
   <!-- Premium Hero Section -->
   <section
@@ -253,8 +257,8 @@ const serviceAreas = [
   >
     <div class="absolute inset-0 z-0">
       <img
-        src="/images/epoxy-floor.webp"
-        alt="Flooring Services"
+        src="/images/flooring.webp"
+        alt="Hardwood Flooring Installation"
         class="w-full h-full object-cover opacity-20 scale-105 animate-[pulse_10s_ease-in-out_infinite_alternate]"
       />
       <div
@@ -274,7 +278,7 @@ const serviceAreas = [
             >Services</a
           >
           <span class="opacity-50">/</span>
-          <span class="text-orange-400">Garage Floor Coating</span>
+          <span class="text-orange-400">Flooring Installation & Repair</span>
         </nav>
 
         <div
@@ -283,24 +287,24 @@ const serviceAreas = [
           <span
             class="w-2 h-2 inline-block rounded-full bg-orange-400 mr-2 animate-pulse"
           ></span>
-          Expert Garage Floor Coatings
+          Expert Flooring Installers
         </div>
 
         <h1
           class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight"
         >
-          Garage Floor <span
+          Flooring <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600"
-            >Epoxy Coating</span
+            >Installation & Repair</span
           >
         </h1>
 
         <p
           class="text-xl md:text-2xl text-blue-100 mb-10 font-light leading-relaxed"
         >
-          Transform your garage with a premium showroom-quality finish. Durable,
-          stain-resistant epoxy coatings installed by experts with meticulous
-          attention to every detail.
+          Hardwood, LVP, laminate, and engineered flooring installed with
+          precision craftsmanship. Proper subfloor prep. Clean edges. Results
+          that last.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4">
@@ -365,8 +369,8 @@ const serviceAreas = [
           <div>
             <p class="font-bold">Emergency Water Damage Service</p>
             <p class="text-sm text-orange-100">
-              Flooded floors? We offer same-day removal to prevent mold and
-              further damage.
+              Flooded floors? We offer priority scheduling to remove damaged
+              flooring and prevent mold.
             </p>
           </div>
         </div>
@@ -380,52 +384,53 @@ const serviceAreas = [
     </div>
   </section>
 
-  <!-- Comprehensive SEO Introduction -->
+  <!-- SEO Introduction -->
   <section class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 prose prose-lg prose-blue">
       <h2
         class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 font-display tracking-tight"
       >
-        Industrial Grade Garage Floor Coatings
+        Flooring Installation That's Done Right the First Time
       </h2>
       <p class="text-gray-700 text-lg leading-relaxed mb-6">
-        Your garage floor is the foundation of your home's most hard-working space.
-        It needs to withstand vehicles, chemicals, temperature fluctuations, and
-        heavy traffic. At Rittenworx, we specialize in high-performance epoxy and
-        polyaspartic systems that transform dusty concrete into a durable,
-        seamless showroom finish.
+        New flooring is one of the highest-impact upgrades you can make to your
+        home. It changes how every room looks and feels. But a beautiful floor
+        starts with a properly prepared subfloor — and that's where most DIY and
+        budget installs fail. At Rittenworx, we treat subfloor prep as seriously
+        as the flooring itself. We inspect for squeaks, soft spots, levelness,
+        and moisture before a single plank is laid, because we know that what's
+        underneath determines how your floor looks and performs for the next
+        20 years.
       </p>
       <p class="text-gray-700 text-lg leading-relaxed mb-6">
-        The secret to a lifetime floor is in the preparation. We don't just "paint"
-        over your concrete; we use planetary diamond grinders to open the pores of the
-        slab, ensuring the coating sinks deep into the concrete. Our process eliminates
-        the risk of "hot tire pick-up" and peeling that often ruins DIY store-bought
-        kits.
-      </p>
-      <p class="text-gray-700 text-lg leading-relaxed mb-6">
-        Our industrial equipment and meticulous attention to detail ensure a 
-        perfectly bonded surface that resists chemicals, salts, and oil stains. 
-        We refuse to cut corners, guaranteeing that your new floor is installed 
-        strictly according to the manufacturer's stringent specifications to 
-        prevent bubbling or delamination.
+        Whether you're upgrading a single bedroom with luxury vinyl plank,
+        installing solid hardwood throughout your main level, or refinishing
+        dull, scratched floors back to their original beauty — we bring the same
+        standard of workmanship to every job. Clean cuts at every wall. Proper
+        expansion gaps. Tight seams. Transitions that look intentional, not
+        afterthought. That's what separates a professional install from one that
+        looks good for 6 months and starts failing in year two.
       </p>
 
       <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 mt-14">
-        Concrete Repair and Moisture Mitigation
+        Choosing the Right Flooring for Your Home
       </h3>
       <p class="text-gray-700 text-lg leading-relaxed mb-6">
-        Beyond the aesthetic upgrade, our crews frequently handle complex concrete 
-        restoration, including crack repair, pit filling, and moisture vapor 
-        remediation. If your slab has high moisture levels, we apply specialized 
-        vapor barriers to ensure the epoxy doesn't lift over time—a common issue 
-        in the humid North Alabama climate.
+        Solid hardwood remains the gold standard for living rooms, dining rooms,
+        and bedrooms — nothing else matches its warmth, longevity, or ability to
+        be refinished multiple times over a lifetime. Engineered hardwood gives
+        you the look of real wood with greater dimensional stability, making it
+        the right call for basements, over concrete slabs, or over radiant heat
+        systems. Luxury vinyl plank has become the dominant choice for
+        kitchens, bathrooms, and whole-home installs where 100% waterproofing is
+        non-negotiable — today's LVP products look nearly identical to real wood
+        and outperform it in high-moisture areas.
       </p>
       <p class="text-gray-700 text-lg leading-relaxed mb-10">
-        By exclusively utilizing premium materials and industrial grinding equipment, 
-        we ensure that your restored flooring system will beautifully withstand 
-        heavy vehicle traffic and environmental challenges for decades to come, 
-        bringing you lasting peace of mind and significantly increasing your 
-        property's value.
+        We don't push you toward any particular product. We walk you through the
+        pros and cons of each option based on your specific rooms, lifestyle,
+        budget, and long-term goals. Our job is to make sure you're happy with
+        your flooring a decade from now, not just on installation day.
       </p>
     </div>
   </section>
@@ -436,7 +441,7 @@ const serviceAreas = [
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">What's Included</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Professional concrete preparation and high-performance coating systems.
+          Full-service flooring installation from subfloor to finished edge.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
@@ -490,7 +495,7 @@ const serviceAreas = [
   <section class="py-12 bg-blue-50">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl font-bold text-center mb-8 text-gray-800">
-        Flooring Comparison Guide
+        Flooring Type Comparison Guide
       </h2>
       <div class="overflow-x-auto">
         <table class="w-full bg-white rounded-lg shadow-sm">
@@ -505,54 +510,16 @@ const serviceAreas = [
           </thead>
           <tbody>
             {
-              flooringTypes.map((floor, index) => (
+              flooringTypes.map((type, index) => (
                 <tr class={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
                   <td class="px-4 py-3 font-semibold text-blue-900">
-                    {floor.name}
+                    {type.name}
                   </td>
-                  <td class="px-4 py-3 text-gray-700">{floor.durability}</td>
-                  <td class="px-4 py-3 text-gray-700">{floor.best}</td>
-                  <td class="px-4 py-3">
-                    {floor.waterproof === "Yes" ? (
-                      <span class="inline-flex items-center gap-1 text-green-600">
-                        <svg
-                          class="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        Yes
-                      </span>
-                    ) : floor.waterproof === "Some" ? (
-                      <span class="text-yellow-600">Some options</span>
-                    ) : (
-                      <span class="inline-flex items-center gap-1 text-red-500">
-                        <svg
-                          class="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                        No
-                      </span>
-                    )}
-                  </td>
+                  <td class="px-4 py-3 text-gray-700">{type.durability}</td>
+                  <td class="px-4 py-3 text-gray-700">{type.best}</td>
+                  <td class="px-4 py-3 text-gray-700">{type.waterproof}</td>
                   <td class="px-4 py-3 text-gray-600 text-sm">
-                    {floor.maintenance}
+                    {type.maintenance}
                   </td>
                 </tr>
               ))
@@ -561,8 +528,8 @@ const serviceAreas = [
         </table>
       </div>
       <p class="text-center text-gray-500 text-sm mt-4">
-        Not sure which flooring is right for you? We'll help you choose based on
-        your lifestyle, budget, and needs.
+        Not sure which flooring is right for your space? Text us a photo and
+        we'll give you our honest recommendation.
       </p>
     </div>
   </section>
@@ -572,11 +539,11 @@ const serviceAreas = [
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-800 mb-4">
-          Common Problems We Solve
+          Flooring Problems We Fix
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Whatever flooring issue you're facing, we have the expertise to fix it
-          right.
+          From water damage to squeaky subfloors, we diagnose and fix the root
+          cause — not just the surface.
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
@@ -636,7 +603,8 @@ const serviceAreas = [
           Our Installation Process
         </h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          A proven process that delivers beautiful, lasting floors every time.
+          A systematic approach that delivers beautiful, long-lasting floors
+          every single time.
         </p>
       </div>
       <div class="relative">
@@ -688,9 +656,9 @@ const serviceAreas = [
   <section class="py-16 bg-blue-900 text-white">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold mb-4">Why Choose Rittenworx</h2>
+        <h2 class="text-3xl font-bold mb-4">Why Rittenworx for Flooring</h2>
         <p class="text-lg text-blue-100 max-w-2xl mx-auto">
-          What sets our flooring services apart from other contractors.
+          We take flooring seriously. Here's what sets our installs apart.
         </p>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -711,10 +679,11 @@ const serviceAreas = [
                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">Proper Subfloor Prep</h3>
+          <h3 class="text-lg font-bold mb-2">Subfloor Prep First</h3>
           <p class="text-blue-100 text-sm">
-            We don't skip steps. Subfloor leveling, moisture barriers, and
-            underlayment done right mean flooring that lasts decades.
+            Every install starts with a thorough subfloor inspection. We fix
+            squeaks, level low spots, and address moisture before touching the
+            finished flooring. Most failed installs skip this step.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -735,10 +704,11 @@ const serviceAreas = [
               ></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">Quality Materials</h3>
+          <h3 class="text-lg font-bold mb-2">Clean, Tight Installations</h3>
           <p class="text-blue-100 text-sm">
-            We source flooring from trusted suppliers and can get contractor
-            pricing on premium products. No cheap materials that fail early.
+            We use precision tools to achieve tight seams, clean cuts at every
+            wall, and properly fitted transitions. You'll never see gaps, lifted
+            edges, or ill-fitting threshold strips when we finish.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -758,10 +728,11 @@ const serviceAreas = [
                 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">We Show Up On Time</h3>
+          <h3 class="text-lg font-bold mb-2">On-Time & Efficient</h3>
           <p class="text-blue-100 text-sm">
-            Appointment confirmed 24 hours AND 2 hours before arrival. No
-            waiting around wondering when we'll show. Your time matters.
+            We show up when we say we will and complete the job within the
+            timeline we quote. No disappearing mid-project, no surprise
+            multi-week delays.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -778,13 +749,15 @@ const serviceAreas = [
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">Emergency Service</h3>
+          <h3 class="text-lg font-bold mb-2">Moisture Protection</h3>
           <p class="text-blue-100 text-sm">
-            Water damage can't wait. We offer same-day emergency flooring
-            removal to prevent mold — something most contractors don't do.
+            Moisture is the #1 enemy of flooring. We install proper barriers and
+            underlayment for every job and test for moisture intrusion before
+            committing to an install method.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -805,10 +778,11 @@ const serviceAreas = [
               ></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">Transparent Pricing</h3>
+          <h3 class="text-lg font-bold mb-2">Transparent, Locked-In Pricing</h3>
           <p class="text-blue-100 text-sm">
-            Detailed written quotes include everything — materials, labor,
-            removal, disposal. No surprise fees. Your estimate is your price.
+            Your written estimate includes labor, materials, disposal, and
+            subfloor prep. No surprise upcharges after we start. Your quote is
+            your final price.
           </p>
         </div>
         <div class="bg-white/10 rounded-lg p-6">
@@ -828,10 +802,11 @@ const serviceAreas = [
                 d="M5 13l4 4L19 7"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-bold mb-2">Clean Installation</h3>
+          <h3 class="text-lg font-bold mb-2">Complete Cleanup Guaranteed</h3>
           <p class="text-blue-100 text-sm">
-            We protect your home, minimize dust, and clean up completely.
-            Furniture moved carefully and returned. You'll love your new floors.
+            We haul away all old flooring, packaging, and debris. Your new floor
+            is vacuumed and ready to enjoy the day we finish. We leave your home
+            cleaner than we found it.
           </p>
         </div>
       </div>
@@ -846,33 +821,35 @@ const serviceAreas = [
           Frequently Asked Questions
         </h2>
         <p class="text-lg text-gray-600">
-          Common questions about our flooring services.
+          Everything you need to know about flooring installation and repair.
         </p>
       </div>
       <div class="space-y-4">
         {
-          faqs.map((faq) => (
-            <details class="bg-white rounded-lg border border-gray-200 group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                <h3 class="font-semibold text-gray-800 pr-4">{faq.question}</h3>
-                <svg
-                  class="w-5 h-5 text-gray-500 flex-shrink-0 transition-transform group-open:rotate-180"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </summary>
-              <div class="px-6 pb-6">
-                <p class="text-gray-600">{faq.answer}</p>
-              </div>
-            </details>
+          faqs.map((faq, index) => (
+            <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+              <details class="group">
+                <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                  <h3 class="font-semibold text-gray-800 pr-4">
+                    {faq.question}
+                  </h3>
+                  <svg
+                    class="w-5 h-5 text-blue-600 flex-shrink-0 transform group-open:rotate-180 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <div class="px-6 pb-6 text-gray-600">{faq.answer}</div>
+              </details>
+            </div>
           ))
         }
       </div>
@@ -880,118 +857,69 @@ const serviceAreas = [
   </section>
 
   <!-- Service Areas -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-white border-t border-gray-100">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">
-          Flooring Service Areas
-        </h2>
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Areas We Serve</h2>
         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          We install and repair flooring throughout Madison County and North
-          Alabama.
+          Flooring installation and repair services across North Alabama.
         </p>
       </div>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
         {
-          serviceAreas.map((area) => {
-            const citySlug = area.city.toLowerCase().replace(/ /g, "-");
-            const finalSlug = `flooring-installation-${citySlug}-al`;
-
-            return (
-              <a
-                href={`/services/${finalSlug}`}
-                class={`block group rounded-2xl p-6 text-center transition-all duration-300 ${area.city === "Madison" ? "bg-gradient-to-br from-blue-900 to-blue-800 text-white shadow-xl shadow-blue-900/20 hover:-translate-y-1" : "bg-white border border-gray-100 shadow-lg hover:shadow-xl hover:border-blue-100 hover:-translate-y-1"}`}
-              >
-                <div
-                  class={`w-12 h-12 mx-auto rounded-full flex items-center justify-center mb-4 ${area.city === "Madison" ? "bg-white/20" : "bg-blue-50 group-hover:bg-blue-100 transition-colors"}`}
-                >
-                  <svg
-                    class={`w-6 h-6 ${area.city === "Madison" ? "text-white" : "text-blue-600"}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                </div>
-                <h3
-                  class={`text-xl font-bold mb-2 ${area.city === "Madison" ? "text-white" : "text-gray-900 group-hover:text-blue-900"}`}
-                >
-                  {area.city}
-                </h3>
-                <p
-                  class={`text-sm mb-4 ${area.city === "Madison" ? "text-blue-100" : "text-gray-500"}`}
-                >
-                  {area.note}
-                </p>
-
-                <div
-                  class={`inline-flex items-center gap-2 text-sm font-bold ${area.city === "Madison" ? "text-orange-400" : "text-blue-600"}`}
-                >
-                  View Details
-                  <svg
-                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </div>
-              </a>
-            );
-          })
+          serviceAreas.map((area) => (
+            <div class="bg-gray-50 rounded-lg p-5 border border-gray-100 text-center">
+              <h3 class="font-bold text-gray-900 mb-1">{area.city}, AL</h3>
+              <p class="text-sm text-blue-600 font-medium">{area.note}</p>
+              <p class="text-xs text-gray-500 mt-1">{area.driveTime}</p>
+            </div>
+          ))
         }
       </div>
-      <p class="text-center text-gray-500 text-sm mt-6">
-        Not sure if we service your area? <a
-          href="/contact"
-          class="text-blue-600 hover:underline">Contact us</a
-        > — we're happy to discuss.
-      </p>
     </div>
   </section>
 
   <InlineQuoteForm />
-
   <TrustCredentials />
 
-  <!-- CTA Section -->
-  <section class="py-16 bg-orange-500 text-white">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4">Ready for Beautiful New Floors?</h2>
-      <p class="text-xl mb-8 text-orange-100">
-        Get a free flooring estimate today. We'll help you choose the perfect
-        floor for your lifestyle and budget.
+  <!-- CTA -->
+  <section class="py-24 relative bg-blue-900 overflow-hidden">
+    <div
+      class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-800 rounded-full blur-[100px] opacity-50 mix-blend-screen -mr-40 -mt-40"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-orange-600/30 rounded-full blur-[120px] opacity-50 mix-blend-screen -ml-40 -mb-40"
+    >
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-white leading-tight">
+        Ready for New Floors?
+      </h2>
+      <p class="text-xl md:text-2xl mb-12 text-blue-100 font-light">
+        Text us a photo of your space and we'll give you an honest quote — fast.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
         <a
-          href="/contact"
-          class="bg-white hover:bg-gray-100 text-orange-500 font-bold py-3 px-8 rounded-lg transition-colors text-lg"
+          href="sms:2562210373"
+          class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-10 rounded-xl transition-all duration-300 text-lg flex items-center justify-center gap-2 shadow-xl shadow-orange-500/20 hover:shadow-orange-500/40 hover:-translate-y-1 border border-orange-400/30"
         >
-          Request Free Estimate
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+            ></path>
+          </svg>
+          Text Us A Photo
         </a>
         <a
-          href="tel:+12562210373"
-          class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg border border-orange-400"
+          href="/contact"
+          class="bg-white hover:bg-gray-50 text-blue-900 font-bold py-4 px-10 rounded-xl transition-all duration-300 text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1"
         >
-          Call (256) 221-0373
+          Use Standard Form
         </a>
       </div>
     </div>
