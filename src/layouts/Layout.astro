@@ -477,6 +477,45 @@ const finalSchema = schema || schemaData;
       </div>
     </div>
 
+    <!-- Seasonal Urgency Banner (Rotating) -->
+    <div
+      class="bg-gradient-to-r from-blue-800 to-blue-900 text-white text-center py-2 px-4 text-sm relative z-45 border-b border-blue-700"
+      id="urgency-banner"
+    >
+      <div
+        class="max-w-6xl mx-auto flex items-center justify-center gap-2 flex-wrap"
+      >
+        <span class="font-bold">This Week:</span>
+        <span id="urgency-message">14 of 17 slots filled</span>
+        <span class="text-blue-200">•</span>
+        <a
+          href="/contact"
+          class="underline hover:text-orange-400 transition-colors font-semibold"
+          >Lock in your spot before we're booked</a
+        >
+      </div>
+    </div>
+
+    <script>
+      // Rotate urgency messages based on current month
+      const messages = [
+        { months: [0, 1], text: "Winter freeze repairs: Only 5 emergency slots left" },
+        { months: [2, 3, 4], text: "Spring storm season: Book repairs before our April rush" },
+        { months: [5, 6, 7], text: "AC season books fast: Only 5 painting slots left this month" },
+        { months: [8, 9, 10], text: "Fall gutter cleaning: 31 homes ahead of you (reserve now)" },
+        { months: [11], text: "Holiday guest panic? Emergency spots still open" }
+      ];
+
+      const currentMonth = new Date().getMonth();
+      const urgencyEl = document.getElementById('urgency-message');
+      if (urgencyEl) {
+        const message = messages.find(m => m.months.includes(currentMonth));
+        if (message) {
+          urgencyEl.textContent = message.text;
+        }
+      }
+    </script>
+
     <!-- Sticky Header -->
     <header
       class="bg-blue-900 text-white shadow-lg sticky top-0 z-40 transition-shadow duration-300"

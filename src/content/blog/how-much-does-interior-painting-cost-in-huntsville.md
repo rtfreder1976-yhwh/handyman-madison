@@ -93,6 +93,8 @@ When you hire Rittenworx for your interior painting project, you are investing i
 *   **Transparent Pricing:** You will receive a detailed, itemized quote with zero hidden fees. 
 *   **Peace of Mind:** We answer our phones, we show up exactly when we say we will, and we are fully licensed and insured for $1,000,000. 
 
-If you are ready to elevate the interior of your luxury home with a Quality, professional finish, do not leave your largest asset to an amateur. 
+If you're ready to stop living with embarrassing walls and get that magazine-worthy finish you deserve, we have 3 painting slots available this month.
 
-[**Contact Rittenworx today for a fast, free quote**](/quote) or call us directly at **(256) 221-0373**. We respond to all inquiries within 3 hours.
+**Ready to skip the research and get this fixed today?** Text a photo of your room to **(256) 221-0373** right now. You'll have a price in 60 seconds and we can start this weekend.
+
+**P.S.** Mention this article for 10% off your first painting project—but only if you book within the next 48 hours. Our schedule fills fast during painting season.
