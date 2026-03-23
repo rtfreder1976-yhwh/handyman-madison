@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nElevate website copy with direct response principles\n\nMajor copy improvements across all pages:\n- Transform homepage hero from feature-focused to benefit-driven\n- Add urgency, scarcity, and specific timeframes throughout\n- Replace generic CTAs with compelling, specific actions\n- Update service pages with results-based headlines and pricing\n- Enhance About page with transformation focus\n- Add scarcity elements to Contact page\n- Integrate rotating urgency banner in header\n- Include special offers in blog CTAs\n\nAll copy now focuses on customer transformation, creates urgency,\nand drives immediate action with specific claims and guarantees.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)"
     ],
     "deny": [],
     "ask": []
